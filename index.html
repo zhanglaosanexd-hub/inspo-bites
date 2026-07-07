@@ -74,15 +74,58 @@
 
           <div class="filter-strip" id="filter-strip" aria-label="Filters"></div>
 
-          <label class="sort-box">
-            <span class="visually-hidden">Sort</span>
-            <select id="sort-select">
-              <option value="recent">Recent</option>
-              <option value="title">A-Z</option>
-              <option value="source">Source</option>
-            </select>
-          </label>
+          <div class="view-switcher" id="view-switcher" aria-label="Display mode">
+            <button
+              class="view-mode-button"
+              type="button"
+              data-view-mode="single"
+              aria-label="Single card mode"
+              title="Single card"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="5" y="4.5" width="14" height="10" rx="1.8"></rect>
+                <path d="M7 19c0-2 1.4-3 5-3s5 1 5 3"></path>
+              </svg>
+            </button>
+            <button
+              class="view-mode-button"
+              type="button"
+              data-view-mode="grid"
+              aria-label="Uniform card mode"
+              title="Uniform cards"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="4" width="6.3" height="6.3" rx="1.5"></rect>
+                <rect x="13.7" y="4" width="6.3" height="6.3" rx="1.5"></rect>
+                <rect x="4" y="13.7" width="6.3" height="6.3" rx="1.5"></rect>
+                <rect x="13.7" y="13.7" width="6.3" height="6.3" rx="1.5"></rect>
+              </svg>
+            </button>
+            <button
+              class="view-mode-button"
+              type="button"
+              data-view-mode="masonry"
+              aria-label="Masonry card mode"
+              title="Masonry cards"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="4" y="4" width="6.3" height="6.3" rx="1.5"></rect>
+                <rect x="13.7" y="4" width="6.3" height="6.3" rx="1.5"></rect>
+                <path d="M4 19.8v-3.1c0-1.9 1.3-3 3.2-3s3.1 1.1 3.1 3v3.1"></path>
+                <path d="M13.7 19.8v-3.1c0-1.9 1.3-3 3.2-3s3.1 1.1 3.1 3v3.1"></path>
+              </svg>
+            </button>
+          </div>
         </div>
+
+        <label class="sort-box visually-hidden">
+          <span class="visually-hidden">Sort</span>
+          <select id="sort-select">
+            <option value="recent">Recent</option>
+            <option value="title">A-Z</option>
+            <option value="source">Source</option>
+          </select>
+        </label>
 
         <section class="gallery" id="gallery" aria-live="polite"></section>
 

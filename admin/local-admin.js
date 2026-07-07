@@ -278,6 +278,7 @@ async function saveCurrentItem(form) {
   if (!item) return;
 
   const data = new FormData(form);
+  const createdAt = item.createdAt || dateToCreatedAt(item.dateAdded) || new Date().toISOString();
   Object.assign(item, {
     id: cleanId(data.get("id")),
     section: data.get("section") || "",
@@ -293,6 +294,7 @@ async function saveCurrentItem(form) {
     video: data.get("video") || "",
     size: data.get("size") || "wide",
     dateAdded: data.get("dateAdded") || today(),
+    createdAt,
     tags: textToList(data.get("tagsText")),
     details: textToDetails(data.get("detailsText")),
     materials: textToMaterials(data.get("materialsText")),
@@ -338,6 +340,7 @@ function addItem() {
     video: "",
     url: "",
     dateAdded: today(),
+    createdAt: new Date().toISOString(),
     details: [],
     materials: [],
     size: "wide",
@@ -534,6 +537,7 @@ function normalizeItems(data) {
   const source = Array.isArray(data) ? data : [];
   return source.map((item) => ({
     ...item,
+    createdAt: item.createdAt || dateToCreatedAt(item.dateAdded),
     tags: textToList(item.tags),
     details: Array.isArray(item.details) ? item.details : [],
     materials: Array.isArray(item.materials) ? item.materials : [],
@@ -611,6 +615,12 @@ function cleanId(value) {
 
 function today() {
   return new Date().toISOString().slice(0, 10);
+}
+
+function dateToCreatedAt(value) {
+  if (!value) return "";
+  if (String(value).includes("T")) return value;
+  return `${value}T00:00:00.000Z`;
 }
 
 function escapeHtml(value) {

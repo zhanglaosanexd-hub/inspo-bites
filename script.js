@@ -3,6 +3,7 @@ const state = {
   filter: "All",
   query: "",
   sort: "recent",
+  viewMode: "masonry",
 };
 
 let items = [];
@@ -24,6 +25,7 @@ const lastUpdated = document.querySelector("#last-updated");
 const sidebarUpdated = document.querySelector("#sidebar-updated");
 const searchInput = document.querySelector("#search-input");
 const sortSelect = document.querySelector("#sort-select");
+const viewSwitcher = document.querySelector("#view-switcher");
 const submitModal = document.querySelector("#submit-modal");
 const detailViewer = document.querySelector("#detail-viewer");
 const detailPreview = document.querySelector("#detail-preview");
@@ -41,6 +43,7 @@ const formatter = new Intl.DateTimeFormat("en", {
   day: "numeric",
   year: "numeric",
 });
+const NEW_WINDOW_MS = 36 * 60 * 60 * 1000;
 
 async function init() {
   const [sectionsResponse, itemsResponse] = await Promise.all([
@@ -80,6 +83,7 @@ function normalizeItems(data) {
   const source = Array.isArray(data) ? data : data.items || [];
   return source.map((item) => ({
     ...item,
+    createdAt: item.createdAt || dateToCreatedAt(item.dateAdded),
     tags: normalizeList(item.tags),
     details: Array.isArray(item.details) ? item.details : [],
   }));
@@ -116,6 +120,14 @@ function bindEvents() {
 
   sortSelect.addEventListener("change", (event) => {
     state.sort = event.target.value;
+    renderGallery();
+  });
+
+  viewSwitcher.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-view-mode]");
+    if (!button) return;
+
+    state.viewMode = button.dataset.viewMode;
     renderGallery();
   });
 
@@ -308,8 +320,19 @@ function renderGallery() {
     sidebarUpdated.textContent = formatter.format(recentDate);
   }
 
-  renderMasonry(filtered);
+  renderViewModeControls();
+  if (state.viewMode === "single") renderSingleColumn(filtered);
+  else if (state.viewMode === "grid") renderUniformGrid(filtered);
+  else renderMasonry(filtered);
   emptyState.hidden = filtered.length > 0;
+}
+
+function renderViewModeControls() {
+  viewSwitcher.querySelectorAll("[data-view-mode]").forEach((button) => {
+    const isActive = button.dataset.viewMode === state.viewMode;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
+  });
 }
 
 function getVisibleItems() {
@@ -335,6 +358,7 @@ function createCard(item) {
   const media = createMediaMarkup(item);
   const itemUrl = escapeHtml(item.url || "");
   const itemTitle = escapeHtml(item.title || "Untitled");
+  const newBadge = isNewItem(item) ? `<span class="new-badge" aria-label="New item">NEW</span>` : "";
   const externalAction = item.url
     ? `
         <a
@@ -353,6 +377,7 @@ function createCard(item) {
         <button class="media-link" type="button" data-detail-id="${escapeHtml(item.id)}" aria-label="View ${itemTitle} details">
           ${media}
         </button>
+        ${newBadge}
         ${externalAction}
       </div>
     </article>
@@ -507,6 +532,7 @@ function getDetailRows(item) {
 }
 
 function renderMasonry(filtered) {
+  gallery.className = "gallery is-masonry";
   gallery.style.maxWidth = "";
   const columnCount = Math.min(getColumnCount(), Math.max(filtered.length, 1));
   const columns = Array.from({ length: columnCount }, () => ({ height: 0, cards: [] }));
@@ -524,6 +550,23 @@ function renderMasonry(filtered) {
   gallery.innerHTML = columns
     .map((column) => `<div class="gallery-column">${column.cards.join("")}</div>`)
     .join("");
+  bindVideoFallbacks(gallery);
+}
+
+function renderUniformGrid(filtered) {
+  gallery.className = "gallery is-uniform";
+  gallery.style.maxWidth = "";
+  const columnCount = Math.min(getColumnCount(), Math.max(filtered.length, 1));
+  gallery.style.setProperty("--gallery-columns", columnCount);
+  gallery.innerHTML = filtered.map((item) => createCard(item)).join("");
+  bindVideoFallbacks(gallery);
+}
+
+function renderSingleColumn(filtered) {
+  gallery.className = "gallery is-single";
+  gallery.style.setProperty("--gallery-columns", 1);
+  gallery.style.maxWidth = filtered.length ? "min(100%, 960px)" : "";
+  gallery.innerHTML = filtered.map((item) => createCard(item)).join("");
   bindVideoFallbacks(gallery);
 }
 
@@ -597,6 +640,26 @@ function getRecentDate(sourceItems) {
   return sourceItems
     .map((item) => new Date(item.dateAdded))
     .sort((a, b) => b - a)[0];
+}
+
+function isNewItem(item) {
+  const createdAt = getCreatedAt(item);
+  if (!createdAt) return false;
+  const age = Date.now() - createdAt.getTime();
+  return age >= 0 && age <= NEW_WINDOW_MS;
+}
+
+function getCreatedAt(item) {
+  const value = item.createdAt || dateToCreatedAt(item.dateAdded);
+  if (!value) return null;
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function dateToCreatedAt(value) {
+  if (!value) return "";
+  if (String(value).includes("T")) return value;
+  return `${value}T00:00:00.000Z`;
 }
 
 function setOnlineCount() {
