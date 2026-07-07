@@ -6,7 +6,14 @@
       "title": "设计灵感",
       "eyebrow": "Inspo",
       "description": "A small, curated feed for motion experiments, visual systems, and expressive design references.",
-      "filters": ["All", "Motion", "Typography", "Graphic", "Experiment", "X"]
+      "filters": [
+        "All",
+        "Motion",
+        "Typography",
+        "Graphic",
+        "Experiment",
+        "X"
+      ]
     },
     {
       "id": "ux-bites",
@@ -14,7 +21,14 @@
       "title": "体验切片",
       "eyebrow": "Experience notes",
       "description": "Short, reusable UX observations for flows, patterns, writing, and product decisions.",
-      "filters": ["All", "Patterns", "Research", "Writing", "Metrics", "Accessibility"]
+      "filters": [
+        "All",
+        "Patterns",
+        "Research",
+        "Writing",
+        "Metrics",
+        "Accessibility"
+      ]
     }
   ]
 }

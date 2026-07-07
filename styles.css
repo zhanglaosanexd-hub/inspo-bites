@@ -407,25 +407,96 @@ h1 {
 }
 
 .work-card {
+  --glow-angle: 45deg;
+  --glow-border-opacity: 0;
+  --glow-fill-opacity: 0;
+  --glow-shadow-opacity: 0;
+  position: relative;
+  isolation: isolate;
   display: block;
   width: 100%;
   margin: 0;
   border: 1px solid rgba(222, 222, 216, 0.72);
   border-radius: 6px;
-  overflow: hidden;
+  overflow: visible;
   background: var(--surface);
   box-shadow: 0 1px 0 rgba(23, 23, 23, 0.03);
 }
 
+.work-card::before,
+.work-card::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.work-card::before {
+  inset: 0;
+  z-index: 3;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(rgb(255 255 255 / 0%) 0 100%) padding-box,
+    radial-gradient(at 80% 55%, #c084fc 0, transparent 52%) border-box,
+    radial-gradient(at 69% 34%, #f472b6 0, transparent 52%) border-box,
+    radial-gradient(at 8% 6%, #38bdf8 0, transparent 52%) border-box,
+    radial-gradient(at 41% 38%, #c084fc 0, transparent 52%) border-box,
+    radial-gradient(at 86% 85%, #f472b6 0, transparent 52%) border-box,
+    radial-gradient(at 82% 18%, #38bdf8 0, transparent 52%) border-box,
+    linear-gradient(135deg, #c084fc, #f472b6, #38bdf8) border-box;
+  mask-image: conic-gradient(
+    from var(--glow-angle) at center,
+    #000 0 24%,
+    transparent 38% 62%,
+    #000 76% 100%
+  );
+  -webkit-mask-image: conic-gradient(
+    from var(--glow-angle) at center,
+    #000 0 24%,
+    transparent 38% 62%,
+    #000 76% 100%
+  );
+  opacity: var(--glow-border-opacity);
+  transition: opacity 220ms ease;
+}
+
+.work-card::after {
+  inset: -18px;
+  z-index: 0;
+  opacity: var(--glow-shadow-opacity);
+  box-shadow:
+    0 0 1px 1px hsl(284deg 82% 72% / 78%),
+    0 0 8px 1px hsl(331deg 86% 70% / 48%),
+    0 0 22px 2px hsl(199deg 92% 61% / 28%),
+    0 0 46px 3px hsl(284deg 82% 72% / 16%);
+  mask-image: conic-gradient(
+    from var(--glow-angle) at center,
+    #000 0 10%,
+    transparent 22% 78%,
+    #000 90% 100%
+  );
+  -webkit-mask-image: conic-gradient(
+    from var(--glow-angle) at center,
+    #000 0 10%,
+    transparent 22% 78%,
+    #000 90% 100%
+  );
+  transition: opacity 260ms ease;
+}
+
 .work-card:hover {
   border-color: rgba(23, 23, 23, 0.24);
-  box-shadow: var(--shadow);
+  box-shadow:
+    0 1px 0 rgba(23, 23, 23, 0.03),
+    0 14px 34px rgba(23, 23, 23, 0.08);
 }
 
 .media-frame {
   position: relative;
+  z-index: 1;
   width: 100%;
   overflow: hidden;
+  border-radius: inherit;
   background: #e8e8e2;
 }
 
@@ -841,7 +912,7 @@ h1 {
   color: #fff;
   background: rgba(23, 23, 23, 0.68);
   box-shadow: 0 1px 10px rgba(23, 23, 23, 0.22);
-  z-index: 1;
+  z-index: 4;
 }
 
 .card-action::before {
@@ -1099,6 +1170,8 @@ h1 {
   font-size: 13px;
   line-height: 1.55;
   font-weight: 520;
+  overflow-wrap: anywhere;
+  white-space: pre-line;
 }
 
 .detail-meta {

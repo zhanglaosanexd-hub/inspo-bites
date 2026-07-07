@@ -1,126 +1,111 @@
 {
   "items": [
-  {
-    "id": "pinckus-hydrangea",
-    "section": "inspiration",
-    "title": "Pinckus: Motion Graphics「绣球」",
-    "description": "A motion graphics reference centered on soft floral clustering, orbiting forms, and tactile graphic rhythm.",
-    "longDescription": "一个围绕绣球花形态展开的动态视觉参考，适合观察柔软聚合、轨道运动、几何线条和触感图形节奏的组合方式。",
-    "author": "Pinckus",
-    "source": "X / Pinckus",
-    "type": "Motion",
-    "tags": ["Motion", "Graphic", "Experiment", "X"],
-    "video": "./assets/pinckus-motion-graphics-hydrangea.mp4",
-    "url": "https://x.com/Pinckus102xz/status/2059978237921644784?s=20",
-    "dateAdded": "2026-06-26",
-    "details": [
-      { "label": "Source", "value": "X" },
-      { "label": "Category", "value": "Motion" },
-      { "label": "Style", "value": "Floral / Graphic" },
-      { "label": "Color", "value": "Dark / Soft gradient" },
-      { "label": "Interaction", "value": "Looping orbit" }
-    ],
-    "size": "wide"
-  },
-  {
-    "id": "ampersand-no3-in-out",
-    "section": "inspiration",
-    "title": "Ampersand No.3 - In & Out",
-    "description": "Seb Cornelius' type-motion experiment uses one glyph as a stage for entry, exit, masking, and timing.",
-    "longDescription": "一个以 ampersand 字符为主体的字体动态实验，把进入、退出、遮罩和节奏控制压缩在一个清晰的图形舞台里。",
-    "author": "Seb Cornelius",
-    "source": "X / Seb Cornelius",
-    "type": "Typography",
-    "tags": ["Typography", "Motion", "Experiment", "X"],
-    "video": "./assets/ampersand-no3-in-out.mp4",
-    "url": "https://x.com/SebCornelius/status/2059975757460586950",
-    "dateAdded": "2026-06-26",
-    "details": [
-      { "label": "Source", "value": "X" },
-      { "label": "Category", "value": "Typography" },
-      { "label": "Style", "value": "Type motion" },
-      { "label": "Color", "value": "Monochrome / Accent" },
-      { "label": "Interaction", "value": "In / Out transition" }
-    ],
-    "size": "wide"
-  },
-  {
-    "id": "tabs-ux",
-    "section": "ux-bites",
-    "title": "Tabs Need a Clear Job",
-    "description": "Tabs work best when choices are peers, labels are short, and switching never destroys user progress.",
-    "source": "UX Bite",
-    "type": "Pattern",
-    "tags": ["Patterns", "Writing"],
-    "cover": "./assets/vol25-figma-tabs.png",
-    "url": "https://www.nngroup.com/articles/tabs-used-right/",
-    "dateAdded": "2026-07-06",
-    "size": "wide"
-  },
-  {
-    "id": "config-before-canvas",
-    "section": "ux-bites",
-    "title": "Configure Before the Canvas",
-    "description": "When the output is complex, front-load intent with presets before asking users to tweak every detail.",
-    "source": "UX Bite",
-    "type": "Flow",
-    "tags": ["Patterns", "Research"],
-    "cover": "./assets/vol26-figma-config.png",
-    "url": "https://www.figma.com/",
-    "dateAdded": "2026-07-04",
-    "size": "standard"
-  },
-  {
-    "id": "design-psychology",
-    "section": "ux-bites",
-    "title": "Name the Cognitive Load",
-    "description": "Good reviews separate visual polish from memory burden, decision cost, and recovery paths.",
-    "source": "UX Bite",
-    "type": "Research",
-    "tags": ["Research", "Metrics"],
-    "cover": "./assets/vol27-design-psychology.png",
-    "url": "https://www.nngroup.com/",
-    "dateAdded": "2026-07-02",
-    "size": "square"
-  },
-  {
-    "id": "video-proof",
-    "section": "ux-bites",
-    "title": "Show Motion as Evidence",
-    "description": "For interaction ideas, a short loop often explains timing, causality, and state change better than copy.",
-    "source": "UX Bite",
-    "type": "Motion",
-    "tags": ["Patterns", "Metrics"],
-    "cover": "./assets/vol26-video-use.png",
-    "url": "https://screen.studio/",
-    "dateAdded": "2026-06-30",
-    "size": "wide"
-  },
-  {
-    "id": "ai-answer-affordance",
-    "section": "ux-bites",
-    "title": "AI Answers Need Edges",
-    "description": "Make generation states, confidence, editing entry points, and undo routes visible in the same surface.",
-    "source": "UX Bite",
-    "type": "AI UX",
-    "tags": ["Patterns", "Writing", "Accessibility"],
-    "cover": "./assets/vol26-gpt-sol.png",
-    "url": "https://openai.com/",
-    "dateAdded": "2026-06-28",
-    "size": "tall"
-  },
-  {
-    "id": "solara",
-    "section": "ux-bites",
-    "title": "Subscriptions Need Timing",
-    "description": "Ask after value is visible, then make price, cadence, and cancellation readable at a glance.",
-    "source": "UX Bite",
-    "type": "Product",
-    "tags": ["Writing", "Metrics"],
-    "cover": "./assets/vol23-solara.png",
-    "url": "https://stripe.com/",
-    "dateAdded": "2026-06-26",
-    "size": "standard"
-  }
+    {
+      "id": "3d",
+      "section": "inspiration",
+      "title": "3D 文件夹交互动画",
+      "description": "",
+      "longDescription": "这是 @AdityaSur11 发布的一段 3D 文件夹交互动效演示。视频里用橙色、黑色、白色三种文件夹状态做展示，文件从文件夹中展开，整体有明显的空间层次和轻量拟物感。\n文件夹本身是很基础的界面隐喻，但通过 3D 透视、纸张展开、材质变化和鼠标悬停反馈，一个普通入口也能变得更有操作感和记忆点。\n它的参考价值在于：不一定只有复杂页面才需要动效。像文件夹、卡片、资料库、项目入口这类组件，也可以通过轻 3D 和状态变化，让用户更直观地感知里面有内容、可以打开、可以进入。",
+      "author": "AdityaSur11",
+      "source": "𝕏 ",
+      "type": "",
+      "tags": [
+        "All"
+      ],
+      "cover": "",
+      "video": "./assets/uploads/1783406370925-03-3d-interactive-folder-Animation.mp4",
+      "url": "https://x.com/AdityaSur11/status/2070348830181376510?s=20",
+      "dateAdded": "2026-07-07",
+      "details": [],
+      "materials": [],
+      "size": "wide",
+      "avatar": "./assets/uploads/1783406357762-XJttc16H_400x400.jpg"
+    },
+    {
+      "id": "pinckus-hydrangea",
+      "section": "inspiration",
+      "title": "Pinckus: Motion Graphics「绣球」",
+      "description": "A motion graphics reference centered on soft floral clustering, orbiting forms, and tactile graphic rhythm.",
+      "longDescription": "一个围绕绣球花形态展开的动态视觉参考，适合观察柔软聚合、轨道运动、几何线条和触感图形节奏的组合方式。",
+      "author": "Pinckus",
+      "source": "X / Pinckus",
+      "type": "Motion",
+      "tags": [
+        "Motion",
+        "Graphic",
+        "Experiment",
+        "X"
+      ],
+      "video": "./assets/pinckus-motion-graphics-hydrangea.mp4",
+      "url": "https://x.com/Pinckus102xz/status/2059978237921644784?s=20",
+      "dateAdded": "2026-06-26",
+      "details": [
+        {
+          "label": "Source",
+          "value": "X"
+        },
+        {
+          "label": "Category",
+          "value": "Motion"
+        },
+        {
+          "label": "Style",
+          "value": "Floral / Graphic"
+        },
+        {
+          "label": "Color",
+          "value": "Dark / Soft gradient"
+        },
+        {
+          "label": "Interaction",
+          "value": "Looping orbit"
+        }
+      ],
+      "size": "wide",
+      "materials": []
+    },
+    {
+      "id": "ampersand-no3-in-out",
+      "section": "inspiration",
+      "title": "Ampersand No.3 - In & Out",
+      "description": "Seb Cornelius' type-motion experiment uses one glyph as a stage for entry, exit, masking, and timing.",
+      "longDescription": "一个以 ampersand 字符为主体的字体动态实验，把进入、退出、遮罩和节奏控制压缩在一个清晰的图形舞台里。",
+      "author": "Seb Cornelius",
+      "source": "X / Seb Cornelius",
+      "type": "Typography",
+      "tags": [
+        "Typography",
+        "Motion",
+        "Experiment",
+        "X"
+      ],
+      "video": "./assets/ampersand-no3-in-out.mp4",
+      "url": "https://x.com/SebCornelius/status/2059975757460586950",
+      "dateAdded": "2026-06-26",
+      "details": [
+        {
+          "label": "Source",
+          "value": "X"
+        },
+        {
+          "label": "Category",
+          "value": "Typography"
+        },
+        {
+          "label": "Style",
+          "value": "Type motion"
+        },
+        {
+          "label": "Color",
+          "value": "Monochrome / Accent"
+        },
+        {
+          "label": "Interaction",
+          "value": "In / Out transition"
+        }
+      ],
+      "size": "wide",
+      "materials": []
+    }
   ]
 }
