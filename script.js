@@ -44,6 +44,9 @@ const formatter = new Intl.DateTimeFormat("en", {
   year: "numeric",
 });
 const NEW_WINDOW_MS = 36 * 60 * 60 * 1000;
+const GALLERY_GAP = 14;
+const GALLERY_MIN_CARD_WIDTH = 286;
+const GALLERY_MAX_CARD_WIDTH = 430;
 
 async function init() {
   const [sectionsResponse, itemsResponse] = await Promise.all([
@@ -533,8 +536,8 @@ function getDetailRows(item) {
 
 function renderMasonry(filtered) {
   gallery.className = "gallery is-masonry";
-  gallery.style.maxWidth = "";
-  const columnCount = Math.min(getColumnCount(), Math.max(filtered.length, 1));
+  const galleryMetrics = getGalleryMetrics();
+  const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
   const columns = Array.from({ length: columnCount }, () => ({ height: 0, cards: [] }));
 
   filtered.forEach((item) => {
@@ -546,7 +549,7 @@ function renderMasonry(filtered) {
   });
 
   gallery.style.setProperty("--gallery-columns", columnCount);
-  gallery.style.maxWidth = `${columnCount * 430 + Math.max(columnCount - 1, 0) * 14}px`;
+  gallery.style.maxWidth = `${getGalleryMaxWidth(columnCount)}px`;
   gallery.innerHTML = columns
     .map((column) => `<div class="gallery-column">${column.cards.join("")}</div>`)
     .join("");
@@ -555,9 +558,10 @@ function renderMasonry(filtered) {
 
 function renderUniformGrid(filtered) {
   gallery.className = "gallery is-uniform";
-  gallery.style.maxWidth = "";
-  const columnCount = Math.min(getColumnCount(), Math.max(filtered.length, 1));
+  const galleryMetrics = getGalleryMetrics();
+  const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
   gallery.style.setProperty("--gallery-columns", columnCount);
+  gallery.style.maxWidth = `${getGalleryMaxWidth(columnCount)}px`;
   gallery.innerHTML = filtered.map((item) => createCard(item)).join("");
   bindVideoFallbacks(gallery);
 }
@@ -583,13 +587,29 @@ function bindVideoFallbacks(root) {
   });
 }
 
-function getColumnCount() {
+function getGalleryMetrics() {
   const container = gallery.parentElement;
   const width = container?.clientWidth || window.innerWidth;
-  if (width >= 1240) return 4;
-  if (width >= 760) return 3;
-  if (width >= 520) return 2;
-  return 1;
+  const maxColumnsForMinWidth = Math.max(
+    1,
+    Math.floor((width + GALLERY_GAP) / (GALLERY_MIN_CARD_WIDTH + GALLERY_GAP)),
+  );
+  const minColumnsForMaxWidth = Math.max(
+    1,
+    Math.ceil((width + GALLERY_GAP) / (GALLERY_MAX_CARD_WIDTH + GALLERY_GAP)),
+  );
+  const columnCount = Math.min(maxColumnsForMinWidth, minColumnsForMaxWidth);
+  const cardWidth = (width - Math.max(columnCount - 1, 0) * GALLERY_GAP) / columnCount;
+
+  return {
+    columnCount,
+    cardWidth,
+    width,
+  };
+}
+
+function getGalleryMaxWidth(columnCount) {
+  return columnCount * GALLERY_MAX_CARD_WIDTH + Math.max(columnCount - 1, 0) * GALLERY_GAP;
 }
 
 function getCardEstimate(item) {
