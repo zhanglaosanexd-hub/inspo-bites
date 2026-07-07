@@ -525,7 +525,6 @@ function renderMasonry(filtered) {
     .map((column) => `<div class="gallery-column">${column.cards.join("")}</div>`)
     .join("");
   bindVideoFallbacks(gallery);
-  bindCardGlow(gallery);
 }
 
 function bindVideoFallbacks(root) {
@@ -539,57 +538,6 @@ function bindVideoFallbacks(root) {
     video.addEventListener("error", showFallback, { once: true });
     video.querySelector("source")?.addEventListener("error", showFallback, { once: true });
   });
-}
-
-function bindCardGlow(root) {
-  root.querySelectorAll(".work-card").forEach((card) => {
-    card.addEventListener("pointermove", (event) => updateCardGlow(card, event));
-    card.addEventListener("pointerenter", (event) => updateCardGlow(card, event));
-    card.addEventListener("pointerleave", () => {
-      card.style.setProperty("--glow-border-opacity", "0");
-      card.style.setProperty("--glow-fill-opacity", "0");
-      card.style.setProperty("--glow-shadow-opacity", "0");
-    });
-  });
-}
-
-function updateCardGlow(card, event) {
-  const rect = card.getBoundingClientRect();
-  const x = event.clientX - rect.left;
-  const y = event.clientY - rect.top;
-  const proximity = getEdgeProximity(rect.width, rect.height, x, y);
-  const angle = getCursorAngle(rect.width, rect.height, x, y);
-  const borderOpacity = getGlowOpacity(proximity, 0.42);
-  const shadowOpacity = getGlowOpacity(proximity, 0.28);
-
-  card.style.setProperty("--glow-angle", `${angle.toFixed(3)}deg`);
-  card.style.setProperty("--glow-border-opacity", borderOpacity.toFixed(3));
-  card.style.setProperty("--glow-fill-opacity", (borderOpacity * 0.35).toFixed(3));
-  card.style.setProperty("--glow-shadow-opacity", shadowOpacity.toFixed(3));
-}
-
-function getEdgeProximity(width, height, x, y) {
-  const centerX = width / 2;
-  const centerY = height / 2;
-  const deltaX = x - centerX;
-  const deltaY = y - centerY;
-  const scaleX = deltaX === 0 ? Infinity : centerX / Math.abs(deltaX);
-  const scaleY = deltaY === 0 ? Infinity : centerY / Math.abs(deltaY);
-
-  return Math.min(Math.max(1 / Math.min(scaleX, scaleY), 0), 1);
-}
-
-function getCursorAngle(width, height, x, y) {
-  const deltaX = x - width / 2;
-  const deltaY = y - height / 2;
-  if (deltaX === 0 && deltaY === 0) return 0;
-
-  const degrees = Math.atan2(deltaY, deltaX) * (180 / Math.PI) + 90;
-  return degrees < 0 ? degrees + 360 : degrees;
-}
-
-function getGlowOpacity(proximity, threshold) {
-  return Math.max(0, (proximity - threshold) / (1 - threshold));
 }
 
 function getColumnCount() {
