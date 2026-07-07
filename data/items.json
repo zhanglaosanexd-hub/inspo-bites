@@ -22,6 +22,93 @@
       "avatar": "./assets/uploads/1783406357762-XJttc16H_400x400.jpg"
     },
     {
+      "id": "world-is-web-ticket-brand-motion",
+      "section": "inspiration",
+      "title": "票券式品牌动效",
+      "description": "A ticket-inspired brand motion piece for iskra.graphics with holographic texture, barcode details, and collectible interface language.",
+      "longDescription": "这是 @world_is_web 为 iskra.graphics 做的一段票券式品牌动效。画面把网站设计工作室包装成一张可撕开的入场券，通过镭射质感、暗色背景、条形码、编号和信息分区，营造出很强的未来感和收藏感。\n\n它没有直接用常规的标题、按钮和服务列表，而是把品牌信息压缩进一张票券里，让设计、开发、交互、发布这些服务内容变成更有视觉记忆点的图形信息。\n\n它的参考价值在于：品牌表达不一定只能依赖 Logo 和标语，也可以通过一种具体媒介来承载。票券、卡片、证件、说明书、包装盒这类现实物件，都可以转化成数字界面里的视觉隐喻，让品牌更有故事感。",
+      "author": "world_is_web",
+      "source": "X / world_is_web",
+      "type": "Brand",
+      "tags": [
+        "Brand",
+        "Motion",
+        "Graphic",
+        "X"
+      ],
+      "cover": "./assets/world-is-web-ticket-brand-motion-cover.webp",
+      "url": "https://x.com/world_is_web/status/2068101965901390292?s=20",
+      "dateAdded": "2026-07-07",
+      "details": [
+        {
+          "label": "Source",
+          "value": "X"
+        },
+        {
+          "label": "Category",
+          "value": "Brand motion"
+        },
+        {
+          "label": "Style",
+          "value": "Ticket / Holographic"
+        },
+        {
+          "label": "Color",
+          "value": "Dark / Iridescent"
+        },
+        {
+          "label": "Interaction",
+          "value": "Tear-away ticket motion"
+        }
+      ],
+      "materials": [],
+      "size": "portrait"
+    },
+    {
+      "id": "bamojk-webgl-wheel-browse",
+      "section": "inspiration",
+      "title": "WebGL 轮盘式作品浏览动效",
+      "description": "A Webflow, WebGL, and Three.js portfolio browsing concept where image cards rotate through a spatial carousel.",
+      "longDescription": "这是 @bamojk 发布的一段 WIP 动效演示，使用 Webflow、WebGL 和 Three.js 做了一个轮盘式作品浏览效果。画面中图片卡片围绕空间路径旋转、翻动和切换，整体有很强的 3D 透视感和动态冲击力。\n\n传统作品集大多是卡片排列或瀑布流，而这个演示把内容做成了一个可滚动、可旋转、可进入的空间装置，让浏览本身变成了体验的一部分。\n\n它的参考价值在于：当内容本身偏视觉、艺术、摄影或创意项目时，列表不一定只是承载信息，也可以成为品牌气质的一部分。WebGL 和 Three.js 在这里不是单纯炫技，而是在强化“探索感”和“动态记忆点”。",
+      "author": "bamojk",
+      "source": "X / bamojk",
+      "type": "WebGL",
+      "tags": [
+        "WebGL",
+        "3D",
+        "Motion",
+        "Experiment",
+        "X"
+      ],
+      "cover": "./assets/bamojk-webgl-wheel-browse-cover.webp",
+      "url": "https://x.com/bamojk/status/2067922309130977480?s=20",
+      "dateAdded": "2026-07-07",
+      "details": [
+        {
+          "label": "Source",
+          "value": "X"
+        },
+        {
+          "label": "Category",
+          "value": "WebGL"
+        },
+        {
+          "label": "Style",
+          "value": "Spatial carousel"
+        },
+        {
+          "label": "Tools",
+          "value": "Webflow / WebGL / Three.js"
+        },
+        {
+          "label": "Interaction",
+          "value": "Rotating portfolio browse"
+        }
+      ],
+      "materials": [],
+      "size": "standard"
+    },
+    {
       "id": "pinckus-hydrangea",
       "section": "inspiration",
       "title": "Pinckus: Motion Graphics「绣球」",

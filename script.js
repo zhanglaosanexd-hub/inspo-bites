@@ -554,6 +554,7 @@ function getCardEstimate(item) {
     wide: 0.82,
     square: 1.06,
     tall: 1.42,
+    portrait: 1.58,
     standard: 1.18,
   };
 

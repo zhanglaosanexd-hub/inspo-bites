@@ -459,6 +459,10 @@ h1 {
   aspect-ratio: 4 / 5;
 }
 
+.work-card.is-portrait .media-frame::before {
+  aspect-ratio: 9 / 14;
+}
+
 .work-card.is-square .media-frame::before {
   aspect-ratio: 1 / 1;
 }
