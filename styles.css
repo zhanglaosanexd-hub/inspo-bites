@@ -187,37 +187,11 @@ body.detail-open .content {
   vertical-align: 1px;
 }
 
-.sidebar-actions {
-  display: grid;
-  gap: 12px;
-  margin-top: auto;
-  padding-top: 28px;
-}
-
-.quiet-button,
-.quiet-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 36px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--ink);
-  background: #fff;
-  font-size: 13px;
-  font-weight: 720;
-  cursor: pointer;
-}
-
-.quiet-button:hover,
-.quiet-link:hover {
-  border-color: var(--ink);
-}
-
 .sidebar-footer {
   display: grid;
   gap: 8px;
-  margin-top: 28px;
+  margin-top: auto;
+  padding-top: 28px;
   color: var(--muted);
   font-size: 12px;
 }
@@ -318,9 +292,7 @@ h1 {
 }
 
 .search-box input,
-.sort-box select,
-.submit-form input,
-.submit-form textarea {
+.sort-box select {
   width: 100%;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -336,9 +308,7 @@ h1 {
 }
 
 .search-box input:focus,
-.sort-box select:focus,
-.submit-form input:focus,
-.submit-form textarea:focus {
+.sort-box select:focus {
   border-color: var(--ink);
   box-shadow: 0 0 0 4px rgba(23, 23, 23, 0.08);
 }
@@ -1010,82 +980,6 @@ h1 {
   color: var(--muted);
 }
 
-.modal-layer {
-  position: fixed;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  background: rgba(23, 23, 23, 0.36);
-  z-index: 10;
-}
-
-.modal-card {
-  position: relative;
-  width: min(100%, 480px);
-  padding: 28px;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: var(--shadow);
-}
-
-.modal-card h2 {
-  margin-bottom: 18px;
-  font-size: 28px;
-}
-
-.icon-button {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: #fff;
-  cursor: pointer;
-}
-
-.close-modal {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-}
-
-.submit-form {
-  display: grid;
-  gap: 14px;
-}
-
-.submit-form label {
-  display: grid;
-  gap: 7px;
-  color: #4c4c47;
-  font-size: 13px;
-  font-weight: 750;
-}
-
-.submit-form input,
-.submit-form textarea {
-  border-radius: 8px;
-  min-height: 42px;
-  padding: 10px 12px;
-  resize: vertical;
-}
-
-.primary-button {
-  min-height: 44px;
-  border: 0;
-  border-radius: 999px;
-  color: #fff;
-  background: var(--ink);
-  font-weight: 800;
-  cursor: pointer;
-}
-
-.primary-button:hover {
-  background: #30302c;
-}
-
 .detail-viewer {
   position: fixed;
   inset: 0 0 0 var(--sidebar);
@@ -1365,7 +1259,6 @@ h1 {
 
   .brand-name,
   .presence,
-  .sidebar-actions,
   .sidebar-footer {
     display: none;
   }
@@ -1476,8 +1369,6 @@ h1 {
   [role="button"],
   .media-link,
   .card-action,
-  .quiet-button,
-  .quiet-link,
   .filter-chip,
   .section-link,
   .view-mode-button,

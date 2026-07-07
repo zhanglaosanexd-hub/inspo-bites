@@ -26,7 +26,6 @@ const sidebarUpdated = document.querySelector("#sidebar-updated");
 const searchInput = document.querySelector("#search-input");
 const sortSelect = document.querySelector("#sort-select");
 const viewSwitcher = document.querySelector("#view-switcher");
-const submitModal = document.querySelector("#submit-modal");
 const detailViewer = document.querySelector("#detail-viewer");
 const detailPreview = document.querySelector("#detail-preview");
 const detailTitle = document.querySelector("#detail-title");
@@ -146,18 +145,7 @@ function bindEvents() {
     openDetail(trigger.dataset.detailId);
   });
 
-  document.querySelector("#open-submit").addEventListener("click", () => {
-    submitModal.hidden = false;
-    submitModal.querySelector("input")?.focus();
-  });
-
-  submitModal.querySelector(".close-modal").addEventListener("click", closeModal);
-  submitModal.addEventListener("click", (event) => {
-    if (event.target === submitModal) closeModal();
-  });
-
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !submitModal.hidden) closeModal();
     if (event.key === "Escape" && !detailViewer.hidden) closeDetail();
     if (event.key === "ArrowLeft" && !detailViewer.hidden) moveDetail(-1);
     if (event.key === "ArrowRight" && !detailViewer.hidden) moveDetail(1);
@@ -256,11 +244,6 @@ function initClickSpark() {
   resize();
   window.addEventListener("resize", resize);
   window.addEventListener("pointerdown", spawn, { passive: true });
-}
-
-function closeModal() {
-  submitModal.hidden = true;
-  document.querySelector("#open-submit").focus();
 }
 
 function renderSidebar() {
