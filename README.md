@@ -9,7 +9,22 @@ You can manage content in two ways:
 - Edit `data/items.json` and `data/sections.json` directly.
 - Open the admin UI at `/admin/` and manage content visually.
 
-The admin is intended for the site owner only. It is powered by Decap CMS and writes changes back to the Git repository after GitHub authentication is configured.
+The admin is intended for the site owner only.
+
+Local editing uses the included local server:
+
+```bash
+node local-server.mjs
+```
+
+Then open:
+
+- Front-end: `http://127.0.0.1:4174/`
+- Local admin: `http://127.0.0.1:4174/admin/`
+
+The local admin can edit JSON content and upload media into `assets/uploads`.
+
+In production, `/admin/` falls back to Decap CMS and writes changes back to the Git repository after GitHub authentication is configured.
 
 ### Admin Setup
 
