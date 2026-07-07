@@ -1,0 +1,126 @@
+{
+  "items": [
+  {
+    "id": "pinckus-hydrangea",
+    "section": "inspiration",
+    "title": "Pinckus: Motion Graphics「绣球」",
+    "description": "A motion graphics reference centered on soft floral clustering, orbiting forms, and tactile graphic rhythm.",
+    "longDescription": "一个围绕绣球花形态展开的动态视觉参考，适合观察柔软聚合、轨道运动、几何线条和触感图形节奏的组合方式。",
+    "author": "Pinckus",
+    "source": "X / Pinckus",
+    "type": "Motion",
+    "tags": ["Motion", "Graphic", "Experiment", "X"],
+    "video": "./assets/pinckus-motion-graphics-hydrangea.mp4",
+    "url": "https://x.com/Pinckus102xz/status/2059978237921644784?s=20",
+    "dateAdded": "2026-06-26",
+    "details": [
+      { "label": "Source", "value": "X" },
+      { "label": "Category", "value": "Motion" },
+      { "label": "Style", "value": "Floral / Graphic" },
+      { "label": "Color", "value": "Dark / Soft gradient" },
+      { "label": "Interaction", "value": "Looping orbit" }
+    ],
+    "size": "wide"
+  },
+  {
+    "id": "ampersand-no3-in-out",
+    "section": "inspiration",
+    "title": "Ampersand No.3 - In & Out",
+    "description": "Seb Cornelius' type-motion experiment uses one glyph as a stage for entry, exit, masking, and timing.",
+    "longDescription": "一个以 ampersand 字符为主体的字体动态实验，把进入、退出、遮罩和节奏控制压缩在一个清晰的图形舞台里。",
+    "author": "Seb Cornelius",
+    "source": "X / Seb Cornelius",
+    "type": "Typography",
+    "tags": ["Typography", "Motion", "Experiment", "X"],
+    "video": "./assets/ampersand-no3-in-out.mp4",
+    "url": "https://x.com/SebCornelius/status/2059975757460586950",
+    "dateAdded": "2026-06-26",
+    "details": [
+      { "label": "Source", "value": "X" },
+      { "label": "Category", "value": "Typography" },
+      { "label": "Style", "value": "Type motion" },
+      { "label": "Color", "value": "Monochrome / Accent" },
+      { "label": "Interaction", "value": "In / Out transition" }
+    ],
+    "size": "wide"
+  },
+  {
+    "id": "tabs-ux",
+    "section": "ux-bites",
+    "title": "Tabs Need a Clear Job",
+    "description": "Tabs work best when choices are peers, labels are short, and switching never destroys user progress.",
+    "source": "UX Bite",
+    "type": "Pattern",
+    "tags": ["Patterns", "Writing"],
+    "cover": "./assets/vol25-figma-tabs.png",
+    "url": "https://www.nngroup.com/articles/tabs-used-right/",
+    "dateAdded": "2026-07-06",
+    "size": "wide"
+  },
+  {
+    "id": "config-before-canvas",
+    "section": "ux-bites",
+    "title": "Configure Before the Canvas",
+    "description": "When the output is complex, front-load intent with presets before asking users to tweak every detail.",
+    "source": "UX Bite",
+    "type": "Flow",
+    "tags": ["Patterns", "Research"],
+    "cover": "./assets/vol26-figma-config.png",
+    "url": "https://www.figma.com/",
+    "dateAdded": "2026-07-04",
+    "size": "standard"
+  },
+  {
+    "id": "design-psychology",
+    "section": "ux-bites",
+    "title": "Name the Cognitive Load",
+    "description": "Good reviews separate visual polish from memory burden, decision cost, and recovery paths.",
+    "source": "UX Bite",
+    "type": "Research",
+    "tags": ["Research", "Metrics"],
+    "cover": "./assets/vol27-design-psychology.png",
+    "url": "https://www.nngroup.com/",
+    "dateAdded": "2026-07-02",
+    "size": "square"
+  },
+  {
+    "id": "video-proof",
+    "section": "ux-bites",
+    "title": "Show Motion as Evidence",
+    "description": "For interaction ideas, a short loop often explains timing, causality, and state change better than copy.",
+    "source": "UX Bite",
+    "type": "Motion",
+    "tags": ["Patterns", "Metrics"],
+    "cover": "./assets/vol26-video-use.png",
+    "url": "https://screen.studio/",
+    "dateAdded": "2026-06-30",
+    "size": "wide"
+  },
+  {
+    "id": "ai-answer-affordance",
+    "section": "ux-bites",
+    "title": "AI Answers Need Edges",
+    "description": "Make generation states, confidence, editing entry points, and undo routes visible in the same surface.",
+    "source": "UX Bite",
+    "type": "AI UX",
+    "tags": ["Patterns", "Writing", "Accessibility"],
+    "cover": "./assets/vol26-gpt-sol.png",
+    "url": "https://openai.com/",
+    "dateAdded": "2026-06-28",
+    "size": "tall"
+  },
+  {
+    "id": "solara",
+    "section": "ux-bites",
+    "title": "Subscriptions Need Timing",
+    "description": "Ask after value is visible, then make price, cadence, and cancellation readable at a glance.",
+    "source": "UX Bite",
+    "type": "Product",
+    "tags": ["Writing", "Metrics"],
+    "cover": "./assets/vol23-solara.png",
+    "url": "https://stripe.com/",
+    "dateAdded": "2026-06-26",
+    "size": "standard"
+  }
+  ]
+}

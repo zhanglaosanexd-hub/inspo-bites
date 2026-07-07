@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Inspo Bites is a curated collection of design inspiration and compact UX notes."
+    />
+    <title>Inspo Bites - Design & UX Collection</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <aside class="sidebar" aria-label="Primary">
+        <a class="brand" href="./" aria-label="Inspo Bites home">
+          <span class="brand-mark">IB</span>
+          <span class="brand-name">Inspo Bites</span>
+        </a>
+
+        <div class="presence" aria-label="Online viewers">
+          <span class="presence-dot"></span>
+          <span id="online-count">28</span>
+          <span>online</span>
+        </div>
+
+        <nav class="section-nav" aria-label="Sections">
+          <button class="section-link is-active" type="button" data-section="inspiration">
+            <span>Inspo</span>
+            <small>设计灵感</small>
+          </button>
+          <button class="section-link" type="button" data-section="ux-bites">
+            <span>UX Bites</span>
+            <small>体验切片</small>
+          </button>
+        </nav>
+
+        <div class="sidebar-actions">
+          <button class="quiet-button" type="button" id="open-submit">Submit a find</button>
+          <a class="quiet-link" href="mailto:hello@example.com?subject=Inspo%20Bites%20feedback"
+            >Feedback</a
+          >
+        </div>
+
+        <footer class="sidebar-footer">
+          <span>Updated <time id="sidebar-updated">Jul 2026</time></span>
+          <span>© 2026 Inspo Bites</span>
+        </footer>
+      </aside>
+
+      <main class="content">
+        <header class="page-head">
+          <div>
+            <p class="eyebrow" id="page-eyebrow">Curated feed</p>
+            <h1 id="page-title">设计灵感</h1>
+            <p id="page-description">
+              Fresh visual references for product, interface, motion, brand, and web design.
+            </p>
+          </div>
+
+          <div class="head-meta" aria-label="Collection metadata">
+            <span id="item-count">0 items</span>
+            <span id="last-updated">Last updated today</span>
+          </div>
+        </header>
+
+        <div class="toolbar" aria-label="Content controls">
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="search-input" type="search" placeholder="Search collection" />
+          </label>
+
+          <div class="filter-strip" id="filter-strip" aria-label="Filters"></div>
+
+          <label class="sort-box">
+            <span class="visually-hidden">Sort</span>
+            <select id="sort-select">
+              <option value="recent">Recent</option>
+              <option value="title">A-Z</option>
+              <option value="source">Source</option>
+            </select>
+          </label>
+        </div>
+
+        <section class="gallery" id="gallery" aria-live="polite"></section>
+
+        <section class="empty-state" id="empty-state" hidden>
+          <h2>No matches</h2>
+          <p>Try another tag or search term.</p>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-layer" id="submit-modal" hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="submit-title">
+        <button class="icon-button close-modal" type="button" aria-label="Close">×</button>
+        <p class="eyebrow">Submission</p>
+        <h2 id="submit-title">Submit a find</h2>
+        <form class="submit-form" action="mailto:hello@example.com" method="get" enctype="text/plain">
+          <label>
+            Title
+            <input name="title" type="text" autocomplete="off" />
+          </label>
+          <label>
+            Link
+            <input name="url" type="url" autocomplete="off" />
+          </label>
+          <label>
+            Note
+            <textarea name="note" rows="4"></textarea>
+          </label>
+          <button class="primary-button" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="detail-viewer" id="detail-viewer" role="dialog" aria-modal="true" hidden>
+      <aside class="detail-panel" aria-labelledby="detail-title">
+        <div class="detail-controls">
+          <button class="detail-icon-button" id="detail-close" type="button" aria-label="Close">
+            ×
+          </button>
+          <div class="detail-nav">
+            <button class="detail-icon-button" id="detail-prev" type="button" aria-label="Previous">
+              ←
+            </button>
+            <button class="detail-icon-button" id="detail-next" type="button" aria-label="Next">
+              →
+            </button>
+          </div>
+        </div>
+
+        <p class="detail-section" id="detail-section">Design</p>
+        <h2 id="detail-title"></h2>
+        <p class="detail-author" id="detail-author"></p>
+        <p class="detail-description" id="detail-description"></p>
+        <dl class="detail-meta" id="detail-meta"></dl>
+        <div class="detail-tags" id="detail-tags"></div>
+        <a class="detail-source-link" id="detail-source-link" target="_blank" rel="noreferrer">
+          Open original
+        </a>
+      </aside>
+
+      <section class="detail-stage" aria-label="Preview">
+        <div class="detail-preview" id="detail-preview"></div>
+      </section>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

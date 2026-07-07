@@ -1,0 +1,65 @@
+# Inspo Bites
+
+A lightweight static collection site for design inspiration and UX notes.
+
+## Edit Content
+
+You can manage content in two ways:
+
+- Edit `data/items.json` and `data/sections.json` directly.
+- Open the admin UI at `/admin/` and manage content visually.
+
+The admin is intended for the site owner only. It is powered by Decap CMS and writes changes back to the Git repository after GitHub authentication is configured.
+
+### Admin Setup
+
+Before deploying, update `admin/config.yml`:
+
+```yaml
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/inspo-bites
+  branch: main
+```
+
+Replace `YOUR_GITHUB_USERNAME/inspo-bites` with your real GitHub repository.
+
+For local CMS testing, Decap CMS uses `local_backend: true`. For production, use GitHub authentication or a small OAuth proxy. The front-end remains static and free to host.
+
+### Sections
+
+Left sidebar tabs are managed in `data/sections.json`.
+
+Each section supports:
+
+- `id`: stable section key, used by content items
+- `label`: left sidebar English label
+- `title`: left sidebar Chinese label and page title
+- `eyebrow`, `description`
+- `filters`: filter chips shown in that section
+
+### Items
+
+Each item supports:
+
+- `section`: must match a section `id`
+- `title`, `description`, `longDescription`, `source`, `url`
+- `author`, `avatar`
+- `tags`: used by the filter chips
+- `cover`: optional image path
+- `video`: optional MP4 preview path
+- `materials`: optional extra image/video assets
+- `details`: custom detail rows, such as category, style, color, interaction
+- `size`: `wide`, `tall`, `square`, or `standard`
+
+Media files are currently planned at **10MB or less**. Cloudflare Pages has a larger per-file asset limit, but keeping files around 10MB makes uploads and page loading more predictable.
+
+## Deploy Free
+
+Cloudflare Pages settings:
+
+- Framework preset: None
+- Build command: leave empty
+- Build output directory: `.`
+
+Replace `hello@example.com` in `index.html` with your email or a Tally form link when ready.

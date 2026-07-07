@@ -1,0 +1,91 @@
+local_backend: true
+
+backend:
+  name: github
+  repo: zhanglaosanexd-hub/inspo-bites
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "site_settings"
+    label: "站点设置"
+    files:
+      - name: "sections"
+        label: "左侧 Tab"
+        file: "data/sections.json"
+        format: "json"
+        fields:
+          - label: "Tab 列表"
+            name: "sections"
+            widget: "list"
+            summary: "{{fields.label}} / {{fields.title}}"
+            fields:
+              - { label: "唯一 ID", name: "id", widget: "string", hint: "例如 inspiration。内容卡片的 section 字段需要填写这个 ID。" }
+              - { label: "左侧英文名", name: "label", widget: "string", hint: "显示在左侧主标签，例如 Inspo。" }
+              - { label: "左侧中文名 / 页面标题", name: "title", widget: "string" }
+              - { label: "页面 Eyebrow", name: "eyebrow", widget: "string", required: false }
+              - { label: "页面描述", name: "description", widget: "text", required: false }
+              - label: "筛选标签"
+                name: "filters"
+                widget: "list"
+                hint: "建议保留 All。其余值需要和内容卡片 tags 中的标签一致。"
+                field: { label: "标签", name: "filter", widget: "string" }
+
+  - name: "content"
+    label: "内容管理"
+    files:
+      - name: "items"
+        label: "卡片内容"
+        file: "data/items.json"
+        format: "json"
+        fields:
+          - label: "内容列表"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "唯一 ID", name: "id", widget: "string", hint: "建议用英文小写和连字符，例如 pinckus-hydrangea。" }
+              - { label: "所属 Tab ID", name: "section", widget: "string", hint: "填写 data/sections.json 里的 Tab 唯一 ID，例如 inspiration 或 ux-bites。" }
+              - { label: "标题", name: "title", widget: "string" }
+              - { label: "短描述", name: "description", widget: "text", required: false }
+              - { label: "详情描述", name: "longDescription", widget: "text", required: false }
+              - { label: "作者", name: "author", widget: "string", required: false }
+              - { label: "作者头像", name: "avatar", widget: "image", required: false, hint: "可选。建议图片 <= 10MB；不填时会尝试从 X 原文链接自动抓取头像。" }
+              - { label: "内容来源", name: "source", widget: "string", required: false, hint: "例如 X / Pinckus、UX Bite。" }
+              - { label: "原文链接", name: "url", widget: "string", required: false }
+              - { label: "内容分类", name: "type", widget: "string", required: false, hint: "例如 Motion、Typography、Pattern。" }
+              - { label: "卡片封面图片", name: "cover", widget: "image", required: false, hint: "可选。建议图片 <= 10MB；如果同时填写视频，首页优先显示视频动态封面。" }
+              - { label: "卡片封面视频", name: "video", widget: "file", required: false, hint: "可选。建议 MP4 <= 10MB；用于首页动态封面和详情预览。" }
+              - label: "内容素材"
+                name: "materials"
+                widget: "list"
+                required: false
+                summary: "{{fields.file}}"
+                fields:
+                  - { label: "素材文件", name: "file", widget: "file", hint: "图片或视频，暂定 <= 10MB。" }
+                  - { label: "素材说明", name: "caption", widget: "string", required: false }
+              - label: "标签"
+                name: "tags"
+                widget: "list"
+                required: false
+                field: { label: "标签", name: "tag", widget: "string" }
+              - label: "详情字段"
+                name: "details"
+                widget: "list"
+                required: false
+                summary: "{{fields.label}}: {{fields.value}}"
+                fields:
+                  - { label: "字段名", name: "label", widget: "string", hint: "例如 Category、Style、Color。" }
+                  - { label: "字段值", name: "value", widget: "string" }
+              - label: "卡片比例"
+                name: "size"
+                widget: "select"
+                default: "wide"
+                options:
+                  - { label: "宽屏 16:9", value: "wide" }
+                  - { label: "标准 4:3", value: "standard" }
+                  - { label: "方形 1:1", value: "square" }
+                  - { label: "竖版 4:5", value: "tall" }
+              - { label: "添加日期", name: "dateAdded", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }

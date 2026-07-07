@@ -1,0 +1,524 @@
+const state = {
+  section: "inspiration",
+  filter: "All",
+  query: "",
+  sort: "recent",
+};
+
+let items = [];
+let sections = {};
+let sectionList = [];
+let resizeFrame = 0;
+let visibleItems = [];
+let activeDetailIndex = 0;
+
+const gallery = document.querySelector("#gallery");
+const sectionNav = document.querySelector(".section-nav");
+const emptyState = document.querySelector("#empty-state");
+const filterStrip = document.querySelector("#filter-strip");
+const pageTitle = document.querySelector("#page-title");
+const pageEyebrow = document.querySelector("#page-eyebrow");
+const pageDescription = document.querySelector("#page-description");
+const itemCount = document.querySelector("#item-count");
+const lastUpdated = document.querySelector("#last-updated");
+const sidebarUpdated = document.querySelector("#sidebar-updated");
+const searchInput = document.querySelector("#search-input");
+const sortSelect = document.querySelector("#sort-select");
+const submitModal = document.querySelector("#submit-modal");
+const detailViewer = document.querySelector("#detail-viewer");
+const detailPreview = document.querySelector("#detail-preview");
+const detailTitle = document.querySelector("#detail-title");
+const detailSection = document.querySelector("#detail-section");
+const detailAuthor = document.querySelector("#detail-author");
+const detailDescription = document.querySelector("#detail-description");
+const detailMeta = document.querySelector("#detail-meta");
+const detailTags = document.querySelector("#detail-tags");
+const detailSourceLink = document.querySelector("#detail-source-link");
+
+const formatter = new Intl.DateTimeFormat("en", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});
+
+async function init() {
+  const [sectionsResponse, itemsResponse] = await Promise.all([
+    fetch("./data/sections.json"),
+    fetch("./data/items.json"),
+  ]);
+  const sectionsData = await sectionsResponse.json();
+  const itemsData = await itemsResponse.json();
+
+  sectionList = normalizeSections(sectionsData);
+  sections = Object.fromEntries(sectionList.map((section) => [section.id, section]));
+  items = normalizeItems(itemsData);
+  state.section = sections[state.section]?.id || sectionList[0]?.id || "";
+
+  setOnlineCount();
+  renderSidebar();
+  bindEvents();
+  render();
+}
+
+function normalizeSections(data) {
+  const source = Array.isArray(data) ? data : data.sections || [];
+  return source
+    .filter((section) => section.id)
+    .map((section) => ({
+      ...section,
+      label: section.label || section.eyebrow || section.title || section.id,
+      title: section.title || section.label || section.id,
+      eyebrow: section.eyebrow || section.label || "Collection",
+      description: section.description || "",
+      filters: normalizeList(section.filters, ["All"]),
+    }));
+}
+
+function normalizeItems(data) {
+  const source = Array.isArray(data) ? data : data.items || [];
+  return source.map((item) => ({
+    ...item,
+    tags: normalizeList(item.tags),
+    details: Array.isArray(item.details) ? item.details : [],
+  }));
+}
+
+function normalizeList(value, fallback = []) {
+  if (Array.isArray(value)) return value.filter(Boolean);
+  if (typeof value === "string") {
+    return value
+      .split(",")
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+
+  return fallback;
+}
+
+function bindEvents() {
+  sectionNav.addEventListener("click", (event) => {
+    const button = event.target.closest(".section-link");
+    if (!button) return;
+
+    state.section = button.dataset.section;
+    state.filter = "All";
+    state.query = "";
+    searchInput.value = "";
+    render();
+  });
+
+  searchInput.addEventListener("input", (event) => {
+    state.query = event.target.value.trim().toLowerCase();
+    renderGallery();
+  });
+
+  sortSelect.addEventListener("change", (event) => {
+    state.sort = event.target.value;
+    renderGallery();
+  });
+
+  window.addEventListener("resize", () => {
+    cancelAnimationFrame(resizeFrame);
+    resizeFrame = requestAnimationFrame(renderGallery);
+  });
+
+  gallery.addEventListener("click", (event) => {
+    const trigger = event.target.closest("[data-detail-id]");
+    if (!trigger) return;
+
+    openDetail(trigger.dataset.detailId);
+  });
+
+  document.querySelector("#open-submit").addEventListener("click", () => {
+    submitModal.hidden = false;
+    submitModal.querySelector("input")?.focus();
+  });
+
+  submitModal.querySelector(".close-modal").addEventListener("click", closeModal);
+  submitModal.addEventListener("click", (event) => {
+    if (event.target === submitModal) closeModal();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !submitModal.hidden) closeModal();
+    if (event.key === "Escape" && !detailViewer.hidden) closeDetail();
+    if (event.key === "ArrowLeft" && !detailViewer.hidden) moveDetail(-1);
+    if (event.key === "ArrowRight" && !detailViewer.hidden) moveDetail(1);
+  });
+
+  document.querySelector("#detail-close").addEventListener("click", closeDetail);
+  document.querySelector("#detail-prev").addEventListener("click", () => moveDetail(-1));
+  document.querySelector("#detail-next").addEventListener("click", () => moveDetail(1));
+  detailViewer.addEventListener("click", (event) => {
+    if (event.target === detailViewer) closeDetail();
+  });
+}
+
+function closeModal() {
+  submitModal.hidden = true;
+  document.querySelector("#open-submit").focus();
+}
+
+function renderSidebar() {
+  sectionNav.innerHTML = sectionList
+    .map(
+      (section) => `
+        <button class="section-link" type="button" data-section="${escapeHtml(section.id)}">
+          <span>${escapeHtml(section.label)}</span>
+          <small>${escapeHtml(section.title)}</small>
+        </button>
+      `,
+    )
+    .join("");
+}
+
+function render() {
+  const section = sections[state.section];
+  if (!section) return;
+
+  pageTitle.textContent = section.title;
+  pageEyebrow.textContent = section.eyebrow;
+  pageDescription.textContent = section.description;
+
+  document.querySelectorAll(".section-link").forEach((button) => {
+    button.classList.toggle("is-active", button.dataset.section === state.section);
+  });
+
+  renderFilters(section.filters.length ? section.filters : ["All"]);
+  renderGallery();
+}
+
+function renderFilters(filters) {
+  filterStrip.innerHTML = filters
+    .map(
+      (filter) => `
+        <button class="filter-chip ${filter === state.filter ? "is-active" : ""}" type="button" data-filter="${filter}">
+          ${filter}
+        </button>
+      `,
+    )
+    .join("");
+
+  filterStrip.querySelectorAll("button").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.filter = button.dataset.filter;
+      renderFilters(sections[state.section].filters);
+      renderGallery();
+    });
+  });
+}
+
+function renderGallery() {
+  const filtered = getVisibleItems();
+  visibleItems = filtered;
+  itemCount.textContent = `${filtered.length} ${filtered.length === 1 ? "item" : "items"}`;
+
+  const recentDate = getRecentDate(items.filter((item) => item.section === state.section));
+  if (recentDate) {
+    lastUpdated.textContent = `Last updated ${formatter.format(recentDate)}`;
+    sidebarUpdated.textContent = formatter.format(recentDate);
+  }
+
+  renderMasonry(filtered);
+  emptyState.hidden = filtered.length > 0;
+}
+
+function getVisibleItems() {
+  const query = state.query;
+  const visible = items.filter((item) => {
+    const tags = normalizeList(item.tags);
+    const inSection = item.section === state.section;
+    const inFilter = state.filter === "All" || tags.includes(state.filter);
+    const haystack =
+      `${item.title || ""} ${item.description || ""} ${item.source || ""} ${tags.join(" ")}`.toLowerCase();
+    const inQuery = !query || haystack.includes(query);
+    return inSection && inFilter && inQuery;
+  });
+
+  return visible.sort((a, b) => {
+    if (state.sort === "title") return a.title.localeCompare(b.title);
+    if (state.sort === "source") return a.source.localeCompare(b.source);
+    return new Date(b.dateAdded) - new Date(a.dateAdded);
+  });
+}
+
+function createCard(item) {
+  const media = createMediaMarkup(item);
+  const itemUrl = escapeHtml(item.url || "");
+  const itemTitle = escapeHtml(item.title || "Untitled");
+  const externalAction = item.url
+    ? `
+        <a
+          class="card-action"
+          href="${itemUrl}"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Open ${itemTitle} original link"
+        ></a>
+      `
+    : "";
+
+  return `
+    <article class="work-card is-${item.size || "standard"}">
+      <div class="media-frame">
+        <button class="media-link" type="button" data-detail-id="${escapeHtml(item.id)}" aria-label="View ${itemTitle} details">
+          ${media}
+        </button>
+        ${externalAction}
+      </div>
+    </article>
+  `;
+}
+
+function createMediaMarkup(item) {
+  const itemTitle = escapeHtml(item.title || "Untitled");
+
+  if (item.motionCover) return createMotionCover(item);
+  if (item.video) {
+    const poster = item.cover ? ` poster="${item.cover}"` : "";
+    return `
+      <video muted autoplay loop playsinline preload="metadata"${poster} data-video-path="${item.video}">
+        <source src="${item.video}" type="video/mp4" />
+      </video>
+      <span class="media-missing" hidden>
+        <strong>Video file needed</strong>
+        <small>${item.video.replace("./assets/", "assets/")}</small>
+      </span>
+    `;
+  }
+
+  if (item.cover) return `<img src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="lazy" />`;
+
+  return `
+    <span class="media-missing">
+      <strong>Media needed</strong>
+      <small>Add a cover or video in /admin</small>
+    </span>
+  `;
+}
+
+function openDetail(itemId) {
+  const nextIndex = visibleItems.findIndex((item) => item.id === itemId);
+  if (nextIndex < 0) return;
+
+  activeDetailIndex = nextIndex;
+  renderDetail();
+  detailViewer.hidden = false;
+  document.body.classList.add("detail-open");
+  document.querySelector("#detail-close").focus();
+}
+
+function closeDetail() {
+  detailViewer.hidden = true;
+  document.body.classList.remove("detail-open");
+}
+
+function moveDetail(direction) {
+  if (!visibleItems.length) return;
+  activeDetailIndex = (activeDetailIndex + direction + visibleItems.length) % visibleItems.length;
+  renderDetail();
+}
+
+function renderDetail() {
+  const item = visibleItems[activeDetailIndex];
+  if (!item) return;
+
+  detailSection.textContent = sections[item.section]?.title || "Design";
+  detailTitle.textContent = item.title;
+  detailAuthor.innerHTML = createAuthorMarkup(item);
+  bindAuthorAvatar(detailAuthor);
+  detailDescription.textContent = item.longDescription || item.description;
+  detailPreview.innerHTML = createMediaMarkup(item);
+  bindVideoFallbacks(detailPreview);
+  detailSourceLink.hidden = !item.url;
+  detailSourceLink.href = item.url || "#";
+  detailTags.innerHTML = normalizeList(item.tags)
+    .map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`)
+    .join("");
+  detailMeta.innerHTML = getDetailRows(item)
+    .map(
+      ([label, value]) => `
+        <div class="detail-meta-row">
+          <dt>${label}</dt>
+          <dd>${value}</dd>
+        </div>
+      `,
+    )
+    .join("");
+}
+
+function createAuthorMarkup(item) {
+  const authorName = escapeHtml(item.author || item.source);
+  const avatarUrl = item.avatar || getXAvatarUrl(item.url);
+
+  if (!avatarUrl) {
+    return `
+      <span class="detail-avatar is-fallback" aria-hidden="true">
+        <span class="detail-avatar-dot"></span>
+      </span>
+      <span>${authorName}</span>
+    `;
+  }
+
+  return `
+    <span class="detail-avatar" aria-hidden="true">
+      <img src="${escapeHtml(avatarUrl)}" alt="" loading="lazy" referrerpolicy="no-referrer" />
+      <span class="detail-avatar-dot"></span>
+    </span>
+    <span>${authorName}</span>
+  `;
+}
+
+function bindAuthorAvatar(root) {
+  const image = root.querySelector(".detail-avatar img");
+  if (!image) return;
+
+  image.addEventListener(
+    "error",
+    () => {
+      image.closest(".detail-avatar")?.classList.add("is-fallback");
+    },
+    { once: true },
+  );
+}
+
+function getXAvatarUrl(url) {
+  if (!url) return "";
+
+  try {
+    const parsedUrl = new URL(url);
+    const hostname = parsedUrl.hostname.replace(/^www\./, "");
+    if (hostname !== "x.com" && hostname !== "twitter.com") return "";
+
+    const handle = parsedUrl.pathname.split("/").filter(Boolean)[0];
+    return handle ? `https://unavatar.io/x/${encodeURIComponent(handle)}` : "";
+  } catch {
+    return "";
+  }
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function getDetailRows(item) {
+  if (item.details?.length) return item.details.map((row) => [row.label, row.value]);
+
+  return [
+    ["Source", item.source],
+    ["Category", item.type],
+    ["Style", normalizeList(item.tags).filter((tag) => tag !== "X").join(", ")],
+    ["Added", formatter.format(new Date(item.dateAdded))],
+  ];
+}
+
+function renderMasonry(filtered) {
+  gallery.style.maxWidth = "";
+  const columnCount = Math.min(getColumnCount(), Math.max(filtered.length, 1));
+  const columns = Array.from({ length: columnCount }, () => ({ height: 0, cards: [] }));
+
+  filtered.forEach((item) => {
+    const target = columns.reduce((shortest, column) =>
+      column.height < shortest.height ? column : shortest,
+    );
+    target.cards.push(createCard(item));
+    target.height += getCardEstimate(item);
+  });
+
+  gallery.style.setProperty("--gallery-columns", columnCount);
+  gallery.style.maxWidth = `${columnCount * 430 + Math.max(columnCount - 1, 0) * 14}px`;
+  gallery.innerHTML = columns
+    .map((column) => `<div class="gallery-column">${column.cards.join("")}</div>`)
+    .join("");
+  bindVideoFallbacks(gallery);
+}
+
+function bindVideoFallbacks(root) {
+  root.querySelectorAll("video[data-video-path]").forEach((video) => {
+    const fallback = video.nextElementSibling;
+    const showFallback = () => {
+      video.hidden = true;
+      if (fallback) fallback.hidden = false;
+    };
+
+    video.addEventListener("error", showFallback, { once: true });
+    video.querySelector("source")?.addEventListener("error", showFallback, { once: true });
+  });
+}
+
+function getColumnCount() {
+  const container = gallery.parentElement;
+  const width = container?.clientWidth || window.innerWidth;
+  if (width >= 1240) return 4;
+  if (width >= 760) return 3;
+  if (width >= 520) return 2;
+  return 1;
+}
+
+function getCardEstimate(item) {
+  const sizeEstimate = {
+    wide: 0.82,
+    square: 1.06,
+    tall: 1.42,
+    standard: 1.18,
+  };
+
+  return sizeEstimate[item.size] || sizeEstimate.standard;
+}
+
+function createMotionCover(item) {
+  if (item.motionCover === "hydrangea") {
+    return `
+      <div class="motion-cover motion-cover--hydrangea" aria-hidden="true">
+        <span class="motion-orbit orbit-a"></span>
+        <span class="motion-orbit orbit-b"></span>
+        <span class="motion-orbit orbit-c"></span>
+        <span class="motion-petal petal-a"></span>
+        <span class="motion-petal petal-b"></span>
+        <span class="motion-petal petal-c"></span>
+        <span class="motion-petal petal-d"></span>
+        <span class="motion-core"></span>
+        <span class="motion-line line-a"></span>
+        <span class="motion-line line-b"></span>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="motion-cover motion-cover--ampersand" aria-hidden="true">
+      <span class="type-grid"></span>
+      <span class="amp amp-back">&amp;</span>
+      <span class="amp amp-front">&amp;</span>
+      <span class="type-pill pill-in">In</span>
+      <span class="type-pill pill-out">Out</span>
+      <span class="type-line line-one"></span>
+      <span class="type-line line-two"></span>
+    </div>
+  `;
+}
+
+function getRecentDate(sourceItems) {
+  if (!sourceItems.length) return null;
+  return sourceItems
+    .map((item) => new Date(item.dateAdded))
+    .sort((a, b) => b - a)[0];
+}
+
+function setOnlineCount() {
+  const seed = new Date().getDate() + new Date().getHours();
+  document.querySelector("#online-count").textContent = 18 + (seed % 27);
+}
+
+init().catch((error) => {
+  gallery.innerHTML = `
+    <section class="empty-state">
+      <h2>Could not load collection</h2>
+      <p>${error.message}</p>
+    </section>
+  `;
+});
