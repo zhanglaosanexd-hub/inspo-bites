@@ -38,6 +38,17 @@ body {
     var(--bg);
 }
 
+.click-spark-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  user-select: none;
+}
+
 button,
 input,
 select,

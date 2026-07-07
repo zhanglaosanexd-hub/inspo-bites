@@ -34,6 +34,7 @@ const detailDescription = document.querySelector("#detail-description");
 const detailMeta = document.querySelector("#detail-meta");
 const detailTags = document.querySelector("#detail-tags");
 const detailSourceLink = document.querySelector("#detail-source-link");
+const clickSparkCanvas = document.querySelector("#click-spark-canvas");
 
 const formatter = new Intl.DateTimeFormat("en", {
   month: "short",
@@ -57,6 +58,7 @@ async function init() {
   setOnlineCount();
   renderSidebar();
   bindEvents();
+  initClickSpark();
   render();
 }
 
@@ -152,6 +154,93 @@ function bindEvents() {
   detailViewer.addEventListener("click", (event) => {
     if (event.target === detailViewer) closeDetail();
   });
+}
+
+function initClickSpark() {
+  if (!clickSparkCanvas) return;
+
+  const context = clickSparkCanvas.getContext("2d");
+  const sparks = [];
+  const settings = {
+    color: "rgba(23, 23, 23, 0.78)",
+    size: 12,
+    radius: 18,
+    count: 8,
+    duration: 420,
+    extraScale: 1.15,
+  };
+
+  let animationFrame = 0;
+
+  const resize = () => {
+    const scale = window.devicePixelRatio || 1;
+    clickSparkCanvas.width = Math.ceil(window.innerWidth * scale);
+    clickSparkCanvas.height = Math.ceil(window.innerHeight * scale);
+    clickSparkCanvas.style.width = `${window.innerWidth}px`;
+    clickSparkCanvas.style.height = `${window.innerHeight}px`;
+    context.setTransform(scale, 0, 0, scale, 0, 0);
+  };
+
+  const draw = (timestamp) => {
+    context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    for (let index = sparks.length - 1; index >= 0; index -= 1) {
+      const spark = sparks[index];
+      const elapsed = timestamp - spark.startTime;
+
+      if (elapsed >= settings.duration) {
+        sparks.splice(index, 1);
+        continue;
+      }
+
+      const progress = elapsed / settings.duration;
+      const eased = progress * (2 - progress);
+      const distance = eased * settings.radius * settings.extraScale;
+      const lineLength = settings.size * (1 - eased);
+      const opacity = 1 - eased;
+      const startX = spark.x + distance * Math.cos(spark.angle);
+      const startY = spark.y + distance * Math.sin(spark.angle);
+      const endX = spark.x + (distance + lineLength) * Math.cos(spark.angle);
+      const endY = spark.y + (distance + lineLength) * Math.sin(spark.angle);
+
+      context.globalAlpha = opacity;
+      context.strokeStyle = settings.color;
+      context.lineWidth = 1.7;
+      context.lineCap = "round";
+      context.beginPath();
+      context.moveTo(startX, startY);
+      context.lineTo(endX, endY);
+      context.stroke();
+    }
+
+    context.globalAlpha = 1;
+
+    if (sparks.length) {
+      animationFrame = requestAnimationFrame(draw);
+    } else {
+      animationFrame = 0;
+    }
+  };
+
+  const spawn = (event) => {
+    if (event.button && event.button !== 0) return;
+
+    const now = performance.now();
+    for (let index = 0; index < settings.count; index += 1) {
+      sparks.push({
+        x: event.clientX,
+        y: event.clientY,
+        angle: (Math.PI * 2 * index) / settings.count,
+        startTime: now,
+      });
+    }
+
+    if (!animationFrame) animationFrame = requestAnimationFrame(draw);
+  };
+
+  resize();
+  window.addEventListener("resize", resize);
+  window.addEventListener("pointerdown", spawn, { passive: true });
 }
 
 function closeModal() {
