@@ -48,8 +48,10 @@ const formatter = new Intl.DateTimeFormat("en", {
 });
 const NEW_WINDOW_MS = 36 * 60 * 60 * 1000;
 const GALLERY_GAP = 14;
-const GALLERY_MIN_CARD_WIDTH = 286;
+const GALLERY_DEFAULT_COLUMNS = 4;
+const GALLERY_MIN_CARD_WIDTH = 260;
 const GALLERY_MAX_CARD_WIDTH = 430;
+const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
 
 async function init() {
@@ -587,7 +589,7 @@ function renderUniformGrid(filtered) {
 function renderSingleColumn(filtered) {
   gallery.className = "gallery is-single";
   gallery.style.setProperty("--gallery-columns", 1);
-  gallery.style.maxWidth = filtered.length ? `${getGalleryMaxWidth(1)}px` : "";
+  gallery.style.maxWidth = filtered.length ? `${getGalleryMaxWidth(1, SINGLE_CARD_MAX_WIDTH)}px` : "";
   gallery.innerHTML = filtered.map((item) => createCard(item)).join("");
   bindVideoFallbacks(gallery);
 }
@@ -608,15 +610,11 @@ function bindVideoFallbacks(root) {
 function getGalleryMetrics() {
   const container = gallery.parentElement;
   const width = container?.clientWidth || window.innerWidth;
-  const maxColumnsForMinWidth = Math.max(
+  const maxColumnsForWidth = Math.max(
     1,
     Math.floor((width + GALLERY_GAP) / (GALLERY_MIN_CARD_WIDTH + GALLERY_GAP)),
   );
-  const minColumnsForMaxWidth = Math.max(
-    1,
-    Math.ceil((width + GALLERY_GAP) / (GALLERY_MAX_CARD_WIDTH + GALLERY_GAP)),
-  );
-  const columnCount = Math.min(maxColumnsForMinWidth, minColumnsForMaxWidth);
+  const columnCount = Math.min(GALLERY_DEFAULT_COLUMNS, maxColumnsForWidth);
   const cardWidth = (width - Math.max(columnCount - 1, 0) * GALLERY_GAP) / columnCount;
 
   return {
@@ -626,8 +624,8 @@ function getGalleryMetrics() {
   };
 }
 
-function getGalleryMaxWidth(columnCount) {
-  return columnCount * GALLERY_MAX_CARD_WIDTH + Math.max(columnCount - 1, 0) * GALLERY_GAP;
+function getGalleryMaxWidth(columnCount, maxCardWidth = GALLERY_MAX_CARD_WIDTH) {
+  return columnCount * maxCardWidth + Math.max(columnCount - 1, 0) * GALLERY_GAP;
 }
 
 function getCardEstimate(item) {
