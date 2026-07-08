@@ -30,6 +30,8 @@ const sortSelect = document.querySelector("#sort-select");
 const viewSwitcher = document.querySelector("#view-switcher");
 const detailViewer = document.querySelector("#detail-viewer");
 const detailPreview = document.querySelector("#detail-preview");
+const detailPrevButton = document.querySelector("#detail-prev");
+const detailNextButton = document.querySelector("#detail-next");
 const detailTitle = document.querySelector("#detail-title");
 const detailSection = document.querySelector("#detail-section");
 const detailAuthor = document.querySelector("#detail-author");
@@ -155,8 +157,8 @@ function bindEvents() {
   });
 
   document.querySelector("#detail-close").addEventListener("click", closeDetail);
-  document.querySelector("#detail-prev").addEventListener("click", () => moveDetail(-1));
-  document.querySelector("#detail-next").addEventListener("click", () => moveDetail(1));
+  detailPrevButton.addEventListener("click", () => moveDetail(-1));
+  detailNextButton.addEventListener("click", () => moveDetail(1));
   detailViewer.addEventListener("click", (event) => {
     const clickedContent = event.target.closest(".detail-panel, .detail-preview");
     if (!clickedContent) closeDetail();
@@ -435,7 +437,10 @@ function closeDetail() {
 
 function moveDetail(direction) {
   if (!visibleItems.length) return;
-  activeDetailIndex = (activeDetailIndex + direction + visibleItems.length) % visibleItems.length;
+  const nextIndex = activeDetailIndex + direction;
+  if (nextIndex < 0 || nextIndex >= visibleItems.length) return;
+
+  activeDetailIndex = nextIndex;
   renderDetail();
 }
 
@@ -465,6 +470,16 @@ function renderDetail() {
       `,
     )
     .join("");
+  updateDetailNav();
+}
+
+function updateDetailNav() {
+  const hasPrevious = activeDetailIndex > 0;
+  const hasNext = activeDetailIndex < visibleItems.length - 1;
+  detailPrevButton.disabled = !hasPrevious;
+  detailNextButton.disabled = !hasNext;
+  detailPrevButton.setAttribute("aria-disabled", String(!hasPrevious));
+  detailNextButton.setAttribute("aria-disabled", String(!hasNext));
 }
 
 function createAuthorMarkup(item) {
