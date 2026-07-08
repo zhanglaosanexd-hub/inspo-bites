@@ -1240,7 +1240,7 @@ h1 {
   min-height: 100vh;
   place-items: center;
   padding: 0 clamp(28px, 5vw, 76px);
-  cursor: zoom-out;
+  cursor: var(--cursor-glow);
   opacity: 0;
   transform: translate3d(28px, 0, 0) scale(0.985);
   transition:
