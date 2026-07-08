@@ -552,7 +552,7 @@ function renderUniformGrid(filtered) {
 function renderSingleColumn(filtered) {
   gallery.className = "gallery is-single";
   gallery.style.setProperty("--gallery-columns", 1);
-  gallery.style.maxWidth = filtered.length ? "min(100%, 960px)" : "";
+  gallery.style.maxWidth = filtered.length ? `${getGalleryMaxWidth(1)}px` : "";
   gallery.innerHTML = filtered.map((item) => createCard(item)).join("");
   bindVideoFallbacks(gallery);
 }

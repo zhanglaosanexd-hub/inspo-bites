@@ -450,10 +450,6 @@ h1 {
   margin-left: auto;
 }
 
-.gallery.is-single .media-frame::before {
-  aspect-ratio: 16 / 10;
-}
-
 .work-card {
   position: relative;
   display: block;
