@@ -5,7 +5,7 @@
       "label": "Inspo",
       "title": "设计灵感",
       "eyebrow": "Inspo",
-      "description": "A small, curated feed for motion experiments, visual systems, and expressive design references.",
+      "description": "收集 Motion 实验、视觉系统和有表达力的设计参考。",
       "filters": [
         "All",
         "Motion",
@@ -22,8 +22,8 @@
       "id": "ux-bites",
       "label": "UX Bites",
       "title": "体验切片",
-      "eyebrow": "Experience notes",
-      "description": "Short, reusable UX observations for flows, patterns, writing, and product decisions.",
+      "eyebrow": "体验笔记",
+      "description": "沉淀关于流程、Pattern、文案、指标和产品决策的轻量 UX 观察。",
       "filters": [
         "All",
         "Patterns",

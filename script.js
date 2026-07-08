@@ -41,11 +41,50 @@ const detailTags = document.querySelector("#detail-tags");
 const detailSourceLink = document.querySelector("#detail-source-link");
 const clickSparkCanvas = document.querySelector("#click-spark-canvas");
 
-const formatter = new Intl.DateTimeFormat("en", {
-  month: "short",
+const formatter = new Intl.DateTimeFormat("zh-CN", {
+  month: "long",
   day: "numeric",
   year: "numeric",
 });
+const DETAIL_LABELS = {
+  Source: "来源",
+  Category: "分类",
+  Style: "风格",
+  Color: "色彩",
+  Interaction: "交互",
+  Tool: "工具",
+  Medium: "媒介",
+  Material: "材质",
+  Added: "收录时间",
+};
+const DETAIL_VALUE_LABELS = {
+  Interface: "界面",
+  Image: "图片",
+  "Floral / Light 3D": "花卉 / 轻 3D",
+  "Bright / Soft gradient": "明亮 / 柔和渐变",
+  "Looping motion": "循环动效",
+  "Skeuomorphic / Hardware": "拟物 / 硬件感",
+  "Brand motion": "品牌动效",
+  "Ticket / Gold": "票券 / 金色",
+  "Dark / Gold": "深色 / 金色",
+  "Collectible ticket motion": "收藏票券动效",
+  "Reading interaction": "阅读交互",
+  "Physical / Skeuomorphic": "真实物理 / 拟物",
+  "Paper / Light bleed": "纸张 / 透光",
+  "Page turn": "翻页",
+  "Ticket / Holographic": "票券 / 镭射",
+  "Dark / Iridescent": "深色 / 虹彩",
+  "Tear-away ticket motion": "可撕票券动效",
+  "Spatial carousel": "空间轮播",
+  "Rotating portfolio browse": "旋转式作品浏览",
+  Typography: "字体排版",
+  "Type motion": "字体动效",
+  "Monochrome / Accent": "单色 / 强调色",
+  "In / Out transition": "进入 / 退出转场",
+};
+const FILTER_LABELS = {
+  All: "全部",
+};
 const MIN_ONLINE_COUNT = 18;
 const NEW_WINDOW_MS = 36 * 60 * 60 * 1000;
 const GALLERY_GAP = 14;
@@ -85,7 +124,7 @@ function normalizeSections(data) {
       ...section,
       label: section.label || section.eyebrow || section.title || section.id,
       title: section.title || section.label || section.id,
-      eyebrow: section.eyebrow || section.label || "Collection",
+      eyebrow: section.eyebrow || section.label || "精选内容",
       description: section.description || "",
       filters: normalizeList(section.filters, ["All"]),
     }));
@@ -294,7 +333,7 @@ function renderFilters(filters) {
     .map(
       (filter) => `
         <button class="filter-chip ${filter === state.filter ? "is-active" : ""}" type="button" data-filter="${filter}">
-          ${filter}
+          ${escapeHtml(getFilterLabel(filter))}
         </button>
       `,
     )
@@ -312,11 +351,11 @@ function renderFilters(filters) {
 function renderGallery() {
   const filtered = getVisibleItems();
   visibleItems = filtered;
-  itemCount.textContent = `${filtered.length} ${filtered.length === 1 ? "item" : "items"}`;
+  itemCount.textContent = `${filtered.length} 条内容`;
 
   const recentDate = getRecentDate(items.filter((item) => item.section === state.section));
   if (recentDate) {
-    lastUpdated.textContent = `Last updated ${formatter.format(recentDate)}`;
+    lastUpdated.textContent = `更新于 ${formatter.format(recentDate)}`;
     sidebarUpdated.textContent = formatter.format(recentDate);
   }
 
@@ -357,8 +396,8 @@ function getVisibleItems() {
 function createCard(item) {
   const media = createMediaMarkup(item);
   const itemUrl = escapeHtml(item.url || "");
-  const itemTitle = escapeHtml(item.title || "Untitled");
-  const newBadge = isNewItem(item) ? `<span class="new-badge" aria-label="New item">NEW</span>` : "";
+  const itemTitle = escapeHtml(item.title || "未命名内容");
+  const newBadge = isNewItem(item) ? `<span class="new-badge" aria-label="新内容">新</span>` : "";
   const externalAction = item.url
     ? `
         <a
@@ -366,7 +405,7 @@ function createCard(item) {
           href="${itemUrl}"
           target="_blank"
           rel="noreferrer"
-          aria-label="Open ${itemTitle} original link"
+          aria-label="打开 ${itemTitle} 的原文链接"
         ></a>
       `
     : "";
@@ -374,7 +413,7 @@ function createCard(item) {
   return `
     <article class="work-card is-${item.size || "standard"}">
       <div class="media-frame">
-        <button class="media-link" type="button" data-detail-id="${escapeHtml(item.id)}" aria-label="View ${itemTitle} details">
+        <button class="media-link" type="button" data-detail-id="${escapeHtml(item.id)}" aria-label="查看 ${itemTitle} 详情">
           ${media}
         </button>
         ${newBadge}
@@ -385,7 +424,7 @@ function createCard(item) {
 }
 
 function createMediaMarkup(item) {
-  const itemTitle = escapeHtml(item.title || "Untitled");
+  const itemTitle = escapeHtml(item.title || "未命名内容");
 
   if (item.motionCover) return createMotionCover(item);
   if (item.video) {
@@ -395,7 +434,7 @@ function createMediaMarkup(item) {
         <source src="${item.video}" type="video/mp4" />
       </video>
       <span class="media-missing" hidden>
-        <strong>Video file needed</strong>
+        <strong>需要视频文件</strong>
         <small>${item.video.replace("./assets/", "assets/")}</small>
       </span>
     `;
@@ -405,8 +444,8 @@ function createMediaMarkup(item) {
 
   return `
     <span class="media-missing">
-      <strong>Media needed</strong>
-      <small>Add a cover or video in /admin</small>
+      <strong>需要素材</strong>
+      <small>在后台补充封面或视频</small>
     </span>
   `;
 }
@@ -475,8 +514,8 @@ function renderDetail() {
     .map(
       ([label, value]) => `
         <div class="detail-meta-row">
-          <dt>${label}</dt>
-          <dd>${value}</dd>
+          <dt>${escapeHtml(getDetailLabel(label))}</dt>
+          <dd>${escapeHtml(getDetailValue(value))}</dd>
         </div>
       `,
     )
@@ -561,6 +600,18 @@ function getDetailRows(item) {
     ["Style", normalizeList(item.tags).filter((tag) => tag !== "X" && tag !== "𝕏").join(", ")],
     ["Added", formatter.format(new Date(item.dateAdded))],
   ];
+}
+
+function getDetailLabel(label) {
+  return DETAIL_LABELS[label] || label;
+}
+
+function getDetailValue(value) {
+  return DETAIL_VALUE_LABELS[value] || value || "";
+}
+
+function getFilterLabel(filter) {
+  return FILTER_LABELS[filter] || filter;
 }
 
 function renderMasonry(filtered) {

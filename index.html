@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Inspo Bites is a curated collection of design inspiration and compact UX notes."
+      content="Inspo Bites 是一个收集设计灵感与 UX 观察的精选内容库。"
     />
-    <title>Inspo Bites - Design & UX Collection</title>
+    <title>Inspo Bites - 设计与 UX 收藏</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <canvas class="click-spark-canvas" id="click-spark-canvas" aria-hidden="true"></canvas>
 
     <div class="site-shell">
-      <aside class="sidebar" aria-label="Primary">
-        <a class="brand" href="./" aria-label="Inspo Bites home">
+      <aside class="sidebar" aria-label="主导航">
+        <a class="brand" href="./" aria-label="Inspo Bites 首页">
           <span class="brand-mark">IB</span>
           <span class="brand-name">Inspo Bites</span>
         </a>
@@ -25,7 +25,7 @@
           <span><span id="online-count">28</span> 人正在浏览</span>
         </div>
 
-        <nav class="section-nav" aria-label="Sections">
+        <nav class="section-nav" aria-label="内容分区">
           <button class="section-link is-active" type="button" data-section="inspiration">
             <span>Inspo</span>
             <small>设计灵感</small>
@@ -37,7 +37,7 @@
         </nav>
 
         <footer class="sidebar-footer">
-          <span>Updated <time id="sidebar-updated">Jul 2026</time></span>
+          <span>更新于 <time id="sidebar-updated">2026年7月</time></span>
           <span>© 2026 Inspo Bites</span>
         </footer>
       </aside>
@@ -45,34 +45,34 @@
       <main class="content">
         <header class="page-head">
           <div>
-            <p class="eyebrow" id="page-eyebrow">Curated feed</p>
+            <p class="eyebrow" id="page-eyebrow">精选内容</p>
             <h1 id="page-title">设计灵感</h1>
             <p id="page-description">
-              Fresh visual references for product, interface, motion, brand, and web design.
+              为产品、界面、Motion、品牌和网页设计收集的新鲜视觉参考。
             </p>
           </div>
 
-          <div class="head-meta" aria-label="Collection metadata">
-            <span id="item-count">0 items</span>
-            <span id="last-updated">Last updated today</span>
+          <div class="head-meta" aria-label="内容信息">
+            <span id="item-count">0 条内容</span>
+            <span id="last-updated">更新于今天</span>
           </div>
         </header>
 
-        <div class="toolbar" aria-label="Content controls">
+        <div class="toolbar" aria-label="内容控制">
           <label class="search-box">
             <span class="search-icon" aria-hidden="true"></span>
-            <input id="search-input" type="search" placeholder="Search collection" />
+            <input id="search-input" type="search" placeholder="搜索内容" />
           </label>
 
-          <div class="filter-strip" id="filter-strip" aria-label="Filters"></div>
+          <div class="filter-strip" id="filter-strip" aria-label="筛选"></div>
 
-          <div class="view-switcher" id="view-switcher" aria-label="Display mode">
+          <div class="view-switcher" id="view-switcher" aria-label="展示模式">
             <button
               class="view-mode-button"
               type="button"
               data-view-mode="single"
-              aria-label="Single card mode"
-              title="Single card"
+              aria-label="单张展示模式"
+              title="单张展示"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="5" y="4.5" width="14" height="10" rx="1.8"></rect>
@@ -83,8 +83,8 @@
               class="view-mode-button"
               type="button"
               data-view-mode="grid"
-              aria-label="Uniform card mode"
-              title="Uniform cards"
+              aria-label="统一卡片模式"
+              title="统一卡片"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="4" y="4" width="6.3" height="6.3" rx="1.5"></rect>
@@ -97,8 +97,8 @@
               class="view-mode-button"
               type="button"
               data-view-mode="masonry"
-              aria-label="Masonry card mode"
-              title="Masonry cards"
+              aria-label="瀑布流卡片模式"
+              title="瀑布流"
             >
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <rect x="4" y="4" width="6.3" height="6.3" rx="1.5"></rect>
@@ -111,19 +111,19 @@
         </div>
 
         <label class="sort-box visually-hidden">
-          <span class="visually-hidden">Sort</span>
+          <span class="visually-hidden">排序</span>
           <select id="sort-select">
-            <option value="recent">Recent</option>
+            <option value="recent">最新</option>
             <option value="title">A-Z</option>
-            <option value="source">Source</option>
+            <option value="source">来源</option>
           </select>
         </label>
 
         <section class="gallery" id="gallery" aria-live="polite"></section>
 
         <section class="empty-state" id="empty-state" hidden>
-          <h2>No matches</h2>
-          <p>Try another tag or search term.</p>
+          <h2>没有匹配结果</h2>
+          <p>换个标签或关键词试试。</p>
         </section>
       </main>
     </div>
@@ -131,31 +131,31 @@
     <div class="detail-viewer" id="detail-viewer" role="dialog" aria-modal="true" hidden>
       <aside class="detail-panel" aria-labelledby="detail-title">
         <div class="detail-controls">
-          <button class="detail-icon-button" id="detail-close" type="button" aria-label="Close">
+          <button class="detail-icon-button" id="detail-close" type="button" aria-label="关闭">
             ×
           </button>
           <div class="detail-nav">
-            <button class="detail-icon-button" id="detail-prev" type="button" aria-label="Previous">
+            <button class="detail-icon-button" id="detail-prev" type="button" aria-label="上一条">
               ←
             </button>
-            <button class="detail-icon-button" id="detail-next" type="button" aria-label="Next">
+            <button class="detail-icon-button" id="detail-next" type="button" aria-label="下一条">
               →
             </button>
           </div>
         </div>
 
-        <p class="detail-section" id="detail-section">Design</p>
+        <p class="detail-section" id="detail-section">设计灵感</p>
         <h2 id="detail-title"></h2>
         <p class="detail-author" id="detail-author"></p>
         <p class="detail-description" id="detail-description"></p>
         <dl class="detail-meta" id="detail-meta"></dl>
         <div class="detail-tags" id="detail-tags"></div>
         <a class="detail-source-link" id="detail-source-link" target="_blank" rel="noreferrer">
-          Open original
+          查看原文
         </a>
       </aside>
 
-      <section class="detail-stage" aria-label="Preview">
+      <section class="detail-stage" aria-label="预览">
         <div class="detail-preview" id="detail-preview"></div>
       </section>
     </div>
