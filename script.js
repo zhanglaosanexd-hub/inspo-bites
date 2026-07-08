@@ -12,6 +12,8 @@ let sectionList = [];
 let resizeFrame = 0;
 let visibleItems = [];
 let activeDetailIndex = 0;
+let detailTransitionFrame = 0;
+let detailCloseTimer = 0;
 
 const gallery = document.querySelector("#gallery");
 const sectionNav = document.querySelector(".section-nav");
@@ -46,6 +48,7 @@ const NEW_WINDOW_MS = 36 * 60 * 60 * 1000;
 const GALLERY_GAP = 14;
 const GALLERY_MIN_CARD_WIDTH = 286;
 const GALLERY_MAX_CARD_WIDTH = 430;
+const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
 
 async function init() {
   const [sectionsResponse, itemsResponse] = await Promise.all([
@@ -155,7 +158,8 @@ function bindEvents() {
   document.querySelector("#detail-prev").addEventListener("click", () => moveDetail(-1));
   document.querySelector("#detail-next").addEventListener("click", () => moveDetail(1));
   detailViewer.addEventListener("click", (event) => {
-    if (event.target === detailViewer) closeDetail();
+    const clickedContent = event.target.closest(".detail-panel, .detail-preview");
+    if (!clickedContent) closeDetail();
   });
 }
 
@@ -401,16 +405,32 @@ function openDetail(itemId) {
   const nextIndex = visibleItems.findIndex((item) => item.id === itemId);
   if (nextIndex < 0) return;
 
+  clearTimeout(detailCloseTimer);
+  cancelAnimationFrame(detailTransitionFrame);
   activeDetailIndex = nextIndex;
   renderDetail();
   detailViewer.hidden = false;
+  detailViewer.classList.remove("is-open", "is-closing");
   document.body.classList.add("detail-open");
-  document.querySelector("#detail-close").focus();
+  detailTransitionFrame = requestAnimationFrame(() => {
+    detailViewer.classList.add("is-open");
+  });
+  document.querySelector("#detail-close").focus({ preventScroll: true });
 }
 
 function closeDetail() {
-  detailViewer.hidden = true;
-  document.body.classList.remove("detail-open");
+  if (detailViewer.hidden || detailViewer.classList.contains("is-closing")) return;
+
+  cancelAnimationFrame(detailTransitionFrame);
+  detailViewer.classList.remove("is-open");
+  detailViewer.classList.add("is-closing");
+  clearTimeout(detailCloseTimer);
+  detailCloseTimer = setTimeout(() => {
+    detailViewer.hidden = true;
+    detailViewer.classList.remove("is-closing");
+    document.body.classList.remove("detail-open");
+    detailPreview.innerHTML = "";
+  }, DETAIL_EXIT_MS);
 }
 
 function moveDetail(direction) {

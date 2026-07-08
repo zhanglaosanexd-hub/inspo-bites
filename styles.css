@@ -982,9 +982,24 @@ h1 {
   display: grid;
   grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
   overflow: hidden;
-  background: rgba(247, 247, 244, 0.36);
-  backdrop-filter: blur(6px);
+  background: rgba(247, 247, 244, 0);
+  opacity: 0;
+  backdrop-filter: blur(0);
+  transition:
+    opacity 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    backdrop-filter 280ms cubic-bezier(0.22, 1, 0.36, 1);
   z-index: 20;
+}
+
+.detail-viewer.is-open {
+  background: rgba(247, 247, 244, 0.34);
+  opacity: 1;
+  backdrop-filter: blur(6px);
+}
+
+.detail-viewer.is-closing {
+  pointer-events: none;
 }
 
 .detail-panel {
@@ -996,6 +1011,22 @@ h1 {
   overflow-y: auto;
   border-right: 1px solid rgba(222, 222, 216, 0.72);
   background: rgba(255, 255, 255, 0.9);
+  opacity: 0;
+  transform: translate3d(-36px, 0, 0);
+  transition:
+    opacity 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+
+.detail-viewer.is-open .detail-panel {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.detail-viewer.is-closing .detail-panel {
+  opacity: 0;
+  transform: translate3d(-42px, 0, 0);
 }
 
 .detail-controls {
@@ -1170,6 +1201,23 @@ h1 {
   min-height: 100vh;
   place-items: center;
   padding: 0 clamp(28px, 5vw, 76px);
+  cursor: zoom-out;
+  opacity: 0;
+  transform: translate3d(28px, 0, 0) scale(0.985);
+  transition:
+    opacity 320ms cubic-bezier(0.22, 1, 0.36, 1) 50ms,
+    transform 380ms cubic-bezier(0.22, 1, 0.36, 1) 50ms;
+  will-change: transform, opacity;
+}
+
+.detail-viewer.is-open .detail-stage {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.detail-viewer.is-closing .detail-stage {
+  opacity: 0;
+  transform: translate3d(32px, 0, 0) scale(0.985);
 }
 
 .detail-preview {
@@ -1180,6 +1228,7 @@ h1 {
   border-radius: 6px;
   background: #111;
   box-shadow: 0 28px 90px rgba(23, 23, 23, 0.24);
+  cursor: default;
 }
 
 .detail-preview img,
@@ -1323,7 +1372,12 @@ h1 {
     inset: 0;
     grid-template-columns: 1fr;
     overflow: auto;
-    background: rgba(247, 247, 244, 0.5);
+    background: rgba(247, 247, 244, 0);
+    backdrop-filter: blur(0);
+  }
+
+  .detail-viewer.is-open {
+    background: rgba(247, 247, 244, 0.48);
     backdrop-filter: blur(4px);
   }
 
@@ -1351,6 +1405,21 @@ h1 {
 
   .detail-preview {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-viewer,
+  .detail-panel,
+  .detail-stage {
+    transition: none;
+  }
+
+  .detail-panel,
+  .detail-stage,
+  .detail-viewer.is-closing .detail-panel,
+  .detail-viewer.is-closing .detail-stage {
+    transform: none;
   }
 }
 
