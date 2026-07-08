@@ -52,8 +52,8 @@ collections:
               - { label: "短描述", name: "description", widget: "text", required: false }
               - { label: "详情描述", name: "longDescription", widget: "text", required: false }
               - { label: "作者", name: "author", widget: "string", required: false }
-              - { label: "作者头像", name: "avatar", widget: "image", required: false, hint: "可选。建议图片 <= 10MB；不填时会尝试从 X 原文链接自动抓取头像。" }
-              - { label: "内容来源", name: "source", widget: "string", required: false, hint: "例如 X / Pinckus、UX Bite。" }
+              - { label: "作者头像", name: "avatar", widget: "image", required: false, hint: "可选。建议图片 <= 10MB；不填时会尝试从 𝕏 原文链接自动抓取头像。" }
+              - { label: "内容来源", name: "source", widget: "string", required: false, hint: "例如 𝕏 / Pinckus、UX Bite。" }
               - { label: "原文链接", name: "url", widget: "string", required: false }
               - { label: "内容分类", name: "type", widget: "string", required: false, hint: "例如 Motion、Typography、Pattern。" }
               - { label: "卡片封面图片", name: "cover", widget: "image", required: false, hint: "可选。建议图片 <= 10MB；如果同时填写视频，首页优先显示视频动态封面。" }

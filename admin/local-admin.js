@@ -142,7 +142,7 @@ function renderItemEditor() {
         ${mediaField("封面视频", "video", item.video, "video/mp4,video/*")}
         ${textareaField("短描述", "description", item.description)}
         ${textareaField("详情描述", "longDescription", item.longDescription)}
-        ${textareaField("标签", "tagsText", listToText(item.tags), "一行一个或用逗号分隔，例如 Motion, Graphic, X")}
+        ${textareaField("标签", "tagsText", listToText(item.tags), "一行一个或用逗号分隔，例如 Motion, Graphic, 𝕏")}
         ${textareaField("详情字段", "detailsText", detailsToText(item.details), "每行一个：字段名: 字段值")}
         ${textareaField("内容素材", "materialsText", materialsToText(item.materials), "每行一个：文件路径 | 说明")}
         <div class="field full">

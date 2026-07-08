@@ -512,7 +512,7 @@ function getDetailRows(item) {
   return [
     ["Source", item.source],
     ["Category", item.type],
-    ["Style", normalizeList(item.tags).filter((tag) => tag !== "X").join(", ")],
+    ["Style", normalizeList(item.tags).filter((tag) => tag !== "X" && tag !== "𝕏").join(", ")],
     ["Added", formatter.format(new Date(item.dateAdded))],
   ];
 }

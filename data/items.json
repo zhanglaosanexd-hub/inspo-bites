@@ -8,14 +8,14 @@
       "longDescription": "这是 @Pinckus 发布的动态图形作品，主题是绣球，灵感来自作者家乡广西的文化元素。\n\n作品用蓝、黄、橙等高明度色彩表现绣球的图案结构，并通过虚化、景深、空间层次和轻 3D 动效，让传统文化元素从静态纹样变成更年轻、更轻盈、更适合数字媒介传播的视觉语言。\n\n它没有把传统文化元素做得很重，而是通过 Motion、空间感和明亮色彩，把地域文化转译成了更现代的动态视觉表达。\n\n传统文化视觉不一定只能停留在插画、纹样和国风配色上，也可以通过动态图形、轻 3D、景深和节奏设计，变成更适合短视频、活动视觉、品牌传播和数字媒介的表达方式。",
       "author": "Pinckus",
       "avatar": "https://pbs.twimg.com/profile_images/2058773125890719744/icqA2nww_200x200.jpg",
-      "source": "X / Pinckus",
+      "source": "𝕏 / Pinckus",
       "type": "Motion",
       "tags": [
         "Motion",
         "Graphic",
         "Culture",
         "Experiment",
-        "X"
+        "𝕏"
       ],
       "cover": "",
       "video": "./assets/pinckus-motion-graphics-hydrangea-x.mp4",
@@ -24,7 +24,7 @@
       "details": [
         {
           "label": "Source",
-          "value": "X"
+          "value": "𝕏"
         },
         {
           "label": "Category",
@@ -54,14 +54,14 @@
       "longDescription": "这是 @AdityaSur11 发布的音乐播放器界面细节，作者提到是用 Figma 制作。画面把播放器做成了偏硬件设备的视觉风格：大面积黑灰材质、实体按键、扬声器网孔、进度条和专辑封面共同营造出一种复古又克制的听觉氛围。\n\n它不是那种重度复古的播放器皮肤，而是把硬件设备里的按钮、屏幕、网孔、材质和阴影转译成更现代的 UI 语言。\n\n其实音乐、播客、声音类产品，本身就很适合借用真实硬件的触感。适当的拟物细节能让界面更有情绪，也能强化正在播放、可以按下、有声音从这里出来的感知。",
       "author": "AdityaSur11",
       "avatar": "https://pbs.twimg.com/profile_images/2008066661841248256/XJttc16H_200x200.jpg",
-      "source": "X / AdityaSur11",
+      "source": "𝕏 / AdityaSur11",
       "type": "Interface",
       "tags": [
         "Interface",
         "Skeuomorphic",
         "Figma",
         "Music",
-        "X"
+        "𝕏"
       ],
       "cover": "./assets/adityasur11-figma-music-player.jpg",
       "video": "",
@@ -70,7 +70,7 @@
       "details": [
         {
           "label": "Source",
-          "value": "X"
+          "value": "𝕏"
         },
         {
           "label": "Category",
@@ -100,14 +100,14 @@
       "longDescription": "这是 @world_is_web 为 iskra.graphics 做的另一段票券式品牌动效。相比上一张更偏镭射质感的入场券，这次更像一张被光照亮的金色票券，通过碎片、光影、编号、条形码和暗色背景，营造出更强的仪式感和稀缺感。\n\n同样是票券这个视觉隐喻，一个偏未来感和镭射材质，一个偏收藏感和金色奖励感。它们都没有用常规的官网首屏逻辑，而是把品牌信息包装成一个可以被观看、被期待、被收藏的对象。\n\n所以品牌动效不一定只围绕 Logo 展开，也可以围绕一种媒介展开。票券、会员卡、通行证、邀请函这些载体，本身就带有进入、资格、身份和仪式感，非常适合用来做数字品牌的视觉叙事。",
       "author": "world_is_web",
       "avatar": "https://pbs.twimg.com/profile_images/2033466992825696256/bjVQQY7b_200x200.jpg",
-      "source": "X / world_is_web",
+      "source": "𝕏 / world_is_web",
       "type": "Brand",
       "tags": [
         "Brand",
         "Motion",
         "Ticket",
         "Graphic",
-        "X"
+        "𝕏"
       ],
       "cover": "",
       "video": "./assets/world-is-web-golden-ticket-motion.mp4",
@@ -116,7 +116,7 @@
       "details": [
         {
           "label": "Source",
-          "value": "X"
+          "value": "𝕏"
         },
         {
           "label": "Category",
@@ -146,14 +146,14 @@
       "longDescription": "这是 @_kelindi 做的一段电子书翻页交互探索。视频里不仅模拟了书页翻动的动作，还保留了纸张透光、背面内容隐约显现、翻页阴影和页面堆叠这些真实阅读里的细节。\n\n现在很多阅读产品追求极简和平面化，但真实纸书里的翻页、厚度、透光和阴影，其实能带来更强的沉浸感和阅读仪式感。\n\n拟物不等于复古，也不一定是过度装饰。好的拟物细节可以帮助用户理解状态、感知进度，也能让数字内容变得更有触感和情绪。",
       "author": "_kelindi",
       "avatar": "https://pbs.twimg.com/profile_images/2047731816207982592/1WDL2hib_200x200.jpg",
-      "source": "X / _kelindi",
+      "source": "𝕏 / _kelindi",
       "type": "Interface",
       "tags": [
         "Interface",
         "Reading",
         "Skeuomorphic",
         "Motion",
-        "X"
+        "𝕏"
       ],
       "cover": "",
       "video": "./assets/kelindi-ebook-page-turn.mp4",
@@ -162,7 +162,7 @@
       "details": [
         {
           "label": "Source",
-          "value": "X"
+          "value": "𝕏"
         },
         {
           "label": "Category",
@@ -192,14 +192,14 @@
       "longDescription": "这是 @world_is_web 为 iskra.graphics 做的一段票券式品牌动效。画面把网站设计工作室包装成一张可撕开的入场券，通过镭射质感、暗色背景、条形码、编号和信息分区，营造出很强的未来感和收藏感。\n\n它没有直接用常规的标题、按钮和服务列表，而是把品牌信息压缩进一张票券里，让设计、开发、交互、发布这些服务内容变成更有视觉记忆点的图形信息。\n\n它的参考价值在于：品牌表达不一定只能依赖 Logo 和标语，也可以通过一种具体媒介来承载。票券、卡片、证件、说明书、包装盒这类现实物件，都可以转化成数字界面里的视觉隐喻，让品牌更有故事感。",
       "author": "world_is_web",
       "avatar": "https://pbs.twimg.com/profile_images/2033466992825696256/bjVQQY7b_200x200.jpg",
-      "source": "X / world_is_web",
+      "source": "𝕏 / world_is_web",
       "type": "Brand",
       "tags": [
         "Brand",
         "Motion",
         "Ticket",
         "Graphic",
-        "X"
+        "𝕏"
       ],
       "cover": "",
       "video": "./assets/world-is-web-ticket-brand-motion.mp4",
@@ -208,7 +208,7 @@
       "details": [
         {
           "label": "Source",
-          "value": "X"
+          "value": "𝕏"
         },
         {
           "label": "Category",
@@ -238,14 +238,14 @@
       "longDescription": "这是 @bamojk 发布的一段 WIP 动效演示，使用 Webflow、WebGL 和 Three.js 做了一个轮盘式作品浏览效果。画面中图片卡片围绕空间路径旋转、翻动和切换，整体有很强的 3D 透视感和动态冲击力。\n\n传统作品集大多是卡片排列或瀑布流，而这个演示把内容做成了一个可滚动、可旋转、可进入的空间装置，让浏览本身变成了体验的一部分。\n\n它的参考价值在于：当内容本身偏视觉、艺术、摄影或创意项目时，列表不一定只是承载信息，也可以成为品牌气质的一部分。WebGL 和 Three.js 在这里不是单纯炫技，而是在强化“探索感”和“动态记忆点”。",
       "author": "bamojk",
       "avatar": "https://pbs.twimg.com/profile_images/1846125293276483587/g7FBWz5__200x200.jpg",
-      "source": "X / bamojk",
+      "source": "𝕏 / bamojk",
       "type": "WebGL",
       "tags": [
         "WebGL",
         "3D",
         "Motion",
         "Portfolio",
-        "X"
+        "𝕏"
       ],
       "cover": "",
       "video": "./assets/bamojk-webgl-wheel-browse.mp4",
@@ -254,7 +254,7 @@
       "details": [
         {
           "label": "Source",
-          "value": "X"
+          "value": "𝕏"
         },
         {
           "label": "Category",
@@ -281,17 +281,17 @@
       "section": "inspiration",
       "title": "01｜Ampersand No.3 - In & Out：字形动效实验",
       "description": "用一个 & 符号承载进入、退出、遮罩和节奏的字体动效实验。",
-      "longDescription": "这是 Seb Cornelius 发布在 X 上的一组字形动效实验，主题是 “Ampersand No.3 - In & Out”。画面围绕 & 符号做动态变化，通过形态进出、节奏变化和局部运动，让一个很简单的符号变成了有记忆点的视觉动效。\n\n这个案例适合一个小元素怎么做出高级感。它没有复杂场景，也不是大而全的品牌系统，但节奏、细节和形式感很强。\n\n很多时候我们做动效容易上来就想做大场景、大转场，但其实一个 Logo、一个符号、一个按钮状态，也可以通过节奏和形变做得很耐看。这个案例可以作为字体动效、品牌动态识别、加载动画的参考。",
+      "longDescription": "这是 Seb Cornelius 发布在 𝕏 上的一组字形动效实验，主题是 “Ampersand No.3 - In & Out”。画面围绕 & 符号做动态变化，通过形态进出、节奏变化和局部运动，让一个很简单的符号变成了有记忆点的视觉动效。\n\n这个案例适合一个小元素怎么做出高级感。它没有复杂场景，也不是大而全的品牌系统，但节奏、细节和形式感很强。\n\n很多时候我们做动效容易上来就想做大场景、大转场，但其实一个 Logo、一个符号、一个按钮状态，也可以通过节奏和形变做得很耐看。这个案例可以作为字体动效、品牌动态识别、加载动画的参考。",
       "author": "Seb Cornelius",
       "avatar": "https://pbs.twimg.com/profile_images/1910194496966680576/wwkh7f8r_200x200.jpg",
-      "source": "X / Seb Cornelius",
+      "source": "𝕏 / Seb Cornelius",
       "type": "Typography",
       "tags": [
         "Typography",
         "Motion",
         "Experiment",
         "Loader",
-        "X"
+        "𝕏"
       ],
       "cover": "",
       "video": "./assets/ampersand-no3-in-out-x.mp4",
@@ -300,7 +300,7 @@
       "details": [
         {
           "label": "Source",
-          "value": "X"
+          "value": "𝕏"
         },
         {
           "label": "Category",
