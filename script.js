@@ -46,6 +46,7 @@ const formatter = new Intl.DateTimeFormat("en", {
   day: "numeric",
   year: "numeric",
 });
+const MIN_ONLINE_COUNT = 18;
 const NEW_WINDOW_MS = 36 * 60 * 60 * 1000;
 const GALLERY_GAP = 14;
 const GALLERY_DEFAULT_COLUMNS = 4;
@@ -700,7 +701,7 @@ function dateToCreatedAt(value) {
 
 function setOnlineCount() {
   const seed = new Date().getDate() + new Date().getHours();
-  document.querySelector("#online-count").textContent = 18 + (seed % 27);
+  document.querySelector("#online-count").textContent = MIN_ONLINE_COUNT + (seed % 27);
 }
 
 init().catch((error) => {
