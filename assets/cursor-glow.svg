@@ -1,25 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+<svg xmlns="http://www.w3.org/2000/svg" width="38" height="41" viewBox="-12 -12 200 212" fill="none">
   <defs>
-    <filter id="shadow" x="-80%" y="-80%" width="260%" height="260%">
-      <feDropShadow dx="0" dy="1.8" stdDeviation="1.8" flood-color="#8d8d86" flood-opacity="0.34"/>
-      <feDropShadow dx="0" dy="0.5" stdDeviation="0.5" flood-color="#111111" flood-opacity="0.18"/>
+    <filter id="cursor-shadow" x="-35%" y="-35%" width="170%" height="170%">
+      <feDropShadow dx="0" dy="2.2" stdDeviation="2.2" flood-color="#8d8d86" flood-opacity="0.34"/>
+      <feDropShadow dx="0" dy="0.6" stdDeviation="0.7" flood-color="#111111" flood-opacity="0.16"/>
     </filter>
   </defs>
   <path
-    d="M6.7 5.4 27.5 16.1 18.8 19.1 14.2 27.7Z"
+    d="M19.5664 5.02734C22.2703 4.86747 24.9651 5.421 27.3828 6.62793L27.8633 6.87793L27.8652 6.87891L162.925 80.3887L162.932 80.3926C165.83 81.9757 168.145 84.4444 169.542 87.4365C170.939 90.4284 171.346 93.7886 170.703 97.0273C170.06 100.266 168.402 103.217 165.967 105.447C163.532 107.678 160.447 109.072 157.163 109.423L157.156 109.424L95.1201 115.964C92.9104 116.197 90.9423 117.466 89.8174 119.382L56.9492 175.372L56.9443 175.381C55.3248 178.127 52.8977 180.308 49.9932 181.623C47.0885 182.938 43.8488 183.324 40.7168 182.726C37.5849 182.127 34.7155 180.574 32.499 178.282C30.2829 175.99 28.8273 173.071 28.3291 169.922L28.3281 169.918L5.1875 22.9111L5.18652 22.9072C4.73974 20.0531 5.09863 17.1304 6.22168 14.4688C7.34478 11.8071 9.18789 9.51084 11.5459 7.8418C13.904 6.1727 16.6824 5.19794 19.5664 5.02734Z"
     fill="#050505"
     stroke="#ffffff"
     stroke-linejoin="round"
-    stroke-linecap="round"
-    stroke-width="3.2"
-    filter="url(#shadow)"
-  />
-  <path
-    d="M6.7 5.4 27.5 16.1 18.8 19.1 14.2 27.7Z"
-    fill="#050505"
-    stroke="#050505"
-    stroke-linejoin="round"
-    stroke-linecap="round"
-    stroke-width="1"
+    stroke-width="10"
+    filter="url(#cursor-shadow)"
   />
 </svg>
