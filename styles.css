@@ -1262,7 +1262,9 @@ h1 {
 .detail-preview {
   position: relative;
   width: min(100%, 1060px);
-  aspect-ratio: 16 / 9;
+  max-width: 100%;
+  max-height: calc(100vh - 112px);
+  aspect-ratio: var(--detail-aspect, 16 / 9);
   overflow: hidden;
   border-radius: 6px;
   background: #111;
@@ -1281,7 +1283,7 @@ h1 {
 
 .detail-preview img,
 .detail-preview video {
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .visually-hidden {
