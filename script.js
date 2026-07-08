@@ -86,6 +86,8 @@ const FILTER_LABELS = {
   All: "全部",
 };
 const MIN_ONLINE_COUNT = 18;
+const HOUR_MS = 60 * 60 * 1000;
+const DAY_MS = 24 * HOUR_MS;
 const NEW_WINDOW_MS = 36 * 60 * 60 * 1000;
 const GALLERY_GAP = 14;
 const GALLERY_DEFAULT_COLUMNS = 4;
@@ -355,8 +357,9 @@ function renderGallery() {
 
   const recentDate = getRecentDate(items.filter((item) => item.section === state.section));
   if (recentDate) {
-    lastUpdated.textContent = `更新于 ${formatter.format(recentDate)}`;
-    sidebarUpdated.textContent = formatter.format(recentDate);
+    const updateText = formatUpdatedText(recentDate);
+    lastUpdated.textContent = updateText;
+    sidebarUpdated.textContent = updateText;
   }
 
   renderViewModeControls();
@@ -791,8 +794,19 @@ function createMotionCover(item) {
 function getRecentDate(sourceItems) {
   if (!sourceItems.length) return null;
   return sourceItems
-    .map((item) => new Date(item.dateAdded))
+    .map(getCreatedAt)
+    .filter(Boolean)
     .sort((a, b) => b - a)[0];
+}
+
+function formatUpdatedText(date) {
+  const age = Date.now() - date.getTime();
+  if (age >= 0 && age < DAY_MS) {
+    const hours = Math.max(1, Math.floor(age / HOUR_MS));
+    return `最后更新于 ${hours} 小时前`;
+  }
+
+  return `更新于 ${formatter.format(date)}`;
 }
 
 function isNewItem(item) {
