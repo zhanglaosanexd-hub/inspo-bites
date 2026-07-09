@@ -28,16 +28,14 @@ In production, `/admin/` falls back to Decap CMS and writes changes back to the 
 
 ### Admin Setup
 
-Before deploying, update `admin/config.yml`:
+`admin/config.yml` is already pointed at:
 
 ```yaml
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/inspo-bites
+  repo: zhanglaosanexd-hub/inspo-bites
   branch: main
 ```
-
-Replace `YOUR_GITHUB_USERNAME/inspo-bites` with your real GitHub repository.
 
 For local CMS testing, Decap CMS uses `local_backend: true`. For production, use GitHub authentication or a small OAuth proxy. The front-end remains static and free to host.
 
@@ -71,10 +69,16 @@ Media files are currently planned at **10MB or less**. Cloudflare Pages has a la
 
 ## Deploy Free
 
-Cloudflare Pages settings:
+GitHub Pages free setup:
+
+- Go to the repository `Settings` -> `Pages`
+- Source: `Deploy from a branch`
+- Branch: `main`
+- Folder: `/ (root)`
+- The published URL will be `https://zhanglaosanexd-hub.github.io/inspo-bites/`
+
+Cloudflare Pages is still a free alternative:
 
 - Framework preset: None
 - Build command: leave empty
 - Build output directory: `.`
-
-Replace `hello@example.com` in `index.html` with your email or a Tally form link when ready.
