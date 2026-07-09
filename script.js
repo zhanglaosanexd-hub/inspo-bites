@@ -348,7 +348,9 @@ function render() {
   });
 
   const showFilters = section.showFilters !== false;
-  filterStrip.hidden = !showFilters;
+  filterStrip.hidden = false;
+  filterStrip.classList.toggle("is-placeholder", !showFilters);
+  filterStrip.setAttribute("aria-hidden", String(!showFilters));
   if (!showFilters) state.filter = "All";
 
   if (showFilters) {

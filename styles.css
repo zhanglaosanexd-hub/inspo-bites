@@ -370,6 +370,12 @@ h1 {
   display: none;
 }
 
+.filter-strip.is-placeholder {
+  min-height: 36px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
 .filter-chip {
   flex: 0 0 auto;
   min-height: 32px;
@@ -1399,6 +1405,10 @@ h1 {
     margin: 0 -16px 16px;
     padding: 9px 16px;
     grid-template-columns: 1fr;
+  }
+
+  .filter-strip.is-placeholder {
+    display: none;
   }
 
   .view-switcher {
