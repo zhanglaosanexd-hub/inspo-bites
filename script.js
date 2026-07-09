@@ -99,16 +99,11 @@ const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
 
 async function init() {
-  const [sectionsResponse, itemsResponse] = await Promise.all([
-    fetch("./data/sections.json"),
-    fetch("./data/items.json"),
-  ]);
-  const sectionsData = await sectionsResponse.json();
-  const itemsData = await itemsResponse.json();
+  const collectionData = await loadCollectionData();
 
-  sectionList = normalizeSections(sectionsData);
+  sectionList = normalizeSections(collectionData.sections);
   sections = Object.fromEntries(sectionList.map((section) => [section.id, section]));
-  items = normalizeItems(itemsData);
+  items = normalizeItems(collectionData.items);
   state.section = sections[state.section]?.id || sectionList[0]?.id || "";
 
   setOnlineCount();
@@ -116,6 +111,31 @@ async function init() {
   bindEvents();
   initClickSpark();
   render();
+}
+
+async function loadCollectionData() {
+  const localFallback = window.INSPO_STATIC_DATA;
+
+  if (window.location.protocol === "file:" && localFallback) return localFallback;
+
+  try {
+    const [sectionsResponse, itemsResponse] = await Promise.all([
+      fetch("./data/sections.json"),
+      fetch("./data/items.json"),
+    ]);
+
+    if (!sectionsResponse.ok || !itemsResponse.ok) {
+      throw new Error("内容数据加载失败");
+    }
+
+    return {
+      sections: await sectionsResponse.json(),
+      items: await itemsResponse.json(),
+    };
+  } catch (error) {
+    if (localFallback) return localFallback;
+    throw error;
+  }
 }
 
 function normalizeSections(data) {
@@ -129,6 +149,7 @@ function normalizeSections(data) {
       eyebrow: section.eyebrow || section.label || "精选内容",
       description: section.description || "",
       filters: normalizeList(section.filters, ["All"]),
+      showFilters: section.showFilters !== false,
     }));
 }
 
@@ -326,7 +347,16 @@ function render() {
     button.classList.toggle("is-active", button.dataset.section === state.section);
   });
 
-  renderFilters(section.filters.length ? section.filters : ["All"]);
+  const showFilters = section.showFilters !== false;
+  filterStrip.hidden = !showFilters;
+  if (!showFilters) state.filter = "All";
+
+  if (showFilters) {
+    renderFilters(section.filters.length ? section.filters : ["All"]);
+  } else {
+    filterStrip.innerHTML = "";
+  }
+
   renderGallery();
 }
 
@@ -379,10 +409,12 @@ function renderViewModeControls() {
 
 function getVisibleItems() {
   const query = state.query;
+  const section = sections[state.section];
+  const activeFilter = section?.showFilters === false ? "All" : state.filter;
   const visible = items.filter((item) => {
     const tags = normalizeList(item.tags);
     const inSection = item.section === state.section;
-    const inFilter = state.filter === "All" || tags.includes(state.filter);
+    const inFilter = activeFilter === "All" || tags.includes(activeFilter);
     const haystack =
       `${item.title || ""} ${item.description || ""} ${item.source || ""} ${tags.join(" ")}`.toLowerCase();
     const inQuery = !query || haystack.includes(query);

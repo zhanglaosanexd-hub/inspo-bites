@@ -40,6 +40,7 @@ const server = createServer(async (request, response) => {
       await writeJsonFile(["data", "sections.json"], {
         sections: Array.isArray(body.sections) ? body.sections : [],
       });
+      await writeStaticContentCache();
       await sendJson(response, { ok: true });
       return;
     }
@@ -73,6 +74,11 @@ async function readContent() {
     items: Array.isArray(itemsData) ? itemsData : itemsData.items || [],
     sections: Array.isArray(sectionsData) ? sectionsData : sectionsData.sections || [],
   };
+}
+
+async function writeStaticContentCache() {
+  const content = await readContent();
+  await writeFile(safePath(["data", "content.js"]), `window.INSPO_STATIC_DATA = ${JSON.stringify(content, null, 2)};\n`);
 }
 
 async function saveUpload(body) {
