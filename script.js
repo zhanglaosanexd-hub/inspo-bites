@@ -100,6 +100,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
+const DATA_VERSION = "20260709-app-recap";
 
 async function init() {
   const collectionData = await loadCollectionData();
@@ -123,8 +124,8 @@ async function loadCollectionData() {
 
   try {
     const [sectionsResponse, itemsResponse] = await Promise.all([
-      fetch("./data/sections.json"),
-      fetch("./data/items.json"),
+      fetch(`./data/sections.json?v=${DATA_VERSION}`, { cache: "no-store" }),
+      fetch(`./data/items.json?v=${DATA_VERSION}`, { cache: "no-store" }),
     ]);
 
     if (!sectionsResponse.ok || !itemsResponse.ok) {
