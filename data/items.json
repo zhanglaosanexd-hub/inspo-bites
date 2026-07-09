@@ -2838,6 +2838,5368 @@
       "materials": [],
       "size": "tall",
       "reference": "https://www.yuque.com/zhanglaosan-bz7nq/blot0b/gknnx9dn7fs4pa3p?singleDoc#"
+    },
+    {
+      "id": "app-recap-beikeshengxinzu",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "贝壳省心租",
+      "description": "7 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "贝壳省心租",
+      "avatar": "https://2025app.designstroll.space/public/BeiKeShengXinZu/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/BeiKeShengXinZu/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "生活",
+      "tags": [
+        "生活"
+      ],
+      "cover": "https://2025app.designstroll.space/public/BeiKeShengXinZu/BeiKeShengXinZu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-19",
+      "createdAt": "2026-01-19T00:00:00.000Z",
+      "imageCount": 7,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "生活"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/BeiKeShengXinZu/BeiKeShengXinZu_01.jpg",
+          "caption": "贝壳省心租 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BeiKeShengXinZu/BeiKeShengXinZu_02.jpg",
+          "caption": "贝壳省心租 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BeiKeShengXinZu/BeiKeShengXinZu_03.jpg",
+          "caption": "贝壳省心租 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BeiKeShengXinZu/BeiKeShengXinZu_04.jpg",
+          "caption": "贝壳省心租 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BeiKeShengXinZu/BeiKeShengXinZu_05.jpg",
+          "caption": "贝壳省心租 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BeiKeShengXinZu/BeiKeShengXinZu_06.jpg",
+          "caption": "贝壳省心租 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BeiKeShengXinZu/BeiKeShengXinZu_07.jpg",
+          "caption": "贝壳省心租 07"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-somno",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "元气睡眠",
+      "description": "8 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "元气睡眠",
+      "avatar": "https://2025app.designstroll.space/public/Somno/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/Somno/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "健康健美",
+      "tags": [
+        "健康健美"
+      ],
+      "cover": "https://2025app.designstroll.space/public/Somno/Somno_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-19",
+      "createdAt": "2026-01-19T00:00:00.000Z",
+      "imageCount": 8,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "健康健美"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/Somno/Somno_01.jpg",
+          "caption": "元气睡眠 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Somno/Somno_02.jpg",
+          "caption": "元气睡眠 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Somno/Somno_03.jpg",
+          "caption": "元气睡眠 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Somno/Somno_04.jpg",
+          "caption": "元气睡眠 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Somno/Somno_05.jpg",
+          "caption": "元气睡眠 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Somno/Somno_06.jpg",
+          "caption": "元气睡眠 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Somno/Somno_07.jpg",
+          "caption": "元气睡眠 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Somno/Somno_08.jpg",
+          "caption": "元气睡眠 08"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-didaqingdan",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "滴答清单",
+      "description": "7 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "滴答清单",
+      "avatar": "https://2025app.designstroll.space/public/DiDaQingDan/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/DiDaQingDan/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "效率",
+      "tags": [
+        "效率"
+      ],
+      "cover": "https://2025app.designstroll.space/public/DiDaQingDan/DiDaQingDan_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 7,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "效率"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/DiDaQingDan/DiDaQingDan_01.jpg",
+          "caption": "滴答清单 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDaQingDan/DiDaQingDan_02.jpg",
+          "caption": "滴答清单 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDaQingDan/DiDaQingDan_03.jpg",
+          "caption": "滴答清单 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDaQingDan/DiDaQingDan_04.jpg",
+          "caption": "滴答清单 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDaQingDan/DiDaQingDan_05.jpg",
+          "caption": "滴答清单 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDaQingDan/DiDaQingDan_06.jpg",
+          "caption": "滴答清单 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDaQingDan/DiDaQingDan_07.jpg",
+          "caption": "滴答清单 07"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-didichuxing",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "滴滴出行",
+      "description": "8 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "滴滴出行",
+      "avatar": "https://2025app.designstroll.space/public/DiDiChuXing/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/DiDiChuXing/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "旅游",
+      "tags": [
+        "旅游"
+      ],
+      "cover": "https://2025app.designstroll.space/public/DiDiChuXing/DiDiChuXing_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 8,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "旅游"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/DiDiChuXing/DiDiChuXing_01.jpg",
+          "caption": "滴滴出行 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDiChuXing/DiDiChuXing_02.jpg",
+          "caption": "滴滴出行 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDiChuXing/DiDiChuXing_03.jpg",
+          "caption": "滴滴出行 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDiChuXing/DiDiChuXing_04.jpg",
+          "caption": "滴滴出行 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDiChuXing/DiDiChuXing_05.jpg",
+          "caption": "滴滴出行 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDiChuXing/DiDiChuXing_06.jpg",
+          "caption": "滴滴出行 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDiChuXing/DiDiChuXing_07.jpg",
+          "caption": "滴滴出行 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DiDiChuXing/DiDiChuXing_08.jpg",
+          "caption": "滴滴出行 08"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-douyinshenghuofuwu",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "抖音生活服务",
+      "description": "14 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "抖音生活服务",
+      "avatar": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "生活",
+      "tags": [
+        "生活"
+      ],
+      "cover": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 14,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "生活"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_01.jpg",
+          "caption": "抖音生活服务 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_02.jpg",
+          "caption": "抖音生活服务 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_03.jpg",
+          "caption": "抖音生活服务 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_04.jpg",
+          "caption": "抖音生活服务 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_05.jpg",
+          "caption": "抖音生活服务 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_06.jpg",
+          "caption": "抖音生活服务 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_07.jpg",
+          "caption": "抖音生活服务 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_08.jpg",
+          "caption": "抖音生活服务 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_09.jpg",
+          "caption": "抖音生活服务 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_10.jpg",
+          "caption": "抖音生活服务 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_11.jpg",
+          "caption": "抖音生活服务 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_12.jpg",
+          "caption": "抖音生活服务 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_13.jpg",
+          "caption": "抖音生活服务 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinShengHuoFuWu/DouYinShengHuoFuWu_14.jpg",
+          "caption": "抖音生活服务 14"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-douyinzhifu",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "抖音支付",
+      "description": "10 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "抖音支付",
+      "avatar": "https://2025app.designstroll.space/public/DouYinZhiFu/icon.jpg",
+      "appIcon": "https://2025app.designstroll.space/public/DouYinZhiFu/icon.jpg",
+      "source": "2025 App 年度回顾",
+      "type": "财务",
+      "tags": [
+        "财务"
+      ],
+      "cover": "https://2025app.designstroll.space/public/DouYinZhiFu/DouYinZhiFu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 10,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "财务"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinZhiFu/DouYinZhiFu_01.jpg",
+          "caption": "抖音支付 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinZhiFu/DouYinZhiFu_02.jpg",
+          "caption": "抖音支付 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinZhiFu/DouYinZhiFu_03.jpg",
+          "caption": "抖音支付 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinZhiFu/DouYinZhiFu_04.jpg",
+          "caption": "抖音支付 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinZhiFu/DouYinZhiFu_05.jpg",
+          "caption": "抖音支付 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinZhiFu/DouYinZhiFu_06.jpg",
+          "caption": "抖音支付 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinZhiFu/DouYinZhiFu_07.jpg",
+          "caption": "抖音支付 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinZhiFu/DouYinZhiFu_08.jpg",
+          "caption": "抖音支付 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinZhiFu/DouYinZhiFu_09.jpg",
+          "caption": "抖音支付 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinZhiFu/DouYinZhiFu_10.jpg",
+          "caption": "抖音支付 10"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-feishu",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "飞书",
+      "description": "7 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "飞书",
+      "avatar": "https://2025app.designstroll.space/public/FeiShu/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/FeiShu/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "效率",
+      "tags": [
+        "效率"
+      ],
+      "cover": "https://2025app.designstroll.space/public/FeiShu/FeiShu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 7,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "效率"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/FeiShu/FeiShu_01.jpg",
+          "caption": "飞书 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiShu/FeiShu_02.jpg",
+          "caption": "飞书 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiShu/FeiShu_03.jpg",
+          "caption": "飞书 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiShu/FeiShu_04.jpg",
+          "caption": "飞书 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiShu/FeiShu_05.jpg",
+          "caption": "飞书 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiShu/FeiShu_06.jpg",
+          "caption": "飞书 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiShu/FeiShu_07.jpg",
+          "caption": "飞书 07"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-hongguoduanju",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "红果短剧",
+      "description": "12 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "红果短剧",
+      "avatar": "https://2025app.designstroll.space/public/HongGuoDuanJu/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/HongGuoDuanJu/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "娱乐",
+      "tags": [
+        "娱乐"
+      ],
+      "cover": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 12,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "娱乐"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_01.jpg",
+          "caption": "红果短剧 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_02.jpg",
+          "caption": "红果短剧 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_03.jpg",
+          "caption": "红果短剧 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_04.jpg",
+          "caption": "红果短剧 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_05.jpg",
+          "caption": "红果短剧 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_06.jpg",
+          "caption": "红果短剧 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_07.jpg",
+          "caption": "红果短剧 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_08.jpg",
+          "caption": "红果短剧 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_09.jpg",
+          "caption": "红果短剧 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_10.jpg",
+          "caption": "红果短剧 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_11.jpg",
+          "caption": "红果短剧 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HongGuoDuanJu/HongGuoDuanJu_12.jpg",
+          "caption": "红果短剧 12"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-jianfazuanshihui",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "建发钻石会",
+      "description": "10 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "建发钻石会",
+      "avatar": "https://2025app.designstroll.space/public/JianFaZuanShiHui/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/JianFaZuanShiHui/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "生活",
+      "tags": [
+        "生活"
+      ],
+      "cover": "https://2025app.designstroll.space/public/JianFaZuanShiHui/JianFaZuanShiHui_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 10,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "生活"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/JianFaZuanShiHui/JianFaZuanShiHui_01.jpg",
+          "caption": "建发钻石会 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JianFaZuanShiHui/JianFaZuanShiHui_02.jpg",
+          "caption": "建发钻石会 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JianFaZuanShiHui/JianFaZuanShiHui_03.jpg",
+          "caption": "建发钻石会 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JianFaZuanShiHui/JianFaZuanShiHui_04.jpg",
+          "caption": "建发钻石会 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JianFaZuanShiHui/JianFaZuanShiHui_05.jpg",
+          "caption": "建发钻石会 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JianFaZuanShiHui/JianFaZuanShiHui_06.jpg",
+          "caption": "建发钻石会 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JianFaZuanShiHui/JianFaZuanShiHui_07.jpg",
+          "caption": "建发钻石会 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JianFaZuanShiHui/JianFaZuanShiHui_08.jpg",
+          "caption": "建发钻石会 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JianFaZuanShiHui/JianFaZuanShiHui_09.jpg",
+          "caption": "建发钻石会 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JianFaZuanShiHui/JianFaZuanShiHui_10.jpg",
+          "caption": "建发钻石会 10"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-jd",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "京东",
+      "description": "75 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "京东",
+      "avatar": "https://2025app.designstroll.space/public/JD/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/JD/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "购物",
+      "tags": [
+        "购物"
+      ],
+      "cover": "https://2025app.designstroll.space/public/JD/JD_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 75,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "购物"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_01.jpg",
+          "caption": "京东 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_02.jpg",
+          "caption": "京东 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_03.jpg",
+          "caption": "京东 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_04.jpg",
+          "caption": "京东 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_05.jpg",
+          "caption": "京东 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_06.jpg",
+          "caption": "京东 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_07.jpg",
+          "caption": "京东 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_08.jpg",
+          "caption": "京东 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_09.jpg",
+          "caption": "京东 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_10.jpg",
+          "caption": "京东 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_11.jpg",
+          "caption": "京东 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_12.jpg",
+          "caption": "京东 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_13.jpg",
+          "caption": "京东 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_14.jpg",
+          "caption": "京东 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_15.jpg",
+          "caption": "京东 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_16.jpg",
+          "caption": "京东 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_17.jpg",
+          "caption": "京东 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_18.jpg",
+          "caption": "京东 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_19.jpg",
+          "caption": "京东 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_20.jpg",
+          "caption": "京东 20"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_21.jpg",
+          "caption": "京东 21"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_22.jpg",
+          "caption": "京东 22"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_23.jpg",
+          "caption": "京东 23"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_24.jpg",
+          "caption": "京东 24"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_25.jpg",
+          "caption": "京东 25"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_26.jpg",
+          "caption": "京东 26"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_27.jpg",
+          "caption": "京东 27"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_28.jpg",
+          "caption": "京东 28"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_29.jpg",
+          "caption": "京东 29"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_30.jpg",
+          "caption": "京东 30"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_31.jpg",
+          "caption": "京东 31"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_32.jpg",
+          "caption": "京东 32"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_33.jpg",
+          "caption": "京东 33"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_34.jpg",
+          "caption": "京东 34"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_35.jpg",
+          "caption": "京东 35"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_36.jpg",
+          "caption": "京东 36"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_37.jpg",
+          "caption": "京东 37"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_38.jpg",
+          "caption": "京东 38"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_39.jpg",
+          "caption": "京东 39"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_40.jpg",
+          "caption": "京东 40"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_41.jpg",
+          "caption": "京东 41"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_42.jpg",
+          "caption": "京东 42"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_43.jpg",
+          "caption": "京东 43"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_44.jpg",
+          "caption": "京东 44"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_45.jpg",
+          "caption": "京东 45"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_46.jpg",
+          "caption": "京东 46"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_47.jpg",
+          "caption": "京东 47"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_48.jpg",
+          "caption": "京东 48"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_49.jpg",
+          "caption": "京东 49"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_50.jpg",
+          "caption": "京东 50"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_51.jpg",
+          "caption": "京东 51"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_52.jpg",
+          "caption": "京东 52"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_53.jpg",
+          "caption": "京东 53"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_54.jpg",
+          "caption": "京东 54"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_55.jpg",
+          "caption": "京东 55"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_56.jpg",
+          "caption": "京东 56"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_57.jpg",
+          "caption": "京东 57"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_58.jpg",
+          "caption": "京东 58"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_59.jpg",
+          "caption": "京东 59"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_60.jpg",
+          "caption": "京东 60"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_61.jpg",
+          "caption": "京东 61"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_62.jpg",
+          "caption": "京东 62"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_63.jpg",
+          "caption": "京东 63"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_64.jpg",
+          "caption": "京东 64"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_65.jpg",
+          "caption": "京东 65"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_66.jpg",
+          "caption": "京东 66"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_67.jpg",
+          "caption": "京东 67"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_68.jpg",
+          "caption": "京东 68"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_69.jpg",
+          "caption": "京东 69"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_70.jpg",
+          "caption": "京东 70"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_71.jpg",
+          "caption": "京东 71"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_72.jpg",
+          "caption": "京东 72"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_73.jpg",
+          "caption": "京东 73"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_74.jpg",
+          "caption": "京东 74"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JD/JD_75.jpg",
+          "caption": "京东 75"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-rongyaoyoyo",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "荣耀YoYo",
+      "description": "6 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "荣耀YoYo",
+      "avatar": "https://2025app.designstroll.space/public/RongYaoYoYo/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/RongYaoYoYo/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "效率",
+      "tags": [
+        "效率"
+      ],
+      "cover": "https://2025app.designstroll.space/public/RongYaoYoYo/RongYaoYoYo_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 6,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "效率"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/RongYaoYoYo/RongYaoYoYo_01.jpg",
+          "caption": "荣耀YoYo 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/RongYaoYoYo/RongYaoYoYo_02.jpg",
+          "caption": "荣耀YoYo 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/RongYaoYoYo/RongYaoYoYo_03.jpg",
+          "caption": "荣耀YoYo 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/RongYaoYoYo/RongYaoYoYo_04.jpg",
+          "caption": "荣耀YoYo 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/RongYaoYoYo/RongYaoYoYo_05.jpg",
+          "caption": "荣耀YoYo 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/RongYaoYoYo/RongYaoYoYo_06.jpg",
+          "caption": "荣耀YoYo 06"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-taobaoshangou",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "淘宝闪购",
+      "description": "13 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "淘宝闪购",
+      "avatar": "https://2025app.designstroll.space/public/TaoBaoShanGou/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/TaoBaoShanGou/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "购物",
+      "tags": [
+        "购物"
+      ],
+      "cover": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 13,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "购物"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_01.jpg",
+          "caption": "淘宝闪购 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_02.jpg",
+          "caption": "淘宝闪购 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_03.jpg",
+          "caption": "淘宝闪购 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_04.jpg",
+          "caption": "淘宝闪购 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_05.jpg",
+          "caption": "淘宝闪购 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_06.jpg",
+          "caption": "淘宝闪购 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_07.jpg",
+          "caption": "淘宝闪购 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_08.jpg",
+          "caption": "淘宝闪购 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_09.jpg",
+          "caption": "淘宝闪购 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_10.jpg",
+          "caption": "淘宝闪购 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_11.jpg",
+          "caption": "淘宝闪购 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_12.jpg",
+          "caption": "淘宝闪购 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBaoShanGou/TaoBaoShanGou_13.jpg",
+          "caption": "淘宝闪购 13"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-waimasongjiu",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "歪马送酒",
+      "description": "21 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "歪马送酒",
+      "avatar": "https://2025app.designstroll.space/public/WaiMaSongJiu/icon.jpg",
+      "appIcon": "https://2025app.designstroll.space/public/WaiMaSongJiu/icon.jpg",
+      "source": "2025 App 年度回顾",
+      "type": "购物",
+      "tags": [
+        "购物"
+      ],
+      "cover": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 21,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "购物"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_01.jpg",
+          "caption": "歪马送酒 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_02.jpg",
+          "caption": "歪马送酒 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_03.jpg",
+          "caption": "歪马送酒 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_04.jpg",
+          "caption": "歪马送酒 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_05.jpg",
+          "caption": "歪马送酒 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_06.jpg",
+          "caption": "歪马送酒 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_07.jpg",
+          "caption": "歪马送酒 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_08.jpg",
+          "caption": "歪马送酒 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_09.jpg",
+          "caption": "歪马送酒 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_10.jpg",
+          "caption": "歪马送酒 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_11.jpg",
+          "caption": "歪马送酒 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_12.jpg",
+          "caption": "歪马送酒 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_13.jpg",
+          "caption": "歪马送酒 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_14.jpg",
+          "caption": "歪马送酒 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_15.jpg",
+          "caption": "歪马送酒 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_16.jpg",
+          "caption": "歪马送酒 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_17.jpg",
+          "caption": "歪马送酒 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_18.jpg",
+          "caption": "歪马送酒 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_19.jpg",
+          "caption": "歪马送酒 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_20.jpg",
+          "caption": "歪马送酒 20"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WaiMaSongJiu/WaiMaSongJiu_21.jpg",
+          "caption": "歪马送酒 21"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-weibo",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "微博",
+      "description": "28 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "微博",
+      "avatar": "https://2025app.designstroll.space/public/WeiBo/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/WeiBo/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "社交",
+      "tags": [
+        "社交"
+      ],
+      "cover": "https://2025app.designstroll.space/public/WeiBo/WeiBo_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 28,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "社交"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_01.jpg",
+          "caption": "微博 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_02.jpg",
+          "caption": "微博 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_03.jpg",
+          "caption": "微博 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_04.jpg",
+          "caption": "微博 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_05.jpg",
+          "caption": "微博 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_06.jpg",
+          "caption": "微博 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_07.jpg",
+          "caption": "微博 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_08.jpg",
+          "caption": "微博 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_09.jpg",
+          "caption": "微博 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_10.jpg",
+          "caption": "微博 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_11.jpg",
+          "caption": "微博 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_12.jpg",
+          "caption": "微博 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_13.jpg",
+          "caption": "微博 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_14.jpg",
+          "caption": "微博 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_15.jpg",
+          "caption": "微博 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_16.jpg",
+          "caption": "微博 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_17.jpg",
+          "caption": "微博 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_18.jpg",
+          "caption": "微博 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_19.jpg",
+          "caption": "微博 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_20.jpg",
+          "caption": "微博 20"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_21.jpg",
+          "caption": "微博 21"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_22.jpg",
+          "caption": "微博 22"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_23.jpg",
+          "caption": "微博 23"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_24.jpg",
+          "caption": "微博 24"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_25.jpg",
+          "caption": "微博 25"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_26.jpg",
+          "caption": "微博 26"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_27.jpg",
+          "caption": "微博 27"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiBo/WeiBo_28.jpg",
+          "caption": "微博 28"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-xiaoheihe",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "小黑盒",
+      "description": "9 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "小黑盒",
+      "avatar": "https://2025app.designstroll.space/public/XiaoHeiHe/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/XiaoHeiHe/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "娱乐",
+      "tags": [
+        "娱乐"
+      ],
+      "cover": "https://2025app.designstroll.space/public/XiaoHeiHe/XiaoHeiHe_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 9,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "娱乐"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHeiHe/XiaoHeiHe_01.jpg",
+          "caption": "小黑盒 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHeiHe/XiaoHeiHe_02.jpg",
+          "caption": "小黑盒 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHeiHe/XiaoHeiHe_03.jpg",
+          "caption": "小黑盒 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHeiHe/XiaoHeiHe_04.jpg",
+          "caption": "小黑盒 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHeiHe/XiaoHeiHe_05.jpg",
+          "caption": "小黑盒 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHeiHe/XiaoHeiHe_06.jpg",
+          "caption": "小黑盒 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHeiHe/XiaoHeiHe_07.jpg",
+          "caption": "小黑盒 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHeiHe/XiaoHeiHe_08.jpg",
+          "caption": "小黑盒 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHeiHe/XiaoHeiHe_09.jpg",
+          "caption": "小黑盒 09"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-xiechenglvxing",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "携程旅游",
+      "description": "8 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "携程旅游",
+      "avatar": "https://2025app.designstroll.space/public/XieChengLvXing/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/XieChengLvXing/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "旅游",
+      "tags": [
+        "旅游"
+      ],
+      "cover": "https://2025app.designstroll.space/public/XieChengLvXing/XieChengLvXing_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 8,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "旅游"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/XieChengLvXing/XieChengLvXing_01.jpg",
+          "caption": "携程旅游 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XieChengLvXing/XieChengLvXing_02.jpg",
+          "caption": "携程旅游 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XieChengLvXing/XieChengLvXing_03.jpg",
+          "caption": "携程旅游 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XieChengLvXing/XieChengLvXing_04.jpg",
+          "caption": "携程旅游 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XieChengLvXing/XieChengLvXing_05.jpg",
+          "caption": "携程旅游 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XieChengLvXing/XieChengLvXing_06.jpg",
+          "caption": "携程旅游 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XieChengLvXing/XieChengLvXing_07.jpg",
+          "caption": "携程旅游 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XieChengLvXing/XieChengLvXing_08.jpg",
+          "caption": "携程旅游 08"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-yanyun16sheng",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "燕云十六声",
+      "description": "8 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "燕云十六声",
+      "avatar": "https://2025app.designstroll.space/public/YanYun16Sheng/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/YanYun16Sheng/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "游戏",
+      "tags": [
+        "游戏"
+      ],
+      "cover": "https://2025app.designstroll.space/public/YanYun16Sheng/YanYun16Sheng_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 8,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "游戏"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/YanYun16Sheng/YanYun16Sheng_01.jpg",
+          "caption": "燕云十六声 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YanYun16Sheng/YanYun16Sheng_02.jpg",
+          "caption": "燕云十六声 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YanYun16Sheng/YanYun16Sheng_03.jpg",
+          "caption": "燕云十六声 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YanYun16Sheng/YanYun16Sheng_04.jpg",
+          "caption": "燕云十六声 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YanYun16Sheng/YanYun16Sheng_05.jpg",
+          "caption": "燕云十六声 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YanYun16Sheng/YanYun16Sheng_06.jpg",
+          "caption": "燕云十六声 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YanYun16Sheng/YanYun16Sheng_07.jpg",
+          "caption": "燕云十六声 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YanYun16Sheng/YanYun16Sheng_08.jpg",
+          "caption": "燕云十六声 08"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-yingxionglianmengshouyou",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "英雄联盟手游",
+      "description": "9 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "英雄联盟手游",
+      "avatar": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "游戏",
+      "tags": [
+        "游戏"
+      ],
+      "cover": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/YingXiongLianMengShouYou_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 9,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "游戏"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/YingXiongLianMengShouYou_01.jpg",
+          "caption": "英雄联盟手游 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/YingXiongLianMengShouYou_02.jpg",
+          "caption": "英雄联盟手游 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/YingXiongLianMengShouYou_03.jpg",
+          "caption": "英雄联盟手游 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/YingXiongLianMengShouYou_04.jpg",
+          "caption": "英雄联盟手游 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/YingXiongLianMengShouYou_05.jpg",
+          "caption": "英雄联盟手游 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/YingXiongLianMengShouYou_06.jpg",
+          "caption": "英雄联盟手游 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/YingXiongLianMengShouYou_07.jpg",
+          "caption": "英雄联盟手游 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/YingXiongLianMengShouYou_08.jpg",
+          "caption": "英雄联盟手游 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YingXiongLianMengShouYou/YingXiongLianMengShouYou_09.jpg",
+          "caption": "英雄联盟手游 09"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-yuantong",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "圆通",
+      "description": "8 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "圆通",
+      "avatar": "https://2025app.designstroll.space/public/YuanTong/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/YuanTong/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "生活",
+      "tags": [
+        "生活"
+      ],
+      "cover": "https://2025app.designstroll.space/public/YuanTong/YuanTong_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 8,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "生活"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/YuanTong/YuanTong_01.jpg",
+          "caption": "圆通 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YuanTong/YuanTong_02.jpg",
+          "caption": "圆通 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YuanTong/YuanTong_03.jpg",
+          "caption": "圆通 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YuanTong/YuanTong_04.jpg",
+          "caption": "圆通 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YuanTong/YuanTong_05.jpg",
+          "caption": "圆通 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YuanTong/YuanTong_06.jpg",
+          "caption": "圆通 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YuanTong/YuanTong_07.jpg",
+          "caption": "圆通 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YuanTong/YuanTong_08.jpg",
+          "caption": "圆通 08"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-zhifubao",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "支付宝",
+      "description": "16 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "支付宝",
+      "avatar": "https://2025app.designstroll.space/public/ZhiFuBao/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/ZhiFuBao/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "财务",
+      "tags": [
+        "财务"
+      ],
+      "cover": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 16,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "财务"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_01.jpg",
+          "caption": "支付宝 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_02.jpg",
+          "caption": "支付宝 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_03.jpg",
+          "caption": "支付宝 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_04.jpg",
+          "caption": "支付宝 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_05.jpg",
+          "caption": "支付宝 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_06.jpg",
+          "caption": "支付宝 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_07.jpg",
+          "caption": "支付宝 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_08.jpg",
+          "caption": "支付宝 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_09.jpg",
+          "caption": "支付宝 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_10.jpg",
+          "caption": "支付宝 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_11.jpg",
+          "caption": "支付宝 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_12.jpg",
+          "caption": "支付宝 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_13.jpg",
+          "caption": "支付宝 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_14.jpg",
+          "caption": "支付宝 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_15.jpg",
+          "caption": "支付宝 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBao/ZhiFuBao_16.jpg",
+          "caption": "支付宝 16"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-zhifubaokuaidi",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "支付宝快递",
+      "description": "13 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "支付宝快递",
+      "avatar": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/icon.jpg",
+      "appIcon": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/icon.jpg",
+      "source": "2025 App 年度回顾",
+      "type": "生活",
+      "tags": [
+        "生活"
+      ],
+      "cover": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 13,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "生活"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_01.jpg",
+          "caption": "支付宝快递 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_02.jpg",
+          "caption": "支付宝快递 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_03.jpg",
+          "caption": "支付宝快递 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_04.jpg",
+          "caption": "支付宝快递 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_05.jpg",
+          "caption": "支付宝快递 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_06.jpg",
+          "caption": "支付宝快递 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_07.jpg",
+          "caption": "支付宝快递 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_08.jpg",
+          "caption": "支付宝快递 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_09.jpg",
+          "caption": "支付宝快递 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_10.jpg",
+          "caption": "支付宝快递 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_11.jpg",
+          "caption": "支付宝快递 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_12.jpg",
+          "caption": "支付宝快递 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiFuBaoKuaiDi/ZhiFuBaoKuaiDi_13.jpg",
+          "caption": "支付宝快递 13"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-zhihu",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "知乎",
+      "description": "24 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "知乎",
+      "avatar": "https://2025app.designstroll.space/public/ZhiHu/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/ZhiHu/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "社交",
+      "tags": [
+        "社交"
+      ],
+      "cover": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 24,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "社交"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_01.jpg",
+          "caption": "知乎 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_02.jpg",
+          "caption": "知乎 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_03.jpg",
+          "caption": "知乎 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_04.jpg",
+          "caption": "知乎 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_05.jpg",
+          "caption": "知乎 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_06.jpg",
+          "caption": "知乎 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_07.jpg",
+          "caption": "知乎 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_08.jpg",
+          "caption": "知乎 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_09.jpg",
+          "caption": "知乎 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_10.jpg",
+          "caption": "知乎 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_11.jpg",
+          "caption": "知乎 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_12.jpg",
+          "caption": "知乎 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_13.jpg",
+          "caption": "知乎 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_14.jpg",
+          "caption": "知乎 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_15.jpg",
+          "caption": "知乎 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_16.jpg",
+          "caption": "知乎 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_17.jpg",
+          "caption": "知乎 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_18.jpg",
+          "caption": "知乎 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_19.jpg",
+          "caption": "知乎 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_20.jpg",
+          "caption": "知乎 20"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_21.jpg",
+          "caption": "知乎 21"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_22.jpg",
+          "caption": "知乎 22"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_23.jpg",
+          "caption": "知乎 23"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiHu/ZhiHu_24.jpg",
+          "caption": "知乎 24"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-digrun",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "DIGRUN",
+      "description": "2 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "DIGRUN",
+      "avatar": "https://2025app.designstroll.space/public/DIGRUN/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/DIGRUN/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "游戏",
+      "tags": [
+        "游戏"
+      ],
+      "cover": "https://2025app.designstroll.space/public/DIGRUN/DIGRUN_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 2,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "游戏"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/DIGRUN/DIGRUN_01.jpg",
+          "caption": "DIGRUN 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DIGRUN/DIGRUN_02.jpg",
+          "caption": "DIGRUN 02"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-discord",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "Discord",
+      "description": "12 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "Discord",
+      "avatar": "https://2025app.designstroll.space/public/Discord/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/Discord/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "社交",
+      "tags": [
+        "社交"
+      ],
+      "cover": "https://2025app.designstroll.space/public/Discord/Discord_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 12,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "社交"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_01.jpg",
+          "caption": "Discord 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_02.jpg",
+          "caption": "Discord 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_03.jpg",
+          "caption": "Discord 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_04.jpg",
+          "caption": "Discord 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_05.jpg",
+          "caption": "Discord 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_06.jpg",
+          "caption": "Discord 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_07.jpg",
+          "caption": "Discord 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_08.jpg",
+          "caption": "Discord 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_09.jpg",
+          "caption": "Discord 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_10.jpg",
+          "caption": "Discord 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_11.jpg",
+          "caption": "Discord 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Discord/Discord_12.jpg",
+          "caption": "Discord 12"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-flomo",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "flomo",
+      "description": "6 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "flomo",
+      "avatar": "https://2025app.designstroll.space/public/flomo/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/flomo/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "效率",
+      "tags": [
+        "效率"
+      ],
+      "cover": "https://2025app.designstroll.space/public/flomo/flomo_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 6,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "效率"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/flomo/flomo_01.jpg",
+          "caption": "flomo 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/flomo/flomo_02.jpg",
+          "caption": "flomo 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/flomo/flomo_03.jpg",
+          "caption": "flomo 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/flomo/flomo_04.jpg",
+          "caption": "flomo 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/flomo/flomo_05.jpg",
+          "caption": "flomo 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/flomo/flomo_06.jpg",
+          "caption": "flomo 06"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-grow",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "Grow",
+      "description": "4 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "Grow",
+      "avatar": "https://2025app.designstroll.space/public/Grow/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/Grow/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "效率",
+      "tags": [
+        "效率"
+      ],
+      "cover": "https://2025app.designstroll.space/public/Grow/Grow_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 4,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "效率"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/Grow/Grow_01.jpg",
+          "caption": "Grow 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Grow/Grow_02.jpg",
+          "caption": "Grow 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Grow/Grow_03.jpg",
+          "caption": "Grow 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Grow/Grow_04.jpg",
+          "caption": "Grow 04"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-mastergo",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "MasterGo",
+      "description": "9 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "MasterGo",
+      "avatar": "https://2025app.designstroll.space/public/MasterGo/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/MasterGo/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "效率",
+      "tags": [
+        "效率"
+      ],
+      "cover": "https://2025app.designstroll.space/public/MasterGo/MasterGo_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 9,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "效率"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/MasterGo/MasterGo_01.jpg",
+          "caption": "MasterGo 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MasterGo/MasterGo_02.jpg",
+          "caption": "MasterGo 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MasterGo/MasterGo_03.jpg",
+          "caption": "MasterGo 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MasterGo/MasterGo_04.jpg",
+          "caption": "MasterGo 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MasterGo/MasterGo_05.jpg",
+          "caption": "MasterGo 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MasterGo/MasterGo_06.jpg",
+          "caption": "MasterGo 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MasterGo/MasterGo_07.jpg",
+          "caption": "MasterGo 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MasterGo/MasterGo_08.jpg",
+          "caption": "MasterGo 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MasterGo/MasterGo_09.jpg",
+          "caption": "MasterGo 09"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-mybmw",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "MyBMW",
+      "description": "7 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "MyBMW",
+      "avatar": "https://2025app.designstroll.space/public/MyBMW/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/MyBMW/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "生活",
+      "tags": [
+        "生活"
+      ],
+      "cover": "https://2025app.designstroll.space/public/MyBMW/MyBMW_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 7,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "生活"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/MyBMW/MyBMW_01.jpg",
+          "caption": "MyBMW 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MyBMW/MyBMW_02.jpg",
+          "caption": "MyBMW 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MyBMW/MyBMW_03.jpg",
+          "caption": "MyBMW 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MyBMW/MyBMW_04.jpg",
+          "caption": "MyBMW 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MyBMW/MyBMW_05.jpg",
+          "caption": "MyBMW 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MyBMW/MyBMW_06.jpg",
+          "caption": "MyBMW 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MyBMW/MyBMW_07.jpg",
+          "caption": "MyBMW 07"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-tesla",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "Tesla",
+      "description": "1 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "Tesla",
+      "avatar": "https://2025app.designstroll.space/public/Tesla/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/Tesla/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "生活",
+      "tags": [
+        "生活"
+      ],
+      "cover": "https://2025app.designstroll.space/public/Tesla/Tesla_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 1,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "生活"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/Tesla/Tesla_01.jpg",
+          "caption": "Tesla 01"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-youtube",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "YouTube",
+      "description": "9 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "YouTube",
+      "avatar": "https://2025app.designstroll.space/public/YouTube/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/YouTube/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "娱乐",
+      "tags": [
+        "娱乐"
+      ],
+      "cover": "https://2025app.designstroll.space/public/YouTube/YouTube_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-16",
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "imageCount": 9,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "娱乐"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/YouTube/YouTube_01.jpg",
+          "caption": "YouTube 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YouTube/YouTube_02.jpg",
+          "caption": "YouTube 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YouTube/YouTube_03.jpg",
+          "caption": "YouTube 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YouTube/YouTube_04.jpg",
+          "caption": "YouTube 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YouTube/YouTube_05.jpg",
+          "caption": "YouTube 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YouTube/YouTube_06.jpg",
+          "caption": "YouTube 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YouTube/YouTube_07.jpg",
+          "caption": "YouTube 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YouTube/YouTube_08.jpg",
+          "caption": "YouTube 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/YouTube/YouTube_09.jpg",
+          "caption": "YouTube 09"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-baiduwangpan",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "百度网盘",
+      "description": "22 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "百度网盘",
+      "avatar": "https://2025app.designstroll.space/public/BaiDuWangPan/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/BaiDuWangPan/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "效率",
+      "tags": [
+        "效率"
+      ],
+      "cover": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 22,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "效率"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_01.jpg",
+          "caption": "百度网盘 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_02.jpg",
+          "caption": "百度网盘 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_03.jpg",
+          "caption": "百度网盘 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_04.jpg",
+          "caption": "百度网盘 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_05.jpg",
+          "caption": "百度网盘 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_06.jpg",
+          "caption": "百度网盘 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_07.jpg",
+          "caption": "百度网盘 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_08.jpg",
+          "caption": "百度网盘 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_09.jpg",
+          "caption": "百度网盘 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_10.jpg",
+          "caption": "百度网盘 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_11.jpg",
+          "caption": "百度网盘 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_12.jpg",
+          "caption": "百度网盘 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_13.jpg",
+          "caption": "百度网盘 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_14.jpg",
+          "caption": "百度网盘 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_15.jpg",
+          "caption": "百度网盘 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_16.jpg",
+          "caption": "百度网盘 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_17.jpg",
+          "caption": "百度网盘 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_18.jpg",
+          "caption": "百度网盘 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_19.jpg",
+          "caption": "百度网盘 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_20.jpg",
+          "caption": "百度网盘 20"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_21.jpg",
+          "caption": "百度网盘 21"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BaiDuWangPan/BaiDuWangPan_22.jpg",
+          "caption": "百度网盘 22"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-bilibili",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "哔哩哔哩",
+      "description": "27 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "哔哩哔哩",
+      "avatar": "https://2025app.designstroll.space/public/BiliBili/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/BiliBili/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "娱乐",
+      "tags": [
+        "娱乐"
+      ],
+      "cover": "https://2025app.designstroll.space/public/BiliBili/BiliBili_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 27,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "娱乐"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_01.jpg",
+          "caption": "哔哩哔哩 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_02.jpg",
+          "caption": "哔哩哔哩 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_03.jpg",
+          "caption": "哔哩哔哩 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_04.jpg",
+          "caption": "哔哩哔哩 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_05.jpg",
+          "caption": "哔哩哔哩 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_06.jpg",
+          "caption": "哔哩哔哩 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_07.jpg",
+          "caption": "哔哩哔哩 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_08.jpg",
+          "caption": "哔哩哔哩 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_09.jpg",
+          "caption": "哔哩哔哩 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_10.jpg",
+          "caption": "哔哩哔哩 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_11.jpg",
+          "caption": "哔哩哔哩 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_12.jpg",
+          "caption": "哔哩哔哩 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_13.jpg",
+          "caption": "哔哩哔哩 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_14.jpg",
+          "caption": "哔哩哔哩 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_15.jpg",
+          "caption": "哔哩哔哩 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_16.jpg",
+          "caption": "哔哩哔哩 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_17.jpg",
+          "caption": "哔哩哔哩 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_18.jpg",
+          "caption": "哔哩哔哩 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_19.jpg",
+          "caption": "哔哩哔哩 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_20.jpg",
+          "caption": "哔哩哔哩 20"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_21.jpg",
+          "caption": "哔哩哔哩 21"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_22.jpg",
+          "caption": "哔哩哔哩 22"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_23.jpg",
+          "caption": "哔哩哔哩 23"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_24.jpg",
+          "caption": "哔哩哔哩 24"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_25.jpg",
+          "caption": "哔哩哔哩 25"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_26.jpg",
+          "caption": "哔哩哔哩 26"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/BiliBili/BiliBili_27.jpg",
+          "caption": "哔哩哔哩 27"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-dazhongdianping",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "大众点评",
+      "description": "13 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "大众点评",
+      "avatar": "https://2025app.designstroll.space/public/DaZhongDianPing/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/DaZhongDianPing/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "生活",
+      "tags": [
+        "生活"
+      ],
+      "cover": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 13,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "生活"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_01.jpg",
+          "caption": "大众点评 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_02.jpg",
+          "caption": "大众点评 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_03.jpg",
+          "caption": "大众点评 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_04.jpg",
+          "caption": "大众点评 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_05.jpg",
+          "caption": "大众点评 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_06.jpg",
+          "caption": "大众点评 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_07.jpg",
+          "caption": "大众点评 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_08.jpg",
+          "caption": "大众点评 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_09.jpg",
+          "caption": "大众点评 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_10.jpg",
+          "caption": "大众点评 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_11.jpg",
+          "caption": "大众点评 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_12.jpg",
+          "caption": "大众点评 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DaZhongDianPing/DaZhongDianPing_13.jpg",
+          "caption": "大众点评 13"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-dingdongmaicai",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "叮咚买菜",
+      "description": "14 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "叮咚买菜",
+      "avatar": "https://2025app.designstroll.space/public/DingDongMaiCai/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/DingDongMaiCai/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "购物",
+      "tags": [
+        "购物"
+      ],
+      "cover": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 14,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "购物"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_01.jpg",
+          "caption": "叮咚买菜 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_02.jpg",
+          "caption": "叮咚买菜 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_03.jpg",
+          "caption": "叮咚买菜 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_04.jpg",
+          "caption": "叮咚买菜 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_05.jpg",
+          "caption": "叮咚买菜 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_06.jpg",
+          "caption": "叮咚买菜 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_07.jpg",
+          "caption": "叮咚买菜 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_08.jpg",
+          "caption": "叮咚买菜 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_09.jpg",
+          "caption": "叮咚买菜 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_10.jpg",
+          "caption": "叮咚买菜 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_11.jpg",
+          "caption": "叮咚买菜 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_12.jpg",
+          "caption": "叮咚买菜 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_13.jpg",
+          "caption": "叮咚买菜 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DingDongMaiCai/DingDongMaiCai_14.jpg",
+          "caption": "叮咚买菜 14"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-douyinsousuo",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "抖音搜索",
+      "description": "10 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "抖音搜索",
+      "avatar": "https://2025app.designstroll.space/public/DouYinSouSuo/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/DouYinSouSuo/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "娱乐",
+      "tags": [
+        "娱乐"
+      ],
+      "cover": "https://2025app.designstroll.space/public/DouYinSouSuo/DouYinSouSuo_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 10,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "娱乐"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinSouSuo/DouYinSouSuo_01.jpg",
+          "caption": "抖音搜索 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinSouSuo/DouYinSouSuo_02.jpg",
+          "caption": "抖音搜索 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinSouSuo/DouYinSouSuo_03.jpg",
+          "caption": "抖音搜索 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinSouSuo/DouYinSouSuo_04.jpg",
+          "caption": "抖音搜索 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinSouSuo/DouYinSouSuo_05.jpg",
+          "caption": "抖音搜索 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinSouSuo/DouYinSouSuo_06.jpg",
+          "caption": "抖音搜索 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinSouSuo/DouYinSouSuo_07.jpg",
+          "caption": "抖音搜索 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinSouSuo/DouYinSouSuo_08.jpg",
+          "caption": "抖音搜索 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinSouSuo/DouYinSouSuo_09.jpg",
+          "caption": "抖音搜索 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouYinSouSuo/DouYinSouSuo_10.jpg",
+          "caption": "抖音搜索 10"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-douban",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "豆瓣",
+      "description": "4 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "豆瓣",
+      "avatar": "https://2025app.designstroll.space/public/DouBan/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/DouBan/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "社交",
+      "tags": [
+        "社交"
+      ],
+      "cover": "https://2025app.designstroll.space/public/DouBan/DouBan_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 4,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "社交"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/DouBan/DouBan_01.jpg",
+          "caption": "豆瓣 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouBan/DouBan_02.jpg",
+          "caption": "豆瓣 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouBan/DouBan_03.jpg",
+          "caption": "豆瓣 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/DouBan/DouBan_04.jpg",
+          "caption": "豆瓣 04"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-feichangzhun",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "飞常准",
+      "description": "9 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "飞常准",
+      "avatar": "https://2025app.designstroll.space/public/FeiChangZhun/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/FeiChangZhun/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "旅游",
+      "tags": [
+        "旅游"
+      ],
+      "cover": "https://2025app.designstroll.space/public/FeiChangZhun/FeiChangZhun_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 9,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "旅游"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/FeiChangZhun/FeiChangZhun_01.jpg",
+          "caption": "飞常准 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiChangZhun/FeiChangZhun_02.jpg",
+          "caption": "飞常准 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiChangZhun/FeiChangZhun_03.jpg",
+          "caption": "飞常准 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiChangZhun/FeiChangZhun_04.jpg",
+          "caption": "飞常准 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiChangZhun/FeiChangZhun_05.jpg",
+          "caption": "飞常准 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiChangZhun/FeiChangZhun_06.jpg",
+          "caption": "飞常准 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiChangZhun/FeiChangZhun_07.jpg",
+          "caption": "飞常准 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiChangZhun/FeiChangZhun_08.jpg",
+          "caption": "飞常准 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/FeiChangZhun/FeiChangZhun_09.jpg",
+          "caption": "飞常准 09"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-gaodeditu",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "高德地图",
+      "description": "21 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "高德地图",
+      "avatar": "https://2025app.designstroll.space/public/GaoDeDiTu/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/GaoDeDiTu/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "其他",
+      "tags": [
+        "其他"
+      ],
+      "cover": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 21,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "其他"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_01.jpg",
+          "caption": "高德地图 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_02.jpg",
+          "caption": "高德地图 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_03.jpg",
+          "caption": "高德地图 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_04.jpg",
+          "caption": "高德地图 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_05.jpg",
+          "caption": "高德地图 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_06.jpg",
+          "caption": "高德地图 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_07.jpg",
+          "caption": "高德地图 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_08.jpg",
+          "caption": "高德地图 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_09.jpg",
+          "caption": "高德地图 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_10.jpg",
+          "caption": "高德地图 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_11.jpg",
+          "caption": "高德地图 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_12.jpg",
+          "caption": "高德地图 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_13.jpg",
+          "caption": "高德地图 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_14.jpg",
+          "caption": "高德地图 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_15.jpg",
+          "caption": "高德地图 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_16.jpg",
+          "caption": "高德地图 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_17.jpg",
+          "caption": "高德地图 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_18.jpg",
+          "caption": "高德地图 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_19.jpg",
+          "caption": "高德地图 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_20.jpg",
+          "caption": "高德地图 20"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/GaoDeDiTu/GaoDeDiTu_21.jpg",
+          "caption": "高德地图 21"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-hupu",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "虎扑",
+      "description": "10 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "虎扑",
+      "avatar": "https://2025app.designstroll.space/public/HuPu/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/HuPu/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "社交",
+      "tags": [
+        "社交"
+      ],
+      "cover": "https://2025app.designstroll.space/public/HuPu/HuPu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 10,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "社交"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/HuPu/HuPu_01.jpg",
+          "caption": "虎扑 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HuPu/HuPu_02.jpg",
+          "caption": "虎扑 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HuPu/HuPu_03.jpg",
+          "caption": "虎扑 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HuPu/HuPu_04.jpg",
+          "caption": "虎扑 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HuPu/HuPu_05.jpg",
+          "caption": "虎扑 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HuPu/HuPu_06.jpg",
+          "caption": "虎扑 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HuPu/HuPu_07.jpg",
+          "caption": "虎扑 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HuPu/HuPu_08.jpg",
+          "caption": "虎扑 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HuPu/HuPu_09.jpg",
+          "caption": "虎扑 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/HuPu/HuPu_10.jpg",
+          "caption": "虎扑 10"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-jike",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "即刻",
+      "description": "2 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "即刻",
+      "avatar": "https://2025app.designstroll.space/public/JiKe/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/JiKe/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "社交",
+      "tags": [
+        "社交"
+      ],
+      "cover": "https://2025app.designstroll.space/public/JiKe/JiKe_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 2,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "社交"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/JiKe/JiKe_01.jpg",
+          "caption": "即刻 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/JiKe/JiKe_02.jpg",
+          "caption": "即刻 02"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-leke",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "乐刻",
+      "description": "12 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "乐刻",
+      "avatar": "https://2025app.designstroll.space/public/LeKe/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/LeKe/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "健康健美",
+      "tags": [
+        "健康健美"
+      ],
+      "cover": "https://2025app.designstroll.space/public/LeKe/LeKe_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 12,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "健康健美"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_01.jpg",
+          "caption": "乐刻 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_02.jpg",
+          "caption": "乐刻 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_03.jpg",
+          "caption": "乐刻 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_04.jpg",
+          "caption": "乐刻 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_05.jpg",
+          "caption": "乐刻 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_06.jpg",
+          "caption": "乐刻 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_07.jpg",
+          "caption": "乐刻 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_08.jpg",
+          "caption": "乐刻 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_09.jpg",
+          "caption": "乐刻 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_10.jpg",
+          "caption": "乐刻 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_11.jpg",
+          "caption": "乐刻 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/LeKe/LeKe_12.jpg",
+          "caption": "乐刻 12"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-maidanglao",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "麦当劳",
+      "description": "13 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "麦当劳",
+      "avatar": "https://2025app.designstroll.space/public/MaiDangLao/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/MaiDangLao/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "其他",
+      "tags": [
+        "其他"
+      ],
+      "cover": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 13,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "其他"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_01.jpg",
+          "caption": "麦当劳 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_02.jpg",
+          "caption": "麦当劳 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_03.jpg",
+          "caption": "麦当劳 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_04.jpg",
+          "caption": "麦当劳 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_05.jpg",
+          "caption": "麦当劳 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_06.jpg",
+          "caption": "麦当劳 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_07.jpg",
+          "caption": "麦当劳 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_08.jpg",
+          "caption": "麦当劳 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_09.jpg",
+          "caption": "麦当劳 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_10.jpg",
+          "caption": "麦当劳 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_11.jpg",
+          "caption": "麦当劳 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_12.jpg",
+          "caption": "麦当劳 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MaiDangLao/MaiDangLao_13.jpg",
+          "caption": "麦当劳 13"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-meituan",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "美团",
+      "description": "45 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "美团",
+      "avatar": "https://2025app.designstroll.space/public/MeiTuan/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/MeiTuan/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "生活",
+      "tags": [
+        "生活"
+      ],
+      "cover": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 45,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "生活"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_01.jpg",
+          "caption": "美团 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_02.jpg",
+          "caption": "美团 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_03.jpg",
+          "caption": "美团 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_04.jpg",
+          "caption": "美团 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_05.jpg",
+          "caption": "美团 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_06.jpg",
+          "caption": "美团 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_07.jpg",
+          "caption": "美团 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_08.jpg",
+          "caption": "美团 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_09.jpg",
+          "caption": "美团 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_10.jpg",
+          "caption": "美团 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_11.jpg",
+          "caption": "美团 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_12.jpg",
+          "caption": "美团 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_13.jpg",
+          "caption": "美团 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_14.jpg",
+          "caption": "美团 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_15.jpg",
+          "caption": "美团 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_16.jpg",
+          "caption": "美团 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_17.jpg",
+          "caption": "美团 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_18.jpg",
+          "caption": "美团 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_19.jpg",
+          "caption": "美团 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_20.jpg",
+          "caption": "美团 20"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_21.jpg",
+          "caption": "美团 21"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_22.jpg",
+          "caption": "美团 22"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_23.jpg",
+          "caption": "美团 23"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_24.jpg",
+          "caption": "美团 24"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_25.jpg",
+          "caption": "美团 25"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_26.jpg",
+          "caption": "美团 26"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_27.jpg",
+          "caption": "美团 27"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_28.jpg",
+          "caption": "美团 28"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_29.jpg",
+          "caption": "美团 29"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_30.jpg",
+          "caption": "美团 30"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_31.jpg",
+          "caption": "美团 31"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_32.jpg",
+          "caption": "美团 32"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_33.jpg",
+          "caption": "美团 33"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_34.jpg",
+          "caption": "美团 34"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_35.jpg",
+          "caption": "美团 35"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_36.jpg",
+          "caption": "美团 36"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_37.jpg",
+          "caption": "美团 37"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_38.jpg",
+          "caption": "美团 38"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_39.jpg",
+          "caption": "美团 39"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_40.jpg",
+          "caption": "美团 40"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_41.jpg",
+          "caption": "美团 41"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_42.jpg",
+          "caption": "美团 42"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_43.jpg",
+          "caption": "美团 43"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_44.jpg",
+          "caption": "美团 44"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiTuan/MeiTuan_45.jpg",
+          "caption": "美团 45"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-meiyou",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "美柚",
+      "description": "10 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "美柚",
+      "avatar": "https://2025app.designstroll.space/public/MeiYou/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/MeiYou/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "健康健美",
+      "tags": [
+        "健康健美"
+      ],
+      "cover": "https://2025app.designstroll.space/public/MeiYou/MeiYou_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 10,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "健康健美"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/MeiYou/MeiYou_01.jpg",
+          "caption": "美柚 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiYou/MeiYou_02.jpg",
+          "caption": "美柚 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiYou/MeiYou_03.jpg",
+          "caption": "美柚 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiYou/MeiYou_04.jpg",
+          "caption": "美柚 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiYou/MeiYou_05.jpg",
+          "caption": "美柚 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiYou/MeiYou_06.jpg",
+          "caption": "美柚 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiYou/MeiYou_07.jpg",
+          "caption": "美柚 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiYou/MeiYou_08.jpg",
+          "caption": "美柚 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiYou/MeiYou_09.jpg",
+          "caption": "美柚 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/MeiYou/MeiYou_10.jpg",
+          "caption": "美柚 10"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-qishuiyinyue",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "汽水音乐",
+      "description": "22 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "汽水音乐",
+      "avatar": "https://2025app.designstroll.space/public/QiShuiYinYue/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/QiShuiYinYue/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "音乐",
+      "tags": [
+        "音乐"
+      ],
+      "cover": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 22,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "音乐"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_01.jpg",
+          "caption": "汽水音乐 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_02.jpg",
+          "caption": "汽水音乐 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_03.jpg",
+          "caption": "汽水音乐 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_04.jpg",
+          "caption": "汽水音乐 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_05.jpg",
+          "caption": "汽水音乐 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_06.jpg",
+          "caption": "汽水音乐 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_07.jpg",
+          "caption": "汽水音乐 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_08.jpg",
+          "caption": "汽水音乐 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_09.jpg",
+          "caption": "汽水音乐 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_10.jpg",
+          "caption": "汽水音乐 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_11.jpg",
+          "caption": "汽水音乐 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_12.jpg",
+          "caption": "汽水音乐 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_13.jpg",
+          "caption": "汽水音乐 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_14.jpg",
+          "caption": "汽水音乐 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_15.jpg",
+          "caption": "汽水音乐 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_16.jpg",
+          "caption": "汽水音乐 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_17.jpg",
+          "caption": "汽水音乐 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_18.jpg",
+          "caption": "汽水音乐 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_19.jpg",
+          "caption": "汽水音乐 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_20.jpg",
+          "caption": "汽水音乐 20"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_21.jpg",
+          "caption": "汽水音乐 21"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/QiShuiYinYue/QiShuiYinYue_22.jpg",
+          "caption": "汽水音乐 22"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-shunfeng",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "顺丰",
+      "description": "12 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "顺丰",
+      "avatar": "https://2025app.designstroll.space/public/ShunFeng/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/ShunFeng/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "生活",
+      "tags": [
+        "生活"
+      ],
+      "cover": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 12,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "生活"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_01.jpg",
+          "caption": "顺丰 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_02.jpg",
+          "caption": "顺丰 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_03.jpg",
+          "caption": "顺丰 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_04.jpg",
+          "caption": "顺丰 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_05.jpg",
+          "caption": "顺丰 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_06.jpg",
+          "caption": "顺丰 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_07.jpg",
+          "caption": "顺丰 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_08.jpg",
+          "caption": "顺丰 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_09.jpg",
+          "caption": "顺丰 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_10.jpg",
+          "caption": "顺丰 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_11.jpg",
+          "caption": "顺丰 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ShunFeng/ShunFeng_12.jpg",
+          "caption": "顺丰 12"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-taobao",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "淘宝",
+      "description": "15 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "淘宝",
+      "avatar": "https://2025app.designstroll.space/public/TaoBao/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/TaoBao/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "购物",
+      "tags": [
+        "购物"
+      ],
+      "cover": "https://2025app.designstroll.space/public/TaoBao/TaoBao_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 15,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "购物"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_01.jpg",
+          "caption": "淘宝 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_02.jpg",
+          "caption": "淘宝 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_03.jpg",
+          "caption": "淘宝 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_04.jpg",
+          "caption": "淘宝 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_05.jpg",
+          "caption": "淘宝 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_06.jpg",
+          "caption": "淘宝 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_07.jpg",
+          "caption": "淘宝 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_08.jpg",
+          "caption": "淘宝 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_09.jpg",
+          "caption": "淘宝 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_10.jpg",
+          "caption": "淘宝 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_11.jpg",
+          "caption": "淘宝 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_12.jpg",
+          "caption": "淘宝 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_13.jpg",
+          "caption": "淘宝 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_14.jpg",
+          "caption": "淘宝 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TaoBao/TaoBao_15.jpg",
+          "caption": "淘宝 15"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-tenxunshiping",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "腾讯视频",
+      "description": "15 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "腾讯视频",
+      "avatar": "https://2025app.designstroll.space/public/TenXunShiPing/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/TenXunShiPing/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "娱乐",
+      "tags": [
+        "娱乐"
+      ],
+      "cover": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 15,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "娱乐"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_01.jpg",
+          "caption": "腾讯视频 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_02.jpg",
+          "caption": "腾讯视频 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_03.jpg",
+          "caption": "腾讯视频 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_04.jpg",
+          "caption": "腾讯视频 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_05.jpg",
+          "caption": "腾讯视频 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_06.jpg",
+          "caption": "腾讯视频 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_07.jpg",
+          "caption": "腾讯视频 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_08.jpg",
+          "caption": "腾讯视频 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_09.jpg",
+          "caption": "腾讯视频 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_10.jpg",
+          "caption": "腾讯视频 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_11.jpg",
+          "caption": "腾讯视频 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_12.jpg",
+          "caption": "腾讯视频 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_13.jpg",
+          "caption": "腾讯视频 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_14.jpg",
+          "caption": "腾讯视频 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/TenXunShiPing/TenXunShiPing_15.jpg",
+          "caption": "腾讯视频 15"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-wangyiyunyinyue",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "网易云音乐",
+      "description": "45 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "网易云音乐",
+      "avatar": "https://2025app.designstroll.space/public/WangYiYunYinYue/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/WangYiYunYinYue/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "音乐",
+      "tags": [
+        "音乐"
+      ],
+      "cover": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 45,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "音乐"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_01.jpg",
+          "caption": "网易云音乐 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_02.jpg",
+          "caption": "网易云音乐 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_03.jpg",
+          "caption": "网易云音乐 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_04.jpg",
+          "caption": "网易云音乐 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_05.jpg",
+          "caption": "网易云音乐 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_06.jpg",
+          "caption": "网易云音乐 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_07.jpg",
+          "caption": "网易云音乐 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_08.jpg",
+          "caption": "网易云音乐 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_09.jpg",
+          "caption": "网易云音乐 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_10.jpg",
+          "caption": "网易云音乐 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_11.jpg",
+          "caption": "网易云音乐 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_12.jpg",
+          "caption": "网易云音乐 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_13.jpg",
+          "caption": "网易云音乐 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_14.jpg",
+          "caption": "网易云音乐 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_15.jpg",
+          "caption": "网易云音乐 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_16.jpg",
+          "caption": "网易云音乐 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_17.jpg",
+          "caption": "网易云音乐 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_18.jpg",
+          "caption": "网易云音乐 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_19.jpg",
+          "caption": "网易云音乐 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_20.jpg",
+          "caption": "网易云音乐 20"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_21.jpg",
+          "caption": "网易云音乐 21"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_22.jpg",
+          "caption": "网易云音乐 22"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_23.jpg",
+          "caption": "网易云音乐 23"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_24.jpg",
+          "caption": "网易云音乐 24"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_25.jpg",
+          "caption": "网易云音乐 25"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_26.jpg",
+          "caption": "网易云音乐 26"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_27.jpg",
+          "caption": "网易云音乐 27"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_28.jpg",
+          "caption": "网易云音乐 28"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_29.jpg",
+          "caption": "网易云音乐 29"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_30.jpg",
+          "caption": "网易云音乐 30"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_31.jpg",
+          "caption": "网易云音乐 31"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_32.jpg",
+          "caption": "网易云音乐 32"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_33.jpg",
+          "caption": "网易云音乐 33"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_34.jpg",
+          "caption": "网易云音乐 34"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_35.jpg",
+          "caption": "网易云音乐 35"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_36.jpg",
+          "caption": "网易云音乐 36"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_37.jpg",
+          "caption": "网易云音乐 37"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_38.jpg",
+          "caption": "网易云音乐 38"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_39.jpg",
+          "caption": "网易云音乐 39"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_40.jpg",
+          "caption": "网易云音乐 40"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_41.jpg",
+          "caption": "网易云音乐 41"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_42.jpg",
+          "caption": "网易云音乐 42"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_43.jpg",
+          "caption": "网易云音乐 43"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_44.jpg",
+          "caption": "网易云音乐 44"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WangYiYunYinYue/WangYiYunYinYue_45.jpg",
+          "caption": "网易云音乐 45"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-weixindushu",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "微信读书",
+      "description": "20 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "微信读书",
+      "avatar": "https://2025app.designstroll.space/public/WeiXinDuShu/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/WeiXinDuShu/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "图书",
+      "tags": [
+        "图书"
+      ],
+      "cover": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 20,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "图书"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_01.jpg",
+          "caption": "微信读书 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_02.jpg",
+          "caption": "微信读书 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_03.jpg",
+          "caption": "微信读书 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_04.jpg",
+          "caption": "微信读书 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_05.jpg",
+          "caption": "微信读书 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_06.jpg",
+          "caption": "微信读书 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_07.jpg",
+          "caption": "微信读书 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_08.jpg",
+          "caption": "微信读书 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_09.jpg",
+          "caption": "微信读书 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_10.jpg",
+          "caption": "微信读书 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_11.jpg",
+          "caption": "微信读书 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_12.jpg",
+          "caption": "微信读书 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_13.jpg",
+          "caption": "微信读书 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_14.jpg",
+          "caption": "微信读书 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_15.jpg",
+          "caption": "微信读书 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_16.jpg",
+          "caption": "微信读书 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_17.jpg",
+          "caption": "微信读书 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_18.jpg",
+          "caption": "微信读书 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_19.jpg",
+          "caption": "微信读书 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/WeiXinDuShu/WeiXinDuShu_20.jpg",
+          "caption": "微信读书 20"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-xianyu",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "闲鱼",
+      "description": "7 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "闲鱼",
+      "avatar": "https://2025app.designstroll.space/public/XianYu/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/XianYu/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "购物",
+      "tags": [
+        "购物"
+      ],
+      "cover": "https://2025app.designstroll.space/public/XianYu/XianYu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 7,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "购物"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/XianYu/XianYu_01.jpg",
+          "caption": "闲鱼 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XianYu/XianYu_02.jpg",
+          "caption": "闲鱼 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XianYu/XianYu_03.jpg",
+          "caption": "闲鱼 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XianYu/XianYu_04.jpg",
+          "caption": "闲鱼 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XianYu/XianYu_05.jpg",
+          "caption": "闲鱼 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XianYu/XianYu_06.jpg",
+          "caption": "闲鱼 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XianYu/XianYu_07.jpg",
+          "caption": "闲鱼 07"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-xiaohongshu",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "小红书",
+      "description": "15 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "小红书",
+      "avatar": "https://2025app.designstroll.space/public/XiaoHongShu/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/XiaoHongShu/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "生活",
+      "tags": [
+        "生活"
+      ],
+      "cover": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 15,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "生活"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_01.jpg",
+          "caption": "小红书 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_02.jpg",
+          "caption": "小红书 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_03.jpg",
+          "caption": "小红书 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_04.jpg",
+          "caption": "小红书 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_05.jpg",
+          "caption": "小红书 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_06.jpg",
+          "caption": "小红书 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_07.jpg",
+          "caption": "小红书 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_08.jpg",
+          "caption": "小红书 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_09.jpg",
+          "caption": "小红书 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_10.jpg",
+          "caption": "小红书 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_11.jpg",
+          "caption": "小红书 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_12.jpg",
+          "caption": "小红书 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_13.jpg",
+          "caption": "小红书 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_14.jpg",
+          "caption": "小红书 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoHongShu/XiaoHongShu_15.jpg",
+          "caption": "小红书 15"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-xiaoyuzhou",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "小宇宙",
+      "description": "16 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "小宇宙",
+      "avatar": "https://2025app.designstroll.space/public/XiaoYuZhou/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/XiaoYuZhou/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "娱乐",
+      "tags": [
+        "娱乐"
+      ],
+      "cover": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 16,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "娱乐"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_01.jpg",
+          "caption": "小宇宙 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_02.jpg",
+          "caption": "小宇宙 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_03.jpg",
+          "caption": "小宇宙 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_04.jpg",
+          "caption": "小宇宙 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_05.jpg",
+          "caption": "小宇宙 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_06.jpg",
+          "caption": "小宇宙 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_07.jpg",
+          "caption": "小宇宙 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_08.jpg",
+          "caption": "小宇宙 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_09.jpg",
+          "caption": "小宇宙 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_10.jpg",
+          "caption": "小宇宙 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_11.jpg",
+          "caption": "小宇宙 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_12.jpg",
+          "caption": "小宇宙 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_13.jpg",
+          "caption": "小宇宙 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_14.jpg",
+          "caption": "小宇宙 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_15.jpg",
+          "caption": "小宇宙 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/XiaoYuZhou/XiaoYuZhou_16.jpg",
+          "caption": "小宇宙 16"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-zhaoshangyinhang",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "招商银行",
+      "description": "20 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "招商银行",
+      "avatar": "https://2025app.designstroll.space/public/ZhaoShangYinHang/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/ZhaoShangYinHang/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "财务",
+      "tags": [
+        "财务"
+      ],
+      "cover": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 20,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "财务"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_01.jpg",
+          "caption": "招商银行 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_02.jpg",
+          "caption": "招商银行 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_03.jpg",
+          "caption": "招商银行 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_04.jpg",
+          "caption": "招商银行 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_05.jpg",
+          "caption": "招商银行 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_06.jpg",
+          "caption": "招商银行 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_07.jpg",
+          "caption": "招商银行 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_08.jpg",
+          "caption": "招商银行 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_09.jpg",
+          "caption": "招商银行 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_10.jpg",
+          "caption": "招商银行 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_11.jpg",
+          "caption": "招商银行 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_12.jpg",
+          "caption": "招商银行 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_13.jpg",
+          "caption": "招商银行 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_14.jpg",
+          "caption": "招商银行 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_15.jpg",
+          "caption": "招商银行 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_16.jpg",
+          "caption": "招商银行 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_17.jpg",
+          "caption": "招商银行 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_18.jpg",
+          "caption": "招商银行 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_19.jpg",
+          "caption": "招商银行 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhaoShangYinHang/ZhaoShangYinHang_20.jpg",
+          "caption": "招商银行 20"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-zhixing",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "智行",
+      "description": "13 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "智行",
+      "avatar": "https://2025app.designstroll.space/public/ZhiXing/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/ZhiXing/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "旅游",
+      "tags": [
+        "旅游"
+      ],
+      "cover": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 13,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "旅游"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_01.jpg",
+          "caption": "智行 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_02.jpg",
+          "caption": "智行 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_03.jpg",
+          "caption": "智行 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_04.jpg",
+          "caption": "智行 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_05.jpg",
+          "caption": "智行 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_06.jpg",
+          "caption": "智行 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_07.jpg",
+          "caption": "智行 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_08.jpg",
+          "caption": "智行 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_09.jpg",
+          "caption": "智行 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_10.jpg",
+          "caption": "智行 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_11.jpg",
+          "caption": "智行 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_12.jpg",
+          "caption": "智行 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhiXing/ZhiXing_13.jpg",
+          "caption": "智行 13"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-zhongguoyinhang",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "中国银行",
+      "description": "11 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "中国银行",
+      "avatar": "https://2025app.designstroll.space/public/ZhongGuoYinHang/icon.jpeg",
+      "appIcon": "https://2025app.designstroll.space/public/ZhongGuoYinHang/icon.jpeg",
+      "source": "2025 App 年度回顾",
+      "type": "财务",
+      "tags": [
+        "财务"
+      ],
+      "cover": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 11,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "财务"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_01.jpg",
+          "caption": "中国银行 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_02.jpg",
+          "caption": "中国银行 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_03.jpg",
+          "caption": "中国银行 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_04.jpg",
+          "caption": "中国银行 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_05.jpg",
+          "caption": "中国银行 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_06.jpg",
+          "caption": "中国银行 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_07.jpg",
+          "caption": "中国银行 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_08.jpg",
+          "caption": "中国银行 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_09.jpg",
+          "caption": "中国银行 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_10.jpg",
+          "caption": "中国银行 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ZhongGuoYinHang/ZhongGuoYinHang_11.jpg",
+          "caption": "中国银行 11"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-chatgpt",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "ChatGPT",
+      "description": "12 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "ChatGPT",
+      "avatar": "https://2025app.designstroll.space/public/ChatGPT/icon_ChatGPT.jpg",
+      "appIcon": "https://2025app.designstroll.space/public/ChatGPT/icon_ChatGPT.jpg",
+      "source": "2025 App 年度回顾",
+      "type": "效率",
+      "tags": [
+        "效率"
+      ],
+      "cover": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 12,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "效率"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_01.jpg",
+          "caption": "ChatGPT 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_02.jpg",
+          "caption": "ChatGPT 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_03.jpg",
+          "caption": "ChatGPT 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_04.jpg",
+          "caption": "ChatGPT 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_05.jpg",
+          "caption": "ChatGPT 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_06.jpg",
+          "caption": "ChatGPT 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_07.jpg",
+          "caption": "ChatGPT 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_08.jpg",
+          "caption": "ChatGPT 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_09.jpg",
+          "caption": "ChatGPT 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_10.jpg",
+          "caption": "ChatGPT 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_11.jpg",
+          "caption": "ChatGPT 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/ChatGPT/ChatGPT_12.jpg",
+          "caption": "ChatGPT 12"
+        }
+      ],
+      "size": "portrait"
+    },
+    {
+      "id": "app-recap-spotify",
+      "section": "app-recap",
+      "layout": "app-recap",
+      "title": "Spotify",
+      "description": "27 张 2025 年度回顾截图",
+      "longDescription": "",
+      "author": "Spotify",
+      "avatar": "https://2025app.designstroll.space/public/Spotify/icon.png",
+      "appIcon": "https://2025app.designstroll.space/public/Spotify/icon.png",
+      "source": "2025 App 年度回顾",
+      "type": "音乐",
+      "tags": [
+        "音乐"
+      ],
+      "cover": "https://2025app.designstroll.space/public/Spotify/Spotify_01.jpg",
+      "url": "",
+      "dateAdded": "2026-01-15",
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "imageCount": 27,
+      "appYear": "2025",
+      "details": [
+        {
+          "label": "类别",
+          "value": "音乐"
+        },
+        {
+          "label": "年份",
+          "value": "2025"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_01.jpg",
+          "caption": "Spotify 01"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_02.jpg",
+          "caption": "Spotify 02"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_03.jpg",
+          "caption": "Spotify 03"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_04.jpg",
+          "caption": "Spotify 04"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_05.jpg",
+          "caption": "Spotify 05"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_06.jpg",
+          "caption": "Spotify 06"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_07.jpg",
+          "caption": "Spotify 07"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_08.jpg",
+          "caption": "Spotify 08"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_09.jpg",
+          "caption": "Spotify 09"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_10.jpg",
+          "caption": "Spotify 10"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_11.jpg",
+          "caption": "Spotify 11"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_12.jpg",
+          "caption": "Spotify 12"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_13.jpg",
+          "caption": "Spotify 13"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_14.jpg",
+          "caption": "Spotify 14"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_15.jpg",
+          "caption": "Spotify 15"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_16.jpg",
+          "caption": "Spotify 16"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_17.jpg",
+          "caption": "Spotify 17"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_18.jpg",
+          "caption": "Spotify 18"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_19.jpg",
+          "caption": "Spotify 19"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_20.jpg",
+          "caption": "Spotify 20"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_21.jpg",
+          "caption": "Spotify 21"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_22.jpg",
+          "caption": "Spotify 22"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_23.jpg",
+          "caption": "Spotify 23"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_24.jpg",
+          "caption": "Spotify 24"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_25.jpg",
+          "caption": "Spotify 25"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_26.jpg",
+          "caption": "Spotify 26"
+        },
+        {
+          "file": "https://2025app.designstroll.space/public/Spotify/Spotify_27.jpg",
+          "caption": "Spotify 27"
+        }
+      ],
+      "size": "portrait"
     }
   ]
 }

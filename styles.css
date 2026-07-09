@@ -528,6 +528,72 @@ h1 {
   aspect-ratio: 1 / 1;
 }
 
+.app-recap-card .media-frame {
+  background: #f2f2ee;
+}
+
+.app-recap-card .media-frame::before {
+  aspect-ratio: 9 / 16;
+}
+
+.app-recap-card .media-link img {
+  object-position: top center;
+}
+
+.app-recap-type,
+.app-recap-count {
+  position: absolute;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 0 9px;
+  border: 1px solid rgba(255, 255, 255, 0.44);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(58, 58, 56, 0.34);
+  backdrop-filter: blur(10px);
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 720;
+  pointer-events: none;
+}
+
+.app-recap-type {
+  top: 12px;
+  left: 12px;
+}
+
+.app-recap-count {
+  top: 12px;
+  right: 12px;
+}
+
+.app-recap-icon {
+  position: absolute;
+  z-index: 3;
+  left: 12px;
+  bottom: 12px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 8px 18px rgba(23, 23, 23, 0.16),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.46);
+  pointer-events: none;
+}
+
+.app-recap-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .media-link {
   position: absolute;
   inset: 0;
@@ -1299,6 +1365,12 @@ h1 {
   transform: translate3d(32px, 0, 0) scale(0.985);
 }
 
+.detail-viewer.is-app-recap-detail .detail-stage {
+  place-items: center stretch;
+  padding-right: 0;
+  padding-left: clamp(24px, 4vw, 56px);
+}
+
 .detail-preview {
   position: relative;
   width: min(100%, 1060px);
@@ -1324,6 +1396,62 @@ h1 {
 .detail-preview img,
 .detail-preview video {
   object-fit: contain;
+}
+
+.detail-preview.is-app-recap-preview {
+  width: 100%;
+  max-width: none;
+  max-height: none;
+  aspect-ratio: auto;
+  overflow: visible;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.app-recap-strip {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  gap: 14px;
+  overflow-x: auto;
+  padding: clamp(18px, 4vh, 44px) clamp(24px, 5vw, 76px) clamp(22px, 5vh, 56px) 0;
+  scroll-padding-inline: clamp(24px, 5vw, 76px);
+  scroll-snap-type: x mandatory;
+  scrollbar-color: rgba(23, 23, 23, 0.24) transparent;
+  scrollbar-width: thin;
+}
+
+.app-recap-strip::-webkit-scrollbar {
+  height: 8px;
+}
+
+.app-recap-strip::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.app-recap-strip::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(23, 23, 23, 0.22);
+}
+
+.app-recap-shot {
+  flex: 0 0 clamp(230px, 24vw, 360px);
+  height: min(72vh, 760px);
+  margin: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f4f4f1;
+  box-shadow: 0 18px 44px rgba(23, 23, 23, 0.12);
+  scroll-snap-align: center;
+}
+
+.app-recap-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .visually-hidden {
@@ -1359,6 +1487,10 @@ h1 {
 
   .detail-stage {
     padding: 0 24px;
+  }
+
+  .detail-viewer.is-app-recap-detail .detail-stage {
+    padding-left: 24px;
   }
 
   .gallery {
@@ -1490,6 +1622,20 @@ h1 {
 
   .detail-preview {
     width: 100%;
+  }
+
+  .detail-viewer.is-app-recap-detail .detail-stage {
+    padding: 18px 0 18px 18px;
+  }
+
+  .app-recap-strip {
+    padding: 0 18px 22px 0;
+    scroll-padding-inline: 18px;
+  }
+
+  .app-recap-shot {
+    flex-basis: min(76vw, 320px);
+    height: min(68vh, 620px);
   }
 }
 

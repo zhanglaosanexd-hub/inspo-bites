@@ -93,6 +93,9 @@ const GALLERY_GAP = 14;
 const GALLERY_DEFAULT_COLUMNS = 4;
 const GALLERY_MIN_CARD_WIDTH = 260;
 const GALLERY_MAX_CARD_WIDTH = 430;
+const APP_RECAP_COLUMNS = 5;
+const APP_RECAP_MIN_CARD_WIDTH = 150;
+const APP_RECAP_MAX_CARD_WIDTH = 300;
 const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
@@ -431,6 +434,8 @@ function getVisibleItems() {
 }
 
 function createCard(item) {
+  if (isAppRecapItem(item)) return createAppRecapCard(item);
+
   const media = createMediaMarkup(item);
   const itemUrl = escapeHtml(item.url || "");
   const itemTitle = escapeHtml(item.title || "未命名内容");
@@ -455,6 +460,30 @@ function createCard(item) {
         </button>
         ${newBadge}
         ${externalAction}
+      </div>
+    </article>
+  `;
+}
+
+function createAppRecapCard(item) {
+  const itemTitle = escapeHtml(item.title || "未命名内容");
+  const category = escapeHtml(item.type || item.tags?.[0] || "其他");
+  const icon = escapeHtml(item.appIcon || item.avatar || "");
+  const count = Number(item.imageCount || item.materials?.length || 0);
+
+  return `
+    <article class="work-card app-recap-card is-portrait">
+      <div class="media-frame">
+        <button class="media-link" type="button" data-detail-id="${escapeHtml(item.id)}" aria-label="查看 ${itemTitle} 详情">
+          ${createMediaMarkup(item)}
+        </button>
+        <span class="app-recap-type">${category}</span>
+        <span class="app-recap-count">${count}张</span>
+        ${
+          icon
+            ? `<span class="app-recap-icon"><img src="${icon}" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>`
+            : ""
+        }
       </div>
     </article>
   `;
@@ -533,20 +562,27 @@ function moveDetail(direction) {
 function renderDetail() {
   const item = visibleItems[activeDetailIndex];
   if (!item) return;
+  const isAppRecap = isAppRecapItem(item);
 
-  detailSection.textContent = sections[item.section]?.title || "Design";
+  detailViewer.classList.toggle("is-app-recap-detail", isAppRecap);
+  detailPreview.classList.toggle("is-app-recap-preview", isAppRecap);
+  detailSection.textContent = sections[item.section]?.eyebrow || sections[item.section]?.title || "Design";
   detailTitle.textContent = item.title;
   detailAuthor.innerHTML = createAuthorMarkup(item);
   bindAuthorAvatar(detailAuthor);
-  detailDescription.textContent = item.longDescription || item.description;
-  detailPreview.innerHTML = createMediaMarkup(item);
+  detailDescription.hidden = isAppRecap || !(item.longDescription || item.description);
+  detailDescription.textContent = isAppRecap ? "" : item.longDescription || item.description;
+  detailPreview.innerHTML = isAppRecap ? createAppRecapDetailMarkup(item) : createMediaMarkup(item);
   bindVideoFallbacks(detailPreview);
   bindDetailPreviewRatio();
-  detailSourceLink.hidden = !item.url;
+  detailSourceLink.hidden = isAppRecap || !item.url;
   detailSourceLink.href = item.url || "#";
-  detailTags.innerHTML = normalizeList(item.tags)
-    .map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`)
-    .join("");
+  detailTags.hidden = isAppRecap;
+  detailTags.innerHTML = isAppRecap
+    ? ""
+    : normalizeList(item.tags)
+        .map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`)
+        .join("");
   detailMeta.innerHTML = getDetailRows(item)
     .map(
       ([label, value]) => `
@@ -560,6 +596,30 @@ function renderDetail() {
   updateDetailNav();
 }
 
+function createAppRecapDetailMarkup(item) {
+  const materials = normalizeMaterials(item);
+  if (!materials.length) return createMediaMarkup(item);
+
+  return `
+    <div class="app-recap-strip" aria-label="${escapeHtml(item.title)} 年度回顾截图">
+      ${materials
+        .map(
+          (material, index) => `
+            <figure class="app-recap-shot">
+              <img
+                src="${escapeHtml(material.file)}"
+                alt="${escapeHtml(`${item.title} 截图 ${index + 1}`)}"
+                loading="${index < 3 ? "eager" : "lazy"}"
+                referrerpolicy="no-referrer"
+              />
+            </figure>
+          `,
+        )
+        .join("")}
+    </div>
+  `;
+}
+
 function updateDetailNav() {
   const hasPrevious = activeDetailIndex > 0;
   const hasNext = activeDetailIndex < visibleItems.length - 1;
@@ -571,7 +631,7 @@ function updateDetailNav() {
 
 function createAuthorMarkup(item) {
   const authorName = escapeHtml(item.author || item.source);
-  const avatarUrl = item.avatar || getXAvatarUrl(item.url);
+  const avatarUrl = item.appIcon || item.avatar || getXAvatarUrl(item.url);
 
   if (!avatarUrl) {
     return `
@@ -602,6 +662,20 @@ function bindAuthorAvatar(root) {
     },
     { once: true },
   );
+}
+
+function isAppRecapItem(item) {
+  return item.section === "app-recap" || item.layout === "app-recap";
+}
+
+function normalizeMaterials(item) {
+  if (!Array.isArray(item.materials)) return [];
+  return item.materials
+    .map((material) => {
+      if (typeof material === "string") return { file: material };
+      return material || {};
+    })
+    .filter((material) => material.file);
 }
 
 function getXAvatarUrl(url) {
@@ -705,6 +779,13 @@ function bindVideoFallbacks(root) {
 }
 
 function bindDetailPreviewRatio() {
+  if (detailPreview.classList.contains("is-app-recap-preview")) {
+    detailPreview.style.removeProperty("--detail-aspect");
+    detailPreview.style.width = "100%";
+    delete detailPreview.dataset.ratio;
+    return;
+  }
+
   const media = detailPreview.querySelector("img, video");
 
   detailPreview.style.removeProperty("--detail-aspect");
@@ -739,6 +820,10 @@ function bindDetailPreviewRatio() {
 
 function updateDetailPreviewSize() {
   if (detailViewer.hidden || !detailPreview.isConnected) return;
+  if (detailPreview.classList.contains("is-app-recap-preview")) {
+    detailPreview.style.width = "100%";
+    return;
+  }
 
   const stage = detailPreview.closest(".detail-stage");
   const stageRect = stage?.getBoundingClientRect();
@@ -762,13 +847,14 @@ function updateDetailPreviewSize() {
 }
 
 function getGalleryMetrics() {
+  const galleryConfig = getGalleryConfig();
   const container = gallery.parentElement;
   const width = container?.clientWidth || window.innerWidth;
   const maxColumnsForWidth = Math.max(
     1,
-    Math.floor((width + GALLERY_GAP) / (GALLERY_MIN_CARD_WIDTH + GALLERY_GAP)),
+    Math.floor((width + GALLERY_GAP) / (galleryConfig.minCardWidth + GALLERY_GAP)),
   );
-  const columnCount = Math.min(GALLERY_DEFAULT_COLUMNS, maxColumnsForWidth);
+  const columnCount = Math.min(galleryConfig.defaultColumns, maxColumnsForWidth);
   const cardWidth = (width - Math.max(columnCount - 1, 0) * GALLERY_GAP) / columnCount;
 
   return {
@@ -778,8 +864,24 @@ function getGalleryMetrics() {
   };
 }
 
-function getGalleryMaxWidth(columnCount, maxCardWidth = GALLERY_MAX_CARD_WIDTH) {
+function getGalleryMaxWidth(columnCount, maxCardWidth = getGalleryConfig().maxCardWidth) {
   return columnCount * maxCardWidth + Math.max(columnCount - 1, 0) * GALLERY_GAP;
+}
+
+function getGalleryConfig() {
+  if (state.section === "app-recap") {
+    return {
+      defaultColumns: APP_RECAP_COLUMNS,
+      minCardWidth: APP_RECAP_MIN_CARD_WIDTH,
+      maxCardWidth: APP_RECAP_MAX_CARD_WIDTH,
+    };
+  }
+
+  return {
+    defaultColumns: GALLERY_DEFAULT_COLUMNS,
+    minCardWidth: GALLERY_MIN_CARD_WIDTH,
+    maxCardWidth: GALLERY_MAX_CARD_WIDTH,
+  };
 }
 
 function getCardEstimate(item) {

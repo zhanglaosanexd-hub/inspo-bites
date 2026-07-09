@@ -39,10 +39,22 @@
       "label": "App Recap",
       "title": "年度回顾",
       "eyebrow": "App Recap",
-      "description": "收集产品年度回顾、数据叙事和个人化总结体验。",
-      "showFilters": false,
+      "description": "收集 2025 年度 App 回顾、数据叙事和个性化总结体验。",
+      "showFilters": true,
       "filters": [
-        "All"
+        "All",
+        "生活",
+        "健康健美",
+        "效率",
+        "旅游",
+        "财务",
+        "娱乐",
+        "购物",
+        "社交",
+        "游戏",
+        "其他",
+        "音乐",
+        "图书"
       ]
     }
   ]
