@@ -100,7 +100,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260709-app-recap";
+const DATA_VERSION = "20260709-app-recap-fit";
 
 async function init() {
   const collectionData = await loadCollectionData();

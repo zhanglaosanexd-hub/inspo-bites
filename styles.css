@@ -537,7 +537,12 @@ h1 {
 }
 
 .app-recap-card .media-link img {
+  object-fit: contain;
   object-position: top center;
+}
+
+.app-recap-card:hover .media-link img {
+  transform: none;
 }
 
 .app-recap-type,
@@ -1450,7 +1455,7 @@ h1 {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top center;
 }
 
