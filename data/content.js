@@ -33,6 +33,17 @@ window.INSPO_STATIC_DATA = {
         "Metrics",
         "Accessibility"
       ]
+    },
+    {
+      "id": "app-recap",
+      "label": "App Recap",
+      "title": "年度回顾",
+      "eyebrow": "App Recap",
+      "description": "收集产品年度回顾、数据叙事和个人化总结体验。",
+      "showFilters": false,
+      "filters": [
+        "All"
+      ]
     }
   ],
   "items": [
