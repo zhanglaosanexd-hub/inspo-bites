@@ -533,7 +533,7 @@ h1 {
 }
 
 .app-recap-card .media-frame::before {
-  aspect-ratio: 9 / 16;
+  aspect-ratio: var(--card-aspect, 9 / 16);
 }
 
 .app-recap-card .media-link img {
@@ -1441,7 +1441,8 @@ h1 {
 }
 
 .app-recap-shot {
-  flex: 0 0 clamp(230px, 24vw, 360px);
+  flex: 0 0 auto;
+  aspect-ratio: var(--shot-aspect, 9 / 16);
   height: min(72vh, 760px);
   margin: 0;
   overflow: hidden;
@@ -1639,7 +1640,7 @@ h1 {
   }
 
   .app-recap-shot {
-    flex-basis: min(76vw, 320px);
+    max-width: 76vw;
     height: min(68vh, 620px);
   }
 }

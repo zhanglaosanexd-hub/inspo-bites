@@ -100,7 +100,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260709-app-recap-fit";
+const DATA_VERSION = "20260709-app-recap-ratio";
 
 async function init() {
   const collectionData = await loadCollectionData();
@@ -471,12 +471,17 @@ function createAppRecapCard(item) {
   const category = escapeHtml(item.type || item.tags?.[0] || "其他");
   const icon = escapeHtml(item.appIcon || item.avatar || "");
   const count = Number(item.imageCount || item.materials?.length || 0);
+  const cover = escapeHtml(item.cover || "");
 
   return `
     <article class="work-card app-recap-card is-portrait">
       <div class="media-frame">
         <button class="media-link" type="button" data-detail-id="${escapeHtml(item.id)}" aria-label="查看 ${itemTitle} 详情">
-          ${createMediaMarkup(item)}
+          ${
+            cover
+              ? `<img class="app-recap-cover" src="${cover}" alt="${itemTitle}" loading="lazy" referrerpolicy="no-referrer" />`
+              : createMediaMarkup(item)
+          }
         </button>
         <span class="app-recap-type">${category}</span>
         <span class="app-recap-count">${count}张</span>
@@ -575,6 +580,7 @@ function renderDetail() {
   detailDescription.textContent = isAppRecap ? "" : item.longDescription || item.description;
   detailPreview.innerHTML = isAppRecap ? createAppRecapDetailMarkup(item) : createMediaMarkup(item);
   bindVideoFallbacks(detailPreview);
+  bindAppRecapImageRatios(detailPreview);
   bindDetailPreviewRatio();
   detailSourceLink.hidden = isAppRecap || !item.url;
   detailSourceLink.href = item.url || "#";
@@ -608,9 +614,11 @@ function createAppRecapDetailMarkup(item) {
           (material, index) => `
             <figure class="app-recap-shot">
               <img
+                class="app-recap-shot-image"
                 src="${escapeHtml(material.file)}"
                 alt="${escapeHtml(`${item.title} 截图 ${index + 1}`)}"
                 loading="${index < 3 ? "eager" : "lazy"}"
+                fetchpriority="${index < 3 ? "high" : "auto"}"
                 referrerpolicy="no-referrer"
               />
             </figure>
@@ -746,6 +754,7 @@ function renderMasonry(filtered) {
     .map((column) => `<div class="gallery-column">${column.cards.join("")}</div>`)
     .join("");
   bindVideoFallbacks(gallery);
+  bindAppRecapImageRatios(gallery);
 }
 
 function renderUniformGrid(filtered) {
@@ -756,6 +765,7 @@ function renderUniformGrid(filtered) {
   gallery.style.maxWidth = `${getGalleryMaxWidth(columnCount)}px`;
   gallery.innerHTML = filtered.map((item) => createCard(item)).join("");
   bindVideoFallbacks(gallery);
+  bindAppRecapImageRatios(gallery);
 }
 
 function renderSingleColumn(filtered) {
@@ -764,6 +774,7 @@ function renderSingleColumn(filtered) {
   gallery.style.maxWidth = filtered.length ? `${getGalleryMaxWidth(1, SINGLE_CARD_MAX_WIDTH)}px` : "";
   gallery.innerHTML = filtered.map((item) => createCard(item)).join("");
   bindVideoFallbacks(gallery);
+  bindAppRecapImageRatios(gallery);
 }
 
 function bindVideoFallbacks(root) {
@@ -777,6 +788,31 @@ function bindVideoFallbacks(root) {
     video.addEventListener("error", showFallback, { once: true });
     video.querySelector("source")?.addEventListener("error", showFallback, { once: true });
   });
+}
+
+function bindAppRecapImageRatios(root) {
+  const applyRatio = (image, targetSelector, property) => {
+    const target = image.closest(targetSelector);
+    if (!target) return;
+
+    const setRatio = () => {
+      const width = image.naturalWidth;
+      const height = image.naturalHeight;
+      if (!width || !height) return;
+
+      target.style.setProperty(property, `${width} / ${height}`);
+    };
+
+    image.addEventListener("load", setRatio, { once: true });
+    if (image.complete) setRatio();
+  };
+
+  root
+    .querySelectorAll(".app-recap-cover")
+    .forEach((image) => applyRatio(image, ".media-frame", "--card-aspect"));
+  root
+    .querySelectorAll(".app-recap-shot-image")
+    .forEach((image) => applyRatio(image, ".app-recap-shot", "--shot-aspect"));
 }
 
 function bindDetailPreviewRatio() {
