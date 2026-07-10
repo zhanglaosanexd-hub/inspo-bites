@@ -89,6 +89,7 @@ const FILTER_LABELS = {
 const ONLINE_BASE_COUNT = 13;
 const ONLINE_COUNT_ENDPOINT = "/api/presence";
 const ONLINE_COUNT_REFRESH_MS = 15 * 1000;
+const ONLINE_SESSION_KEY = "inspo-presence-session";
 const HOUR_MS = 60 * 60 * 1000;
 const DAY_MS = 24 * HOUR_MS;
 const NEW_WINDOW_MS = 36 * 60 * 60 * 1000;
@@ -103,7 +104,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260710-online-presence";
+const DATA_VERSION = "20260710-presence-heartbeat";
 
 let onlineCountTimer = 0;
 
@@ -1015,6 +1016,7 @@ function dateToCreatedAt(value) {
 function startOnlineCountMonitoring() {
   renderOnlineCount(0);
   refreshOnlineCount();
+  window.addEventListener("pagehide", sendPresenceLeave);
 }
 
 async function refreshOnlineCount() {
@@ -1022,8 +1024,13 @@ async function refreshOnlineCount() {
 
   try {
     const response = await fetch(ONLINE_COUNT_ENDPOINT, {
+      method: "POST",
       cache: "no-store",
-      headers: { Accept: "application/json" },
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id: getPresenceSessionId() }),
     });
 
     if (response.status === 404) {
@@ -1050,6 +1057,29 @@ function getRealtimeVisitorCount(payload) {
   const count = Number(value);
   if (!Number.isFinite(count)) return 0;
   return Math.max(0, Math.floor(count));
+}
+
+function getPresenceSessionId() {
+  const existing = window.sessionStorage.getItem(ONLINE_SESSION_KEY);
+  if (existing) return existing;
+
+  const nextId =
+    typeof globalThis.crypto?.randomUUID === "function"
+      ? globalThis.crypto.randomUUID()
+      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  window.sessionStorage.setItem(ONLINE_SESSION_KEY, nextId);
+  return nextId;
+}
+
+function sendPresenceLeave() {
+  const id = window.sessionStorage.getItem(ONLINE_SESSION_KEY);
+  if (!id || typeof navigator.sendBeacon !== "function") return;
+
+  const payload = JSON.stringify({ id, status: "leave" });
+  navigator.sendBeacon(
+    ONLINE_COUNT_ENDPOINT,
+    new Blob([payload], { type: "application/json" }),
+  );
 }
 
 function renderOnlineCount(realtimeVisitors) {
