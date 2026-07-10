@@ -40,6 +40,7 @@ const detailMeta = document.querySelector("#detail-meta");
 const detailTags = document.querySelector("#detail-tags");
 const detailSourceLink = document.querySelector("#detail-source-link");
 const clickSparkCanvas = document.querySelector("#click-spark-canvas");
+const onlineCount = document.querySelector("#online-count");
 
 const formatter = new Intl.DateTimeFormat("zh-CN", {
   month: "long",
@@ -85,7 +86,9 @@ const DETAIL_VALUE_LABELS = {
 const FILTER_LABELS = {
   All: "全部",
 };
-const MIN_ONLINE_COUNT = 18;
+const ONLINE_BASE_COUNT = 13;
+const ONLINE_COUNT_ENDPOINT = "/api/presence";
+const ONLINE_COUNT_REFRESH_MS = 15 * 1000;
 const HOUR_MS = 60 * 60 * 1000;
 const DAY_MS = 24 * HOUR_MS;
 const NEW_WINDOW_MS = 36 * 60 * 60 * 1000;
@@ -100,7 +103,9 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260710-global-updated";
+const DATA_VERSION = "20260710-online-presence";
+
+let onlineCountTimer = 0;
 
 async function init() {
   const collectionData = await loadCollectionData();
@@ -110,7 +115,7 @@ async function init() {
   items = normalizeItems(collectionData.items);
   state.section = sections[state.section]?.id || sectionList[0]?.id || "";
 
-  setOnlineCount();
+  startOnlineCountMonitoring();
   renderSidebar();
   bindEvents();
   initClickSpark();
@@ -1007,9 +1012,49 @@ function dateToCreatedAt(value) {
   return `${value}T00:00:00.000Z`;
 }
 
-function setOnlineCount() {
-  const seed = new Date().getDate() + new Date().getHours();
-  document.querySelector("#online-count").textContent = MIN_ONLINE_COUNT + (seed % 27);
+function startOnlineCountMonitoring() {
+  renderOnlineCount(0);
+  refreshOnlineCount();
+}
+
+async function refreshOnlineCount() {
+  let shouldContinue = true;
+
+  try {
+    const response = await fetch(ONLINE_COUNT_ENDPOINT, {
+      cache: "no-store",
+      headers: { Accept: "application/json" },
+    });
+
+    if (response.status === 404) {
+      shouldContinue = false;
+      return;
+    }
+
+    if (!response.ok) return;
+
+    const payload = await response.json();
+    renderOnlineCount(getRealtimeVisitorCount(payload));
+  } catch {
+    renderOnlineCount(0);
+  } finally {
+    window.clearTimeout(onlineCountTimer);
+    if (shouldContinue) {
+      onlineCountTimer = window.setTimeout(refreshOnlineCount, ONLINE_COUNT_REFRESH_MS);
+    }
+  }
+}
+
+function getRealtimeVisitorCount(payload) {
+  const value = payload?.online ?? payload?.activeVisitors ?? payload?.count ?? 0;
+  const count = Number(value);
+  if (!Number.isFinite(count)) return 0;
+  return Math.max(0, Math.floor(count));
+}
+
+function renderOnlineCount(realtimeVisitors) {
+  if (!onlineCount) return;
+  onlineCount.textContent = String(ONLINE_BASE_COUNT + realtimeVisitors);
 }
 
 init().catch((error) => {
