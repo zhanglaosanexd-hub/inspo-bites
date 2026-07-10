@@ -518,15 +518,16 @@ h1 {
 }
 
 .app-recap-card .media-frame {
-  background: #f2f2ee;
+  background: transparent;
 }
 
-.app-recap-card .media-frame::before {
-  aspect-ratio: var(--card-aspect, 9 / 16);
+.gallery.is-uniform .work-card.app-recap-card .media-frame::before,
+.work-card.app-recap-card .media-frame::before {
+  aspect-ratio: var(--card-aspect, 9 / 19.5);
 }
 
 .app-recap-card .media-link img {
-  object-fit: contain;
+  object-fit: cover;
   object-position: top center;
 }
 

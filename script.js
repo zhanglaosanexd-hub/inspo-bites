@@ -922,6 +922,8 @@ function getGalleryConfig() {
 }
 
 function getCardEstimate(item) {
+  if (isAppRecapItem(item)) return 2.18;
+
   const sizeEstimate = {
     wide: 0.82,
     square: 1.06,
