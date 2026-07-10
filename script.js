@@ -100,7 +100,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260710-detail-gallery";
+const DATA_VERSION = "20260710-global-updated";
 
 async function init() {
   const collectionData = await loadCollectionData();
@@ -393,9 +393,12 @@ function renderGallery() {
 
   const recentDate = getRecentDate(items.filter((item) => item.section === state.section));
   if (recentDate) {
-    const updateText = formatUpdatedText(recentDate);
-    lastUpdated.textContent = updateText;
-    sidebarUpdated.textContent = updateText;
+    lastUpdated.textContent = formatUpdatedText(recentDate);
+  }
+
+  const globalRecentDate = getRecentDate(items);
+  if (globalRecentDate) {
+    sidebarUpdated.textContent = formatUpdatedText(globalRecentDate);
   }
 
   renderViewModeControls();
