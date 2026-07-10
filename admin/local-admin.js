@@ -48,9 +48,9 @@ function render() {
     <div class="admin-shell">
       <header class="admin-topbar">
         <div class="admin-brand">
-          <span class="admin-mark">IB</span>
+          <span class="admin-mark">ID</span>
           <div>
-            <h1>Inspo Bites Admin</h1>
+            <h1>Inspo.design Admin</h1>
             <p>本地编辑模式 / 媒体暂定 10MB 以内</p>
           </div>
         </div>

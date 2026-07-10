@@ -61,7 +61,7 @@ const server = createServer(async (request, response) => {
 });
 
 server.listen(PORT, HOST, () => {
-  console.log(`Inspo Bites local server running at http://${HOST}:${PORT}/`);
+  console.log(`Inspo.design local server running at http://${HOST}:${PORT}/`);
 });
 
 async function readContent() {

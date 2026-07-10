@@ -1,4 +1,4 @@
-# Inspo Bites
+# Inspo.design
 
 A lightweight static collection site for design inspiration and UX notes.
 

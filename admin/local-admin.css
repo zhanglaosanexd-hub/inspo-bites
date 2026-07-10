@@ -35,7 +35,7 @@ button {
 }
 
 .decap-admin::before {
-  content: "Inspo Bites Admin - media files are temporarily planned at 10MB or less.";
+  content: "Inspo.design Admin - media files are temporarily planned at 10MB or less.";
   display: block;
   padding: 10px 16px;
   color: #333330;
