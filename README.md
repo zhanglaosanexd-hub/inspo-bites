@@ -75,7 +75,7 @@ GitHub Pages free setup:
 - Source: `Deploy from a branch`
 - Branch: `main`
 - Folder: `/ (root)`
-- The published URL will be `https://zhanglaosanexd-hub.github.io/inspo-bites/`
+- The published URL will be `https://inspo.design/`
 
 Cloudflare Pages is still a free alternative:
 
