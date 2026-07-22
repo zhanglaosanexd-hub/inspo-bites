@@ -139,6 +139,7 @@ function parseYuqueDocument(source, doc, sourceIndex) {
   const docTitle = doc.title || source.title || source.slug;
   const docUpdatedAt = doc.updated_at || doc.updatedAt || doc.published_at || doc.created_at;
   const reference = source.reference || `https://www.yuque.com/${source.repo}/${source.slug}`;
+  const isStructuredEmbed = isYuqueStructuredEmbed(body);
 
   const jsonPayload = parseJsonPayload(body);
   if (jsonPayload) {
@@ -183,13 +184,34 @@ function parseYuqueDocument(source, doc, sourceIndex) {
       );
 
   const items = parsedItems.length ? parsedItems : fallbackItems;
+  const shouldReplace = items.length > 0 && !isStructuredEmbed && !isWeakDocumentSummary(items, docTitle);
 
   return {
-    ok: true,
-    items,
+    ok: shouldReplace,
+    items: shouldReplace ? items : [],
     sections: [],
-    warning: items.length ? "" : `${source.section}: 没有从语雀文档解析到内容。`,
+    warning: shouldReplace
+      ? ""
+      : `${source.section}: 语雀文档是画册表格/嵌入卡片结构，暂未替换本地内容。建议在文档里添加 JSON 内容块作为正式 CMS 数据源。`,
   };
+}
+
+function isYuqueStructuredEmbed(body) {
+  const text = String(body || "");
+  return (
+    text.includes('"format":"laketable"') ||
+    text.includes('"larkJson":true') ||
+    text.includes("此处为语雀卡片")
+  );
+}
+
+function isWeakDocumentSummary(items, docTitle) {
+  if (items.length !== 1) return false;
+  const [item] = items;
+  const sameAsDoc = cleanText(item.title) === cleanText(docTitle);
+  const hasMedia = Boolean(item.cover || item.video || normalizeMaterialsValue(item.materials).length);
+  const hasSpecificFields = Boolean(item.author || item.type || normalizeTags(item.tags).length || item.details?.length);
+  return sameAsDoc && (!hasMedia || !hasSpecificFields);
 }
 
 function getDocBody(doc) {
