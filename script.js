@@ -104,7 +104,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260710-presence-heartbeat";
+const DATA_VERSION = "20260722-yuque-cms";
 
 let onlineCountTimer = 0;
 
@@ -138,14 +138,71 @@ async function loadCollectionData() {
       throw new Error("内容数据加载失败");
     }
 
-    return {
+    const localData = {
       sections: await sectionsResponse.json(),
       items: await itemsResponse.json(),
     };
+
+    return await loadRemoteCollectionData(localData);
   } catch (error) {
     if (localFallback) return localFallback;
     throw error;
   }
+}
+
+async function loadRemoteCollectionData(localData) {
+  try {
+    const response = await fetch(`/api/content?v=${DATA_VERSION}`, {
+      cache: "no-store",
+      headers: { Accept: "application/json" },
+    });
+
+    if (!response.ok) return localData;
+
+    const remoteData = await response.json();
+    const remoteItems = Array.isArray(remoteData.items) ? remoteData.items : [];
+    const remoteSections = Array.isArray(remoteData.sections) ? remoteData.sections : [];
+    const replaceSections = Array.isArray(remoteData.replaceSections)
+      ? remoteData.replaceSections.filter(Boolean)
+      : [...new Set(remoteItems.map((item) => item.section).filter(Boolean))];
+
+    if (!remoteItems.length && !remoteSections.length) return localData;
+
+    return mergeCollectionData(localData, {
+      sections: remoteSections,
+      items: remoteItems,
+      replaceSections,
+    });
+  } catch {
+    return localData;
+  }
+}
+
+function mergeCollectionData(localData, remoteData) {
+  const localSections = Array.isArray(localData.sections)
+    ? localData.sections
+    : localData.sections?.sections || [];
+  const localItems = Array.isArray(localData.items) ? localData.items : localData.items?.items || [];
+  const remoteSections = Array.isArray(remoteData.sections) ? remoteData.sections : [];
+  const remoteItems = Array.isArray(remoteData.items) ? remoteData.items : [];
+  const replaceSections = new Set(remoteData.replaceSections || []);
+  const sectionMap = new Map(localSections.map((section) => [section.id, section]));
+
+  remoteSections.forEach((section) => {
+    if (section.id) sectionMap.set(section.id, { ...sectionMap.get(section.id), ...section });
+  });
+
+  const localItemsToKeep = localItems.filter((item) => !replaceSections.has(item.section));
+  const itemMap = new Map(localItemsToKeep.map((item) => [item.id, item]));
+
+  remoteItems.forEach((item) => {
+    if (item.id) itemMap.set(item.id, item);
+  });
+
+  return {
+    sections: { sections: Array.from(sectionMap.values()) },
+    items: { items: Array.from(itemMap.values()) },
+  };
 }
 
 function normalizeSections(data) {

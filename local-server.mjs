@@ -3,6 +3,7 @@ import { readFile, stat, writeFile, mkdir } from "node:fs/promises";
 import { createReadStream } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { onRequest as handleContentRequest } from "./functions/api/content.js";
 
 const PORT = Number(process.env.PORT || 4174);
 const HOST = "127.0.0.1";
@@ -28,6 +29,15 @@ const mimeTypes = new Map([
 const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url, `http://${request.headers.host}`);
+
+    if (url.pathname === "/api/content" && request.method === "GET") {
+      const cloudflareResponse = await handleContentRequest({
+        request: new Request(url, { method: request.method, headers: getRequestHeaders(request) }),
+        env: process.env,
+      });
+      await sendFetchResponse(response, cloudflareResponse);
+      return;
+    }
 
     if (url.pathname === "/api/admin/content" && request.method === "GET") {
       await sendJson(response, await readContent());
@@ -151,11 +161,22 @@ async function sendJson(response, data) {
   response.end(JSON.stringify(data));
 }
 
+async function sendFetchResponse(response, fetchResponse) {
+  response.writeHead(fetchResponse.status, Object.fromEntries(fetchResponse.headers));
+  response.end(Buffer.from(await fetchResponse.arrayBuffer()));
+}
+
 function sanitizeFilename(name) {
   return String(name)
     .trim()
     .replace(/\s+/g, "-")
     .replace(/[^a-zA-Z0-9._-]/g, "");
+}
+
+function getRequestHeaders(request) {
+  return Object.fromEntries(
+    Object.entries(request.headers).filter(([, value]) => typeof value === "string"),
+  );
 }
 
 function httpError(status, message) {
