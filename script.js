@@ -104,29 +104,39 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260722-yuque-cms";
+const DATA_VERSION = "20260723-fast-local-render";
+const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 
 let onlineCountTimer = 0;
 
 async function init() {
   const collectionData = await loadCollectionData();
 
-  sectionList = normalizeSections(collectionData.sections);
-  sections = Object.fromEntries(sectionList.map((section) => [section.id, section]));
-  items = normalizeItems(collectionData.items);
-  state.section = sections[state.section]?.id || sectionList[0]?.id || "";
+  applyCollectionData(collectionData);
 
   startOnlineCountMonitoring();
   renderSidebar();
   bindEvents();
   initClickSpark();
   render();
+
+  hydrateRemoteCollectionData(collectionData);
+}
+
+function applyCollectionData(collectionData) {
+  sectionList = normalizeSections(collectionData.sections);
+  sections = Object.fromEntries(sectionList.map((section) => [section.id, section]));
+  items = normalizeItems(collectionData.items);
+  state.section = sections[state.section]?.id || sectionList[0]?.id || "";
+
+  const section = sections[state.section];
+  if (section && !section.filters.includes(state.filter)) state.filter = "All";
 }
 
 async function loadCollectionData() {
   const localFallback = window.INSPO_STATIC_DATA;
 
-  if (window.location.protocol === "file:" && localFallback) return localFallback;
+  if (localFallback) return localFallback;
 
   try {
     const [sectionsResponse, itemsResponse] = await Promise.all([
@@ -143,17 +153,31 @@ async function loadCollectionData() {
       items: await itemsResponse.json(),
     };
 
-    return await loadRemoteCollectionData(localData);
+    return localData;
   } catch (error) {
     if (localFallback) return localFallback;
     throw error;
   }
 }
 
+async function hydrateRemoteCollectionData(localData) {
+  const remoteData = await loadRemoteCollectionData(localData);
+  if (remoteData === localData) return;
+
+  const activeSection = state.section;
+  applyCollectionData(remoteData);
+  state.section = sections[activeSection]?.id || sectionList[0]?.id || "";
+  renderSidebar();
+  render();
+}
+
 async function loadRemoteCollectionData(localData) {
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), REMOTE_CONTENT_TIMEOUT_MS);
+
   try {
     const response = await fetch(`/api/content?v=${DATA_VERSION}`, {
-      cache: "no-store",
+      signal: controller.signal,
       headers: { Accept: "application/json" },
     });
 
@@ -175,6 +199,8 @@ async function loadRemoteCollectionData(localData) {
     });
   } catch {
     return localData;
+  } finally {
+    window.clearTimeout(timeoutId);
   }
 }
 
