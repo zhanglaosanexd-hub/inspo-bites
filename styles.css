@@ -548,23 +548,23 @@ h1 {
 .media-frame::before {
   content: "";
   display: block;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: var(--card-aspect, 4 / 3);
 }
 
 .work-card.is-wide .media-frame::before {
-  aspect-ratio: 16 / 9;
+  aspect-ratio: var(--card-aspect, 16 / 9);
 }
 
 .work-card.is-tall .media-frame::before {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: var(--card-aspect, 4 / 5);
 }
 
 .work-card.is-portrait .media-frame::before {
-  aspect-ratio: 9 / 14;
+  aspect-ratio: var(--card-aspect, 9 / 14);
 }
 
 .work-card.is-square .media-frame::before {
-  aspect-ratio: 1 / 1;
+  aspect-ratio: var(--card-aspect, 1 / 1);
 }
 
 .app-recap-card .media-frame {

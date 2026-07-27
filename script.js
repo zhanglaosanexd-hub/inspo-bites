@@ -14,6 +14,7 @@ let visibleItems = [];
 let activeDetailIndex = 0;
 let detailTransitionFrame = 0;
 let detailCloseTimer = 0;
+let masonryRatioFrame = 0;
 
 const gallery = document.querySelector("#gallery");
 const sectionNav = document.querySelector(".section-nav");
@@ -104,7 +105,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260727-yuque-table-cms";
+const DATA_VERSION = "20260727-intrinsic-masonry";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 
 let onlineCountTimer = 0;
@@ -566,6 +567,7 @@ function createCard(item) {
   const itemUrl = escapeHtml(item.url || "");
   const itemTitle = escapeHtml(item.title || "未命名内容");
   const newBadge = isNewItem(item) ? `<span class="new-badge" aria-label="新内容">新</span>` : "";
+  const aspectStyle = getCardAspectStyle(item);
   const externalAction = item.url
     ? `
         <a
@@ -580,7 +582,7 @@ function createCard(item) {
 
   return `
     <article class="work-card is-${item.size || "standard"}">
-      <div class="media-frame">
+      <div class="media-frame" data-item-id="${escapeHtml(item.id)}"${aspectStyle}>
         <button class="media-link" type="button" data-detail-id="${escapeHtml(item.id)}" aria-label="查看 ${itemTitle} 详情">
           ${media}
         </button>
@@ -879,6 +881,7 @@ function renderMasonry(filtered) {
     .map((column) => `<div class="gallery-column">${column.cards.join("")}</div>`)
     .join("");
   bindVideoFallbacks(gallery);
+  bindGalleryMediaRatios(gallery);
   bindAppRecapImageRatios(gallery);
 }
 
@@ -890,6 +893,7 @@ function renderUniformGrid(filtered) {
   gallery.style.maxWidth = `${getGalleryMaxWidth(columnCount)}px`;
   gallery.innerHTML = filtered.map((item) => createCard(item)).join("");
   bindVideoFallbacks(gallery);
+  bindGalleryMediaRatios(gallery);
   bindAppRecapImageRatios(gallery);
 }
 
@@ -899,6 +903,7 @@ function renderSingleColumn(filtered) {
   gallery.style.maxWidth = filtered.length ? `${getGalleryMaxWidth(1, SINGLE_CARD_MAX_WIDTH)}px` : "";
   gallery.innerHTML = filtered.map((item) => createCard(item)).join("");
   bindVideoFallbacks(gallery);
+  bindGalleryMediaRatios(gallery);
   bindAppRecapImageRatios(gallery);
 }
 
@@ -912,6 +917,47 @@ function bindVideoFallbacks(root) {
 
     video.addEventListener("error", showFallback, { once: true });
     video.querySelector("source")?.addEventListener("error", showFallback, { once: true });
+  });
+}
+
+function bindGalleryMediaRatios(root) {
+  const applyRatio = (media) => {
+    const frame = media.closest(".media-frame");
+    const itemId = frame?.dataset.itemId;
+    if (!frame || !itemId) return;
+
+    const width = media.videoWidth || media.naturalWidth;
+    const height = media.videoHeight || media.naturalHeight;
+    if (!width || !height) return;
+
+    const ratio = width / height;
+    if (!Number.isFinite(ratio) || ratio <= 0) return;
+
+    frame.style.setProperty("--card-aspect", `${width} / ${height}`);
+    const item = items.find((candidate) => candidate.id === itemId);
+    if (!item || Math.abs((item.mediaAspectRatio || 0) - ratio) < 0.01) return;
+
+    item.mediaAspectRatio = ratio;
+    scheduleMasonryRerender();
+  };
+
+  root.querySelectorAll(".media-frame img, .media-frame video").forEach((media) => {
+    if (media.tagName === "VIDEO") {
+      media.addEventListener("loadedmetadata", () => applyRatio(media), { once: true });
+      if (media.readyState >= 1) applyRatio(media);
+      return;
+    }
+
+    media.addEventListener("load", () => applyRatio(media), { once: true });
+    if (media.complete) applyRatio(media);
+  });
+}
+
+function scheduleMasonryRerender() {
+  if (state.viewMode !== "masonry") return;
+  cancelAnimationFrame(masonryRatioFrame);
+  masonryRatioFrame = requestAnimationFrame(() => {
+    renderGallery();
   });
 }
 
@@ -1048,6 +1094,7 @@ function getGalleryConfig() {
 
 function getCardEstimate(item) {
   if (isAppRecapItem(item)) return 2.18;
+  if (item.mediaAspectRatio) return Math.max(0.32, Math.min(2.8, 1 / item.mediaAspectRatio));
 
   const sizeEstimate = {
     wide: 0.82,
@@ -1058,6 +1105,13 @@ function getCardEstimate(item) {
   };
 
   return sizeEstimate[item.size] || sizeEstimate.standard;
+}
+
+function getCardAspectStyle(item) {
+  const ratio = Number(item.mediaAspectRatio);
+  if (!Number.isFinite(ratio) || ratio <= 0) return "";
+
+  return ` style="--card-aspect: ${ratio};"`;
 }
 
 function createMotionCover(item) {
