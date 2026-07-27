@@ -3,7 +3,24 @@ const DEFAULT_SOURCES = [
     section: "inspiration",
     repo: "zhanglaosan-bz7nq/gmzg15",
     slug: "wv0ye00q7degi1zp",
+    docId: 275023108,
+    sheetId: "dzc40vyctnvwkye53i06uxotu7kghrgh",
     reference: "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#",
+    fieldAliases: {
+      title: "fldm3trpgtb7qd1m3j906hnzelcvqa9u",
+      source: "fldiq07o0rnkows4tyd4kqcdeiim1qwk",
+      cover: "Gb11ybLphxlckRkI4KIgaSTrt4kWyOgU",
+      author: "F5ZEINfq1eSwWZEFzTb65dKFAucSc9sg",
+      description: "cbRBGUCqYpdvziz1lzIXgs0VeXpq7OHe",
+      url: "bFcsEiXKLPKbvHp0SFzSa5m1mGOnzxpn",
+      analysis: "cqqovK5ulOWVHs2G3gwCyHuif02YT4sf",
+      tags: "iCLTPvcFIlQLSGUOgeODSiw5uS6lCcoG",
+      video: "xgQMUuqdtNKpBGcqeG7wyeVf27ma0uTQ",
+    },
+    selectLabels: {
+      nf4gL8: "𝕏｜推特",
+      dqaQGX: "Awwwards",
+    },
   },
   {
     section: "ux-bites",
@@ -16,6 +33,50 @@ const DEFAULT_SOURCES = [
 const CACHE_SECONDS = 5 * 60;
 const STALE_SECONDS = 24 * 60 * 60;
 const YUQUE_API_BASE = "https://www.yuque.com/api/v2/repos";
+const YUQUE_TABLE_API_BASE = "https://www.yuque.com/api/modules/table/doc";
+const TABLE_RECORD_LIMIT = 5000;
+const LOCAL_INSPIRATION_MEDIA = [
+  {
+    titleIncludes: "Pinckus：Motion Graphics",
+    id: "pinckus-hydrangea",
+    video: "./assets/pinckus-motion-graphics-hydrangea-x.mp4",
+  },
+  {
+    titleIncludes: "Ampersand No.3",
+    id: "ampersand-no3-in-out",
+    video: "./assets/ampersand-no3-in-out-x.mp4",
+  },
+  {
+    titleIncludes: "WebGL 轮盘式作品浏览动效",
+    id: "bamojk-webgl-wheel-browse",
+    video: "./assets/bamojk-webgl-wheel-browse.mp4",
+  },
+  {
+    titleIncludes: "票券式品牌动效",
+    id: "world-is-web-ticket-brand-motion",
+    video: "./assets/world-is-web-ticket-brand-motion.mp4",
+  },
+  {
+    titleIncludes: "把真实翻书质感带回数字阅读",
+    id: "kelindi-ebook-page-turn",
+    video: "./assets/kelindi-ebook-page-turn.mp4",
+  },
+  {
+    titleIncludes: "金色票券动效",
+    id: "world-is-web-golden-ticket-motion",
+    video: "./assets/world-is-web-golden-ticket-motion.mp4",
+  },
+  {
+    titleIncludes: "Figma 制作的拟物音乐播放器细节",
+    id: "adityasur11-figma-music-player",
+    cover: "./assets/adityasur11-figma-music-player.jpg",
+  },
+  {
+    titleIncludes: "3D Interactive Folder Animation",
+    id: "3d",
+    video: "./assets/uploads/1783406370925-03-3d-interactive-folder-Animation.mp4",
+  },
+];
 
 export async function onRequest({ request, env }) {
   if (request.method === "OPTIONS") return optionsResponse();
@@ -23,8 +84,9 @@ export async function onRequest({ request, env }) {
 
   const token = env.YUQUE_TOKEN || env.YUQUE_AUTH_TOKEN || "";
   const sources = readSources(env);
+  const hasTableSource = sources.some((source) => source.sheetId || source.tableId);
 
-  if (!token || !sources.length) {
+  if (!sources.length || (!token && !hasTableSource)) {
     return json(
       {
         source: "yuque",
@@ -32,7 +94,7 @@ export async function onRequest({ request, env }) {
         sections: [],
         replaceSections: [],
         fetchedAt: new Date().toISOString(),
-        warnings: [!token ? "YUQUE_TOKEN is not configured." : "No Yuque CMS sources configured."],
+        warnings: [!sources.length ? "No Yuque CMS sources configured." : "YUQUE_TOKEN is not configured."],
       },
       200,
       "no-store",
@@ -41,8 +103,8 @@ export async function onRequest({ request, env }) {
 
   const results = await Promise.allSettled(
     sources.map(async (source, index) => {
-      const doc = await fetchYuqueDoc(source, token);
-      const parsed = parseYuqueDocument(source, doc, index);
+      const doc = source.sheetId || source.tableId ? createTableDocStub(source) : await fetchYuqueDoc(source, token);
+      const parsed = await parseYuqueDocument(source, doc, index, token);
       return {
         source,
         items: parsed.items,
@@ -107,6 +169,16 @@ function normalizeRepo(namespace, book) {
   return namespace && book ? `${namespace}/${book}` : "";
 }
 
+function createTableDocStub(source) {
+  return {
+    id: source.docId || source.tableDocId || "",
+    type: source.docType || "Doc",
+    title: source.title || source.slug || source.section,
+    updated_at: source.updatedAt || source.createdAt || "",
+    created_at: source.createdAt || "",
+  };
+}
+
 async function fetchYuqueDoc(source, token) {
   const endpoint = `${YUQUE_API_BASE}/${source.repo}/docs/${source.slug}`;
   const response = await fetch(endpoint, {
@@ -134,12 +206,29 @@ async function fetchYuqueDoc(source, token) {
   return payload.data || payload;
 }
 
-function parseYuqueDocument(source, doc, sourceIndex) {
+async function parseYuqueDocument(source, doc, sourceIndex, token) {
   const body = getDocBody(doc);
   const docTitle = doc.title || source.title || source.slug;
   const docUpdatedAt = doc.updated_at || doc.updatedAt || doc.published_at || doc.created_at;
   const reference = source.reference || `https://www.yuque.com/${source.repo}/${source.slug}`;
   const isStructuredEmbed = isYuqueStructuredEmbed(body);
+  let tableWarning = "";
+
+  if (source.sheetId || source.tableId) {
+    try {
+      const tableItems = await fetchYuqueTableItems(source, doc, token, reference, sourceIndex);
+      if (tableItems.length) {
+        return {
+          ok: false,
+          items: tableItems,
+          sections: [],
+          warning: "",
+        };
+      }
+    } catch (error) {
+      tableWarning = `${source.section}: 语雀表格读取失败，已保留本地内容。${error.message || ""}`;
+    }
+  }
 
   const jsonPayload = parseJsonPayload(body);
   if (jsonPayload) {
@@ -192,8 +281,105 @@ function parseYuqueDocument(source, doc, sourceIndex) {
     sections: [],
     warning: shouldReplace
       ? ""
-      : `${source.section}: 语雀文档是画册表格/嵌入卡片结构，暂未替换本地内容。建议在文档里添加 JSON 内容块作为正式 CMS 数据源。`,
+      : tableWarning ||
+        `${source.section}: 语雀文档是画册表格/嵌入卡片结构，暂未替换本地内容。建议在文档里添加 JSON 内容块作为正式 CMS 数据源。`,
   };
+}
+
+async function fetchYuqueTableItems(source, doc, token, reference, sourceIndex) {
+  const docId = source.docId || source.tableDocId || doc.id;
+  const sheetId = source.sheetId || source.tableId;
+  if (!docId || !sheetId) return [];
+
+  const endpoint = new URL(`${YUQUE_TABLE_API_BASE}/TableRecordController/show`);
+  endpoint.searchParams.set("docId", docId);
+  endpoint.searchParams.set("docType", source.docType || doc.type || "Doc");
+  endpoint.searchParams.set("limit", source.limit || TABLE_RECORD_LIMIT);
+  endpoint.searchParams.set("offset", "0");
+  endpoint.searchParams.set("sheetId", sheetId);
+
+  const headers = {
+    Accept: "application/json",
+    "User-Agent": "Inspo.design CMS",
+  };
+  if (token) headers["X-Auth-Token"] = token;
+
+  const response = await fetch(endpoint.toString(), { headers });
+  const text = await response.text();
+  let payload = {};
+
+  try {
+    payload = text ? JSON.parse(text) : {};
+  } catch {
+    payload = { raw: text };
+  }
+
+  if (!response.ok) {
+    const message = payload.message || payload.error || `Yuque table returned ${response.status}`;
+    throw new Error(message);
+  }
+
+  const records = Array.isArray(payload.records)
+    ? payload.records
+    : Array.isArray(payload.data?.records)
+      ? payload.data.records
+      : [];
+
+  return records
+    .map((record, index) =>
+      normalizeYuqueTableRecord(record, {
+        source,
+        doc,
+        reference,
+        sourceIndex,
+        itemIndex: index,
+      }),
+    )
+    .filter(Boolean);
+}
+
+function normalizeYuqueTableRecord(record, context) {
+  const data = parseRecordData(record.data);
+  const fieldAliases = context.source.fieldAliases || {};
+  const field = (name) => readTableField(data, fieldAliases[name]);
+  const title = cleanText(field("title") || findTableString(data, (value) => /^\d{1,2}\s*[｜|]/.test(value)));
+  if (!title) return null;
+
+  const sourceText = normalizeTableSource(field("source"), context.source);
+  const author = normalizeAuthor(field("author") || findTableString(data, (value) => /^作者[:：]/.test(value)));
+  const link = normalizeTableLink(field("url")) || context.reference;
+  const coverAsset = firstTableAttachment(field("cover"), "image");
+  const videoAsset = firstTableAttachment(field("video"), "video");
+  const tagValue = field("tags") || "";
+  const tags = normalizeTags(tagValue, "", sourceText, link);
+  const mediaOverride = findLocalMediaOverride(title, context.source.section);
+  const description = cleanText(field("description"));
+  const analysis = compactParagraphs([field("analysis")].filter(Boolean));
+  const type = inferTypeFromTableTags(tags, sourceText);
+  const cover = videoAsset ? "" : mediaOverride.cover || coverAsset?.file || "";
+  const video = videoAsset?.file || mediaOverride.video || "";
+
+  return cleanupItem({
+    id: mediaOverride.id || slugify(`${context.source.section}-${title}`),
+    section: context.source.section,
+    title,
+    description: description || analysis.split(/\n{2,}/)[0]?.slice(0, 120) || "",
+    longDescription: compactParagraphs([description, analysis].filter(Boolean)),
+    author,
+    avatar: "",
+    source: sourceText,
+    type,
+    tags,
+    cover,
+    video,
+    url: link,
+    dateAdded: dateOnly(record.created_at || data.createdAt || context.doc.updated_at || context.doc.created_at),
+    createdAt: record.created_at || data.createdAt || "",
+    details: buildDetailRows(sourceText, type),
+    materials: normalizeTableMaterials(field("cover"), field("video")),
+    size: inferTableSize(coverAsset, videoAsset, context.source.section),
+    reference: context.reference,
+  });
 }
 
 function isYuqueStructuredEmbed(body) {
@@ -541,6 +727,111 @@ function normalizeDetailsValue(value, item, source, type) {
 
   if (!details.length) details.push(...buildDetailRows(source, type));
   return details;
+}
+
+function parseRecordData(value) {
+  if (!value) return {};
+  if (typeof value === "object") return value;
+  try {
+    return JSON.parse(value);
+  } catch {
+    return {};
+  }
+}
+
+function readTableField(data, fieldId) {
+  if (!fieldId) return "";
+  const cell = data?.[fieldId];
+  if (cell && typeof cell === "object" && "value" in cell) return cell.value;
+  return cell || "";
+}
+
+function findTableString(data, predicate) {
+  for (const value of Object.values(data || {})) {
+    const cellValue = value && typeof value === "object" && "value" in value ? value.value : value;
+    if (typeof cellValue !== "string") continue;
+    const cleanValue = cleanText(cellValue);
+    if (predicate(cleanValue)) return cleanValue;
+  }
+  return "";
+}
+
+function normalizeTableSource(value, source) {
+  const raw = typeof value === "string" ? value : value?.name || value?.text || "";
+  const label = source.selectLabels?.[raw] || raw;
+  const normalized = normalizeSource(label.replace("｜推特", "").replace("| 推特", ""));
+  if (normalized) return normalized;
+  return "";
+}
+
+function normalizeAuthor(value) {
+  return cleanText(value).replace(/^作者[:：]\s*/, "");
+}
+
+function normalizeTableLink(value) {
+  if (!value) return "";
+  if (typeof value === "string") return value;
+  if (typeof value === "object") return value.src || value.url || value.href || value.name || "";
+  return "";
+}
+
+function normalizeTableMaterials(...values) {
+  return values
+    .flatMap((value) => tableAttachments(value))
+    .map((attachment) => ({ file: attachment.file || attachment.src || attachment.url || "" }))
+    .filter((attachment) => attachment.file);
+}
+
+function firstTableAttachment(value, kind = "") {
+  return tableAttachments(value).find((attachment) => {
+    if (!kind) return true;
+    return kind === "video" ? isVideoUrl(attachment.file) : !isVideoUrl(attachment.file);
+  });
+}
+
+function tableAttachments(value) {
+  const list = Array.isArray(value) ? value : value?.value && Array.isArray(value.value) ? value.value : [];
+  return list
+    .map((attachment) => ({
+      file: attachment?.src || attachment?.url || attachment?.file || "",
+      width: attachment?.width || "",
+      height: attachment?.height || "",
+      name: attachment?.name || "",
+    }))
+    .filter((attachment) => attachment.file);
+}
+
+function findLocalMediaOverride(title, section) {
+  if (section !== "inspiration") return {};
+  return LOCAL_INSPIRATION_MEDIA.find((item) => title.includes(item.titleIncludes)) || {};
+}
+
+function inferTypeFromTableTags(tags, sourceText) {
+  const priority = [
+    "Motion",
+    "Typography",
+    "Brand",
+    "WebGL",
+    "3D",
+    "Graphic",
+    "Experiment",
+    "界面",
+    "微交互",
+    "交互模式",
+    "网站视觉",
+    "网页动效",
+  ];
+  return tags.find((tag) => priority.includes(tag)) || (normalizeSource(sourceText).startsWith("Awwwards") ? "WebGL" : "");
+}
+
+function inferTableSize(coverAsset, videoAsset, section) {
+  if (section === "ux-bites") return "tall";
+  if (videoAsset) return "wide";
+  if (!coverAsset?.width || !coverAsset?.height) return "standard";
+  const ratio = Number(coverAsset.width) / Number(coverAsset.height);
+  if (ratio > 1.45) return "wide";
+  if (ratio < 0.78) return "tall";
+  return "standard";
 }
 
 function parseInlineDetails(value) {

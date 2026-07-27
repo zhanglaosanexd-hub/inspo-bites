@@ -34,14 +34,14 @@ The production site can read content from Yuque through the Cloudflare Pages Fun
 Recommended flow:
 
 ```text
-Yuque docs -> Cloudflare Pages Function -> /api/content -> front-end gallery
+Yuque table/docs -> Cloudflare Pages Function -> /api/content -> front-end gallery
 ```
 
-Keep the Yuque token on Cloudflare only. Do not put it in front-end code.
+For the design inspiration table, the site reads Yuque's public table endpoint directly, so no Yuque account password is needed. Keep any Yuque token on Cloudflare only. Do not put it in front-end code.
 
 ### Cloudflare Environment Variables
 
-Set these in Cloudflare Pages -> Settings -> Environment variables:
+Set this in Cloudflare Pages -> Settings -> Environment variables when reading private Yuque docs:
 
 ```text
 YUQUE_TOKEN=your_yuque_token
@@ -55,6 +55,8 @@ Optional custom sources:
     "section": "inspiration",
     "repo": "zhanglaosan-bz7nq/gmzg15",
     "slug": "wv0ye00q7degi1zp",
+    "docId": 275023108,
+    "sheetId": "dzc40vyctnvwkye53i06uxotu7kghrgh",
     "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
   },
   {
@@ -72,7 +74,7 @@ Put that JSON into:
 YUQUE_CMS_SOURCES=[...]
 ```
 
-If `YUQUE_CMS_SOURCES` is not configured, the site reads the two Yuque docs above by default.
+If `YUQUE_CMS_SOURCES` is not configured, the site reads the default Yuque sources above. The inspiration source uses the Yuque table view as the CMS; newly added table rows are merged into the local gallery on refresh.
 
 ### Yuque Content Format
 

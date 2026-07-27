@@ -104,7 +104,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260723-fast-local-render";
+const DATA_VERSION = "20260727-yuque-table-cms";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 
 let onlineCountTimer = 0;
@@ -222,13 +222,46 @@ function mergeCollectionData(localData, remoteData) {
   const itemMap = new Map(localItemsToKeep.map((item) => [item.id, item]));
 
   remoteItems.forEach((item) => {
-    if (item.id) itemMap.set(item.id, item);
+    if (!item.id) return;
+    const previous = itemMap.get(item.id);
+    itemMap.set(item.id, previous ? mergeItem(previous, item) : item);
   });
 
   return {
     sections: { sections: Array.from(sectionMap.values()) },
     items: { items: Array.from(itemMap.values()) },
   };
+}
+
+function mergeItem(previous, incoming) {
+  const merged = { ...previous, ...incoming };
+  const preserveWhenEmpty = [
+    "description",
+    "longDescription",
+    "author",
+    "avatar",
+    "source",
+    "type",
+    "cover",
+    "video",
+    "url",
+    "size",
+    "layout",
+    "appIcon",
+    "imageCount",
+  ];
+
+  preserveWhenEmpty.forEach((key) => {
+    if (incoming[key] === "" || incoming[key] === undefined || incoming[key] === null) {
+      merged[key] = previous[key];
+    }
+  });
+
+  if (!Array.isArray(incoming.tags) || !incoming.tags.length) merged.tags = previous.tags;
+  if (!Array.isArray(incoming.details) || !incoming.details.length) merged.details = previous.details;
+  if (!Array.isArray(incoming.materials) || !incoming.materials.length) merged.materials = previous.materials;
+
+  return merged;
 }
 
 function normalizeSections(data) {
