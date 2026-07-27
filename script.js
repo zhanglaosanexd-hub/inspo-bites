@@ -94,6 +94,7 @@ const ONLINE_SESSION_KEY = "inspo-presence-session";
 const HOUR_MS = 60 * 60 * 1000;
 const DAY_MS = 24 * HOUR_MS;
 const NEW_WINDOW_MS = 36 * 60 * 60 * 1000;
+const INSPIRATION_ARCHIVE_BASE_COUNT = 8;
 const GALLERY_GAP = 14;
 const GALLERY_DEFAULT_COLUMNS = 4;
 const GALLERY_MIN_CARD_WIDTH = 260;
@@ -105,7 +106,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260727-intrinsic-masonry";
+const DATA_VERSION = "20260727-count-offset";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 
 let onlineCountTimer = 0;
@@ -512,7 +513,7 @@ function renderFilters(filters) {
 function renderGallery() {
   const filtered = getVisibleItems();
   visibleItems = filtered;
-  itemCount.textContent = `${filtered.length} 条内容`;
+  itemCount.textContent = `${getDisplayItemCount()} 条内容`;
 
   const recentDate = getRecentDate(items.filter((item) => item.section === state.section));
   if (recentDate) {
@@ -529,6 +530,13 @@ function renderGallery() {
   else if (state.viewMode === "grid") renderUniformGrid(filtered);
   else renderMasonry(filtered);
   emptyState.hidden = filtered.length > 0;
+}
+
+function getDisplayItemCount() {
+  const sectionItems = items.filter((item) => item.section === state.section);
+  const archivedBaseCount = state.section === "inspiration" ? INSPIRATION_ARCHIVE_BASE_COUNT : 0;
+
+  return archivedBaseCount + sectionItems.length;
 }
 
 function renderViewModeControls() {
