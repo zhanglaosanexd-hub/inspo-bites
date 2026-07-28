@@ -358,6 +358,7 @@ function normalizeYuqueTableRecord(record, context) {
   const type = inferTypeFromTableTags(tags, sourceText);
   const cover = videoAsset ? "" : mediaOverride.cover || coverAsset?.file || "";
   const video = videoAsset?.file || mediaOverride.video || "";
+  const mediaAspectRatio = getAttachmentAspectRatio(videoAsset || coverAsset);
 
   return cleanupItem({
     id: mediaOverride.id || slugify(`${context.source.section}-${title}`),
@@ -377,6 +378,7 @@ function normalizeYuqueTableRecord(record, context) {
     createdAt: record.created_at || data.createdAt || "",
     details: buildDetailRows(sourceText, type),
     materials: normalizeTableMaterials(field("cover"), field("video")),
+    mediaAspectRatio,
     size: inferTableSize(coverAsset, videoAsset, context.source.section),
     reference: context.reference,
   });
@@ -778,7 +780,11 @@ function normalizeTableLink(value) {
 function normalizeTableMaterials(...values) {
   return values
     .flatMap((value) => tableAttachments(value))
-    .map((attachment) => ({ file: attachment.file || attachment.src || attachment.url || "" }))
+    .map((attachment) => ({
+      file: attachment.file || attachment.src || attachment.url || "",
+      width: attachment.width || "",
+      height: attachment.height || "",
+    }))
     .filter((attachment) => attachment.file);
 }
 
@@ -826,12 +832,21 @@ function inferTypeFromTableTags(tags, sourceText) {
 
 function inferTableSize(coverAsset, videoAsset, section) {
   if (section === "ux-bites") return "tall";
-  if (videoAsset) return "wide";
-  if (!coverAsset?.width || !coverAsset?.height) return "standard";
-  const ratio = Number(coverAsset.width) / Number(coverAsset.height);
+  const mediaAsset = videoAsset || coverAsset;
+  if (!mediaAsset?.width || !mediaAsset?.height) return videoAsset ? "wide" : "standard";
+  const ratio = Number(mediaAsset.width) / Number(mediaAsset.height);
   if (ratio > 1.45) return "wide";
   if (ratio < 0.78) return "tall";
   return "standard";
+}
+
+function getAttachmentAspectRatio(asset) {
+  const width = Number(asset?.width);
+  const height = Number(asset?.height);
+  if (!width || !height) return "";
+
+  const ratio = width / height;
+  return Number.isFinite(ratio) && ratio > 0 ? ratio : "";
 }
 
 function parseInlineDetails(value) {

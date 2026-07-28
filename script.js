@@ -15,6 +15,7 @@ let activeDetailIndex = 0;
 let detailTransitionFrame = 0;
 let detailCloseTimer = 0;
 let masonryRatioFrame = 0;
+let masonryRatioTimer = 0;
 
 const gallery = document.querySelector("#gallery");
 const sectionNav = document.querySelector(".section-nav");
@@ -105,8 +106,10 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260727-intrinsic-masonry";
+const DATA_VERSION = "20260728-fast-refresh";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
+const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
+const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 12 * HOUR_MS;
 
 let onlineCountTimer = 0;
 
@@ -137,7 +140,10 @@ function applyCollectionData(collectionData) {
 async function loadCollectionData() {
   const localFallback = window.INSPO_STATIC_DATA;
 
-  if (localFallback) return localFallback;
+  if (localFallback) {
+    const cachedRemoteData = readCachedRemoteCollectionData();
+    return cachedRemoteData ? mergeCollectionData(localFallback, cachedRemoteData) : localFallback;
+  }
 
   try {
     const [sectionsResponse, itemsResponse] = await Promise.all([
@@ -154,7 +160,8 @@ async function loadCollectionData() {
       items: await itemsResponse.json(),
     };
 
-    return localData;
+    const cachedRemoteData = readCachedRemoteCollectionData();
+    return cachedRemoteData ? mergeCollectionData(localData, cachedRemoteData) : localData;
   } catch (error) {
     if (localFallback) return localFallback;
     throw error;
@@ -193,15 +200,48 @@ async function loadRemoteCollectionData(localData) {
 
     if (!remoteItems.length && !remoteSections.length) return localData;
 
-    return mergeCollectionData(localData, {
+    const normalizedRemoteData = {
       sections: remoteSections,
       items: remoteItems,
       replaceSections,
-    });
+    };
+    writeCachedRemoteCollectionData(normalizedRemoteData);
+
+    return mergeCollectionData(localData, normalizedRemoteData);
   } catch {
     return localData;
   } finally {
     window.clearTimeout(timeoutId);
+  }
+}
+
+function readCachedRemoteCollectionData() {
+  try {
+    const cache = JSON.parse(window.localStorage.getItem(REMOTE_CONTENT_CACHE_KEY) || "null");
+    if (!cache?.cachedAt || Date.now() - cache.cachedAt > REMOTE_CONTENT_CACHE_MAX_AGE_MS) return null;
+
+    const data = cache.data || {};
+    const cachedItems = Array.isArray(data.items) ? data.items : [];
+    const cachedSections = Array.isArray(data.sections) ? data.sections : [];
+    if (!cachedItems.length && !cachedSections.length) return null;
+
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+function writeCachedRemoteCollectionData(data) {
+  try {
+    window.localStorage.setItem(
+      REMOTE_CONTENT_CACHE_KEY,
+      JSON.stringify({
+        cachedAt: Date.now(),
+        data,
+      }),
+    );
+  } catch {
+    // localStorage can be unavailable in strict privacy modes; the static bundle still works.
   }
 }
 
@@ -235,34 +275,58 @@ function mergeCollectionData(localData, remoteData) {
 }
 
 function mergeItem(previous, incoming) {
-  const merged = { ...previous, ...incoming };
-  const preserveWhenEmpty = [
+  const merged = {
+    ...previous,
+    title: incoming.title || previous.title,
+    source: incoming.source || previous.source,
+    dateAdded: incoming.dateAdded || previous.dateAdded,
+    createdAt: incoming.createdAt || previous.createdAt,
+    reference: incoming.reference || previous.reference,
+    mediaAspectRatio: incoming.mediaAspectRatio || previous.mediaAspectRatio,
+  };
+
+  const preferExistingFields = [
     "description",
     "longDescription",
     "author",
     "avatar",
-    "source",
     "type",
-    "cover",
-    "video",
-    "url",
     "size",
     "layout",
     "appIcon",
     "imageCount",
   ];
 
-  preserveWhenEmpty.forEach((key) => {
-    if (incoming[key] === "" || incoming[key] === undefined || incoming[key] === null) {
-      merged[key] = previous[key];
-    }
+  preferExistingFields.forEach((key) => {
+    merged[key] = previous[key] || incoming[key];
   });
 
-  if (!Array.isArray(incoming.tags) || !incoming.tags.length) merged.tags = previous.tags;
-  if (!Array.isArray(incoming.details) || !incoming.details.length) merged.details = previous.details;
-  if (!Array.isArray(incoming.materials) || !incoming.materials.length) merged.materials = previous.materials;
+  merged.cover = previous.cover || incoming.cover;
+  merged.video = previous.video || incoming.video;
+  merged.url = shouldPreservePreviousUrl(previous.url, incoming.url)
+    ? previous.url
+    : incoming.url || previous.url;
+
+  merged.tags =
+    Array.isArray(previous.tags) && previous.tags.length ? previous.tags : incoming.tags;
+  merged.details =
+    Array.isArray(previous.details) && previous.details.length ? previous.details : incoming.details;
+  merged.materials =
+    Array.isArray(previous.materials) && previous.materials.length ? previous.materials : incoming.materials;
 
   return merged;
+}
+
+function shouldPreservePreviousUrl(previousUrl, incomingUrl) {
+  if (!previousUrl) return false;
+  if (!incomingUrl) return true;
+
+  try {
+    const incoming = new URL(incomingUrl);
+    return incoming.hostname.endsWith("yuque.com") && !previousUrl.includes("yuque.com");
+  } catch {
+    return false;
+  }
 }
 
 function normalizeSections(data) {
@@ -560,10 +624,10 @@ function getVisibleItems() {
   });
 }
 
-function createCard(item) {
-  if (isAppRecapItem(item)) return createAppRecapCard(item);
+function createCard(item, priorityIndex = 0) {
+  if (isAppRecapItem(item)) return createAppRecapCard(item, priorityIndex);
 
-  const media = createMediaMarkup(item);
+  const media = createMediaMarkup(item, { eager: priorityIndex < 8 });
   const itemUrl = escapeHtml(item.url || "");
   const itemTitle = escapeHtml(item.title || "未命名内容");
   const newBadge = isNewItem(item) ? `<span class="new-badge" aria-label="新内容">新</span>` : "";
@@ -593,12 +657,13 @@ function createCard(item) {
   `;
 }
 
-function createAppRecapCard(item) {
+function createAppRecapCard(item, priorityIndex = 0) {
   const itemTitle = escapeHtml(item.title || "未命名内容");
   const category = escapeHtml(item.type || item.tags?.[0] || "其他");
   const icon = escapeHtml(item.appIcon || item.avatar || "");
   const count = Number(item.imageCount || item.materials?.length || 0);
   const cover = escapeHtml(item.cover || "");
+  const isEager = priorityIndex < 8;
 
   return `
     <article class="work-card app-recap-card is-portrait">
@@ -606,8 +671,8 @@ function createAppRecapCard(item) {
         <button class="media-link" type="button" data-detail-id="${escapeHtml(item.id)}" aria-label="查看 ${itemTitle} 详情">
           ${
             cover
-              ? `<img class="app-recap-cover" src="${cover}" alt="${itemTitle}" loading="lazy" referrerpolicy="no-referrer" />`
-              : createMediaMarkup(item)
+              ? `<img class="app-recap-cover" src="${cover}" alt="${itemTitle}" loading="${isEager ? "eager" : "lazy"}" fetchpriority="${isEager ? "high" : "auto"}" referrerpolicy="no-referrer" />`
+              : createMediaMarkup(item, { eager: isEager })
           }
         </button>
         <span class="app-recap-type">${category}</span>
@@ -622,15 +687,19 @@ function createAppRecapCard(item) {
   `;
 }
 
-function createMediaMarkup(item) {
+function createMediaMarkup(item, options = {}) {
   const itemTitle = escapeHtml(item.title || "未命名内容");
+  const isEager = Boolean(options.eager);
+  const loading = isEager ? "eager" : "lazy";
+  const fetchPriority = isEager ? "high" : "auto";
 
   if (item.motionCover) return createMotionCover(item);
   if (item.video) {
-    const poster = item.cover ? ` poster="${item.cover}"` : "";
+    const videoPath = escapeHtml(item.video);
+    const poster = item.cover ? ` poster="${escapeHtml(item.cover)}"` : "";
     return `
-      <video muted autoplay loop playsinline preload="metadata"${poster} data-video-path="${item.video}">
-        <source src="${item.video}" type="video/mp4" />
+      <video muted autoplay loop playsinline preload="${isEager ? "auto" : "metadata"}"${poster} data-video-path="${videoPath}">
+        <source src="${videoPath}" type="video/mp4" />
       </video>
       <span class="media-missing" hidden>
         <strong>需要视频文件</strong>
@@ -639,7 +708,9 @@ function createMediaMarkup(item) {
     `;
   }
 
-  if (item.cover) return `<img src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="lazy" />`;
+  if (item.cover) {
+    return `<img src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" />`;
+  }
 
   return `
     <span class="media-missing">
@@ -705,7 +776,7 @@ function renderDetail() {
   bindAuthorAvatar(detailAuthor);
   detailDescription.hidden = isAppRecap || !(item.longDescription || item.description);
   detailDescription.textContent = isAppRecap ? "" : item.longDescription || item.description;
-  detailPreview.innerHTML = isAppRecap ? createAppRecapDetailMarkup(item) : createMediaMarkup(item);
+  detailPreview.innerHTML = isAppRecap ? createAppRecapDetailMarkup(item) : createMediaMarkup(item, { eager: true });
   bindVideoFallbacks(detailPreview);
   bindAppRecapImageRatios(detailPreview);
   bindDetailPreviewRatio();
@@ -867,11 +938,11 @@ function renderMasonry(filtered) {
   const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
   const columns = Array.from({ length: columnCount }, () => ({ height: 0, cards: [] }));
 
-  filtered.forEach((item) => {
+  filtered.forEach((item, index) => {
     const target = columns.reduce((shortest, column) =>
       column.height < shortest.height ? column : shortest,
     );
-    target.cards.push(createCard(item));
+    target.cards.push(createCard(item, index));
     target.height += getCardEstimate(item);
   });
 
@@ -891,7 +962,7 @@ function renderUniformGrid(filtered) {
   const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
   gallery.style.setProperty("--gallery-columns", columnCount);
   gallery.style.maxWidth = `${getGalleryMaxWidth(columnCount)}px`;
-  gallery.innerHTML = filtered.map((item) => createCard(item)).join("");
+  gallery.innerHTML = filtered.map((item, index) => createCard(item, index)).join("");
   bindVideoFallbacks(gallery);
   bindGalleryMediaRatios(gallery);
   bindAppRecapImageRatios(gallery);
@@ -901,7 +972,7 @@ function renderSingleColumn(filtered) {
   gallery.className = "gallery is-single";
   gallery.style.setProperty("--gallery-columns", 1);
   gallery.style.maxWidth = filtered.length ? `${getGalleryMaxWidth(1, SINGLE_CARD_MAX_WIDTH)}px` : "";
-  gallery.innerHTML = filtered.map((item) => createCard(item)).join("");
+  gallery.innerHTML = filtered.map((item, index) => createCard(item, index)).join("");
   bindVideoFallbacks(gallery);
   bindGalleryMediaRatios(gallery);
   bindAppRecapImageRatios(gallery);
@@ -955,10 +1026,13 @@ function bindGalleryMediaRatios(root) {
 
 function scheduleMasonryRerender() {
   if (state.viewMode !== "masonry") return;
+  window.clearTimeout(masonryRatioTimer);
   cancelAnimationFrame(masonryRatioFrame);
-  masonryRatioFrame = requestAnimationFrame(() => {
-    renderGallery();
-  });
+  masonryRatioTimer = window.setTimeout(() => {
+    masonryRatioFrame = requestAnimationFrame(() => {
+      renderGallery();
+    });
+  }, 180);
 }
 
 function bindAppRecapImageRatios(root) {
