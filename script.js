@@ -106,10 +106,12 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260728-fast-refresh";
+const DATA_VERSION = "20260731-r2-media";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 12 * HOUR_MS;
+const MEDIA_BASE_URL = normalizeMediaBaseUrl(window.INSPO_MEDIA_BASE_URL || "");
+const MEDIA_URL_MAP = normalizeMediaUrlMap(window.INSPO_MEDIA_URL_MAP || window.INSPO_MEDIA_MAP);
 
 let onlineCountTimer = 0;
 
@@ -346,12 +348,14 @@ function normalizeSections(data) {
 
 function normalizeItems(data) {
   const source = Array.isArray(data) ? data : data.items || [];
-  return source.map((item) => ({
-    ...item,
-    createdAt: item.createdAt || dateToCreatedAt(item.dateAdded),
-    tags: normalizeList(item.tags),
-    details: Array.isArray(item.details) ? item.details : [],
-  }));
+  return source.map((item) =>
+    normalizeItemMedia({
+      ...item,
+      createdAt: item.createdAt || dateToCreatedAt(item.dateAdded),
+      tags: normalizeList(item.tags),
+      details: Array.isArray(item.details) ? item.details : [],
+    }),
+  );
 }
 
 function normalizeList(value, fallback = []) {
@@ -364,6 +368,56 @@ function normalizeList(value, fallback = []) {
   }
 
   return fallback;
+}
+
+function normalizeMediaBaseUrl(value) {
+  return typeof value === "string" ? value.trim().replace(/\/+$/, "") : "";
+}
+
+function normalizeMediaUrlMap(value) {
+  if (!value || typeof value !== "object") return new Map();
+  return new Map(
+    Object.entries(value).filter(
+      ([source, target]) => typeof source === "string" && typeof target === "string" && target.trim(),
+    ),
+  );
+}
+
+function normalizeItemMedia(item) {
+  const next = { ...item };
+  ["cover", "video", "avatar", "appIcon"].forEach((key) => {
+    if (next[key]) next[key] = resolveMediaUrl(next[key]);
+  });
+
+  if (Array.isArray(next.materials)) {
+    next.materials = next.materials.map((material) => {
+      if (typeof material === "string") return resolveMediaUrl(material);
+      if (!material || typeof material !== "object") return material;
+      return material.file ? { ...material, file: resolveMediaUrl(material.file) } : material;
+    });
+  }
+
+  return next;
+}
+
+function resolveMediaUrl(value) {
+  const raw = typeof value === "string" ? value.trim() : "";
+  if (!raw) return value || "";
+
+  const assetPath = normalizeLocalAssetPath(raw);
+  const mapped = MEDIA_URL_MAP.get(raw) || (assetPath ? MEDIA_URL_MAP.get(assetPath) : "");
+  if (mapped) return mapped;
+  if (MEDIA_BASE_URL && assetPath) return `${MEDIA_BASE_URL}/${assetPath}`;
+
+  return raw;
+}
+
+function normalizeLocalAssetPath(value) {
+  const raw = typeof value === "string" ? value.trim() : "";
+  if (raw.startsWith("./assets/")) return raw.slice(2);
+  if (raw.startsWith("/assets/")) return raw.slice(1);
+  if (raw.startsWith("assets/")) return raw;
+  return "";
 }
 
 function bindEvents() {

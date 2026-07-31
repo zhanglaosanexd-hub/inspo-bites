@@ -85,6 +85,7 @@ export async function onRequest({ request, env }) {
   const token = env.YUQUE_TOKEN || env.YUQUE_AUTH_TOKEN || "";
   const sources = readSources(env);
   const hasTableSource = sources.some((source) => source.sheetId || source.tableId);
+  const mediaConfig = readMediaConfig(env);
 
   if (!sources.length || (!token && !hasTableSource)) {
     return json(
@@ -135,7 +136,7 @@ export async function onRequest({ request, env }) {
   return json(
     {
       source: "yuque",
-      items,
+      items: items.map((item) => rewriteItemMedia(item, mediaConfig)),
       sections,
       replaceSections: Array.from(replaceSections),
       fetchedAt: new Date().toISOString(),
@@ -163,6 +164,70 @@ function readSources(env) {
   } catch (error) {
     return DEFAULT_SOURCES;
   }
+}
+
+function readMediaConfig(env) {
+  return {
+    baseUrl: normalizeMediaBaseUrl(env.R2_PUBLIC_BASE_URL || env.MEDIA_BASE_URL || env.MEDIA_CDN_BASE_URL || ""),
+    urlMap: parseMediaUrlMap(env.R2_MEDIA_URL_MAP || env.MEDIA_URL_MAP || ""),
+  };
+}
+
+function normalizeMediaBaseUrl(value) {
+  return typeof value === "string" ? value.trim().replace(/\/+$/, "") : "";
+}
+
+function parseMediaUrlMap(value) {
+  if (!value) return new Map();
+
+  try {
+    const parsed = typeof value === "string" ? JSON.parse(value) : value;
+    if (!parsed || typeof parsed !== "object") return new Map();
+    return new Map(
+      Object.entries(parsed).filter(
+        ([source, target]) => typeof source === "string" && typeof target === "string" && target.trim(),
+      ),
+    );
+  } catch {
+    return new Map();
+  }
+}
+
+function rewriteItemMedia(item, mediaConfig) {
+  const next = { ...item };
+  ["cover", "video", "avatar", "appIcon"].forEach((key) => {
+    if (next[key]) next[key] = rewriteMediaUrl(next[key], mediaConfig);
+  });
+
+  if (Array.isArray(next.materials)) {
+    next.materials = next.materials.map((material) => {
+      if (typeof material === "string") return rewriteMediaUrl(material, mediaConfig);
+      if (!material || typeof material !== "object") return material;
+      return material.file ? { ...material, file: rewriteMediaUrl(material.file, mediaConfig) } : material;
+    });
+  }
+
+  return next;
+}
+
+function rewriteMediaUrl(value, mediaConfig) {
+  const raw = typeof value === "string" ? value.trim() : "";
+  if (!raw) return value || "";
+
+  const assetPath = normalizeLocalAssetPath(raw);
+  const mapped = mediaConfig.urlMap.get(raw) || (assetPath ? mediaConfig.urlMap.get(assetPath) : "");
+  if (mapped) return mapped;
+  if (mediaConfig.baseUrl && assetPath) return `${mediaConfig.baseUrl}/${assetPath}`;
+
+  return raw;
+}
+
+function normalizeLocalAssetPath(value) {
+  const raw = typeof value === "string" ? value.trim() : "";
+  if (raw.startsWith("./assets/")) return raw.slice(2);
+  if (raw.startsWith("/assets/")) return raw.slice(1);
+  if (raw.startsWith("assets/")) return raw;
+  return "";
 }
 
 function normalizeRepo(namespace, book) {

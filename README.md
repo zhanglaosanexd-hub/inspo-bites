@@ -130,6 +130,58 @@ For UX Bites, a heading plus image is enough. If there is no detail text, the si
 
 The front-end always loads local JSON first, then lets Yuque replace the sections that were successfully fetched. If Yuque is unavailable or the token expires, the current static content still renders.
 
+## Media Storage
+
+The recommended production storage split is:
+
+```text
+Cloudflare R2 -> image/video files
+Yuque table -> title, author, tags, detail text, original URL, and R2 media URLs
+Cloudflare Pages -> static front-end and /api/content
+```
+
+This keeps large media out of GitHub/Pages and avoids relying on Yuque attachment hotlinks for public traffic.
+
+Recommended R2 setup:
+
+1. Create a Cloudflare R2 bucket, for example `inspo-media`.
+2. Connect a public custom domain, for example `media.inspo.design`.
+3. Create R2 S3 API credentials in Cloudflare. Keep them in your shell or Cloudflare settings only; do not commit them.
+4. Upload media to R2, then paste the public R2 URL into the Yuque `cover` / `video` / `materials` fields.
+
+The front-end and `/api/content` already understand a shared media base URL and URL map:
+
+```text
+R2_PUBLIC_BASE_URL=https://media.inspo.design
+MEDIA_BASE_URL=https://media.inspo.design
+MEDIA_URL_MAP={"https://www.yuque.com/attachments/...mp4":"https://media.inspo.design/yuque/...mp4"}
+```
+
+For local fallback content, `data/media-config.js` can also provide the same public base URL and URL map:
+
+```js
+window.INSPO_MEDIA_BASE_URL = "https://media.inspo.design";
+window.INSPO_MEDIA_URL_MAP = {
+  "https://www.yuque.com/attachments/yuque/0/2026/mp4/example.mp4":
+    "https://media.inspo.design/yuque/example.mp4",
+};
+```
+
+There is a helper script for one-time migration:
+
+```bash
+R2_ACCOUNT_ID=... \
+R2_ACCESS_KEY_ID=... \
+R2_SECRET_ACCESS_KEY=... \
+R2_BUCKET=inspo-media \
+R2_PUBLIC_BASE_URL=https://media.inspo.design \
+node tools/r2-media-migrate.mjs --upload --write-config
+```
+
+Without `--upload`, the script is a dry run. It scans `data/items.json`, plans uploads for referenced `./assets/...` files and Yuque attachment URLs, and can generate `data/media-map.json` plus `data/media-config.js`.
+
+After migration, the shortest ongoing workflow is: upload the new image/video to R2, paste the R2 URL in Yuque, then let `/api/content` refresh from Yuque.
+
 ### Admin Setup
 
 `admin/config.yml` is already pointed at:

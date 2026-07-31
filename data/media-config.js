@@ -1,0 +1,2 @@
+window.INSPO_MEDIA_BASE_URL = window.INSPO_MEDIA_BASE_URL || "";
+window.INSPO_MEDIA_URL_MAP = window.INSPO_MEDIA_URL_MAP || {};
