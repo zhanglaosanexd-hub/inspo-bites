@@ -14,8 +14,7 @@ let visibleItems = [];
 let activeDetailIndex = 0;
 let detailTransitionFrame = 0;
 let detailCloseTimer = 0;
-let masonryRatioFrame = 0;
-let masonryRatioTimer = 0;
+let lazyVideoObserver = null;
 
 const gallery = document.querySelector("#gallery");
 const sectionNav = document.querySelector(".section-nav");
@@ -102,14 +101,15 @@ const GALLERY_MAX_CARD_WIDTH = 430;
 const APP_RECAP_COLUMNS = 5;
 const APP_RECAP_MIN_CARD_WIDTH = 150;
 const APP_RECAP_MAX_CARD_WIDTH = 300;
+const INITIAL_EAGER_MEDIA_COUNT = 4;
 const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260731-r2-media";
+const DATA_VERSION = "20260731-smooth-refresh";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
-const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 12 * HOUR_MS;
+const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
 const MEDIA_BASE_URL = normalizeMediaBaseUrl(window.INSPO_MEDIA_BASE_URL || "");
 const MEDIA_URL_MAP = normalizeMediaUrlMap(window.INSPO_MEDIA_URL_MAP || window.INSPO_MEDIA_MAP);
 
@@ -175,8 +175,10 @@ async function hydrateRemoteCollectionData(localData) {
   if (remoteData === localData) return;
 
   const activeSection = state.section;
+  const beforeFingerprint = getCollectionFingerprint();
   applyCollectionData(remoteData);
   state.section = sections[activeSection]?.id || sectionList[0]?.id || "";
+  if (getCollectionFingerprint() === beforeFingerprint) return;
   renderSidebar();
   render();
 }
@@ -188,6 +190,7 @@ async function loadRemoteCollectionData(localData) {
   try {
     const response = await fetch(`/api/content?v=${DATA_VERSION}`, {
       signal: controller.signal,
+      cache: "no-cache",
       headers: { Accept: "application/json" },
     });
 
@@ -245,6 +248,27 @@ function writeCachedRemoteCollectionData(data) {
   } catch {
     // localStorage can be unavailable in strict privacy modes; the static bundle still works.
   }
+}
+
+function getCollectionFingerprint() {
+  const sectionFingerprint = sectionList
+    .map((section) => `${section.id}:${section.title}:${section.filters.join("|")}:${section.showFilters}`)
+    .join(";");
+  const itemFingerprint = items
+    .map((item) =>
+      [
+        item.id,
+        item.section,
+        item.title,
+        item.cover,
+        item.video,
+        item.createdAt,
+        item.dateAdded,
+      ].join(":"),
+    )
+    .join(";");
+
+  return `${sectionFingerprint}::${itemFingerprint}`;
 }
 
 function mergeCollectionData(localData, remoteData) {
@@ -681,7 +705,7 @@ function getVisibleItems() {
 function createCard(item, priorityIndex = 0) {
   if (isAppRecapItem(item)) return createAppRecapCard(item, priorityIndex);
 
-  const media = createMediaMarkup(item, { eager: priorityIndex < 8 });
+  const media = createMediaMarkup(item, { eager: shouldEagerLoadCard(priorityIndex) });
   const itemUrl = escapeHtml(item.url || "");
   const itemTitle = escapeHtml(item.title || "未命名内容");
   const newBadge = isNewItem(item) ? `<span class="new-badge" aria-label="新内容">新</span>` : "";
@@ -717,7 +741,7 @@ function createAppRecapCard(item, priorityIndex = 0) {
   const icon = escapeHtml(item.appIcon || item.avatar || "");
   const count = Number(item.imageCount || item.materials?.length || 0);
   const cover = escapeHtml(item.cover || "");
-  const isEager = priorityIndex < 8;
+  const isEager = shouldEagerLoadCard(priorityIndex);
 
   return `
     <article class="work-card app-recap-card is-portrait">
@@ -751,10 +775,11 @@ function createMediaMarkup(item, options = {}) {
   if (item.video) {
     const videoPath = escapeHtml(item.video);
     const poster = item.cover ? ` poster="${escapeHtml(item.cover)}"` : "";
+    const eagerAttributes = isEager
+      ? ` src="${videoPath}" autoplay preload="metadata" data-video-loaded="true" data-video-eager="true"`
+      : ` preload="none"`;
     return `
-      <video muted autoplay loop playsinline preload="${isEager ? "auto" : "metadata"}"${poster} data-video-path="${videoPath}">
-        <source src="${videoPath}" type="video/mp4" />
-      </video>
+      <video muted loop playsinline${poster} data-video-path="${videoPath}"${eagerAttributes}></video>
       <span class="media-missing" hidden>
         <strong>需要视频文件</strong>
         <small>${item.video.replace("./assets/", "assets/")}</small>
@@ -772,6 +797,11 @@ function createMediaMarkup(item, options = {}) {
       <small>在后台补充封面或视频</small>
     </span>
   `;
+}
+
+function shouldEagerLoadCard(priorityIndex) {
+  const eagerCount = state.section === "app-recap" ? APP_RECAP_COLUMNS : INITIAL_EAGER_MEDIA_COUNT;
+  return priorityIndex < eagerCount;
 }
 
 function openDetail(itemId) {
@@ -988,6 +1018,7 @@ function getFilterLabel(filter) {
 
 function renderMasonry(filtered) {
   gallery.className = "gallery is-masonry";
+  resetLazyVideoObserver();
   const galleryMetrics = getGalleryMetrics();
   const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
   const columns = Array.from({ length: columnCount }, () => ({ height: 0, cards: [] }));
@@ -1012,6 +1043,7 @@ function renderMasonry(filtered) {
 
 function renderUniformGrid(filtered) {
   gallery.className = "gallery is-uniform";
+  resetLazyVideoObserver();
   const galleryMetrics = getGalleryMetrics();
   const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
   gallery.style.setProperty("--gallery-columns", columnCount);
@@ -1024,6 +1056,7 @@ function renderUniformGrid(filtered) {
 
 function renderSingleColumn(filtered) {
   gallery.className = "gallery is-single";
+  resetLazyVideoObserver();
   gallery.style.setProperty("--gallery-columns", 1);
   gallery.style.maxWidth = filtered.length ? `${getGalleryMaxWidth(1, SINGLE_CARD_MAX_WIDTH)}px` : "";
   gallery.innerHTML = filtered.map((item, index) => createCard(item, index)).join("");
@@ -1041,8 +1074,63 @@ function bindVideoFallbacks(root) {
     };
 
     video.addEventListener("error", showFallback, { once: true });
-    video.querySelector("source")?.addEventListener("error", showFallback, { once: true });
+    if (video.dataset.videoLoaded === "true" || video.dataset.videoEager === "true" || root === detailPreview) {
+      loadLazyVideo(video);
+      return;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      loadLazyVideo(video);
+      return;
+    }
+
+    getLazyVideoObserver().observe(video);
   });
+}
+
+function getLazyVideoObserver() {
+  if (lazyVideoObserver) return lazyVideoObserver;
+
+  lazyVideoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const video = entry.target;
+        lazyVideoObserver.unobserve(video);
+        loadLazyVideo(video);
+      });
+    },
+    { rootMargin: "900px 0px" },
+  );
+
+  return lazyVideoObserver;
+}
+
+function resetLazyVideoObserver() {
+  if (!lazyVideoObserver) return;
+  lazyVideoObserver.disconnect();
+  lazyVideoObserver = null;
+}
+
+function loadLazyVideo(video) {
+  if (!video || video.dataset.videoLoaded === "true") return;
+
+  const source = video.dataset.videoPath;
+  if (!source) return;
+
+  video.dataset.videoLoaded = "true";
+  video.src = source;
+  video.preload = "metadata";
+  video.autoplay = true;
+  video.load();
+
+  const playRequest = video.play();
+  if (playRequest && typeof playRequest.catch === "function") {
+    playRequest.catch(() => {
+      // Browsers may pause background videos until user interaction; the card will still render its poster/frame.
+    });
+  }
 }
 
 function bindGalleryMediaRatios(root) {
@@ -1063,7 +1151,6 @@ function bindGalleryMediaRatios(root) {
     if (!item || Math.abs((item.mediaAspectRatio || 0) - ratio) < 0.01) return;
 
     item.mediaAspectRatio = ratio;
-    scheduleMasonryRerender();
   };
 
   root.querySelectorAll(".media-frame img, .media-frame video").forEach((media) => {
@@ -1076,17 +1163,6 @@ function bindGalleryMediaRatios(root) {
     media.addEventListener("load", () => applyRatio(media), { once: true });
     if (media.complete) applyRatio(media);
   });
-}
-
-function scheduleMasonryRerender() {
-  if (state.viewMode !== "masonry") return;
-  window.clearTimeout(masonryRatioTimer);
-  cancelAnimationFrame(masonryRatioFrame);
-  masonryRatioTimer = window.setTimeout(() => {
-    masonryRatioFrame = requestAnimationFrame(() => {
-      renderGallery();
-    });
-  }, 180);
 }
 
 function bindAppRecapImageRatios(root) {
