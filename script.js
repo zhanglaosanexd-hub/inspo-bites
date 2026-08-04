@@ -106,7 +106,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260804-media-fallback";
+const DATA_VERSION = "20260804-media-proxy";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
@@ -776,7 +776,10 @@ function createMediaMarkup(item, options = {}) {
     const videoPath = escapeHtml(item.video);
     const poster = item.cover ? ` poster="${escapeHtml(item.cover)}"` : "";
     const fallback = item.cover
-      ? `<img class="media-fallback-image" src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" hidden />`
+      ? `
+        <img class="media-fallback-image" data-media-image="true" src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" hidden />
+        ${createMediaMissingMarkup(item, "视频同步中", "视频源正在整理，稍后恢复动态预览。", true)}
+      `
       : createMediaMissingMarkup(item, "素材同步中", "视频源正在整理，稍后恢复动态预览。", true);
     const eagerAttributes = isEager
       ? ` src="${videoPath}" autoplay preload="metadata" data-video-loaded="true" data-video-eager="true"`
@@ -788,7 +791,10 @@ function createMediaMarkup(item, options = {}) {
   }
 
   if (item.cover) {
-    return `<img src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" />`;
+    return `
+      <img data-media-image="true" src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" />
+      ${createMediaMissingMarkup(item, "视频同步中", "视频源正在整理，稍后恢复动态预览。", true)}
+    `;
   }
 
   return createMediaMissingMarkup(item);
@@ -873,6 +879,7 @@ function renderDetail() {
   detailDescription.textContent = isAppRecap ? "" : item.longDescription || item.description;
   detailPreview.innerHTML = isAppRecap ? createAppRecapDetailMarkup(item) : createMediaMarkup(item, { eager: true });
   bindVideoFallbacks(detailPreview);
+  bindImageFallbacks(detailPreview);
   bindAppRecapImageRatios(detailPreview);
   bindDetailPreviewRatio();
   detailSourceLink.hidden = isAppRecap || !item.url;
@@ -1048,6 +1055,7 @@ function renderMasonry(filtered) {
     .map((column) => `<div class="gallery-column">${column.cards.join("")}</div>`)
     .join("");
   bindVideoFallbacks(gallery);
+  bindImageFallbacks(gallery);
   bindGalleryMediaRatios(gallery);
   bindAppRecapImageRatios(gallery);
 }
@@ -1061,6 +1069,7 @@ function renderUniformGrid(filtered) {
   gallery.style.maxWidth = `${getGalleryMaxWidth(columnCount)}px`;
   gallery.innerHTML = filtered.map((item, index) => createCard(item, index)).join("");
   bindVideoFallbacks(gallery);
+  bindImageFallbacks(gallery);
   bindGalleryMediaRatios(gallery);
   bindAppRecapImageRatios(gallery);
 }
@@ -1072,6 +1081,7 @@ function renderSingleColumn(filtered) {
   gallery.style.maxWidth = filtered.length ? `${getGalleryMaxWidth(1, SINGLE_CARD_MAX_WIDTH)}px` : "";
   gallery.innerHTML = filtered.map((item, index) => createCard(item, index)).join("");
   bindVideoFallbacks(gallery);
+  bindImageFallbacks(gallery);
   bindGalleryMediaRatios(gallery);
   bindAppRecapImageRatios(gallery);
 }
@@ -1096,6 +1106,21 @@ function bindVideoFallbacks(root) {
     }
 
     getLazyVideoObserver().observe(video);
+  });
+}
+
+function bindImageFallbacks(root) {
+  root.querySelectorAll("img[data-media-image]").forEach((image) => {
+    const fallback = image.nextElementSibling?.classList.contains("media-missing")
+      ? image.nextElementSibling
+      : null;
+    const showFallback = () => {
+      image.hidden = true;
+      if (fallback) fallback.hidden = false;
+    };
+
+    image.addEventListener("error", showFallback, { once: true });
+    if (image.complete && image.naturalWidth === 0) showFallback();
   });
 }
 

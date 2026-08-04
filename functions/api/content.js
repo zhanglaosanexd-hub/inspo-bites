@@ -423,7 +423,7 @@ function normalizeYuqueTableRecord(record, context) {
   const description = cleanText(field("description"));
   const analysis = compactParagraphs([field("analysis")].filter(Boolean));
   const type = inferTypeFromTableTags(tags, sourceText);
-  const cover = mediaOverride.cover || coverAsset?.file || "";
+  const cover = mediaOverride.cover || proxiedYuqueImageUrl(coverAsset?.file || "");
   const video = mediaOverride.video || playableVideoAsset?.file || "";
   const mediaAspectRatio = getAttachmentAspectRatio(playableVideoAsset || videoAsset || coverAsset);
 
@@ -969,9 +969,10 @@ function cleanupItem(item) {
   next.dateAdded = dateOnly(next.dateAdded || new Date().toISOString());
 
   if (!next.cover && !next.video && next.materials?.length) {
-    const firstPublicMedia = next.materials.find((material) => !isPrivateYuqueAttachmentUrl(material.file))?.file || "";
+    const firstPublicMedia =
+      next.materials.find((material) => !isPrivateYuqueAttachmentUrl(material.file))?.file || "";
     if (isVideoUrl(firstPublicMedia)) next.video = firstPublicMedia;
-    else next.cover = firstPublicMedia;
+    else next.cover = proxiedYuqueImageUrl(firstPublicMedia);
   }
 
   if (next.section === "ux-bites") {
@@ -1074,6 +1075,24 @@ function isPrivateYuqueAttachmentUrl(value) {
   } catch {
     return false;
   }
+}
+
+function proxiedYuqueImageUrl(value) {
+  if (!value) return "";
+  try {
+    const url = new URL(String(value));
+    if (
+      url.protocol === "https:" &&
+      url.hostname === "cdn.nlark.com" &&
+      url.pathname.startsWith("/yuque/") &&
+      /\.(png|jpe?g|webp|gif)$/i.test(url.pathname)
+    ) {
+      return `/api/media?url=${encodeURIComponent(url.toString())}`;
+    }
+  } catch {
+    return value;
+  }
+  return value;
 }
 
 function isXUrl(value) {

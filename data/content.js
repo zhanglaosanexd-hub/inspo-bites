@@ -7933,7 +7933,7 @@ window.INSPO_STATIC_DATA = {
         "tags": [
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294704637-67d6bba0-b5dc-448c-bab1-f7ce3a56c78b.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1782294704637-67d6bba0-b5dc-448c-bab1-f7ce3a56c78b.png",
         "video": "./assets/pinckus-motion-graphics-hydrangea-x.mp4",
         "url": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#",
         "dateAdded": "2026-06-24",
@@ -7969,7 +7969,7 @@ window.INSPO_STATIC_DATA = {
         "tags": [
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294914918-1a6e19fa-0ace-407c-9d3c-4908a9034359.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1782294914918-1a6e19fa-0ace-407c-9d3c-4908a9034359.png",
         "video": "./assets/ampersand-no3-in-out-x.mp4",
         "url": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#",
         "dateAdded": "2026-06-24",
@@ -8011,7 +8011,7 @@ window.INSPO_STATIC_DATA = {
           "#空间化浏览",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415676734-615921b9-b917-4ed1-bb64-bf7df6a3872e.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1783415676734-615921b9-b917-4ed1-bb64-bf7df6a3872e.png",
         "video": "./assets/bamojk-webgl-wheel-browse.mp4",
         "url": "https://x.com/bamojk/status/2067922309130977480?s=20",
         "dateAdded": "2026-07-07",
@@ -8053,7 +8053,7 @@ window.INSPO_STATIC_DATA = {
           "#数字品牌",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415846872-6828d883-7dce-4e30-b950-da29bdb220d9.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1783415846872-6828d883-7dce-4e30-b950-da29bdb220d9.png",
         "video": "./assets/world-is-web-ticket-brand-motion.mp4",
         "url": "https://x.com/world_is_web/status/2068101965901390292?s=20",
         "dateAdded": "2026-07-07",
@@ -8095,7 +8095,7 @@ window.INSPO_STATIC_DATA = {
           "#UIAnimation",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783416928473-f2dc337f-88ff-469e-ab28-f1aee63c7518.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1783416928473-f2dc337f-88ff-469e-ab28-f1aee63c7518.png",
         "video": "./assets/kelindi-ebook-page-turn.mp4",
         "url": "https://x.com/_kelindi/status/2067668302172721568?s=20",
         "dateAdded": "2026-07-07",
@@ -8137,7 +8137,7 @@ window.INSPO_STATIC_DATA = {
           "#WebExperience",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417007845-afd21fb5-a2d7-4d9a-8cfd-866faaef8e9b.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1783417007845-afd21fb5-a2d7-4d9a-8cfd-866faaef8e9b.png",
         "video": "./assets/world-is-web-golden-ticket-motion.mp4",
         "url": "https://x.com/world_is_web/status/2069388221075558537?s=20",
         "dateAdded": "2026-07-07",
@@ -8222,7 +8222,7 @@ window.INSPO_STATIC_DATA = {
           "视觉实验",
           "品牌体验页"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669388920-b2d28310-acb4-48ef-be3c-2536be39d02e.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1783669388920-b2d28310-acb4-48ef-be3c-2536be39d02e.png",
         "video": "",
         "url": "https://oobexr.zerotredici.app/",
         "dateAdded": "2026-07-10",
@@ -8267,7 +8267,7 @@ window.INSPO_STATIC_DATA = {
         "tags": [
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669753472-ef301b90-9282-4219-a0bb-ae9e041484b2.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1783669753472-ef301b90-9282-4219-a0bb-ae9e041484b2.png",
         "video": "./assets/uploads/1783406370925-03-3d-interactive-folder-Animation.mp4",
         "url": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#",
         "dateAdded": "2026-07-10",
@@ -8306,7 +8306,7 @@ window.INSPO_STATIC_DATA = {
           "产品细节",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783672553988-3daaef90-d997-4110-9106-c0e204f3a731.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1783672553988-3daaef90-d997-4110-9106-c0e204f3a731.png",
         "video": "",
         "url": "https://x.com/jmtrivedi/status/2000678707137036637?s=20",
         "dateAdded": "2026-07-10",
@@ -8356,7 +8356,7 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144582604-7450f675-74ec-4ad8-b2e2-04e7dc976a34.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1785144582604-7450f675-74ec-4ad8-b2e2-04e7dc976a34.png",
         "video": "",
         "url": "https://x.com/shedsgns/status/2079162374712365254",
         "dateAdded": "2026-07-27",
@@ -8406,7 +8406,7 @@ window.INSPO_STATIC_DATA = {
           "移动端动效",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144604852-aac0c3a0-2677-4b7b-953a-afba9cc77f71.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1785144604852-aac0c3a0-2677-4b7b-953a-afba9cc77f71.png",
         "video": "",
         "url": "https://x.com/ZaydenSaaSgtfs/status/2079507994124108250",
         "dateAdded": "2026-07-27",
@@ -8452,7 +8452,7 @@ window.INSPO_STATIC_DATA = {
           "内容结构",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144772977-8ce6e369-237c-4394-a238-b9142a7774b6.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1785144772977-8ce6e369-237c-4394-a238-b9142a7774b6.png",
         "video": "",
         "url": "https://x.com/Neesh774/status/2070557463628149055",
         "dateAdded": "2026-07-27",
@@ -8497,7 +8497,7 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785202830097-6d22f09f-c974-452c-b346-2c2f0b379990.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1785202830097-6d22f09f-c974-452c-b346-2c2f0b379990.png",
         "video": "",
         "url": "https://x.com/benjaminnathan/status/2069724377629765813?s=20",
         "dateAdded": "2026-07-28",
@@ -8548,7 +8548,7 @@ window.INSPO_STATIC_DATA = {
           "生成反馈",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785480666235-6d0117ec-5514-409d-a6b8-798655fef0be.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1785480666235-6d0117ec-5514-409d-a6b8-798655fef0be.png",
         "video": "",
         "url": "https://x.com/dqnamo/status/2082481271671078928",
         "dateAdded": "2026-07-31",
@@ -8594,7 +8594,7 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785483159817-c1a45611-d275-4857-bb20-73d4eddfb24c.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1785483159817-c1a45611-d275-4857-bb20-73d4eddfb24c.png",
         "video": "",
         "url": "https://x.com/nilseller/status/2077423947004641474",
         "dateAdded": "2026-07-31",
@@ -8645,7 +8645,7 @@ window.INSPO_STATIC_DATA = {
           "趣味设计",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785483794748-ef076fb3-ecc7-4606-92ad-f056f6db53b0.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1785483794748-ef076fb3-ecc7-4606-92ad-f056f6db53b0.png",
         "video": "",
         "url": "https://x.com/ozzyxs1a/status/2073734969667493914",
         "dateAdded": "2026-07-31",
@@ -8692,7 +8692,7 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785490271318-92ecd789-b2e9-4b8e-9c22-bad60d3d7f13.png",
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1785490271318-92ecd789-b2e9-4b8e-9c22-bad60d3d7f13.png",
         "video": "",
         "url": "https://x.com/turaluix/status/2080720630534865182",
         "dateAdded": "2026-07-31",
