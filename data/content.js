@@ -8250,7 +8250,7 @@ window.INSPO_STATIC_DATA = {
           }
         ],
         "mediaStatus": "pending-media",
-        "mediaAspectRatio": "",
+        "mediaAspectRatio": 1.6644370122630991,
         "size": "wide",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
@@ -8334,8 +8334,8 @@ window.INSPO_STATIC_DATA = {
           }
         ],
         "mediaStatus": "pending-media",
-        "mediaAspectRatio": "",
-        "size": "wide",
+        "mediaAspectRatio": 0.5983935742971888,
+        "size": "tall",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
       {
@@ -8384,8 +8384,8 @@ window.INSPO_STATIC_DATA = {
           }
         ],
         "mediaStatus": "pending-media",
-        "mediaAspectRatio": "",
-        "size": "wide",
+        "mediaAspectRatio": 1.4022617124394183,
+        "size": "standard",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
       {
@@ -8430,8 +8430,8 @@ window.INSPO_STATIC_DATA = {
           }
         ],
         "mediaStatus": "pending-media",
-        "mediaAspectRatio": "",
-        "size": "wide",
+        "mediaAspectRatio": 1.3333333333333333,
+        "size": "standard",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
       {
@@ -8476,8 +8476,8 @@ window.INSPO_STATIC_DATA = {
           }
         ],
         "mediaStatus": "pending-media",
-        "mediaAspectRatio": "",
-        "size": "wide",
+        "mediaAspectRatio": 1.3333333333333333,
+        "size": "standard",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
       {
@@ -8525,7 +8525,7 @@ window.INSPO_STATIC_DATA = {
           }
         ],
         "mediaStatus": "pending-media",
-        "mediaAspectRatio": "",
+        "mediaAspectRatio": 1.6844106463878328,
         "size": "wide",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
@@ -8572,8 +8572,8 @@ window.INSPO_STATIC_DATA = {
           }
         ],
         "mediaStatus": "pending-media",
-        "mediaAspectRatio": "",
-        "size": "wide",
+        "mediaAspectRatio": 1.221383647798742,
+        "size": "standard",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
       {
@@ -8622,7 +8622,7 @@ window.INSPO_STATIC_DATA = {
           }
         ],
         "mediaStatus": "pending-media",
-        "mediaAspectRatio": "",
+        "mediaAspectRatio": 1.5186862967157417,
         "size": "wide",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
@@ -8669,7 +8669,7 @@ window.INSPO_STATIC_DATA = {
           }
         ],
         "mediaStatus": "pending-media",
-        "mediaAspectRatio": "",
+        "mediaAspectRatio": 2.020891364902507,
         "size": "wide",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
@@ -8720,8 +8720,8 @@ window.INSPO_STATIC_DATA = {
           }
         ],
         "mediaStatus": "pending-media",
-        "mediaAspectRatio": "",
-        "size": "wide",
+        "mediaAspectRatio": 1.3925619834710743,
+        "size": "standard",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       }
     ]

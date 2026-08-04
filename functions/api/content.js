@@ -425,7 +425,10 @@ function normalizeYuqueTableRecord(record, context) {
   const type = inferTypeFromTableTags(tags, sourceText);
   const cover = mediaOverride.cover || proxiedYuqueImageUrl(coverAsset?.file || "");
   const video = mediaOverride.video || playableVideoAsset?.file || "";
-  const mediaAspectRatio = getAttachmentAspectRatio(playableVideoAsset || videoAsset || coverAsset);
+  const mediaAspectRatio =
+    getAttachmentAspectRatio(playableVideoAsset) ||
+    getAttachmentAspectRatio(videoAsset) ||
+    getAttachmentAspectRatio(coverAsset);
 
   return cleanupItem({
     id: mediaOverride.id || slugify(`${context.source.section}-${title}`),
@@ -900,7 +903,11 @@ function inferTypeFromTableTags(tags, sourceText) {
 
 function inferTableSize(coverAsset, videoAsset, section) {
   if (section === "ux-bites") return "tall";
-  const mediaAsset = videoAsset || coverAsset;
+  const mediaAsset =
+    (videoAsset?.width && videoAsset?.height ? videoAsset : null) ||
+    (coverAsset?.width && coverAsset?.height ? coverAsset : null) ||
+    videoAsset ||
+    coverAsset;
   if (!mediaAsset?.width || !mediaAsset?.height) return videoAsset ? "wide" : "standard";
   const ratio = Number(mediaAsset.width) / Number(mediaAsset.height);
   if (ratio > 1.45) return "wide";

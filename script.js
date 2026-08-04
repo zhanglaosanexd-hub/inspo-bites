@@ -14,7 +14,6 @@ let visibleItems = [];
 let activeDetailIndex = 0;
 let detailTransitionFrame = 0;
 let detailCloseTimer = 0;
-let lazyVideoObserver = null;
 
 const gallery = document.querySelector("#gallery");
 const sectionNav = document.querySelector(".section-nav");
@@ -106,7 +105,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260804-media-proxy";
+const DATA_VERSION = "20260804-hover-video";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
@@ -774,19 +773,15 @@ function createMediaMarkup(item, options = {}) {
   if (item.motionCover) return createMotionCover(item);
   if (item.video) {
     const videoPath = escapeHtml(item.video);
-    const poster = item.cover ? ` poster="${escapeHtml(item.cover)}"` : "";
-    const fallback = item.cover
+    const poster = item.cover
       ? `
-        <img class="media-fallback-image" data-media-image="true" src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" hidden />
+        <img class="media-fallback-image" data-media-image="true" src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" />
         ${createMediaMissingMarkup(item, "视频同步中", "视频源正在整理，稍后恢复动态预览。", true)}
       `
-      : createMediaMissingMarkup(item, "素材同步中", "视频源正在整理，稍后恢复动态预览。", true);
-    const eagerAttributes = isEager
-      ? ` src="${videoPath}" autoplay preload="metadata" data-video-loaded="true" data-video-eager="true"`
-      : ` preload="none"`;
+      : createMediaMissingMarkup(item, "视频加载中", "移入卡片后播放动态预览。");
     return `
-      <video muted loop playsinline${poster} data-video-path="${videoPath}"${eagerAttributes}></video>
-      ${fallback}
+      ${poster}
+      <video muted loop playsinline preload="none" data-video-path="${videoPath}" aria-hidden="true"></video>
     `;
   }
 
@@ -1036,7 +1031,6 @@ function getFilterLabel(filter) {
 
 function renderMasonry(filtered) {
   gallery.className = "gallery is-masonry";
-  resetLazyVideoObserver();
   const galleryMetrics = getGalleryMetrics();
   const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
   const columns = Array.from({ length: columnCount }, () => ({ height: 0, cards: [] }));
@@ -1062,7 +1056,6 @@ function renderMasonry(filtered) {
 
 function renderUniformGrid(filtered) {
   gallery.className = "gallery is-uniform";
-  resetLazyVideoObserver();
   const galleryMetrics = getGalleryMetrics();
   const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
   gallery.style.setProperty("--gallery-columns", columnCount);
@@ -1076,7 +1069,6 @@ function renderUniformGrid(filtered) {
 
 function renderSingleColumn(filtered) {
   gallery.className = "gallery is-single";
-  resetLazyVideoObserver();
   gallery.style.setProperty("--gallery-columns", 1);
   gallery.style.maxWidth = filtered.length ? `${getGalleryMaxWidth(1, SINGLE_CARD_MAX_WIDTH)}px` : "";
   gallery.innerHTML = filtered.map((item, index) => createCard(item, index)).join("");
@@ -1088,32 +1080,61 @@ function renderSingleColumn(filtered) {
 
 function bindVideoFallbacks(root) {
   root.querySelectorAll("video[data-video-path]").forEach((video) => {
-    const fallback = video.nextElementSibling;
+    const container = video.parentElement;
+    const trigger = video.closest(".media-link") || container;
+    const poster = container?.querySelector("img[data-media-image]");
+    const fallback = container?.querySelector(".media-missing");
+    const isDetailVideo = root === detailPreview;
+    let wantsPlayback = isDetailVideo;
+
     const showFallback = () => {
       video.hidden = true;
-      if (fallback) fallback.hidden = false;
+      container?.classList.remove("is-video-playing");
+      if (!poster || poster.hidden) {
+        if (fallback) fallback.hidden = false;
+      }
+    };
+    const revealVideo = () => {
+      if (!wantsPlayback || video.hidden) return;
+      const playRequest = video.play();
+      if (playRequest && typeof playRequest.then === "function") {
+        playRequest
+          .then(() => container?.classList.add("is-video-playing"))
+          .catch(() => container?.classList.remove("is-video-playing"));
+      }
+    };
+    const startPlayback = () => {
+      wantsPlayback = true;
+      loadLazyVideo(video);
+      if (video.readyState >= 2) revealVideo();
+    };
+    const stopPlayback = () => {
+      wantsPlayback = false;
+      container?.classList.remove("is-video-playing");
+      if (!video.paused) video.pause();
     };
 
     video.addEventListener("error", showFallback, { once: true });
-    if (video.dataset.videoLoaded === "true" || video.dataset.videoEager === "true" || root === detailPreview) {
-      loadLazyVideo(video);
+    video.addEventListener("canplay", revealVideo);
+    video.addEventListener("playing", () => {
+      if (wantsPlayback) container?.classList.add("is-video-playing");
+    });
+
+    if (isDetailVideo) {
+      startPlayback();
       return;
     }
 
-    if (!("IntersectionObserver" in window)) {
-      loadLazyVideo(video);
-      return;
-    }
-
-    getLazyVideoObserver().observe(video);
+    trigger?.addEventListener("pointerenter", startPlayback);
+    trigger?.addEventListener("pointerleave", stopPlayback);
+    trigger?.addEventListener("focusin", startPlayback);
+    trigger?.addEventListener("focusout", stopPlayback);
   });
 }
 
 function bindImageFallbacks(root) {
   root.querySelectorAll("img[data-media-image]").forEach((image) => {
-    const fallback = image.nextElementSibling?.classList.contains("media-missing")
-      ? image.nextElementSibling
-      : null;
+    const fallback = image.parentElement?.querySelector(".media-missing") || null;
     const showFallback = () => {
       image.hidden = true;
       if (fallback) fallback.hidden = false;
@@ -1124,31 +1145,6 @@ function bindImageFallbacks(root) {
   });
 }
 
-function getLazyVideoObserver() {
-  if (lazyVideoObserver) return lazyVideoObserver;
-
-  lazyVideoObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-
-        const video = entry.target;
-        lazyVideoObserver.unobserve(video);
-        loadLazyVideo(video);
-      });
-    },
-    { rootMargin: "900px 0px" },
-  );
-
-  return lazyVideoObserver;
-}
-
-function resetLazyVideoObserver() {
-  if (!lazyVideoObserver) return;
-  lazyVideoObserver.disconnect();
-  lazyVideoObserver = null;
-}
-
 function loadLazyVideo(video) {
   if (!video || video.dataset.videoLoaded === "true") return;
 
@@ -1157,16 +1153,8 @@ function loadLazyVideo(video) {
 
   video.dataset.videoLoaded = "true";
   video.src = source;
-  video.preload = "metadata";
-  video.autoplay = true;
+  video.preload = "auto";
   video.load();
-
-  const playRequest = video.play();
-  if (playRequest && typeof playRequest.catch === "function") {
-    playRequest.catch(() => {
-      // Browsers may pause background videos until user interaction; the card will still render its poster/frame.
-    });
-  }
 }
 
 function bindGalleryMediaRatios(root) {
