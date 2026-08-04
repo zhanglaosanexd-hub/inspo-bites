@@ -415,15 +415,17 @@ function normalizeYuqueTableRecord(record, context) {
   const link = normalizeTableLink(field("url")) || context.reference;
   const coverAsset = firstTableAttachment(field("cover"), "image");
   const videoAsset = firstTableAttachment(field("video"), "video");
+  const blockedVideoAsset = videoAsset && isPrivateYuqueAttachmentUrl(videoAsset.file);
+  const playableVideoAsset = blockedVideoAsset ? null : videoAsset;
   const tagValue = field("tags") || "";
   const tags = normalizeTags(tagValue, "", sourceText, link);
   const mediaOverride = findLocalMediaOverride(title, context.source.section);
   const description = cleanText(field("description"));
   const analysis = compactParagraphs([field("analysis")].filter(Boolean));
   const type = inferTypeFromTableTags(tags, sourceText);
-  const cover = videoAsset ? "" : mediaOverride.cover || coverAsset?.file || "";
-  const video = videoAsset?.file || mediaOverride.video || "";
-  const mediaAspectRatio = getAttachmentAspectRatio(videoAsset || coverAsset);
+  const cover = mediaOverride.cover || coverAsset?.file || "";
+  const video = mediaOverride.video || playableVideoAsset?.file || "";
+  const mediaAspectRatio = getAttachmentAspectRatio(playableVideoAsset || videoAsset || coverAsset);
 
   return cleanupItem({
     id: mediaOverride.id || slugify(`${context.source.section}-${title}`),
@@ -443,6 +445,7 @@ function normalizeYuqueTableRecord(record, context) {
     createdAt: record.created_at || data.createdAt || "",
     details: buildDetailRows(sourceText, type),
     materials: normalizeTableMaterials(field("cover"), field("video")),
+    mediaStatus: blockedVideoAsset && !video ? "pending-media" : "",
     mediaAspectRatio,
     size: inferTableSize(coverAsset, videoAsset, context.source.section),
     reference: context.reference,
@@ -966,9 +969,9 @@ function cleanupItem(item) {
   next.dateAdded = dateOnly(next.dateAdded || new Date().toISOString());
 
   if (!next.cover && !next.video && next.materials?.length) {
-    const first = next.materials[0].file;
-    if (isVideoUrl(first)) next.video = first;
-    else next.cover = first;
+    const firstPublicMedia = next.materials.find((material) => !isPrivateYuqueAttachmentUrl(material.file))?.file || "";
+    if (isVideoUrl(firstPublicMedia)) next.video = firstPublicMedia;
+    else next.cover = firstPublicMedia;
   }
 
   if (next.section === "ux-bites") {
@@ -1057,6 +1060,20 @@ function looksLikeMedia(value) {
 
 function isVideoUrl(value) {
   return /\.(mp4|mov|webm)(\?|$)/i.test(String(value || ""));
+}
+
+function isPrivateYuqueAttachmentUrl(value) {
+  try {
+    const url = new URL(String(value || ""));
+    const hostname = url.hostname.replace(/^www\./, "");
+    return (
+      hostname === "yuque.com" &&
+      url.pathname.startsWith("/attachments/yuque/") &&
+      isVideoUrl(url.pathname)
+    );
+  } catch {
+    return false;
+  }
 }
 
 function isXUrl(value) {

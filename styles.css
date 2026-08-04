@@ -705,6 +705,11 @@ h1 {
   text-align: center;
 }
 
+.media-missing[hidden],
+.media-fallback-image[hidden] {
+  display: none;
+}
+
 .media-missing strong {
   color: #333330;
   font-size: 13px;
@@ -713,6 +718,12 @@ h1 {
 .media-missing small {
   max-width: 26ch;
   overflow-wrap: anywhere;
+}
+
+.media-missing em {
+  max-width: 24ch;
+  color: #8a8a84;
+  font-style: normal;
 }
 
 .motion-cover--hydrangea {

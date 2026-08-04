@@ -106,7 +106,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260731-smooth-refresh";
+const DATA_VERSION = "20260804-media-fallback";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
@@ -775,15 +775,15 @@ function createMediaMarkup(item, options = {}) {
   if (item.video) {
     const videoPath = escapeHtml(item.video);
     const poster = item.cover ? ` poster="${escapeHtml(item.cover)}"` : "";
+    const fallback = item.cover
+      ? `<img class="media-fallback-image" src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" hidden />`
+      : createMediaMissingMarkup(item, "素材同步中", "视频源正在整理，稍后恢复动态预览。", true);
     const eagerAttributes = isEager
       ? ` src="${videoPath}" autoplay preload="metadata" data-video-loaded="true" data-video-eager="true"`
       : ` preload="none"`;
     return `
       <video muted loop playsinline${poster} data-video-path="${videoPath}"${eagerAttributes}></video>
-      <span class="media-missing" hidden>
-        <strong>需要视频文件</strong>
-        <small>${item.video.replace("./assets/", "assets/")}</small>
-      </span>
+      ${fallback}
     `;
   }
 
@@ -791,10 +791,21 @@ function createMediaMarkup(item, options = {}) {
     return `<img src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" />`;
   }
 
+  return createMediaMissingMarkup(item);
+}
+
+function createMediaMissingMarkup(
+  item,
+  title = "素材同步中",
+  note = "视频或封面正在整理，稍后恢复预览。",
+  hidden = false,
+) {
+  const itemTitle = escapeHtml(item.title || "未命名内容");
   return `
-    <span class="media-missing">
-      <strong>需要素材</strong>
-      <small>在后台补充封面或视频</small>
+    <span class="media-missing"${hidden ? " hidden" : ""}>
+      <strong>${escapeHtml(title)}</strong>
+      <small>${itemTitle}</small>
+      <em>${escapeHtml(note)}</em>
     </span>
   `;
 }

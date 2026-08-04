@@ -63,402 +63,6 @@ window.INSPO_STATIC_DATA = {
   "items": {
     "items": [
       {
-        "id": "pinckus-hydrangea",
-        "section": "inspiration",
-        "title": "09｜Pinckus：Motion Graphics「绣球」",
-        "description": "广西绣球文化元素转译成轻 3D、景深和明亮色彩的动态图形实验。",
-        "longDescription": "这是 @Pinckus 发布的动态图形作品，主题是绣球，灵感来自作者家乡广西的文化元素。\n\n作品用蓝、黄、橙等高明度色彩表现绣球的图案结构，并通过虚化、景深、空间层次和轻 3D 动效，让传统文化元素从静态纹样变成更年轻、更轻盈、更适合数字媒介传播的视觉语言。\n\n它没有把传统文化元素做得很重，而是通过 Motion、空间感和明亮色彩，把地域文化转译成了更现代的动态视觉表达。\n\n传统文化视觉不一定只能停留在插画、纹样和国风配色上，也可以通过动态图形、轻 3D、景深和节奏设计，变成更适合短视频、活动视觉、品牌传播和数字媒介的表达方式。",
-        "author": "Pinckus",
-        "avatar": "https://pbs.twimg.com/profile_images/2058773125890719744/icqA2nww_200x200.jpg",
-        "source": "𝕏",
-        "type": "Motion",
-        "tags": [
-          "Motion",
-          "Graphic",
-          "Culture",
-          "Experiment",
-          "𝕏"
-        ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294704637-67d6bba0-b5dc-448c-bab1-f7ce3a56c78b.png",
-        "video": "./assets/pinckus-motion-graphics-hydrangea-x.mp4",
-        "url": "https://x.com/Pinckus102xz/status/2059978237921644784?s=20",
-        "dateAdded": "2026-06-24",
-        "details": [
-          {
-            "label": "Source",
-            "value": "𝕏"
-          },
-          {
-            "label": "Category",
-            "value": "Motion"
-          },
-          {
-            "label": "Style",
-            "value": "Floral / Light 3D"
-          },
-          {
-            "label": "Color",
-            "value": "Bright / Soft gradient"
-          },
-          {
-            "label": "Interaction",
-            "value": "Looping motion"
-          }
-        ],
-        "materials": [
-          {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294704637-67d6bba0-b5dc-448c-bab1-f7ce3a56c78b.png"
-          }
-        ],
-        "size": "tall",
-        "createdAt": "2026-06-24T05:32:06.897Z",
-        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-      },
-      {
-        "id": "adityasur11-figma-music-player",
-        "section": "inspiration",
-        "title": "16｜Figma 制作的拟物音乐播放器细节",
-        "description": "用 Figma 做出的硬件感音乐播放器界面，关注按钮、网孔、材质和播放状态。",
-        "longDescription": "这是 @AdityaSur11 发布的音乐播放器界面细节，作者提到是用 Figma 制作。画面把播放器做成了偏硬件设备的视觉风格：大面积黑灰材质、实体按键、扬声器网孔、进度条和专辑封面共同营造出一种复古又克制的听觉氛围。\n\n它不是那种重度复古的播放器皮肤，而是把硬件设备里的按钮、屏幕、网孔、材质和阴影转译成更现代的 UI 语言。\n\n其实音乐、播客、声音类产品，本身就很适合借用真实硬件的触感。适当的拟物细节能让界面更有情绪，也能强化正在播放、可以按下、有声音从这里出来的感知。",
-        "author": "AdityaSur11",
-        "avatar": "https://pbs.twimg.com/profile_images/2008066661841248256/XJttc16H_200x200.jpg",
-        "source": "𝕏",
-        "type": "Interface",
-        "tags": [
-          "Interface",
-          "Skeuomorphic",
-          "Figma",
-          "Music",
-          "𝕏"
-        ],
-        "cover": "./assets/adityasur11-figma-music-player.jpg",
-        "video": "",
-        "url": "https://x.com/AdityaSur11/status/2069624053636423690?s=20",
-        "dateAdded": "2026-07-07",
-        "details": [
-          {
-            "label": "Source",
-            "value": "𝕏"
-          },
-          {
-            "label": "Category",
-            "value": "Interface"
-          },
-          {
-            "label": "Style",
-            "value": "Skeuomorphic / Hardware"
-          },
-          {
-            "label": "Tool",
-            "value": "Figma"
-          },
-          {
-            "label": "Medium",
-            "value": "Image"
-          }
-        ],
-        "materials": [
-          {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417035460-29407c20-f257-49d0-8ee7-d5b8a94e4b67.png"
-          }
-        ],
-        "size": "standard",
-        "createdAt": "2026-07-07T09:37:04.643Z",
-        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-      },
-      {
-        "id": "world-is-web-golden-ticket-motion",
-        "section": "inspiration",
-        "title": "15｜金色票券动效",
-        "description": "以金色票券、碎片、编号和暗色背景构成的品牌动效视觉隐喻。",
-        "longDescription": "这是 @world_is_web 为 iskra.graphics 做的另一段票券式品牌动效。相比上一张更偏镭射质感的入场券，这次更像一张被光照亮的金色票券，通过碎片、光影、编号、条形码和暗色背景，营造出更强的仪式感和稀缺感。\n\n同样是票券这个视觉隐喻，一个偏未来感和镭射材质，一个偏收藏感和金色奖励感。它们都没有用常规的官网首屏逻辑，而是把品牌信息包装成一个可以被观看、被期待、被收藏的对象。\n\n所以品牌动效不一定只围绕 Logo 展开，也可以围绕一种媒介展开。票券、会员卡、通行证、邀请函这些载体，本身就带有进入、资格、身份和仪式感，非常适合用来做数字品牌的视觉叙事。",
-        "author": "world_is_web",
-        "avatar": "https://pbs.twimg.com/profile_images/2033466992825696256/bjVQQY7b_200x200.jpg",
-        "source": "𝕏",
-        "type": "Brand",
-        "tags": [
-          "Brand",
-          "Motion",
-          "Ticket",
-          "Graphic",
-          "𝕏"
-        ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417007845-afd21fb5-a2d7-4d9a-8cfd-866faaef8e9b.png",
-        "video": "./assets/world-is-web-golden-ticket-motion.mp4",
-        "url": "https://x.com/world_is_web/status/2069388221075558537?s=20",
-        "dateAdded": "2026-07-07",
-        "details": [
-          {
-            "label": "Source",
-            "value": "𝕏"
-          },
-          {
-            "label": "Category",
-            "value": "Brand motion"
-          },
-          {
-            "label": "Style",
-            "value": "Ticket / Gold"
-          },
-          {
-            "label": "Color",
-            "value": "Dark / Gold"
-          },
-          {
-            "label": "Interaction",
-            "value": "Collectible ticket motion"
-          }
-        ],
-        "materials": [
-          {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417007845-afd21fb5-a2d7-4d9a-8cfd-866faaef8e9b.png"
-          }
-        ],
-        "size": "portrait",
-        "createdAt": "2026-07-07T09:35:44.096Z",
-        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-      },
-      {
-        "id": "kelindi-ebook-page-turn",
-        "section": "inspiration",
-        "title": "14｜把真实翻书质感带回数字阅读",
-        "description": "模拟纸张透光、翻页阴影和页面堆叠的电子书翻页交互探索。",
-        "longDescription": "这是 @_kelindi 做的一段电子书翻页交互探索。视频里不仅模拟了书页翻动的动作，还保留了纸张透光、背面内容隐约显现、翻页阴影和页面堆叠这些真实阅读里的细节。\n\n现在很多阅读产品追求极简和平面化，但真实纸书里的翻页、厚度、透光和阴影，其实能带来更强的沉浸感和阅读仪式感。\n\n拟物不等于复古，也不一定是过度装饰。好的拟物细节可以帮助用户理解状态、感知进度，也能让数字内容变得更有触感和情绪。",
-        "author": "_kelindi",
-        "avatar": "https://pbs.twimg.com/profile_images/2047731816207982592/1WDL2hib_200x200.jpg",
-        "source": "𝕏",
-        "type": "Interface",
-        "tags": [
-          "Interface",
-          "Reading",
-          "Skeuomorphic",
-          "Motion",
-          "𝕏"
-        ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783416928473-f2dc337f-88ff-469e-ab28-f1aee63c7518.png",
-        "video": "./assets/kelindi-ebook-page-turn.mp4",
-        "url": "https://x.com/_kelindi/status/2067668302172721568?s=20",
-        "dateAdded": "2026-07-07",
-        "details": [
-          {
-            "label": "Source",
-            "value": "𝕏"
-          },
-          {
-            "label": "Category",
-            "value": "Reading interaction"
-          },
-          {
-            "label": "Style",
-            "value": "Physical / Skeuomorphic"
-          },
-          {
-            "label": "Material",
-            "value": "Paper / Light bleed"
-          },
-          {
-            "label": "Interaction",
-            "value": "Page turn"
-          }
-        ],
-        "materials": [
-          {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783416928473-f2dc337f-88ff-469e-ab28-f1aee63c7518.png"
-          }
-        ],
-        "size": "standard",
-        "createdAt": "2026-07-07T09:30:26.897Z",
-        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-      },
-      {
-        "id": "world-is-web-ticket-brand-motion",
-        "section": "inspiration",
-        "title": "13｜票券式品牌动效",
-        "description": "把网站设计工作室包装成一张可撕开的入场券，形成未来感和收藏感。",
-        "longDescription": "这是 @world_is_web 为 iskra.graphics 做的一段票券式品牌动效。画面把网站设计工作室包装成一张可撕开的入场券，通过镭射质感、暗色背景、条形码、编号和信息分区，营造出很强的未来感和收藏感。\n\n它没有直接用常规的标题、按钮和服务列表，而是把品牌信息压缩进一张票券里，让设计、开发、交互、发布这些服务内容变成更有视觉记忆点的图形信息。\n\n它的参考价值在于：品牌表达不一定只能依赖 Logo 和标语，也可以通过一种具体媒介来承载。票券、卡片、证件、说明书、包装盒这类现实物件，都可以转化成数字界面里的视觉隐喻，让品牌更有故事感。",
-        "author": "world_is_web",
-        "avatar": "https://pbs.twimg.com/profile_images/2033466992825696256/bjVQQY7b_200x200.jpg",
-        "source": "𝕏",
-        "type": "Brand",
-        "tags": [
-          "Brand",
-          "Motion",
-          "Ticket",
-          "Graphic",
-          "𝕏"
-        ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415846872-6828d883-7dce-4e30-b950-da29bdb220d9.png",
-        "video": "./assets/world-is-web-ticket-brand-motion.mp4",
-        "url": "https://x.com/world_is_web/status/2068101965901390292?s=20",
-        "dateAdded": "2026-07-07",
-        "details": [
-          {
-            "label": "Source",
-            "value": "𝕏"
-          },
-          {
-            "label": "Category",
-            "value": "Brand motion"
-          },
-          {
-            "label": "Style",
-            "value": "Ticket / Holographic"
-          },
-          {
-            "label": "Color",
-            "value": "Dark / Iridescent"
-          },
-          {
-            "label": "Interaction",
-            "value": "Tear-away ticket motion"
-          }
-        ],
-        "materials": [
-          {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415846872-6828d883-7dce-4e30-b950-da29bdb220d9.png"
-          }
-        ],
-        "size": "portrait",
-        "createdAt": "2026-07-07T09:16:39.903Z",
-        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-      },
-      {
-        "id": "bamojk-webgl-wheel-browse",
-        "section": "inspiration",
-        "title": "12｜WebGL 轮盘式作品浏览动效",
-        "description": "Webflow、WebGL 和 Three.js 实现的空间轮盘式作品浏览动效。",
-        "longDescription": "这是 @bamojk 发布的一段 WIP 动效演示，使用 Webflow、WebGL 和 Three.js 做了一个轮盘式作品浏览效果。画面中图片卡片围绕空间路径旋转、翻动和切换，整体有很强的 3D 透视感和动态冲击力。\n\n传统作品集大多是卡片排列或瀑布流，而这个演示把内容做成了一个可滚动、可旋转、可进入的空间装置，让浏览本身变成了体验的一部分。\n\n它的参考价值在于：当内容本身偏视觉、艺术、摄影或创意项目时，列表不一定只是承载信息，也可以成为品牌气质的一部分。WebGL 和 Three.js 在这里不是单纯炫技，而是在强化“探索感”和“动态记忆点”。",
-        "author": "bamojk",
-        "avatar": "https://pbs.twimg.com/profile_images/1846125293276483587/g7FBWz5__200x200.jpg",
-        "source": "𝕏",
-        "type": "WebGL",
-        "tags": [
-          "WebGL",
-          "3D",
-          "Motion",
-          "Portfolio",
-          "𝕏"
-        ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415676734-615921b9-b917-4ed1-bb64-bf7df6a3872e.png",
-        "video": "./assets/bamojk-webgl-wheel-browse.mp4",
-        "url": "https://x.com/bamojk/status/2067922309130977480?s=20",
-        "dateAdded": "2026-07-07",
-        "details": [
-          {
-            "label": "Source",
-            "value": "𝕏"
-          },
-          {
-            "label": "Category",
-            "value": "WebGL"
-          },
-          {
-            "label": "Style",
-            "value": "Spatial carousel"
-          },
-          {
-            "label": "Tools",
-            "value": "Webflow / WebGL / Three.js"
-          },
-          {
-            "label": "Interaction",
-            "value": "Rotating portfolio browse"
-          }
-        ],
-        "materials": [
-          {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415676734-615921b9-b917-4ed1-bb64-bf7df6a3872e.png"
-          }
-        ],
-        "size": "wide",
-        "createdAt": "2026-07-07T09:13:58.332Z",
-        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-      },
-      {
-        "id": "ampersand-no3-in-out",
-        "section": "inspiration",
-        "title": "01｜Ampersand No.3 - In & Out：字形动效实验",
-        "description": "用一个 & 符号承载进入、退出、遮罩和节奏的字体动效实验。",
-        "longDescription": "这是 Seb Cornelius 发布在 𝕏 上的一组字形动效实验，主题是 “Ampersand No.3 - In & Out”。画面围绕 & 符号做动态变化，通过形态进出、节奏变化和局部运动，让一个很简单的符号变成了有记忆点的视觉动效。\n\n这个案例适合一个小元素怎么做出高级感。它没有复杂场景，也不是大而全的品牌系统，但节奏、细节和形式感很强。\n\n很多时候我们做动效容易上来就想做大场景、大转场，但其实一个 Logo、一个符号、一个按钮状态，也可以通过节奏和形变做得很耐看。这个案例可以作为字体动效、品牌动态识别、加载动画的参考。",
-        "author": "Seb Cornelius",
-        "avatar": "https://pbs.twimg.com/profile_images/1910194496966680576/wwkh7f8r_200x200.jpg",
-        "source": "𝕏",
-        "type": "Typography",
-        "tags": [
-          "Typography",
-          "Motion",
-          "Experiment",
-          "Loader",
-          "𝕏"
-        ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294914918-1a6e19fa-0ace-407c-9d3c-4908a9034359.png",
-        "video": "./assets/ampersand-no3-in-out-x.mp4",
-        "url": "https://x.com/SebCornelius/status/2059975757460586950",
-        "dateAdded": "2026-06-24",
-        "details": [
-          {
-            "label": "Source",
-            "value": "𝕏"
-          },
-          {
-            "label": "Category",
-            "value": "Typography"
-          },
-          {
-            "label": "Style",
-            "value": "Type motion"
-          },
-          {
-            "label": "Color",
-            "value": "Monochrome / Accent"
-          },
-          {
-            "label": "Interaction",
-            "value": "In / Out transition"
-          }
-        ],
-        "materials": [
-          {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294914918-1a6e19fa-0ace-407c-9d3c-4908a9034359.png"
-          }
-        ],
-        "size": "wide",
-        "createdAt": "2026-06-24T05:32:06.903Z",
-        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-      },
-      {
-        "id": "3d",
-        "section": "inspiration",
-        "title": "11｜3D Interactive Folder Animation",
-        "description": "发布的一段 3D 文件夹交互动效演示。视频里用橙色、黑色、白色三种文件夹状态做展示，文件从文件夹中展开，整体有明显的空间层次和轻量拟物感。",
-        "longDescription": "这是 @AdityaSur11 发布的一段 3D 文件夹交互动效演示。视频里用橙色、黑色、白色三种文件夹状态做展示，文件从文件夹中展开，整体有明显的空间层次和轻量拟物感。\n文件夹本身是很基础的界面隐喻，但通过 3D 透视、纸张展开、材质变化和鼠标悬停反馈，一个普通入口也能变得更有操作感和记忆点。\n它的参考价值在于：不一定只有复杂页面才需要动效。像文件夹、卡片、资料库、项目入口这类组件，也可以通过轻 3D 和状态变化，让用户更直观地感知里面有内容、可以打开、可以进入。",
-        "author": "AdityaSur11",
-        "source": "𝕏",
-        "type": "",
-        "tags": [
-          "All"
-        ],
-        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669753472-ef301b90-9282-4219-a0bb-ae9e041484b2.png",
-        "video": "./assets/uploads/1783406370925-03-3d-interactive-folder-Animation.mp4",
-        "url": "https://x.com/AdityaSur11/status/2070348830181376510?s=20",
-        "dateAdded": "2026-07-10",
-        "details": [
-          {
-            "label": "Source",
-            "value": "𝕏"
-          }
-        ],
-        "materials": [
-          {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669753472-ef301b90-9282-4219-a0bb-ae9e041484b2.png"
-          }
-        ],
-        "size": "wide",
-        "avatar": "./assets/uploads/1783406357762-XJttc16H_400x400.jpg",
-        "createdAt": "2026-07-10T07:48:31.276Z",
-        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-      },
-      {
         "id": "ux-bite-001",
         "section": "ux-bites",
         "title": "购买唤起阶段的卖点轮播",
@@ -8317,6 +7921,288 @@ window.INSPO_STATIC_DATA = {
         "size": "portrait"
       },
       {
+        "id": "pinckus-hydrangea",
+        "section": "inspiration",
+        "title": "09｜Pinckus：Motion Graphics「绣球」",
+        "description": "",
+        "longDescription": "",
+        "author": "Pinckus",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "𝕏"
+        ],
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294704637-67d6bba0-b5dc-448c-bab1-f7ce3a56c78b.png",
+        "video": "./assets/pinckus-motion-graphics-hydrangea-x.mp4",
+        "url": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#",
+        "dateAdded": "2026-06-24",
+        "createdAt": "2026-06-24T05:32:06.897Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294704637-67d6bba0-b5dc-448c-bab1-f7ce3a56c78b.png",
+            "width": 2532,
+            "height": 1434
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.7656903765690377,
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "ampersand-no3-in-out",
+        "section": "inspiration",
+        "title": "01｜Ampersand No.3 - In & Out：字形动效实验",
+        "description": "",
+        "longDescription": "",
+        "author": "Seb Cornelius",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "𝕏"
+        ],
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294914918-1a6e19fa-0ace-407c-9d3c-4908a9034359.png",
+        "video": "./assets/ampersand-no3-in-out-x.mp4",
+        "url": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#",
+        "dateAdded": "2026-06-24",
+        "createdAt": "2026-06-24T05:32:06.903Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294914918-1a6e19fa-0ace-407c-9d3c-4908a9034359.png",
+            "width": 3020,
+            "height": 1702
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.7743830787309047,
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "bamojk-webgl-wheel-browse",
+        "section": "inspiration",
+        "title": "12｜WebGL 轮盘式作品浏览动效",
+        "description": "这是 @bamojk 发布的一段 WIP 动效演示，使用 Webflow、WebGL 和 Three.js 做了一个轮盘式作品浏览效果。画面中图片卡片围绕空间路径旋转、翻动和切换，整体有很强的 3D 透视感和动态冲击力。 传统作品集大多是卡片排列或瀑布流，而这个演示把内容做成了一个可滚动、可旋转、可进入的空间装置，让浏览本身变成了体验的一部分。",
+        "longDescription": "这是 @bamojk 发布的一段 WIP 动效演示，使用 Webflow、WebGL 和 Three.js 做了一个轮盘式作品浏览效果。画面中图片卡片围绕空间路径旋转、翻动和切换，整体有很强的 3D 透视感和动态冲击力。 传统作品集大多是卡片排列或瀑布流，而这个演示把内容做成了一个可滚动、可旋转、可进入的空间装置，让浏览本身变成了体验的一部分。\n它的参考价值在于：当内容本身偏视觉、艺术、摄影或创意项目时，列表不一定只是承载信息，也可以成为品牌气质的一部分。WebGL 和 Three.js 在这里不是单纯炫技，而是在强化“探索感”和“动态记忆点”。",
+        "author": "bamojk",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "#WebGL",
+          "#Threejs",
+          "#Webflow",
+          "#作品集动效",
+          "#3D交互",
+          "#空间化浏览",
+          "𝕏"
+        ],
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415676734-615921b9-b917-4ed1-bb64-bf7df6a3872e.png",
+        "video": "./assets/bamojk-webgl-wheel-browse.mp4",
+        "url": "https://x.com/bamojk/status/2067922309130977480?s=20",
+        "dateAdded": "2026-07-07",
+        "createdAt": "2026-07-07T09:13:58.332Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415676734-615921b9-b917-4ed1-bb64-bf7df6a3872e.png",
+            "width": 1600,
+            "height": 1200
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.3333333333333333,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "world-is-web-ticket-brand-motion",
+        "section": "inspiration",
+        "title": "13｜票券式品牌动效",
+        "description": "这是 @world_is_web 为 iskra.graphics 做的一段票券式品牌动效。画面把网站设计工作室包装成一张可撕开的入场券，通过镭射质感、暗色背景、条形码、编号和信息分区，营造出很强的未来感和收藏感。",
+        "longDescription": "这是 @world_is_web 为 iskra.graphics 做的一段票券式品牌动效。画面把网站设计工作室包装成一张可撕开的入场券，通过镭射质感、暗色背景、条形码、编号和信息分区，营造出很强的未来感和收藏感。\n它没有直接用常规的标题、按钮和服务列表，而是把品牌信息压缩进一张票券里，让设计、开发、交互、发布这些服务内容变成更有视觉记忆点的图形信息。\n\n它的参考价值在于：品牌表达不一定只能依赖 Logo 和标语，也可以通过一种具体媒介来承载。票券、卡片、证件、说明书、包装盒这类现实物件，都可以转化成数字界面里的视觉隐喻，让品牌更有故事感。",
+        "author": "world_is_web",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "#品牌动效",
+          "#票券视觉",
+          "#WebExperience",
+          "#视觉隐喻",
+          "#动效设计",
+          "#数字品牌",
+          "𝕏"
+        ],
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415846872-6828d883-7dce-4e30-b950-da29bdb220d9.png",
+        "video": "./assets/world-is-web-ticket-brand-motion.mp4",
+        "url": "https://x.com/world_is_web/status/2068101965901390292?s=20",
+        "dateAdded": "2026-07-07",
+        "createdAt": "2026-07-07T09:16:39.903Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415846872-6828d883-7dce-4e30-b950-da29bdb220d9.png",
+            "width": 788,
+            "height": 1434
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 0.5495118549511855,
+        "size": "tall",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "kelindi-ebook-page-turn",
+        "section": "inspiration",
+        "title": "14｜把真实翻书质感带回数字阅读",
+        "description": "这是 @_kelindi 做的一段电子书翻页交互探索。视频里不仅模拟了书页翻动的动作，还保留了纸张透光、背面内容隐约显现、翻页阴影和页面堆叠这些真实阅读里的细节。",
+        "longDescription": "这是 @_kelindi 做的一段电子书翻页交互探索。视频里不仅模拟了书页翻动的动作，还保留了纸张透光、背面内容隐约显现、翻页阴影和页面堆叠这些真实阅读里的细节。\n现在很多阅读产品追求极简和平面化，但真实纸书里的翻页、厚度、透光和阴影，其实能带来更强的沉浸感和阅读仪式感。\n\n拟物不等于复古，也不一定是过度装饰。好的拟物细节可以帮助用户理解状态、感知进度，也能让数字内容变得更有触感和情绪。",
+        "author": "_kelindi",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "#电子书交互",
+          "#翻页动效",
+          "#拟物设计",
+          "#阅读体验",
+          "#物理质感",
+          "#UIAnimation",
+          "𝕏"
+        ],
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783416928473-f2dc337f-88ff-469e-ab28-f1aee63c7518.png",
+        "video": "./assets/kelindi-ebook-page-turn.mp4",
+        "url": "https://x.com/_kelindi/status/2067668302172721568?s=20",
+        "dateAdded": "2026-07-07",
+        "createdAt": "2026-07-07T09:30:26.897Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783416928473-f2dc337f-88ff-469e-ab28-f1aee63c7518.png",
+            "width": 1834,
+            "height": 1370
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.3386861313868612,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "world-is-web-golden-ticket-motion",
+        "section": "inspiration",
+        "title": "15｜金色票券动效",
+        "description": "这是 @world_is_web 为 iskra.graphics 做的另一段票券式品牌动效。相比上一张更偏镭射质感的入场券，这次更像一张被光照亮的金色票券，通过碎片、光影、编号、条形码和暗色背景，营造出更强的仪式感和稀缺感。",
+        "longDescription": "这是 @world_is_web 为 iskra.graphics 做的另一段票券式品牌动效。相比上一张更偏镭射质感的入场券，这次更像一张被光照亮的金色票券，通过碎片、光影、编号、条形码和暗色背景，营造出更强的仪式感和稀缺感。\n同样是票券这个视觉隐喻，一个偏未来感和镭射材质，一个偏收藏感和金色奖励感。它们都没有用常规的官网首屏逻辑，而是把品牌信息包装成一个可以被观看、被期待、被收藏的对象。\n\n所以品牌动效不一定只围绕 Logo 展开，也可以围绕一种媒介展开。票券、会员卡、通行证、邀请函这些载体，本身就带有进入、资格、身份和仪式感，非常适合用来做数字品牌的视觉叙事。",
+        "author": "world_is_web",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "#品牌动效",
+          "#票券视觉",
+          "#金色质感",
+          "#视觉隐喻",
+          "#数字品牌",
+          "#WebExperience",
+          "𝕏"
+        ],
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417007845-afd21fb5-a2d7-4d9a-8cfd-866faaef8e9b.png",
+        "video": "./assets/world-is-web-golden-ticket-motion.mp4",
+        "url": "https://x.com/world_is_web/status/2069388221075558537?s=20",
+        "dateAdded": "2026-07-07",
+        "createdAt": "2026-07-07T09:35:44.096Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417007845-afd21fb5-a2d7-4d9a-8cfd-866faaef8e9b.png",
+            "width": 1600,
+            "height": 1200
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.3333333333333333,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "adityasur11-figma-music-player",
+        "section": "inspiration",
+        "title": "16｜Figma 制作的拟物音乐播放器细节",
+        "description": "这是 @AdityaSur11 发布的音乐播放器界面细节，作者提到是用 Figma 制作。画面把播放器做成了偏硬件设备的视觉风格：大面积黑灰材质、实体按键、扬声器网孔、进度条和专辑封面共同营造出一种复古又克制的听觉氛围。 它不是那种重度复古的播放器皮肤，而是把硬件设备里的按钮、屏幕、网孔、材质和阴影转译成更现代的 UI 语言。",
+        "longDescription": "这是 @AdityaSur11 发布的音乐播放器界面细节，作者提到是用 Figma 制作。画面把播放器做成了偏硬件设备的视觉风格：大面积黑灰材质、实体按键、扬声器网孔、进度条和专辑封面共同营造出一种复古又克制的听觉氛围。 它不是那种重度复古的播放器皮肤，而是把硬件设备里的按钮、屏幕、网孔、材质和阴影转译成更现代的 UI 语言。\n其实音乐、播客、声音类产品，本身就很适合借用真实硬件的触感。适当的拟物细节能让界面更有情绪，也能强化正在播放、可以按下、有声音从这里出来的感知。",
+        "author": "AdityaSur11",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "#拟物设计",
+          "#音乐播放器",
+          "#Figma设计",
+          "#UI细节",
+          "#硬件质感",
+          "#声音产品",
+          "𝕏"
+        ],
+        "cover": "./assets/adityasur11-figma-music-player.jpg",
+        "video": "",
+        "url": "https://x.com/AdityaSur11/status/2069624053636423690?s=20",
+        "dateAdded": "2026-07-07",
+        "createdAt": "2026-07-07T09:37:04.643Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417035460-29407c20-f257-49d0-8ee7-d5b8a94e4b67.png",
+            "width": 1200,
+            "height": 1135
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.0572687224669604,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
         "id": "inspiration-17-xr-展示型网站-用沉浸式视觉降低空间体验的理解门槛",
         "section": "inspiration",
         "title": "17｜XR 展示型网站：用沉浸式视觉降低空间体验的理解门槛",
@@ -8336,8 +8222,8 @@ window.INSPO_STATIC_DATA = {
           "视觉实验",
           "品牌体验页"
         ],
-        "cover": "",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142084175-0698690f-a918-4aee-a719-1f6b82338e32.mp4",
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669388920-b2d28310-acb4-48ef-be3c-2536be39d02e.png",
+        "video": "",
         "url": "https://oobexr.zerotredici.app/",
         "dateAdded": "2026-07-10",
         "createdAt": "2026-07-10T07:39:33.709Z",
@@ -8353,12 +8239,54 @@ window.INSPO_STATIC_DATA = {
         ],
         "materials": [
           {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669388920-b2d28310-acb4-48ef-be3c-2536be39d02e.png"
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669388920-b2d28310-acb4-48ef-be3c-2536be39d02e.png",
+            "width": 2986,
+            "height": 1794
           },
           {
-            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142084175-0698690f-a918-4aee-a719-1f6b82338e32.mp4"
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142084175-0698690f-a918-4aee-a719-1f6b82338e32.mp4",
+            "width": "",
+            "height": ""
           }
         ],
+        "mediaStatus": "pending-media",
+        "mediaAspectRatio": "",
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "3d",
+        "section": "inspiration",
+        "title": "11｜3D Interactive Folder Animation",
+        "description": "发布的一段 3D 文件夹交互动效演示。视频里用橙色、黑色、白色三种文件夹状态做展示，文件从文件夹中展开，整体有明显的空间层次和轻量拟物感。",
+        "longDescription": "发布的一段 3D 文件夹交互动效演示。视频里用橙色、黑色、白色三种文件夹状态做展示，文件从文件夹中展开，整体有明显的空间层次和轻量拟物感。",
+        "author": "AdityaSur11",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "𝕏"
+        ],
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669753472-ef301b90-9282-4219-a0bb-ae9e041484b2.png",
+        "video": "./assets/uploads/1783406370925-03-3d-interactive-folder-Animation.mp4",
+        "url": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#",
+        "dateAdded": "2026-07-10",
+        "createdAt": "2026-07-10T07:48:31.276Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669753472-ef301b90-9282-4219-a0bb-ae9e041484b2.png",
+            "width": 2244,
+            "height": 1286
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.744945567651633,
         "size": "wide",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
@@ -8378,8 +8306,8 @@ window.INSPO_STATIC_DATA = {
           "产品细节",
           "𝕏"
         ],
-        "cover": "",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142092964-088c95a5-9592-47f5-8401-4a136175a06d.mp4",
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783672553988-3daaef90-d997-4110-9106-c0e204f3a731.png",
+        "video": "",
         "url": "https://x.com/jmtrivedi/status/2000678707137036637?s=20",
         "dateAdded": "2026-07-10",
         "createdAt": "2026-07-10T08:34:36.709Z",
@@ -8395,12 +8323,18 @@ window.INSPO_STATIC_DATA = {
         ],
         "materials": [
           {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783672553988-3daaef90-d997-4110-9106-c0e204f3a731.png"
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783672553988-3daaef90-d997-4110-9106-c0e204f3a731.png",
+            "width": 894,
+            "height": 1494
           },
           {
-            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142092964-088c95a5-9592-47f5-8401-4a136175a06d.mp4"
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142092964-088c95a5-9592-47f5-8401-4a136175a06d.mp4",
+            "width": "",
+            "height": ""
           }
         ],
+        "mediaStatus": "pending-media",
+        "mediaAspectRatio": "",
         "size": "wide",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
@@ -8422,8 +8356,8 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785131675981-50bed07a-f59a-4b8c-a647-83b627cc5e5d.mp4",
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144582604-7450f675-74ec-4ad8-b2e2-04e7dc976a34.png",
+        "video": "",
         "url": "https://x.com/shedsgns/status/2079162374712365254",
         "dateAdded": "2026-07-27",
         "createdAt": "2026-07-27T05:41:15.182Z",
@@ -8439,12 +8373,18 @@ window.INSPO_STATIC_DATA = {
         ],
         "materials": [
           {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144582604-7450f675-74ec-4ad8-b2e2-04e7dc976a34.png"
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144582604-7450f675-74ec-4ad8-b2e2-04e7dc976a34.png",
+            "width": 1736,
+            "height": 1238
           },
           {
-            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785131675981-50bed07a-f59a-4b8c-a647-83b627cc5e5d.mp4"
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785131675981-50bed07a-f59a-4b8c-a647-83b627cc5e5d.mp4",
+            "width": "",
+            "height": ""
           }
         ],
+        "mediaStatus": "pending-media",
+        "mediaAspectRatio": "",
         "size": "wide",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
@@ -8466,8 +8406,8 @@ window.INSPO_STATIC_DATA = {
           "移动端动效",
           "𝕏"
         ],
-        "cover": "",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144683570-e83591c1-d206-4fd1-bae0-6ef2bd0851a8.mp4",
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144604852-aac0c3a0-2677-4b7b-953a-afba9cc77f71.png",
+        "video": "",
         "url": "https://x.com/ZaydenSaaSgtfs/status/2079507994124108250",
         "dateAdded": "2026-07-27",
         "createdAt": "2026-07-27T09:27:58.885Z",
@@ -8479,12 +8419,18 @@ window.INSPO_STATIC_DATA = {
         ],
         "materials": [
           {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144604852-aac0c3a0-2677-4b7b-953a-afba9cc77f71.png"
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144604852-aac0c3a0-2677-4b7b-953a-afba9cc77f71.png",
+            "width": 1600,
+            "height": 1200
           },
           {
-            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144683570-e83591c1-d206-4fd1-bae0-6ef2bd0851a8.mp4"
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144683570-e83591c1-d206-4fd1-bae0-6ef2bd0851a8.mp4",
+            "width": "",
+            "height": ""
           }
         ],
+        "mediaStatus": "pending-media",
+        "mediaAspectRatio": "",
         "size": "wide",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
@@ -8506,8 +8452,8 @@ window.INSPO_STATIC_DATA = {
           "内容结构",
           "𝕏"
         ],
-        "cover": "",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144808584-15658709-7062-423e-bb13-9f6085261b4c.mp4",
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144772977-8ce6e369-237c-4394-a238-b9142a7774b6.png",
+        "video": "",
         "url": "https://x.com/Neesh774/status/2070557463628149055",
         "dateAdded": "2026-07-27",
         "createdAt": "2026-07-27T09:32:15.238Z",
@@ -8519,12 +8465,18 @@ window.INSPO_STATIC_DATA = {
         ],
         "materials": [
           {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144772977-8ce6e369-237c-4394-a238-b9142a7774b6.png"
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144772977-8ce6e369-237c-4394-a238-b9142a7774b6.png",
+            "width": 1600,
+            "height": 1200
           },
           {
-            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144808584-15658709-7062-423e-bb13-9f6085261b4c.mp4"
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144808584-15658709-7062-423e-bb13-9f6085261b4c.mp4",
+            "width": "",
+            "height": ""
           }
         ],
+        "mediaStatus": "pending-media",
+        "mediaAspectRatio": "",
         "size": "wide",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       },
@@ -8545,8 +8497,8 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785202873692-5fc78647-4f5d-4cdd-bdc9-3aacc4c15423.mp4",
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785202830097-6d22f09f-c974-452c-b346-2c2f0b379990.png",
+        "video": "",
         "url": "https://x.com/benjaminnathan/status/2069724377629765813?s=20",
         "dateAdded": "2026-07-28",
         "createdAt": "2026-07-28T01:37:42.243Z",
@@ -8562,12 +8514,213 @@ window.INSPO_STATIC_DATA = {
         ],
         "materials": [
           {
-            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785202830097-6d22f09f-c974-452c-b346-2c2f0b379990.png"
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785202830097-6d22f09f-c974-452c-b346-2c2f0b379990.png",
+            "width": 886,
+            "height": 526
           },
           {
-            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785202873692-5fc78647-4f5d-4cdd-bdc9-3aacc4c15423.mp4"
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785202873692-5fc78647-4f5d-4cdd-bdc9-3aacc4c15423.mp4",
+            "width": "",
+            "height": ""
           }
         ],
+        "mediaStatus": "pending-media",
+        "mediaAspectRatio": "",
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-23-ai-图片生成的像素揭示动效",
+        "section": "inspiration",
+        "title": "23｜AI 图片生成的像素揭示动效",
+        "description": "一个围绕 AI 图片生成设计的加载与揭示动效。生成过程中，灰度方块以不规则的节奏闪烁和移动，形成模糊的占位画面；图片完成后，相同的方块逐渐归位并显现最终图像。",
+        "longDescription": "一个围绕 AI 图片生成设计的加载与揭示动效。生成过程中，灰度方块以不规则的节奏闪烁和移动，形成模糊的占位画面；图片完成后，相同的方块逐渐归位并显现最终图像。\n这个案例把 AI 生成期间不可预测的等待过程，转化成了与最终结果有关的视觉反馈。\n\n灰度方块既承担 Loading 占位，也参与最后的图片揭示，因此生成前后不是两套割裂的状态。相比旋转图标或进度条，这种处理更贴合图像生成场景，也让结果出现的瞬间更有完成感。\n\n动效同时提供了浅色和深色两种界面版本，方便观察同一套反馈在不同主题下的对比度和层次处理。",
+        "author": "@dqnamo",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "AI",
+          "图片生成",
+          "Loading",
+          "图片揭示",
+          "状态过渡",
+          "生成反馈",
+          "𝕏"
+        ],
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785480666235-6d0117ec-5514-409d-a6b8-798655fef0be.png",
+        "video": "",
+        "url": "https://x.com/dqnamo/status/2082481271671078928",
+        "dateAdded": "2026-07-31",
+        "createdAt": "2026-07-31T06:50:27.983Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785480666235-6d0117ec-5514-409d-a6b8-798655fef0be.png",
+            "width": 1942,
+            "height": 1590
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785480823497-6cc4ceb5-d5b7-4ed2-b098-baa84d50e662.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "pending-media",
+        "mediaAspectRatio": "",
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-24-把文件丢进垃圾桶的删除交互",
+        "section": "inspiration",
+        "title": "24｜把文件丢进垃圾桶的删除交互",
+        "description": "一个把文件删除设计成“投垃圾”的趣味交互。用户拖动文件后，文件会被揉成纸团，再根据甩动方向和力度飞向垃圾桶；如果没有投中，界面还会记录失败次数，成功后则弹出删除确认提示。",
+        "longDescription": "一个把文件删除设计成“投垃圾”的趣味交互。用户拖动文件后，文件会被揉成纸团，再根据甩动方向和力度飞向垃圾桶；如果没有投中，界面还会记录失败次数，成功后则弹出删除确认提示。\n它没有使用常见的淡出、缩小或滑走，而是把“删除文件”对应到现实中的丢弃动作，让操作结果更加直观。\n\n纸团的形变、抛物线轨迹和垃圾桶反馈共同构成了一段完整的小动画。即使没有文字说明，用户也能理解当前发生了什么。\n\n这类趣味反馈更适合低频、非关键的删除场景。正式产品中仍需保留撤销入口，避免动画效果掩盖误操作风险。",
+        "author": "@nilseller",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "微交互",
+        "tags": [
+          "删除交互",
+          "拖拽手势",
+          "物理动效",
+          "趣味反馈",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785483159817-c1a45611-d275-4857-bb20-73d4eddfb24c.png",
+        "video": "",
+        "url": "https://x.com/nilseller/status/2077423947004641474",
+        "dateAdded": "2026-07-31",
+        "createdAt": "2026-07-31T07:30:51.806Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "微交互"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785483159817-c1a45611-d275-4857-bb20-73d4eddfb24c.png",
+            "width": 2682,
+            "height": 1766
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785483094052-27c7dad0-b55a-4b0d-8bd9-996edf5664cc.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "pending-media",
+        "mediaAspectRatio": "",
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-25-乐高积木式-dynamic-island",
+        "section": "inspiration",
+        "title": "25｜乐高积木式 Dynamic Island",
+        "description": "一个将 Dynamic Island 重新设计成乐高积木的趣味概念。Figma 评论、部署完成和 Spotify 播放状态会以不同颜色的积木胶囊出现，并通过拼接、展开和收起展示对应内容。",
+        "longDescription": "一个将 Dynamic Island 重新设计成乐高积木的趣味概念。Figma 评论、部署完成和 Spotify 播放状态会以不同颜色的积木胶囊出现，并通过拼接、展开和收起展示对应内容。\n这个案例没有只给 Dynamic Island 换一层乐高视觉，而是把积木的结构特点带进了交互。\n\n新通知出现时，不同模块会像积木一样拼接到主体上；展开后，胶囊继续保留清晰的分块关系。视觉造型、进入方式和内容结构使用了同一种设计语言，因此不会显得只是表面装饰。\n\n不同应用使用各自的代表色，也让用户可以在内容完全展开前，先通过颜色和形状判断通知来源。",
+        "author": "@ozzyxs1a",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "Dynamic",
+          "Island",
+          "乐高积木",
+          "通知动效",
+          "展开交互",
+          "趣味设计",
+          "𝕏"
+        ],
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785483794748-ef076fb3-ecc7-4606-92ad-f056f6db53b0.png",
+        "video": "",
+        "url": "https://x.com/ozzyxs1a/status/2073734969667493914",
+        "dateAdded": "2026-07-31",
+        "createdAt": "2026-07-31T07:42:43.979Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785483794748-ef076fb3-ecc7-4606-92ad-f056f6db53b0.png",
+            "width": 2902,
+            "height": 1436
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785483891062-631e2b4c-02cb-4400-9720-bccae23810b3.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "pending-media",
+        "mediaAspectRatio": "",
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-26-书签收藏的文件盒动效",
+        "section": "inspiration",
+        "title": "26｜书签收藏的文件盒动效",
+        "description": "一个围绕书签收藏设计的短动效。点击按钮后，书签图标会展开成一个立体文件盒，内容被收入盒中；动画结束后，组件恢复为蓝色选中状态，同时更新收藏数量。",
+        "longDescription": "一个围绕书签收藏设计的短动效。点击按钮后，书签图标会展开成一个立体文件盒，内容被收入盒中；动画结束后，组件恢复为蓝色选中状态，同时更新收藏数量。\n它把抽象的“收藏成功”，转译成了现实中将文件整理进收纳盒的动作。\n\n展开、收纳和关闭形成了一段完整的小叙事，用户不需要依赖额外提示，也能理解内容已经被保存。最终回到常规书签图标，则避免趣味动画长期占用界面空间。\n\n收藏数量在动画完成后更新，也让视觉反馈与数据变化保持了先后关系。相比简单填充图标，这种处理更有记忆点，但仍然保留了按钮原本的识别方式。",
+        "author": "@turaluix",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "3D",
+        "tags": [
+          "书签收藏",
+          "3D",
+          "动效",
+          "状态反馈",
+          "图标动画",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785490271318-92ecd789-b2e9-4b8e-9c22-bad60d3d7f13.png",
+        "video": "",
+        "url": "https://x.com/turaluix/status/2080720630534865182",
+        "dateAdded": "2026-07-31",
+        "createdAt": "2026-07-31T09:30:39.203Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "3D"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785490271318-92ecd789-b2e9-4b8e-9c22-bad60d3d7f13.png",
+            "width": 1348,
+            "height": 968
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785490339000-e7716f53-2d45-48ae-99fb-640b2a447077.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "pending-media",
+        "mediaAspectRatio": "",
         "size": "wide",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       }
