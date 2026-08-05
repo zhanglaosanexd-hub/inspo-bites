@@ -848,7 +848,7 @@ function closeDetail(options = {}) {
   if (options.immediate) {
     detailViewer.hidden = true;
     detailViewer.classList.remove("is-open", "is-closing", "is-app-recap-detail");
-    detailPreview.classList.remove("is-app-recap-preview", "is-video-playing");
+    detailPreview.classList.remove("is-app-recap-preview", "is-video-playing", "has-video-preview");
     detailPreview.innerHTML = "";
     document.body.classList.remove("detail-open");
     activeDetailIndex = 0;
@@ -860,7 +860,7 @@ function closeDetail(options = {}) {
   detailCloseTimer = setTimeout(() => {
     detailViewer.hidden = true;
     detailViewer.classList.remove("is-closing", "is-app-recap-detail");
-    detailPreview.classList.remove("is-app-recap-preview", "is-video-playing");
+    detailPreview.classList.remove("is-app-recap-preview", "is-video-playing", "has-video-preview");
     document.body.classList.remove("detail-open");
     detailPreview.innerHTML = "";
     activeDetailIndex = 0;
@@ -883,6 +883,7 @@ function renderDetail() {
 
   detailViewer.classList.toggle("is-app-recap-detail", isAppRecap);
   detailPreview.classList.toggle("is-app-recap-preview", isAppRecap);
+  detailPreview.classList.toggle("has-video-preview", Boolean(item.video) && !isAppRecap);
   detailSection.textContent = sections[item.section]?.eyebrow || sections[item.section]?.title || "Design";
   detailTitle.textContent = item.title;
   detailAuthor.innerHTML = createAuthorMarkup(item);
@@ -1239,7 +1240,7 @@ function bindDetailPreviewRatio() {
     return;
   }
 
-  const media = detailPreview.querySelector("img, video");
+  const media = detailPreview.querySelector("video") || detailPreview.querySelector("img");
 
   detailPreview.style.removeProperty("--detail-aspect");
   detailPreview.style.removeProperty("width");

@@ -1455,9 +1455,13 @@ h1 {
   aspect-ratio: var(--detail-aspect, 16 / 9);
   overflow: hidden;
   border-radius: 6px;
-  background: #111;
+  background: rgba(255, 255, 255, 0.72);
   box-shadow: 0 28px 90px rgba(23, 23, 23, 0.24);
   cursor: default;
+}
+
+.detail-preview.has-video-preview {
+  background: transparent;
 }
 
 .detail-preview > img,
@@ -1471,6 +1475,7 @@ h1 {
 
 .detail-preview > img,
 .detail-preview > video {
+  background: transparent;
   object-fit: contain;
 }
 
