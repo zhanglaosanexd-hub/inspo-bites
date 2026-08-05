@@ -105,7 +105,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260804-hover-video";
+const DATA_VERSION = "20260805-local-video-cache";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
@@ -1081,7 +1081,7 @@ function renderSingleColumn(filtered) {
 function bindVideoFallbacks(root) {
   root.querySelectorAll("video[data-video-path]").forEach((video) => {
     const container = video.parentElement;
-    const trigger = video.closest(".media-link") || container;
+    const trigger = video.closest(".work-card") || video.closest(".media-link") || container;
     const poster = container?.querySelector("img[data-media-image]");
     const fallback = container?.querySelector(".media-missing");
     const isDetailVideo = root === detailPreview;

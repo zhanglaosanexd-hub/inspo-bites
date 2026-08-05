@@ -35,6 +35,26 @@ const STALE_SECONDS = 24 * 60 * 60;
 const YUQUE_API_BASE = "https://www.yuque.com/api/v2/repos";
 const YUQUE_TABLE_API_BASE = "https://www.yuque.com/api/modules/table/doc";
 const TABLE_RECORD_LIMIT = 5000;
+const LOCAL_INSPIRATION_COVER_IDS = new Set([
+  "01",
+  "09",
+  "11",
+  "12",
+  "13",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18",
+  "19",
+  "20",
+  "21",
+  "22",
+  "23",
+  "24",
+  "25",
+  "26",
+]);
 const LOCAL_INSPIRATION_MEDIA = [
   {
     titleIncludes: "Pinckus：Motion Graphics",
@@ -70,6 +90,46 @@ const LOCAL_INSPIRATION_MEDIA = [
     titleIncludes: "Figma 制作的拟物音乐播放器细节",
     id: "adityasur11-figma-music-player",
     cover: "./assets/adityasur11-figma-music-player.jpg",
+  },
+  {
+    titleIncludes: "XR 展示型网站",
+    video: "./assets/inspiration-video-cache/17-xr-showcase.mp4",
+  },
+  {
+    titleIncludes: "触摸驱动的波浪卡片",
+    video: "./assets/inspiration-video-cache/18-wave-card.mp4",
+  },
+  {
+    titleIncludes: "可展开的 AI Thinking Panel",
+    video: "./assets/inspiration-video-cache/19-ai-thinking-panel.mp4",
+  },
+  {
+    titleIncludes: "AI Task App 输入状态切换",
+    video: "./assets/inspiration-video-cache/20-ai-task-input.mp4",
+  },
+  {
+    titleIncludes: "Codex 章节式代码审查界面",
+    video: "./assets/inspiration-video-cache/21-codex-review.mp4",
+  },
+  {
+    titleIncludes: "点击触发的全屏波纹反馈",
+    video: "./assets/inspiration-video-cache/22-fullscreen-ripple.mp4",
+  },
+  {
+    titleIncludes: "AI 图片生成的像素揭示动效",
+    video: "./assets/inspiration-video-cache/23-ai-pixel-reveal.mp4",
+  },
+  {
+    titleIncludes: "把文件丢进垃圾桶的删除交互",
+    video: "./assets/inspiration-video-cache/24-trash-delete.mp4",
+  },
+  {
+    titleIncludes: "乐高积木式 Dynamic Island",
+    video: "./assets/inspiration-video-cache/25-lego-dynamic-island.mp4",
+  },
+  {
+    titleIncludes: "书签收藏的文件盒动效",
+    video: "./assets/inspiration-video-cache/26-bookmark-file-box.mp4",
   },
   {
     titleIncludes: "3D Interactive Folder Animation",
@@ -880,7 +940,10 @@ function tableAttachments(value) {
 
 function findLocalMediaOverride(title, section) {
   if (section !== "inspiration") return {};
-  return LOCAL_INSPIRATION_MEDIA.find((item) => title.includes(item.titleIncludes)) || {};
+  const media = LOCAL_INSPIRATION_MEDIA.find((item) => title.includes(item.titleIncludes)) || {};
+  const coverId = title.match(/^(\d{2})[｜|]/)?.[1] || "";
+  if (!LOCAL_INSPIRATION_COVER_IDS.has(coverId)) return media;
+  return { ...media, cover: `./assets/inspiration-cover-cache/${coverId}.png` };
 }
 
 function inferTypeFromTableTags(tags, sourceText) {
