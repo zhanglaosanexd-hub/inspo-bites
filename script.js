@@ -447,7 +447,9 @@ function bindEvents() {
   sectionNav.addEventListener("click", (event) => {
     const button = event.target.closest(".section-link");
     if (!button) return;
+    if (button.dataset.section === state.section) return;
 
+    closeDetail({ immediate: true });
     state.section = button.dataset.section;
     state.filter = "All";
     state.query = "";
@@ -643,6 +645,8 @@ function renderFilters(filters) {
 
   filterStrip.querySelectorAll("button").forEach((button) => {
     button.addEventListener("click", () => {
+      if (button.dataset.filter === state.filter) return;
+      closeDetail({ immediate: true });
       state.filter = button.dataset.filter;
       renderFilters(sections[state.section].filters);
       renderGallery();
@@ -835,18 +839,31 @@ function openDetail(itemId) {
   document.querySelector("#detail-close").focus({ preventScroll: true });
 }
 
-function closeDetail() {
+function closeDetail(options = {}) {
   if (detailViewer.hidden || detailViewer.classList.contains("is-closing")) return;
 
   cancelAnimationFrame(detailTransitionFrame);
+  clearTimeout(detailCloseTimer);
+
+  if (options.immediate) {
+    detailViewer.hidden = true;
+    detailViewer.classList.remove("is-open", "is-closing", "is-app-recap-detail");
+    detailPreview.classList.remove("is-app-recap-preview", "is-video-playing");
+    detailPreview.innerHTML = "";
+    document.body.classList.remove("detail-open");
+    activeDetailIndex = 0;
+    return;
+  }
+
   detailViewer.classList.remove("is-open");
   detailViewer.classList.add("is-closing");
-  clearTimeout(detailCloseTimer);
   detailCloseTimer = setTimeout(() => {
     detailViewer.hidden = true;
-    detailViewer.classList.remove("is-closing");
+    detailViewer.classList.remove("is-closing", "is-app-recap-detail");
+    detailPreview.classList.remove("is-app-recap-preview", "is-video-playing");
     document.body.classList.remove("detail-open");
     detailPreview.innerHTML = "";
+    activeDetailIndex = 0;
   }, DETAIL_EXIT_MS);
 }
 
