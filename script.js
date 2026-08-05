@@ -105,7 +105,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260805-local-video-cache";
+const DATA_VERSION = "20260805-source-filters";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
@@ -691,7 +691,7 @@ function getVisibleItems() {
   const visible = items.filter((item) => {
     const tags = normalizeList(item.tags);
     const inSection = item.section === state.section;
-    const inFilter = activeFilter === "All" || tags.includes(activeFilter);
+    const inFilter = matchesActiveFilter(item, activeFilter);
     const haystack =
       `${item.title || ""} ${item.description || ""} ${item.source || ""} ${tags.join(" ")}`.toLowerCase();
     const inQuery = !query || haystack.includes(query);
@@ -703,6 +703,22 @@ function getVisibleItems() {
     if (state.sort === "source") return a.source.localeCompare(b.source);
     return new Date(b.dateAdded) - new Date(a.dateAdded);
   });
+}
+
+function matchesActiveFilter(item, activeFilter) {
+  if (activeFilter === "All") return true;
+  if (item.section === "inspiration") {
+    const source = normalizeSourceFilterValue(item.source);
+    return source === activeFilter;
+  }
+  return normalizeList(item.tags).includes(activeFilter);
+}
+
+function normalizeSourceFilterValue(value) {
+  const source = String(value || "").trim();
+  if (/^(x|twitter|𝕏)(\s|\/|｜|\||$)/i.test(source)) return "𝕏";
+  if (/^awwwards/i.test(source)) return "Awwwards";
+  return source;
 }
 
 function createCard(item, priorityIndex = 0) {

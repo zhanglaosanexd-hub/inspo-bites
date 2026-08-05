@@ -9,14 +9,8 @@ window.INSPO_STATIC_DATA = {
         "description": "收集 Motion 实验、视觉系统和有表达力的设计参考。",
         "filters": [
           "All",
-          "Motion",
-          "Typography",
-          "Brand",
-          "WebGL",
-          "3D",
-          "Graphic",
-          "Experiment",
-          "𝕏"
+          "𝕏",
+          "Awwwards"
         ]
       },
       {
