@@ -105,10 +105,10 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260805-source-filters";
+const DATA_VERSION = "20260807-yuque-video-autoplay";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
-const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 10 * 60 * 1000;
+const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 60 * 1000;
 const MEDIA_BASE_URL = normalizeMediaBaseUrl(window.INSPO_MEDIA_BASE_URL || "");
 const MEDIA_URL_MAP = normalizeMediaUrlMap(window.INSPO_MEDIA_URL_MAP || window.INSPO_MEDIA_MAP);
 
@@ -187,7 +187,7 @@ async function loadRemoteCollectionData(localData) {
   const timeoutId = window.setTimeout(() => controller.abort(), REMOTE_CONTENT_TIMEOUT_MS);
 
   try {
-    const response = await fetch(`/api/content?v=${DATA_VERSION}`, {
+    const response = await fetch(`/api/content?v=${getRemoteContentVersion()}`, {
       signal: controller.signal,
       cache: "no-cache",
       headers: { Accept: "application/json" },
@@ -217,6 +217,10 @@ async function loadRemoteCollectionData(localData) {
   } finally {
     window.clearTimeout(timeoutId);
   }
+}
+
+function getRemoteContentVersion() {
+  return `${DATA_VERSION}-${Math.floor(Date.now() / REMOTE_CONTENT_CACHE_MAX_AGE_MS)}`;
 }
 
 function readCachedRemoteCollectionData() {
@@ -796,12 +800,12 @@ function createMediaMarkup(item, options = {}) {
     const poster = item.cover
       ? `
         <img class="media-fallback-image" data-media-image="true" src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" />
-        ${createMediaMissingMarkup(item, "视频同步中", "视频源正在整理，稍后恢复动态预览。", true)}
+        ${createMediaMissingMarkup(item, "视频加载中", "正在加载动态预览。", true)}
       `
-      : createMediaMissingMarkup(item, "视频加载中", "移入卡片后播放动态预览。");
+      : createMediaMissingMarkup(item, "视频加载中", "正在加载动态预览。");
     return `
       ${poster}
-      <video muted loop playsinline preload="none" data-video-path="${videoPath}" aria-hidden="true"></video>
+      <video muted loop playsinline autoplay preload="auto" src="${videoPath}" data-video-path="${videoPath}" aria-hidden="true"></video>
     `;
   }
 
@@ -1115,11 +1119,9 @@ function renderSingleColumn(filtered) {
 function bindVideoFallbacks(root) {
   root.querySelectorAll("video[data-video-path]").forEach((video) => {
     const container = video.parentElement;
-    const trigger = video.closest(".work-card") || video.closest(".media-link") || container;
     const poster = container?.querySelector("img[data-media-image]");
     const fallback = container?.querySelector(".media-missing");
-    const isDetailVideo = root === detailPreview;
-    let wantsPlayback = isDetailVideo;
+    let wantsPlayback = true;
 
     const showFallback = () => {
       video.hidden = true;
@@ -1142,27 +1144,15 @@ function bindVideoFallbacks(root) {
       loadLazyVideo(video);
       if (video.readyState >= 2) revealVideo();
     };
-    const stopPlayback = () => {
-      wantsPlayback = false;
-      container?.classList.remove("is-video-playing");
-      if (!video.paused) video.pause();
-    };
 
     video.addEventListener("error", showFallback, { once: true });
     video.addEventListener("canplay", revealVideo);
+    video.addEventListener("loadeddata", revealVideo);
     video.addEventListener("playing", () => {
       if (wantsPlayback) container?.classList.add("is-video-playing");
     });
 
-    if (isDetailVideo) {
-      startPlayback();
-      return;
-    }
-
-    trigger?.addEventListener("pointerenter", startPlayback);
-    trigger?.addEventListener("pointerleave", stopPlayback);
-    trigger?.addEventListener("focusin", startPlayback);
-    trigger?.addEventListener("focusout", stopPlayback);
+    startPlayback();
   });
 }
 
@@ -1182,11 +1172,11 @@ function bindImageFallbacks(root) {
 function loadLazyVideo(video) {
   if (!video || video.dataset.videoLoaded === "true") return;
 
-  const source = video.dataset.videoPath;
+  const source = video.dataset.videoPath || video.getAttribute("src") || video.currentSrc;
   if (!source) return;
 
   video.dataset.videoLoaded = "true";
-  video.src = source;
+  if (!video.getAttribute("src")) video.src = source;
   video.preload = "auto";
   video.load();
 }

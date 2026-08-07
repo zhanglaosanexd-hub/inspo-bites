@@ -1134,17 +1134,7 @@ function isVideoUrl(value) {
 }
 
 function isPrivateYuqueAttachmentUrl(value) {
-  try {
-    const url = new URL(String(value || ""));
-    const hostname = url.hostname.replace(/^www\./, "");
-    return (
-      hostname === "yuque.com" &&
-      url.pathname.startsWith("/attachments/yuque/") &&
-      isVideoUrl(url.pathname)
-    );
-  } catch {
-    return false;
-  }
+  return false;
 }
 
 function proxiedYuqueImageUrl(value) {
