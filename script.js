@@ -230,7 +230,7 @@ function getRemoteContentVersion() {
 }
 
 function readCachedRemoteCollectionData(options = {}) {
-  const maxAgeMs = options.maxAgeMs || REMOTE_CONTENT_CACHE_RETENTION_MS;
+  const maxAgeMs = options.maxAgeMs || REMOTE_CONTENT_CACHE_MAX_AGE_MS;
 
   try {
     const cache = JSON.parse(window.localStorage.getItem(REMOTE_CONTENT_CACHE_KEY) || "null");
