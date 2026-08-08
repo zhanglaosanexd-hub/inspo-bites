@@ -8717,6 +8717,57 @@ window.INSPO_STATIC_DATA = {
         "mediaAspectRatio": 1.3925619834710743,
         "size": "standard",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-27-对着麦克风吹散种子的记录反馈",
+        "section": "inspiration",
+        "title": "27｜对着麦克风吹散种子的记录反馈",
+        "description": "一个为日记应用设计的成长反馈交互。用户完成记录后，可以对着手机麦克风吹气，将画面中的种子吹散；新的植物随后在个人花园中生长，逐渐形成一组可收藏的情绪与记录成果。",
+        "longDescription": "一个为日记应用设计的成长反馈交互。用户完成记录后，可以对着手机麦克风吹气，将画面中的种子吹散；新的植物随后在个人花园中生长，逐渐形成一组可收藏的情绪与记录成果。\n它没有使用常见的签到勾选、积分增加或庆祝烟花，而是把“完成一次记录”转译成播种和生长的过程。\n\n吹气既是一次真实的身体动作，也与画面中的种子运动形成自然对应。用户不需要学习新的手势，就能理解自己的动作正在影响界面。\n\n植物并不是一次性完成动画，而会继续留在花园中，成为记录积累的可视化结果。这样既强化了完成反馈，也让长期使用产生持续变化。",
+        "author": "@hours",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "3D",
+        "tags": [
+          "麦克风交互",
+          "成长反馈",
+          "3D",
+          "动效",
+          "情绪记录",
+          "游戏化设计",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1785918564729-41acb00a-5894-42d1-8f99-91efe73a8881.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785918633972-afb6460f-cccf-4be2-b45c-6889fe1959ac.mp4",
+        "url": "https://x.com/hours/status/2082482503961686075",
+        "dateAdded": "2026-08-05",
+        "createdAt": "2026-08-05T08:26:03.465Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "3D"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785918564729-41acb00a-5894-42d1-8f99-91efe73a8881.png",
+            "width": 1274,
+            "height": 1522
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785918633972-afb6460f-cccf-4be2-b45c-6889fe1959ac.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 0.8370565045992115,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       }
     ]
   }

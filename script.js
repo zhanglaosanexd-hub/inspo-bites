@@ -105,10 +105,11 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260807-yuque-video-autoplay";
+const DATA_VERSION = "20260808-stable-yuque-cache";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 60 * 1000;
+const REMOTE_CONTENT_CACHE_RETENTION_MS = 24 * HOUR_MS;
 const MEDIA_BASE_URL = normalizeMediaBaseUrl(window.INSPO_MEDIA_BASE_URL || "");
 const MEDIA_URL_MAP = normalizeMediaUrlMap(window.INSPO_MEDIA_URL_MAP || window.INSPO_MEDIA_MAP);
 
@@ -209,9 +210,14 @@ async function loadRemoteCollectionData(localData) {
       items: remoteItems,
       replaceSections,
     };
-    writeCachedRemoteCollectionData(normalizedRemoteData);
 
-    return mergeCollectionData(localData, normalizedRemoteData);
+    const stableRemoteData = preventRemoteDataRegression(
+      readCachedRemoteCollectionData({ maxAgeMs: REMOTE_CONTENT_CACHE_RETENTION_MS }),
+      normalizedRemoteData,
+    );
+    writeCachedRemoteCollectionData(stableRemoteData);
+
+    return mergeCollectionData(localData, stableRemoteData);
   } catch {
     return localData;
   } finally {
@@ -223,10 +229,12 @@ function getRemoteContentVersion() {
   return `${DATA_VERSION}-${Math.floor(Date.now() / REMOTE_CONTENT_CACHE_MAX_AGE_MS)}`;
 }
 
-function readCachedRemoteCollectionData() {
+function readCachedRemoteCollectionData(options = {}) {
+  const maxAgeMs = options.maxAgeMs || REMOTE_CONTENT_CACHE_RETENTION_MS;
+
   try {
     const cache = JSON.parse(window.localStorage.getItem(REMOTE_CONTENT_CACHE_KEY) || "null");
-    if (!cache?.cachedAt || Date.now() - cache.cachedAt > REMOTE_CONTENT_CACHE_MAX_AGE_MS) return null;
+    if (!cache?.cachedAt || Date.now() - cache.cachedAt > maxAgeMs) return null;
 
     const data = cache.data || {};
     const cachedItems = Array.isArray(data.items) ? data.items : [];
@@ -237,6 +245,37 @@ function readCachedRemoteCollectionData() {
   } catch {
     return null;
   }
+}
+
+function preventRemoteDataRegression(previousData, incomingData) {
+  if (!previousData) return incomingData;
+
+  const previousItems = Array.isArray(previousData.items) ? previousData.items : [];
+  const incomingItems = Array.isArray(incomingData.items) ? [...incomingData.items] : [];
+  if (!previousItems.length || !incomingItems.length) return incomingData;
+
+  const incomingById = new Set(incomingItems.map((item) => item.id).filter(Boolean));
+  const incomingSections = new Set([
+    ...(incomingData.replaceSections || []),
+    ...incomingItems.map((item) => item.section).filter(Boolean),
+  ]);
+
+  incomingSections.forEach((sectionId) => {
+    const incomingCount = incomingItems.filter((item) => item.section === sectionId).length;
+    const previousSectionItems = previousItems.filter((item) => item.section === sectionId);
+    if (!previousSectionItems.length || incomingCount >= previousSectionItems.length) return;
+
+    previousSectionItems.forEach((item) => {
+      if (!item.id || incomingById.has(item.id)) return;
+      incomingItems.push(item);
+      incomingById.add(item.id);
+    });
+  });
+
+  return {
+    ...incomingData,
+    items: incomingItems,
+  };
 }
 
 function writeCachedRemoteCollectionData(data) {
