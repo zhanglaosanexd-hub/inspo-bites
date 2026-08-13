@@ -137,6 +137,7 @@ function cleanLine(value) {
 
 function shouldKeepChange(line) {
   if (!line) return false;
+  if (/^(?:-{3,}|_{3,}|\*{3,})$/.test(line)) return false;
   if (/^(?:Inspo\.design\s*)?更新日志$/i.test(line)) return false;
   if (/^(?:更新内容|本次更新|版本更新|更新说明)[：:]?$/i.test(line)) return false;
   if (/^更新时间\s*[：:]/.test(line)) return false;
