@@ -260,10 +260,9 @@ body.detail-open .content {
 .sidebar-rule {
   display: block;
   width: 100%;
-  height: 2px;
+  height: 1px;
   margin: 8px 0 10px;
-  border-radius: 999px;
-  background: var(--ink);
+  background: var(--line);
 }
 
 .content {
