@@ -14,6 +14,8 @@ let visibleItems = [];
 let activeDetailIndex = 0;
 let detailTransitionFrame = 0;
 let detailCloseTimer = 0;
+let changelogTransitionFrame = 0;
+let activeChangelog = null;
 
 const gallery = document.querySelector("#gallery");
 const sectionNav = document.querySelector(".section-nav");
@@ -41,6 +43,14 @@ const detailTags = document.querySelector("#detail-tags");
 const detailSourceLink = document.querySelector("#detail-source-link");
 const clickSparkCanvas = document.querySelector("#click-spark-canvas");
 const onlineCount = document.querySelector("#online-count");
+const changelogTrigger = document.querySelector("#whats-new-trigger");
+const changelogMeta = document.querySelector("#whats-new-meta");
+const changelogModal = document.querySelector("#changelog-modal");
+const changelogTitle = document.querySelector("#changelog-title");
+const changelogDate = document.querySelector("#changelog-date");
+const changelogList = document.querySelector("#changelog-list");
+const changelogAllLink = document.querySelector("#changelog-all-link");
+const changelogCloseButton = document.querySelector("#changelog-close");
 
 const formatter = new Intl.DateTimeFormat("zh-CN", {
   month: "long",
@@ -110,6 +120,8 @@ const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 60 * 1000;
 const REMOTE_CONTENT_CACHE_RETENTION_MS = 24 * HOUR_MS;
+const CHANGELOG_READ_KEY = "inspo-changelog-read-version";
+const CHANGELOG_REFRESH_MS = 60 * 1000;
 const MEDIA_BASE_URL = normalizeMediaBaseUrl(window.INSPO_MEDIA_BASE_URL || "");
 const MEDIA_URL_MAP = normalizeMediaUrlMap(window.INSPO_MEDIA_URL_MAP || window.INSPO_MEDIA_MAP);
 
@@ -123,6 +135,7 @@ async function init() {
   startOnlineCountMonitoring();
   renderSidebar();
   bindEvents();
+  initWhatsNew();
   initClickSpark();
   render();
 
@@ -534,6 +547,10 @@ function bindEvents() {
   });
 
   document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !changelogModal.hidden) {
+      closeChangelog();
+      return;
+    }
     if (event.key === "Escape" && !detailViewer.hidden) closeDetail();
     if (event.key === "ArrowLeft" && !detailViewer.hidden) moveDetail(-1);
     if (event.key === "ArrowRight" && !detailViewer.hidden) moveDetail(1);
@@ -546,6 +563,120 @@ function bindEvents() {
     const clickedContent = event.target.closest(".detail-panel, .detail-preview");
     if (!clickedContent) closeDetail();
   });
+}
+
+function initWhatsNew() {
+  if (!changelogTrigger || !changelogModal) return;
+
+  changelogTrigger.addEventListener("click", () => {
+    if (!activeChangelog) return;
+    writeChangelogVersion(activeChangelog.latest.version);
+    changelogTrigger.hidden = true;
+    openChangelog();
+  });
+  changelogCloseButton.addEventListener("click", closeChangelog);
+  changelogModal.addEventListener("click", (event) => {
+    if (event.target.closest("[data-changelog-close]")) closeChangelog();
+  });
+
+  applyChangelog(window.INSPO_CHANGELOG);
+  hydrateChangelog();
+  window.setInterval(hydrateChangelog, CHANGELOG_REFRESH_MS);
+}
+
+async function hydrateChangelog() {
+  try {
+    const cacheBucket = Math.floor(Date.now() / 60000);
+    const response = await fetch(`/api/changelog?v=${cacheBucket}`, {
+      cache: "no-cache",
+      headers: { Accept: "application/json" },
+    });
+    if (!response.ok) return;
+    applyChangelog(await response.json());
+  } catch {
+    // Keep the bundled Yuque snapshot visible when the network is unavailable.
+  }
+}
+
+function applyChangelog(changelog) {
+  const latest = changelog?.latest;
+  if (!latest?.version) return;
+  if (activeChangelog && compareVersions(latest.version, activeChangelog.latest.version) < 0) return;
+
+  activeChangelog = {
+    sourceUrl: changelog.sourceUrl || window.INSPO_CHANGELOG?.sourceUrl || "#",
+    latest: {
+      version: String(latest.version).replace(/^v/i, ""),
+      updatedAt: String(latest.updatedAt || ""),
+      changes: Array.isArray(latest.changes) ? latest.changes.filter(Boolean) : [],
+    },
+  };
+
+  const versionLabel = `v${activeChangelog.latest.version}`;
+  changelogMeta.textContent = [versionLabel, activeChangelog.latest.updatedAt].filter(Boolean).join(" · ");
+  changelogTitle.textContent = versionLabel;
+  changelogDate.textContent = activeChangelog.latest.updatedAt
+    ? `更新时间：${activeChangelog.latest.updatedAt}`
+    : "";
+  changelogList.innerHTML = activeChangelog.latest.changes
+    .map((change) => `<li>${escapeHtml(change)}</li>`)
+    .join("");
+  changelogAllLink.href = activeChangelog.sourceUrl;
+
+  const readVersion = readChangelogVersion();
+  changelogTrigger.hidden = Boolean(readVersion) && compareVersions(activeChangelog.latest.version, readVersion) <= 0;
+}
+
+function openChangelog() {
+  if (!changelogModal || !changelogModal.hidden) return;
+  closeDetail({ immediate: true });
+  cancelAnimationFrame(changelogTransitionFrame);
+  changelogModal.hidden = false;
+  changelogModal.classList.remove("is-open");
+  document.body.classList.add("changelog-open");
+  changelogTransitionFrame = requestAnimationFrame(() => {
+    changelogModal.classList.add("is-open");
+  });
+  changelogCloseButton.focus({ preventScroll: true });
+}
+
+function closeChangelog() {
+  if (!changelogModal || changelogModal.hidden) return;
+  cancelAnimationFrame(changelogTransitionFrame);
+  changelogModal.classList.remove("is-open");
+  document.body.classList.remove("changelog-open");
+  window.setTimeout(() => {
+    if (!changelogModal.classList.contains("is-open")) changelogModal.hidden = true;
+  }, DETAIL_EXIT_MS);
+}
+
+function readChangelogVersion() {
+  try {
+    return window.localStorage.getItem(CHANGELOG_READ_KEY) || "";
+  } catch {
+    return "";
+  }
+}
+
+function writeChangelogVersion(version) {
+  try {
+    window.localStorage.setItem(CHANGELOG_READ_KEY, version);
+  } catch {
+    // Privacy modes can block localStorage; the update remains available for that session.
+  }
+}
+
+function compareVersions(left, right) {
+  const leftParts = String(left).match(/\d+/g)?.map(Number) || [];
+  const rightParts = String(right).match(/\d+/g)?.map(Number) || [];
+  const length = Math.max(leftParts.length, rightParts.length);
+
+  for (let index = 0; index < length; index += 1) {
+    const difference = (leftParts[index] || 0) - (rightParts[index] || 0);
+    if (difference !== 0) return difference;
+  }
+
+  return 0;
 }
 
 function initClickSpark() {

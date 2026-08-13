@@ -9,7 +9,7 @@
     />
     <title>Inspo.design - 设计与 UX 收藏</title>
     <link rel="icon" type="image/png" href="./assets/inspo-bites-logo.png?v=20260710-presence-heartbeat" />
-    <link rel="stylesheet" href="./styles.css?v=20260813-sidebar-rule" />
+    <link rel="stylesheet" href="./styles.css?v=20260813-whats-new" />
   </head>
   <body>
     <canvas class="click-spark-canvas" id="click-spark-canvas" aria-hidden="true"></canvas>
@@ -43,6 +43,17 @@
         </nav>
 
         <footer class="sidebar-footer">
+          <button
+            class="whats-new-trigger"
+            id="whats-new-trigger"
+            type="button"
+            aria-haspopup="dialog"
+            aria-controls="changelog-modal"
+            hidden
+          >
+            <span class="whats-new-kicker">What's new</span>
+            <span class="whats-new-meta" id="whats-new-meta"></span>
+          </button>
           <a
             class="weekly-link"
             href="https://sanhao-design-weekly.pages.dev/"
@@ -56,7 +67,7 @@
           </a>
           <span class="sidebar-rule" aria-hidden="true"></span>
           <span id="sidebar-updated">更新于 2026年7月</span>
-          <span>© 2026 Inspo.design</span>
+          <span class="sidebar-copyright">© 2026 Inspo.design</span>
         </footer>
       </aside>
 
@@ -181,8 +192,46 @@
       </section>
     </div>
 
+    <div
+      class="changelog-modal"
+      id="changelog-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="changelog-title"
+      hidden
+    >
+      <button
+        class="changelog-backdrop"
+        type="button"
+        aria-label="关闭更新内容"
+        data-changelog-close
+      ></button>
+      <article class="changelog-dialog">
+        <header class="changelog-head">
+          <div>
+            <p class="changelog-kicker">What's new</p>
+            <h2 id="changelog-title"></h2>
+            <time id="changelog-date"></time>
+          </div>
+          <button class="changelog-close" id="changelog-close" type="button" aria-label="关闭">
+            <span aria-hidden="true"></span>
+          </button>
+        </header>
+        <ul class="changelog-list" id="changelog-list"></ul>
+        <a
+          class="changelog-all-link"
+          id="changelog-all-link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          查看全部更新记录
+        </a>
+      </article>
+    </div>
+
     <script src="./data/media-config.js?v=20260804-media-proxy"></script>
     <script src="./data/content.js?v=20260808-responsive-yuque-cache"></script>
-    <script type="module" src="./script.js?v=20260813-empty-state-art"></script>
+    <script src="./data/changelog.js?v=20260813-yuque-fallback"></script>
+    <script type="module" src="./script.js?v=20260813-yuque-changelog"></script>
   </body>
 </html>

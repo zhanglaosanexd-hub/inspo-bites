@@ -76,6 +76,25 @@ YUQUE_CMS_SOURCES=[...]
 
 If `YUQUE_CMS_SOURCES` is not configured, the site reads the default Yuque sources above. The inspiration source uses the Yuque table view as the CMS; newly added table rows are merged into the local gallery on refresh.
 
+### Yuque Changelog
+
+The What's new module reads the published Inspo.design changelog from Yuque through `/api/changelog`:
+
+```text
+https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/ga8hanhedvi0agcg?singleDoc#
+```
+
+Use this structure for each release, with the newest release first:
+
+```markdown
+v 1.01
+更新时间：2026.08.13
+- 更新内容一
+- 更新内容二
+```
+
+After the Yuque document is published, the edge endpoint refreshes within about one minute. An open page checks once per minute, so changelog-only updates do not require a Git commit or Cloudflare deployment. Each browser stores its last-read version locally and only shows What's new when the published version number increases.
+
 ### Yuque Content Format
 
 The parser supports two formats.

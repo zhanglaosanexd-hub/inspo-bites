@@ -4,6 +4,7 @@ import { createReadStream } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { onRequest as handleContentRequest } from "./functions/api/content.js";
+import { onRequest as handleChangelogRequest } from "./functions/api/changelog.js";
 
 const PORT = Number(process.env.PORT || 4174);
 const HOST = "127.0.0.1";
@@ -32,6 +33,15 @@ const server = createServer(async (request, response) => {
 
     if (url.pathname === "/api/content" && request.method === "GET") {
       const cloudflareResponse = await handleContentRequest({
+        request: new Request(url, { method: request.method, headers: getRequestHeaders(request) }),
+        env: process.env,
+      });
+      await sendFetchResponse(response, cloudflareResponse);
+      return;
+    }
+
+    if (url.pathname === "/api/changelog" && request.method === "GET") {
+      const cloudflareResponse = await handleChangelogRequest({
         request: new Request(url, { method: request.method, headers: getRequestHeaders(request) }),
         env: process.env,
       });
