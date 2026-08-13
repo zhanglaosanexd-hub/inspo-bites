@@ -9,7 +9,7 @@
     />
     <title>Inspo.design - 设计与 UX 收藏</title>
     <link rel="icon" type="image/png" href="./assets/inspo-bites-logo.png?v=20260710-presence-heartbeat" />
-    <link rel="stylesheet" href="./styles.css?v=20260813-header-alignment" />
+    <link rel="stylesheet" href="./styles.css?v=20260813-whats-new-gradient" />
   </head>
   <body>
     <canvas class="click-spark-canvas" id="click-spark-canvas" aria-hidden="true"></canvas>
@@ -51,7 +51,29 @@
             aria-controls="changelog-modal"
             hidden
           >
-            <span class="whats-new-kicker">What's new</span>
+            <span class="whats-new-title">
+              <svg
+                class="whats-new-icon"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <defs>
+                  <linearGradient id="whats-new-icon-gradient" x1="4" y1="18" x2="20" y2="4" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#7c3cff" />
+                    <stop offset="0.48" stop-color="#24c6dc" />
+                    <stop offset="1" stop-color="#ffbf4d" />
+                  </linearGradient>
+                </defs>
+                <path d="M5.1 18.9 8 4.9l11.1 8.3-14 5.7Z" />
+                <path d="m9.1 7.1 3.7 7.5" />
+                <path d="m12.7 5.1 1.3-2" />
+                <path d="m16.3 7.1 2-1.1" />
+                <path d="m17.7 10.5 2.3.4" />
+                <path d="m6.1 14.8 5.9-1.7" />
+              </svg>
+              <span class="whats-new-kicker">What's new</span>
+            </span>
             <span class="whats-new-meta" id="whats-new-meta"></span>
           </button>
           <a

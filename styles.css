@@ -222,41 +222,69 @@ body.detail-open .content {
 
 .whats-new-trigger {
   display: grid;
-  gap: 2px;
+  gap: 3px;
   width: 100%;
   min-height: 48px;
   padding: 9px 11px;
-  border: 1px solid rgba(222, 222, 216, 0.9);
+  border: 1px solid rgba(178, 116, 255, 0.22);
   border-radius: 8px;
-  color: var(--ink);
-  background: rgba(255, 255, 255, 0.58);
+  color: #8b5cf6;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(250, 247, 255, 0.74)),
+    linear-gradient(90deg, rgba(126, 73, 255, 0.11), rgba(246, 91, 179, 0.09), rgba(255, 206, 84, 0.08));
   text-align: left;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(23, 23, 23, 0.035);
+  box-shadow: 0 10px 28px rgba(113, 80, 190, 0.08);
   transition:
     transform 160ms ease,
     border-color 160ms ease,
-    background-color 160ms ease;
+    box-shadow 160ms ease;
 }
 
 .whats-new-trigger:hover,
 .whats-new-trigger:focus-visible {
-  border-color: rgba(23, 23, 23, 0.2);
+  border-color: rgba(150, 86, 255, 0.38);
   outline: 0;
-  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 12px 32px rgba(113, 80, 190, 0.13);
   transform: translateY(-1px);
 }
 
+.whats-new-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+.whats-new-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: url("#whats-new-icon-gradient");
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: #9b5cff;
+  filter: drop-shadow(0 2px 5px rgba(139, 92, 246, 0.18));
+}
+
 .whats-new-kicker {
+  color: transparent;
+  background: linear-gradient(90deg, #7c3cff 0%, #d950ff 45%, #ffbf4d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 12px;
   line-height: 1.2;
-  font-weight: 760;
+  font-weight: 790;
 }
 
 .whats-new-meta {
-  color: var(--muted);
+  color: rgba(111, 74, 158, 0.72);
   font-size: 10px;
   line-height: 1.3;
+  font-weight: 680;
 }
 
 .weekly-link {
