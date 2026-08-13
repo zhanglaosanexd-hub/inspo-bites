@@ -26,7 +26,6 @@ const pageEyebrow = document.querySelector("#page-eyebrow");
 const pageDescription = document.querySelector("#page-description");
 const itemCount = document.querySelector("#item-count");
 const lastUpdated = document.querySelector("#last-updated");
-const sidebarUpdated = document.querySelector("#sidebar-updated");
 const searchInput = document.querySelector("#search-input");
 const sortSelect = document.querySelector("#sort-select");
 const viewSwitcher = document.querySelector("#view-switcher");
@@ -836,11 +835,6 @@ function renderGallery() {
   const recentDate = getRecentDate(items.filter((item) => item.section === state.section));
   if (recentDate) {
     lastUpdated.textContent = formatUpdatedText(recentDate);
-  }
-
-  const globalRecentDate = getRecentDate(items);
-  if (globalRecentDate) {
-    sidebarUpdated.textContent = formatUpdatedText(globalRecentDate);
   }
 
   renderViewModeControls();
