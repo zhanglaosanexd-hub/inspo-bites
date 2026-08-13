@@ -1549,10 +1549,14 @@ function renderOnlineCount(realtimeVisitors) {
 }
 
 init().catch((error) => {
+  console.error("Failed to load collection", error);
   gallery.innerHTML = `
-    <section class="empty-state">
-      <h2>Could not load collection</h2>
-      <p>${error.message}</p>
+    <section class="empty-state" aria-label="暂无内容">
+      <img
+        class="empty-state-illustration"
+        src="./assets/empty-state-coming-soon.png"
+        alt="稍等一下，Coming soon"
+      />
     </section>
   `;
 });
