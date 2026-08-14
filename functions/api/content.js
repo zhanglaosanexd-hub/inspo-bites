@@ -54,6 +54,8 @@ const LOCAL_INSPIRATION_COVER_IDS = new Set([
   "24",
   "25",
   "26",
+  "27",
+  "28",
 ]);
 const LOCAL_INSPIRATION_MEDIA = [
   {
@@ -130,6 +132,14 @@ const LOCAL_INSPIRATION_MEDIA = [
   {
     titleIncludes: "书签收藏的文件盒动效",
     video: "./assets/inspiration-video-cache/26-bookmark-file-box.mp4",
+  },
+  {
+    titleIncludes: "对着麦克风吹散种子的记录反馈",
+    video: "./assets/inspiration-video-cache/27-microphone-seed-feedback.mp4",
+  },
+  {
+    titleIncludes: "让 AI 回答像人的边想边写",
+    video: "./assets/inspiration-video-cache/28-ai-answer-thinking-writing.mp4",
   },
   {
     titleIncludes: "3D Interactive Folder Animation",

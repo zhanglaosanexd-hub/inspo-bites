@@ -13,6 +13,8 @@ const VIDEO_SOURCES = [
   ["24-trash-delete.mp4", "2077423947004641474"],
   ["25-lego-dynamic-island.mp4", "2073734969667493914"],
   ["26-bookmark-file-box.mp4", "2080720630534865182"],
+  ["27-microphone-seed-feedback.mp4", "2082482503961686075"],
+  ["28-ai-answer-thinking-writing.mp4", "2084671704287310103"],
 ];
 
 await mkdir(OUTPUT_DIR, { recursive: true });

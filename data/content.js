@@ -8737,8 +8737,8 @@ window.INSPO_STATIC_DATA = {
           "游戏化设计",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1785918564729-41acb00a-5894-42d1-8f99-91efe73a8881.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785918633972-afb6460f-cccf-4be2-b45c-6889fe1959ac.mp4",
+        "cover": "./assets/inspiration-cover-cache/27.png",
+        "video": "./assets/inspiration-video-cache/27-microphone-seed-feedback.mp4",
         "url": "https://x.com/hours/status/2082482503961686075",
         "dateAdded": "2026-08-05",
         "createdAt": "2026-08-05T08:26:03.465Z",
@@ -8766,6 +8766,58 @@ window.INSPO_STATIC_DATA = {
         ],
         "mediaStatus": "",
         "mediaAspectRatio": 0.8370565045992115,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-28-让-ai-回答像人的边想边写",
+        "section": "inspiration",
+        "title": "28｜让 AI 回答像人的边想边写",
+        "description": "一个围绕 AI 回答过程设计的短动效。内容是在生成过程中加入手写式标记、数字圈选、删除线以及图表逐步出现等细节，让回答看起来更像一个人在边思考、边整理信息。",
+        "longDescription": "一个围绕 AI 回答过程设计的短动效。内容是在生成过程中加入手写式标记、数字圈选、删除线以及图表逐步出现等细节，让回答看起来更像一个人在边思考、边整理信息。\n最有意思的是，它没有继续优化传统的打字机效果，而是直接改变了 AI 内容出现的方式。\n重点数字被圈出来、部分文字被划掉、图表随着回答逐渐补全，这些动作把原本冰冷的流式输出变成了一段可观看的思考痕迹。\n尤其适合 AI 分析、数据解释或复杂回答场景：用户等待结果时，不只是看到文字越来越多，而是能够感受到信息正在被组织和修正。",
+        "author": "@nilseller",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "微交互",
+        "tags": [
+          "AI",
+          "Response",
+          "流式输出",
+          "手写动效",
+          "Generative",
+          "UI",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "./assets/inspiration-cover-cache/28.png",
+        "video": "./assets/inspiration-video-cache/28-ai-answer-thinking-writing.mp4",
+        "url": "https://x.com/nilseller/status/2084671704287310103",
+        "dateAdded": "2026-08-13",
+        "createdAt": "2026-08-13T09:27:18.215Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "微交互"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1786613466829-7ae03710-ef66-466b-8c61-ab8d821806ff.png",
+            "width": 2188,
+            "height": 1544
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786613413076-0d14f869-b530-4e95-969c-35dfdb093227.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.4170984455958548,
         "size": "standard",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       }
