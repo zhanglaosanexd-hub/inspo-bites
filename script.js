@@ -106,9 +106,12 @@ const GALLERY_GAP = 14;
 const GALLERY_DEFAULT_COLUMNS = 4;
 const GALLERY_MIN_CARD_WIDTH = 260;
 const GALLERY_MAX_CARD_WIDTH = 430;
+const GALLERY_TARGET_CARD_WIDTH = 340;
+const GALLERY_MAX_COLUMNS = 6;
 const APP_RECAP_COLUMNS = 5;
 const APP_RECAP_MIN_CARD_WIDTH = 150;
 const APP_RECAP_MAX_CARD_WIDTH = 300;
+const APP_RECAP_TARGET_CARD_WIDTH = 300;
 const INITIAL_EAGER_MEDIA_COUNT = 4;
 const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
@@ -1246,7 +1249,7 @@ function renderMasonry(filtered) {
   });
 
   gallery.style.setProperty("--gallery-columns", columnCount);
-  gallery.style.maxWidth = `${getGalleryMaxWidth(columnCount)}px`;
+  gallery.style.maxWidth = "";
   gallery.innerHTML = columns
     .map((column) => `<div class="gallery-column">${column.cards.join("")}</div>`)
     .join("");
@@ -1261,7 +1264,7 @@ function renderUniformGrid(filtered) {
   const galleryMetrics = getGalleryMetrics();
   const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
   gallery.style.setProperty("--gallery-columns", columnCount);
-  gallery.style.maxWidth = `${getGalleryMaxWidth(columnCount)}px`;
+  gallery.style.maxWidth = "";
   gallery.innerHTML = filtered.map((item, index) => createCard(item, index)).join("");
   bindVideoFallbacks(gallery);
   bindImageFallbacks(gallery);
@@ -1474,11 +1477,21 @@ function getGalleryMetrics() {
   const galleryConfig = getGalleryConfig();
   const container = gallery.parentElement;
   const width = container?.clientWidth || window.innerWidth;
+  const targetCardWidth = galleryConfig.targetCardWidth || galleryConfig.maxCardWidth;
   const maxColumnsForWidth = Math.max(
     1,
     Math.floor((width + GALLERY_GAP) / (galleryConfig.minCardWidth + GALLERY_GAP)),
   );
-  const columnCount = Math.min(galleryConfig.defaultColumns, maxColumnsForWidth);
+  const preferredColumns = Math.max(
+    1,
+    Math.round((width + GALLERY_GAP) / (targetCardWidth + GALLERY_GAP)),
+  );
+  const maxColumns = galleryConfig.maxColumns || preferredColumns;
+  const columnCount = Math.min(
+    maxColumnsForWidth,
+    maxColumns,
+    Math.max(galleryConfig.defaultColumns, preferredColumns),
+  );
   const cardWidth = (width - Math.max(columnCount - 1, 0) * GALLERY_GAP) / columnCount;
 
   return {
@@ -1498,6 +1511,8 @@ function getGalleryConfig() {
       defaultColumns: APP_RECAP_COLUMNS,
       minCardWidth: APP_RECAP_MIN_CARD_WIDTH,
       maxCardWidth: APP_RECAP_MAX_CARD_WIDTH,
+      targetCardWidth: APP_RECAP_TARGET_CARD_WIDTH,
+      maxColumns: APP_RECAP_COLUMNS,
     };
   }
 
@@ -1505,6 +1520,8 @@ function getGalleryConfig() {
     defaultColumns: GALLERY_DEFAULT_COLUMNS,
     minCardWidth: GALLERY_MIN_CARD_WIDTH,
     maxCardWidth: GALLERY_MAX_CARD_WIDTH,
+    targetCardWidth: GALLERY_TARGET_CARD_WIDTH,
+    maxColumns: GALLERY_MAX_COLUMNS,
   };
 }
 
