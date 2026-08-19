@@ -836,7 +836,7 @@ function renderGallery() {
   itemCount.textContent = `${filtered.length} 条内容`;
 
   const recentDate = getRecentDate(items.filter((item) => item.section === state.section));
-  if (recentDate) {
+  if (lastUpdated && recentDate) {
     lastUpdated.textContent = formatUpdatedText(recentDate);
   }
 
