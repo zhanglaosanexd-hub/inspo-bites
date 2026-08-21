@@ -117,7 +117,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260814-inspo-27-28-local-video";
+const DATA_VERSION = "20260821-stable-first-render";
 const REMOTE_CONTENT_TIMEOUT_MS = 2500;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 60 * 1000;
@@ -158,8 +158,7 @@ async function loadCollectionData() {
   const localFallback = window.INSPO_STATIC_DATA;
 
   if (localFallback) {
-    const cachedRemoteData = readCachedRemoteCollectionData();
-    return cachedRemoteData ? mergeCollectionData(localFallback, cachedRemoteData) : localFallback;
+    return localFallback;
   }
 
   try {
@@ -177,8 +176,7 @@ async function loadCollectionData() {
       items: await itemsResponse.json(),
     };
 
-    const cachedRemoteData = readCachedRemoteCollectionData();
-    return cachedRemoteData ? mergeCollectionData(localData, cachedRemoteData) : localData;
+    return localData;
   } catch (error) {
     if (localFallback) return localFallback;
     throw error;
@@ -335,7 +333,11 @@ function mergeCollectionData(localData, remoteData) {
   const localItems = Array.isArray(localData.items) ? localData.items : localData.items?.items || [];
   const remoteSections = Array.isArray(remoteData.sections) ? remoteData.sections : [];
   const remoteItems = Array.isArray(remoteData.items) ? remoteData.items : [];
-  const replaceSections = new Set(remoteData.replaceSections || []);
+  const replaceSections = new Set(
+    (remoteData.replaceSections || []).filter((sectionId) =>
+      canReplaceLocalSection(sectionId, localItems, remoteItems),
+    ),
+  );
   const sectionMap = new Map(localSections.map((section) => [section.id, section]));
 
   remoteSections.forEach((section) => {
@@ -355,6 +357,18 @@ function mergeCollectionData(localData, remoteData) {
     sections: { sections: Array.from(sectionMap.values()) },
     items: { items: Array.from(itemMap.values()) },
   };
+}
+
+function canReplaceLocalSection(sectionId, localItems, remoteItems) {
+  const localSectionItems = localItems.filter((item) => item.section === sectionId);
+  const remoteSectionItems = remoteItems.filter((item) => item.section === sectionId);
+
+  if (!remoteSectionItems.length) return false;
+  if (remoteSectionItems.length > localSectionItems.length) return true;
+  if (remoteSectionItems.length < localSectionItems.length) return false;
+
+  const remoteIds = new Set(remoteSectionItems.map((item) => item.id).filter(Boolean));
+  return localSectionItems.every((item) => item.id && remoteIds.has(item.id));
 }
 
 function mergeItem(previous, incoming) {

@@ -8820,6 +8820,257 @@ window.INSPO_STATIC_DATA = {
         "mediaAspectRatio": 1.4170984455958548,
         "size": "standard",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-29-flower-menu-放射式菜单交互",
+        "section": "inspiration",
+        "title": "29｜Flower Menu 放射式菜单交互",
+        "description": "一个将菜单选项围绕中心按钮展开的 Flower Menu 交互。触发菜单后，多个操作项从中心位置向四周放射展开，形成类似花瓣的结构；关闭时再沿原路径收回。",
+        "longDescription": "一个将菜单选项围绕中心按钮展开的 Flower Menu 交互。触发菜单后，多个操作项从中心位置向四周放射展开，形成类似花瓣的结构；关闭时再沿原路径收回。\n这个案例有意思的地方，是把普通的二级菜单从“列表展开”变成了一个具有空间关系的操作结构。\n中心按钮承担触发点，周围选项围绕它均匀分布，因此用户可以很快理解这些操作属于同一组。展开和收起过程中，所有元素都围绕中心保持一致的运动关系，也让整个交互显得非常完整。\n相比常见的下拉菜单或 Popover，这种形式更适合数量较少、频率相近的快捷操作。如果选项过多，放射结构反而会增加扫描和选择成本。",
+        "author": "@nitishkmrk",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "微交互",
+        "tags": [
+          "Radial",
+          "Menu",
+          "Flower",
+          "菜单动效",
+          "展开交互",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1786943315460-23bb83b8-3671-4b2c-ba05-84b615012d7d.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786943248917-9318a525-887a-4a74-8ec9-5b4539cb9871.mp4",
+        "url": "https://x.com/nitishkmrk/status/2088947032274907602?s=20",
+        "dateAdded": "2026-08-17",
+        "createdAt": "2026-08-17T05:05:07.490Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "微交互"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1786943315460-23bb83b8-3671-4b2c-ba05-84b615012d7d.png",
+            "width": 1542,
+            "height": 1520
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786943248917-9318a525-887a-4a74-8ec9-5b4539cb9871.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.0144736842105264,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-30-带物理摆动感的作品集-carousel",
+        "section": "inspiration",
+        "title": "30｜带物理摆动感的作品集 Carousel",
+        "description": "一个用于作品集展示的 Carousel 组件。切换项目时，卡片不是沿着水平轨道简单滑入，而是带着明显的摆动和惯性从画面外进入，最终回到稳定位置。作者同时将这一组件开源，作为可复用的作品展示模块。",
+        "longDescription": "一个用于作品集展示的 Carousel 组件。切换项目时，卡片不是沿着水平轨道简单滑入，而是带着明显的摆动和惯性从画面外进入，最终回到稳定位置。作者同时将这一组件开源，作为可复用的作品展示模块。\n它有意思的地方，是给传统 Carousel 加入了一种接近真实物体的“重量感”。\n\n卡片进入时不是匀速移动，而是先快速进入，再因为惯性产生轻微摆动和回弹。用户能够感受到卡片像被悬挂或甩进画面，而不是单纯执行一次位移动画。\n\n这种运动方式尤其适合作品集、摄影、海报等视觉内容：卡片本身就是主角，稍微夸张的物理反馈反而能够强化浏览节奏。\n\n关键是控制回弹次数。如果摆动时间太长，会降低连续浏览效率；保持一到两次明显衰减，会更接近真实物理反馈。",
+        "author": "@YousufSoomroDev",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "Motion",
+        "tags": [
+          "Carousel",
+          "Physics",
+          "Motion",
+          "Spring",
+          "作品集",
+          "卡片动效",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1786946234998-8216d018-10be-4f9f-8d48-1924a4274a60.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786946224277-a30a5440-b7dc-40a8-93f2-bdb2ea795d7f.mp4",
+        "url": "https://x.com/YousufSoomroDev/status/2088657289410687111",
+        "dateAdded": "2026-08-17",
+        "createdAt": "2026-08-17T05:52:24.945Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "Motion"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1786946234998-8216d018-10be-4f9f-8d48-1924a4274a60.png",
+            "width": 2430,
+            "height": 1524
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786946224277-a30a5440-b7dc-40a8-93f2-bdb2ea795d7f.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.594488188976378,
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-31-手绘圈选式导航反馈",
+        "section": "inspiration",
+        "title": "31｜手绘圈选式导航反馈",
+        "description": "一个围绕导航 Hover 状态设计的轻量微交互。 鼠标移动到不同菜单项时，一圈带有手绘质感的 SVG 椭圆会移动到当前项目周围，并通过绘制动画完成高亮。",
+        "longDescription": "一个围绕导航 Hover 状态设计的轻量微交互。 鼠标移动到不同菜单项时，一圈带有手绘质感的 SVG 椭圆会移动到当前项目周围，并通过绘制动画完成高亮。\n相比底线、背景色或文字变色，手绘 SVG 本身带有明显的不规则感，移动到不同菜单项时又保持同一套运动方式，因此既承担了状态提示，也成为界面中的视觉记忆点。  \n\n这种方式很适合作品集、个人网站、创意工作室等需要一点性格，但又不想加入复杂大动画的场景。",
+        "author": "@raul_dronca",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "#Navigation",
+          "#SVG",
+          "#Hover",
+          "#Handdrawn",
+          "#微交互",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787038993919-e00d7eb3-5f99-4247-a88c-0decf9fc544c.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787039007057-4a916704-62b3-4823-99cd-3a6c31735c79.mp4",
+        "url": "https://x.com/raul_dronca/status/2089006726204789023",
+        "dateAdded": "2026-08-18",
+        "createdAt": "2026-08-18T07:42:47.183Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787038993919-e00d7eb3-5f99-4247-a88c-0decf9fc544c.png",
+            "width": 2740,
+            "height": 1528
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787039007057-4a916704-62b3-4823-99cd-3a6c31735c79.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.793193717277487,
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-32-会带动旁边的-tab-hover",
+        "section": "inspiration",
+        "title": "32｜会带动旁边的 Tab Hover",
+        "description": "一个围绕 Tab Hover 设计的轻量微交互。 鼠标移动到某个选项时，不只有当前 Tab 发生变化，左右相邻的选项也会同步产生轻微位移和倾斜，形成一种被当前元素挤开的空间反馈。",
+        "longDescription": "一个围绕 Tab Hover 设计的轻量微交互。 鼠标移动到某个选项时，不只有当前 Tab 发生变化，左右相邻的选项也会同步产生轻微位移和倾斜，形成一种被当前元素挤开的空间反馈。\n传统 Tab 通常只改变背景、颜色或透明度，而这里让相邻元素也参与反馈，因此用户的鼠标移动会影响整组组件。\n\n这种轻微的联动让菜单产生了更强的物理感，但幅度又没有大到破坏文字阅读。\n\n尤其适合导航、分类切换、作品筛选等横向排列组件：通过邻接元素的微小响应，让普通 Hover 多一点活性。",
+        "author": "@guerriero_se",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "微交互",
+        "tags": [
+          "Tab",
+          "Hover",
+          "邻接动效",
+          "Skew",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787217493451-d1d90c2e-cb3a-4ed4-86b9-2a2647236e72.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787217563348-84bb0bc6-1aeb-4f71-91af-b093bbace0cd.mp4",
+        "url": "https://x.com/guerriero_se/status/2074141065104576781",
+        "dateAdded": "2026-08-20",
+        "createdAt": "2026-08-20T09:17:50.903Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "微交互"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787217493451-d1d90c2e-cb3a-4ed4-86b9-2a2647236e72.png",
+            "width": 1524,
+            "height": 1490
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787217563348-84bb0bc6-1aeb-4f71-91af-b093bbace0cd.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.0228187919463088,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-33-用动态眼睛来表达-ai-状态",
+        "section": "inspiration",
+        "title": "33｜用动态眼睛来表达 AI 状态",
+        "description": "一个为 Grok Bot 设计的动态状态图标。 极简的黑色圆形头像只保留一双白色眼睛，通过眨眼、移动、挤压和形态变化表现不同状态，让原本普通的 Bot Icon 产生类似角色表情的反馈。",
+        "longDescription": "一个为 Grok Bot 设计的动态状态图标。 极简的黑色圆形头像只保留一双白色眼睛，通过眨眼、移动、挤压和形态变化表现不同状态，让原本普通的 Bot Icon 产生类似角色表情的反馈。\n有意思的地方，是它没有额外增加 Loading、文字或状态标签，而是直接让图标本身承担反馈。\n眼睛的方向、大小和运动方式发生轻微变化，就能让一个非常抽象的 AI Agent 产生“正在观察、思考或回应”的感觉。\n相比复杂的角色动画，这种做法仍然保持了产品图标的简洁，同时又给 AI 增加了一点生命感。",
+        "author": "@benjitaylor",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "Motion",
+        "tags": [
+          "AI",
+          "Agent",
+          "Icon",
+          "Motion",
+          "状态反馈",
+          "Character",
+          "UI",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787297131668-90d91f0c-5f77-4ec9-965b-c63b7b943e00.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787297088808-73dc193f-264e-4acd-94c3-942078f1c6f4.mp4",
+        "url": "https://x.com/benjitaylor/status/2087227155076046995",
+        "dateAdded": "2026-08-21",
+        "createdAt": "2026-08-21T07:24:10.578Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "Motion"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787297131668-90d91f0c-5f77-4ec9-965b-c63b7b943e00.png",
+            "width": 1532,
+            "height": 1508
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787297088808-73dc193f-264e-4acd-94c3-942078f1c6f4.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.0159151193633953,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       }
     ]
   }
