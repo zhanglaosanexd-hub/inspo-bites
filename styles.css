@@ -289,43 +289,121 @@ body.detail-open .content {
 
 .weekly-link {
   display: grid;
-  gap: 4px;
-  min-height: 74px;
-  padding: 12px 12px 11px;
-  border: 1px solid rgba(222, 222, 216, 0.86);
-  border-radius: 8px;
+  gap: 7px;
+  min-height: 136px;
+  padding: 11px 11px 10px;
+  overflow: hidden;
+  border: 1px solid rgba(42, 40, 35, 0.22);
+  border-radius: 4px;
   color: var(--ink);
-  background: rgba(255, 255, 255, 0.52);
-  box-shadow: 0 8px 26px rgba(23, 23, 23, 0.035);
+  background-color: #f3f0e8;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(46, 42, 35, 0.025) 0,
+    rgba(46, 42, 35, 0.025) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  box-shadow: 2px 3px 0 rgba(42, 40, 35, 0.08);
   transition:
     transform 160ms ease,
     border-color 160ms ease,
-    background 160ms ease;
+    box-shadow 160ms ease;
 }
 
 .weekly-link:hover {
-  border-color: rgba(23, 23, 23, 0.18);
-  background: rgba(255, 255, 255, 0.8);
-  transform: translateY(-1px);
+  border-color: rgba(23, 23, 20, 0.42);
+  box-shadow: 3px 5px 0 rgba(42, 40, 35, 0.11);
+  transform: translateY(-2px) rotate(-0.15deg);
 }
 
-.weekly-link-kicker {
-  color: var(--muted);
-  font-size: 10px;
+.weekly-link:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.weekly-paper-topline,
+.weekly-paper-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 8px;
   font-weight: 760;
-  letter-spacing: 0.03em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
-.weekly-link strong {
-  font-size: 13px;
-  line-height: 1.25;
+.weekly-paper-masthead {
+  font-family: "Songti SC", "STSong", Georgia, serif;
+  font-size: 17px;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.weekly-link small {
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 1.45;
+.weekly-paper-rule {
+  height: 3px;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+
+.weekly-paper-preview {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 7px;
+  min-height: 52px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(42, 40, 35, 0.6);
+}
+
+.weekly-paper-visual {
+  position: relative;
+  min-width: 0;
+  background:
+    linear-gradient(90deg, transparent 46%, #f3f0e8 46%, #f3f0e8 54%, transparent 54%),
+    linear-gradient(#171713 0 0);
+}
+
+.weekly-paper-visual::after {
+  position: absolute;
+  right: 8px;
+  bottom: 7px;
+  width: 16px;
+  height: 16px;
+  border: 3px solid #f3f0e8;
+  border-radius: 50%;
+  content: "";
+}
+
+.weekly-paper-copy {
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+.weekly-paper-copy i {
+  display: block;
+  height: 3px;
+  background: rgba(42, 40, 35, 0.72);
+}
+
+.weekly-paper-copy i:nth-child(2) {
+  width: 82%;
+}
+
+.weekly-paper-copy i:nth-child(3) {
+  width: 92%;
+}
+
+.weekly-paper-copy i:nth-child(4) {
+  width: 64%;
+}
+
+.weekly-paper-foot {
+  color: rgba(42, 40, 35, 0.72);
+  font-size: 7px;
 }
 
 .sidebar-rule {
