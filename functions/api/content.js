@@ -31,7 +31,7 @@ const DEFAULT_SOURCES = [
 ];
 
 const CACHE_SECONDS = 5 * 60;
-const STALE_SECONDS = 24 * 60 * 60;
+const STALE_SECONDS = 60 * 60;
 const YUQUE_API_BASE = "https://www.yuque.com/api/v2/repos";
 const YUQUE_TABLE_API_BASE = "https://www.yuque.com/api/modules/table/doc";
 const TABLE_RECORD_LIMIT = 5000;
@@ -213,7 +213,7 @@ export async function onRequest({ request, env }) {
       warnings,
     },
     200,
-    `s-maxage=${CACHE_SECONDS}, stale-while-revalidate=${STALE_SECONDS}`,
+    `public, max-age=0, s-maxage=${CACHE_SECONDS}, stale-while-revalidate=${STALE_SECONDS}`,
   );
 }
 

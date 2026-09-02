@@ -9071,6 +9071,301 @@ window.INSPO_STATIC_DATA = {
         "mediaAspectRatio": 1.0159151193633953,
         "size": "standard",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-34-把电子签名变成-etch-a-sketch-小游戏",
+        "section": "inspiration",
+        "title": "34｜把电子签名变成 Etch A Sketch 小游戏",
+        "description": "一个把传统电子签名框重新设计成 Etch A Sketch 玩具（2003年被评为20世纪最令人难忘的100种玩具之一）的趣味交互。用户可以直接在玻璃屏上画出签名，如果对结果不满意，还可以通过摇晃设备把内容清空；完成签名后，再进入最终确认状态。",
+        "longDescription": "一个把传统电子签名框重新设计成 Etch A Sketch 玩具（2003年被评为20世纪最令人难忘的100种玩具之一）的趣味交互。用户可以直接在玻璃屏上画出签名，如果对结果不满意，还可以通过摇晃设备把内容清空；完成签名后，再进入最终确认状态。\n它有意思的地方，是没有把签名理解成一个纯功能性的输入框，而是借用了现实玩具里非常明确的操作规则。\n画出来和摇掉重来天然对应签名与清空两个动作，所以即使交互形式很特别，用户仍然能快速理解。\n尤其是 Shake to Erase，把原本普通的 Reset 按钮变成了一次真实的身体动作，让整个签名过程多了一点游戏感和记忆点。\n这种处理不一定适合正式合同或高频工具，但很适合作品集、Offer、活动确认、邀请函或品牌体验等更强调情绪和仪式感的场景。#电子签名",
+        "author": "@adrianabelarde_",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "#EtchASketch",
+          "#ShakeGesture",
+          "#趣味交互",
+          "#微交互",
+          "#PlayfulDesign",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787710727673-7f3ffe64-3089-4fcb-894b-34cd40f2a02d.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787710825372-2e0a9a90-aef8-4271-b919-f8225fe0f990.mp4",
+        "url": "https://x.com/adrianabelarde_/status/2076290018193424792?s=20",
+        "dateAdded": "2026-08-26",
+        "createdAt": "2026-08-26T02:18:09.024Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787710727673-7f3ffe64-3089-4fcb-894b-34cd40f2a02d.png",
+            "width": 1546,
+            "height": 1506
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787710825372-2e0a9a90-aef8-4271-b919-f8225fe0f990.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.0265604249667994,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-35-让人忍不住想点的-hover-动效",
+        "section": "inspiration",
+        "title": "35｜让人忍不住想点的 Hover 动效",
+        "description": "一个专门围绕按钮 Hover 状态设计的短动效。 鼠标进入按钮后，原本稳定的视觉状态开始产生连续变化，让用户在真正点击之前，就能明显感知到按钮正在回应自己的操作。作者自己把它描述成：“A hover effect that makes you want to click it”。",
+        "longDescription": "一个专门围绕按钮 Hover 状态设计的短动效。 鼠标进入按钮后，原本稳定的视觉状态开始产生连续变化，让用户在真正点击之前，就能明显感知到按钮正在回应自己的操作。作者自己把它描述成：“A hover effect that makes you want to click it”。\n常见按钮通常只是变色、放大或者出现阴影，而这个案例更强调 Hover 之后持续发生的运动，让用户产生一种“接下来点一下会发生什么”的期待。\n\n这种思路特别适合 Hero CTA、作品集入口、购买按钮等需要吸引用户主动操作的位置。\n\nHover 不一定只是告诉用户“这里能点”，它也可以提前制造一点欲望。",
+        "author": "@tojawuzik",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "Motion",
+        "tags": [
+          "Hover",
+          "CTA",
+          "Button",
+          "Motion",
+          "点击反馈",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787802012100-abf6033d-70da-4fab-ad1b-a624e22b423e.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787802075591-f954c7b2-c896-45c6-ae91-0fc1553ab0f1.mp4",
+        "url": "https://x.com/tojawuzik/status/2033987211691970785?utm_source=chatgpt.com",
+        "dateAdded": "2026-08-27",
+        "createdAt": "2026-08-27T03:38:21.412Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "Motion"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787802012100-abf6033d-70da-4fab-ad1b-a624e22b423e.png",
+            "width": 1542,
+            "height": 1412
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787802075591-f954c7b2-c896-45c6-ae91-0fc1553ab0f1.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.0920679886685551,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-36-会判断鼠标方向的-resize-handle",
+        "section": "inspiration",
+        "title": "36｜会判断鼠标方向的 Resize Handle",
+        "description": "当鼠标从不同方向进入或离开调整区域时，Handle 的过渡动画会根据鼠标运动方向发生变化，而不是始终播放同一套固定效果。",
+        "longDescription": "当鼠标从不同方向进入或离开调整区域时，Handle 的过渡动画会根据鼠标运动方向发生变化，而不是始终播放同一套固定效果。\n很多 Hover 动画只判断两种状态：进入或离开。但这个案例进一步加入了方向信息，让元素的运动方向和鼠标轨迹保持一致。\n\n这种细节很小，却会让界面产生更自然的空间感——鼠标从左侧进入，反馈就从左侧接住它；从另一侧离开，动画也顺着对应方向退出。\n\n对于 Resize Handle、分栏边界、拖拽控制点这类本身就带有方向语义的组件来说，这种处理尤其合理。",
+        "author": "@terkelg",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "微交互",
+        "tags": [
+          "Resize",
+          "Handle",
+          "Direction-aware",
+          "Hover",
+          "状态过渡",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787802540451-2c3b5997-d133-4ab7-93c9-af7550bf0b4e.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787802584162-10e047c7-0e2a-45d8-a5fb-03b5e2c18aff.mp4",
+        "url": "https://x.com/terkelg/status/2048828974508171584?utm_source=chatgpt.com",
+        "dateAdded": "2026-08-27",
+        "createdAt": "2026-08-27T03:47:28.088Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "微交互"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787802540451-2c3b5997-d133-4ab7-93c9-af7550bf0b4e.png",
+            "width": 2384,
+            "height": 1272
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787802584162-10e047c7-0e2a-45d8-a5fb-03b5e2c18aff.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.8742138364779874,
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-37-会根据按压位置变形的弹性按钮",
+        "section": "inspiration",
+        "title": "37｜会根据按压位置变形的弹性按钮",
+        "description": "用户按下按钮时，按钮不会整体统一缩小，而是会根据按压的位置和力度产生局部形变。手指落在哪一侧，对应区域就会向下凹陷，松开后再带着轻微弹性恢复原状。作者将它称为一种「plasticity-type button」的探索。",
+        "longDescription": "用户按下按钮时，按钮不会整体统一缩小，而是会根据按压的位置和力度产生局部形变。手指落在哪一侧，对应区域就会向下凹陷，松开后再带着轻微弹性恢复原状。作者将它称为一种「plasticity-type button」的探索。\n常见的 Pressed State 通常只有整体缩放、变色或阴影变化，不管用户点在按钮哪个位置，反馈都是同一套动画。\n\n这个案例把按压坐标也变成了动效参数：左侧被按下，形变就更多发生在左侧；点击中心，则会形成更均匀的凹陷。\n\n这种局部形变会让数字界面产生更接近真实材质的触感，也让一次非常普通的点击多了一层空间反馈。\n\n如果未来设备能够提供更丰富的压力或触控信息，这种“根据输入方式实时改变形态”的组件，会比固定播放的一段动画更自然。",
+        "author": "@michalmalewicz",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "微交互",
+        "tags": [
+          "Button",
+          "Press",
+          "Interaction",
+          "Plasticity",
+          "Reactive",
+          "UI",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787894627185-ceddb946-b8f2-4142-a055-acc4f30f67f7.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787894684061-5748f080-de8b-42e8-a22b-5b8396969ef2.mp4",
+        "url": "https://x.com/michalmalewicz/status/2059298839215972592",
+        "dateAdded": "2026-08-28",
+        "createdAt": "2026-08-28T05:22:57.406Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "微交互"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787894627185-ceddb946-b8f2-4142-a055-acc4f30f67f7.png",
+            "width": 2092,
+            "height": 1488
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787894684061-5748f080-de8b-42e8-a22b-5b8396969ef2.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.4059139784946237,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-38-用一把放大镜浏览数字邮票",
+        "section": "inspiration",
+        "title": "38｜用一把放大镜浏览数字邮票",
+        "description": "一个数字邮票收藏网站里的放大镜交互。 选中邮票后，可以拖动一把虚拟放大镜查看纸张纹理、字体和插画细节。镜片不只是简单把图片放大，还加入了边缘折射、轻微色散和缩放控制，让它更像一件真正放在邮票上的玻璃工具。",
+        "longDescription": "一个数字邮票收藏网站里的放大镜交互。 选中邮票后，可以拖动一把虚拟放大镜查看纸张纹理、字体和插画细节。镜片不只是简单把图片放大，还加入了边缘折射、轻微色散和缩放控制，让它更像一件真正放在邮票上的玻璃工具。\n拖动放大镜的过程，本身就是浏览内容的一部分。\n\n尤其是镜片边缘的形变和色散，让它不再像一个圆形 Mask，而是真的产生了“隔着玻璃观察”的感觉。\n\n这种设计很适合博物馆、档案、艺术品、材质、地图等需要用户主动观察细节的内容。",
+        "author": "@marijanapav",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "Magnifier",
+          "Drag",
+          "Interaction",
+          "Shader",
+          "Digital",
+          "Archive",
+          "网页交互",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1788155127483-b1435387-69ff-4e35-bf6b-0854c5a77389.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788155412224-0fa743ff-14d0-443b-b580-2e0d4d27213e.mp4",
+        "url": "https://x.com/marijanapav/status/1984767288172597703?s=20",
+        "dateAdded": "2026-08-31",
+        "createdAt": "2026-08-31T05:44:22.101Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1788155127483-b1435387-69ff-4e35-bf6b-0854c5a77389.png",
+            "width": 2376,
+            "height": 1506
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788155412224-0fa743ff-14d0-443b-b580-2e0d4d27213e.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.5776892430278884,
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-39-把电子小票真的-打印-出来",
+        "section": "inspiration",
+        "title": "39｜把电子小票真的“打印”出来",
+        "description": "一个把结账小票设计成“打印过程”的界面组件。 触发后，小票会从卡片底部一点点伸出来，商品、金额和结算信息随着纸张展开逐步出现，让原本普通的订单结果多了一层类似真实收银机打印小票的反馈。",
+        "longDescription": "一个把结账小票设计成“打印过程”的界面组件。 触发后，小票会从卡片底部一点点伸出来，商品、金额和结算信息随着纸张展开逐步出现，让原本普通的订单结果多了一层类似真实收银机打印小票的反馈。\n它有意思的地方，是没有直接弹出一张完整的 Receipt Card，而是把现实中“打印小票”的过程也一起搬进了界面。\n\n纸张出现的方向、速度和内容揭示保持一致，因此动画不只是装饰，而是在解释：\n\n“这张小票刚刚生成。”\n\n这种现实动作的映射很适合支付成功、订单完成、发票生成等低频关键节点。\n\n它既能强化完成感，也能让一个原本非常普通的结果页面产生更明确的记忆点。\n\n作者使用 Paper 完成设计，并通过 Motion 制作动画。",
+        "author": "@jeetnirnejak",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "#Receipt",
+          "#PrintAnimation",
+          "#Checkout",
+          "#Motion",
+          "#微交互",
+          "#支付反馈",
+          "𝕏"
+        ],
+        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1788241090120-7ede9a8e-bb20-4c88-a662-f26f5687fb55.png",
+        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788241116523-d1c3afdc-a685-40c1-a830-d5149372d68b.mp4",
+        "url": "https://x.com/jeetnirnejak/status/2056007595400527987",
+        "dateAdded": "2026-09-01",
+        "createdAt": "2026-09-01T05:37:32.580Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1788241090120-7ede9a8e-bb20-4c88-a662-f26f5687fb55.png",
+            "width": 1956,
+            "height": 1454
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788241116523-d1c3afdc-a685-40c1-a830-d5149372d68b.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.34525447042641,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       }
     ]
   }

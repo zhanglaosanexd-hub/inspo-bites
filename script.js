@@ -117,8 +117,8 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260821-stable-first-render";
-const REMOTE_CONTENT_TIMEOUT_MS = 2500;
+const DATA_VERSION = "20260902-latest-on-entry";
+const REMOTE_CONTENT_TIMEOUT_MS = 15 * 1000;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 60 * 1000;
 const REMOTE_CONTENT_CACHE_RETENTION_MS = 24 * HOUR_MS;
@@ -158,7 +158,7 @@ async function loadCollectionData() {
   const localFallback = window.INSPO_STATIC_DATA;
 
   if (localFallback) {
-    return localFallback;
+    return mergeCachedRemoteCollectionData(localFallback);
   }
 
   try {
@@ -176,7 +176,7 @@ async function loadCollectionData() {
       items: await itemsResponse.json(),
     };
 
-    return localData;
+    return mergeCachedRemoteCollectionData(localData);
   } catch (error) {
     if (localFallback) return localFallback;
     throw error;
@@ -201,7 +201,7 @@ async function loadRemoteCollectionData(localData) {
   const timeoutId = window.setTimeout(() => controller.abort(), REMOTE_CONTENT_TIMEOUT_MS);
 
   try {
-    const response = await fetch(`/api/content?v=${getRemoteContentVersion()}`, {
+    const response = await fetch("/api/content", {
       signal: controller.signal,
       cache: "no-cache",
       headers: { Accept: "application/json" },
@@ -238,8 +238,11 @@ async function loadRemoteCollectionData(localData) {
   }
 }
 
-function getRemoteContentVersion() {
-  return `${DATA_VERSION}-${Math.floor(Date.now() / REMOTE_CONTENT_CACHE_MAX_AGE_MS)}`;
+function mergeCachedRemoteCollectionData(localData) {
+  const cachedRemoteData = readCachedRemoteCollectionData({
+    maxAgeMs: REMOTE_CONTENT_CACHE_RETENTION_MS,
+  });
+  return cachedRemoteData ? mergeCollectionData(localData, cachedRemoteData) : localData;
 }
 
 function readCachedRemoteCollectionData(options = {}) {

@@ -4,23 +4,984 @@
       "id": "pinckus-hydrangea",
       "section": "inspiration",
       "title": "09｜Pinckus：Motion Graphics「绣球」",
-      "description": "广西绣球文化元素转译成轻 3D、景深和明亮色彩的动态图形实验。",
-      "longDescription": "这是 @Pinckus 发布的动态图形作品，主题是绣球，灵感来自作者家乡广西的文化元素。\n\n作品用蓝、黄、橙等高明度色彩表现绣球的图案结构，并通过虚化、景深、空间层次和轻 3D 动效，让传统文化元素从静态纹样变成更年轻、更轻盈、更适合数字媒介传播的视觉语言。\n\n它没有把传统文化元素做得很重，而是通过 Motion、空间感和明亮色彩，把地域文化转译成了更现代的动态视觉表达。\n\n传统文化视觉不一定只能停留在插画、纹样和国风配色上，也可以通过动态图形、轻 3D、景深和节奏设计，变成更适合短视频、活动视觉、品牌传播和数字媒介的表达方式。",
+      "description": "",
+      "longDescription": "",
       "author": "Pinckus",
-      "avatar": "https://pbs.twimg.com/profile_images/2058773125890719744/icqA2nww_200x200.jpg",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/09.png",
+      "video": "./assets/pinckus-motion-graphics-hydrangea-x.mp4",
+      "url": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#",
+      "dateAdded": "2026-06-24",
+      "createdAt": "2026-06-24T05:32:06.897Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294704637-67d6bba0-b5dc-448c-bab1-f7ce3a56c78b.png",
+          "width": 2532,
+          "height": 1434
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.7656903765690377,
+      "size": "wide",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "ampersand-no3-in-out",
+      "section": "inspiration",
+      "title": "01｜Ampersand No.3 - In & Out：字形动效实验",
+      "description": "",
+      "longDescription": "",
+      "author": "Seb Cornelius",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/01.png",
+      "video": "./assets/ampersand-no3-in-out-x.mp4",
+      "url": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#",
+      "dateAdded": "2026-06-24",
+      "createdAt": "2026-06-24T05:32:06.903Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294914918-1a6e19fa-0ace-407c-9d3c-4908a9034359.png",
+          "width": 3020,
+          "height": 1702
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.7743830787309047,
+      "size": "wide",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "bamojk-webgl-wheel-browse",
+      "section": "inspiration",
+      "title": "12｜WebGL 轮盘式作品浏览动效",
+      "description": "这是 @bamojk 发布的一段 WIP 动效演示，使用 Webflow、WebGL 和 Three.js 做了一个轮盘式作品浏览效果。画面中图片卡片围绕空间路径旋转、翻动和切换，整体有很强的 3D 透视感和动态冲击力。 传统作品集大多是卡片排列或瀑布流，而这个演示把内容做成了一个可滚动、可旋转、可进入的空间装置，让浏览本身变成了体验的一部分。",
+      "longDescription": "这是 @bamojk 发布的一段 WIP 动效演示，使用 Webflow、WebGL 和 Three.js 做了一个轮盘式作品浏览效果。画面中图片卡片围绕空间路径旋转、翻动和切换，整体有很强的 3D 透视感和动态冲击力。 传统作品集大多是卡片排列或瀑布流，而这个演示把内容做成了一个可滚动、可旋转、可进入的空间装置，让浏览本身变成了体验的一部分。\n它的参考价值在于：当内容本身偏视觉、艺术、摄影或创意项目时，列表不一定只是承载信息，也可以成为品牌气质的一部分。WebGL 和 Three.js 在这里不是单纯炫技，而是在强化“探索感”和“动态记忆点”。",
+      "author": "bamojk",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "#WebGL",
+        "#Threejs",
+        "#Webflow",
+        "#作品集动效",
+        "#3D交互",
+        "#空间化浏览",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/12.png",
+      "video": "./assets/bamojk-webgl-wheel-browse.mp4",
+      "url": "https://x.com/bamojk/status/2067922309130977480?s=20",
+      "dateAdded": "2026-07-07",
+      "createdAt": "2026-07-07T09:13:58.332Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415676734-615921b9-b917-4ed1-bb64-bf7df6a3872e.png",
+          "width": 1600,
+          "height": 1200
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.3333333333333333,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "world-is-web-ticket-brand-motion",
+      "section": "inspiration",
+      "title": "13｜票券式品牌动效",
+      "description": "这是 @world_is_web 为 iskra.graphics 做的一段票券式品牌动效。画面把网站设计工作室包装成一张可撕开的入场券，通过镭射质感、暗色背景、条形码、编号和信息分区，营造出很强的未来感和收藏感。",
+      "longDescription": "这是 @world_is_web 为 iskra.graphics 做的一段票券式品牌动效。画面把网站设计工作室包装成一张可撕开的入场券，通过镭射质感、暗色背景、条形码、编号和信息分区，营造出很强的未来感和收藏感。\n它没有直接用常规的标题、按钮和服务列表，而是把品牌信息压缩进一张票券里，让设计、开发、交互、发布这些服务内容变成更有视觉记忆点的图形信息。\n\n它的参考价值在于：品牌表达不一定只能依赖 Logo 和标语，也可以通过一种具体媒介来承载。票券、卡片、证件、说明书、包装盒这类现实物件，都可以转化成数字界面里的视觉隐喻，让品牌更有故事感。",
+      "author": "world_is_web",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "#品牌动效",
+        "#票券视觉",
+        "#WebExperience",
+        "#视觉隐喻",
+        "#动效设计",
+        "#数字品牌",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/13.png",
+      "video": "./assets/world-is-web-ticket-brand-motion.mp4",
+      "url": "https://x.com/world_is_web/status/2068101965901390292?s=20",
+      "dateAdded": "2026-07-07",
+      "createdAt": "2026-07-07T09:16:39.903Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415846872-6828d883-7dce-4e30-b950-da29bdb220d9.png",
+          "width": 788,
+          "height": 1434
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 0.5495118549511855,
+      "size": "tall",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "kelindi-ebook-page-turn",
+      "section": "inspiration",
+      "title": "14｜把真实翻书质感带回数字阅读",
+      "description": "这是 @_kelindi 做的一段电子书翻页交互探索。视频里不仅模拟了书页翻动的动作，还保留了纸张透光、背面内容隐约显现、翻页阴影和页面堆叠这些真实阅读里的细节。",
+      "longDescription": "这是 @_kelindi 做的一段电子书翻页交互探索。视频里不仅模拟了书页翻动的动作，还保留了纸张透光、背面内容隐约显现、翻页阴影和页面堆叠这些真实阅读里的细节。\n现在很多阅读产品追求极简和平面化，但真实纸书里的翻页、厚度、透光和阴影，其实能带来更强的沉浸感和阅读仪式感。\n\n拟物不等于复古，也不一定是过度装饰。好的拟物细节可以帮助用户理解状态、感知进度，也能让数字内容变得更有触感和情绪。",
+      "author": "_kelindi",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "#电子书交互",
+        "#翻页动效",
+        "#拟物设计",
+        "#阅读体验",
+        "#物理质感",
+        "#UIAnimation",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/14.png",
+      "video": "./assets/kelindi-ebook-page-turn.mp4",
+      "url": "https://x.com/_kelindi/status/2067668302172721568?s=20",
+      "dateAdded": "2026-07-07",
+      "createdAt": "2026-07-07T09:30:26.897Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783416928473-f2dc337f-88ff-469e-ab28-f1aee63c7518.png",
+          "width": 1834,
+          "height": 1370
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.3386861313868612,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "world-is-web-golden-ticket-motion",
+      "section": "inspiration",
+      "title": "15｜金色票券动效",
+      "description": "这是 @world_is_web 为 iskra.graphics 做的另一段票券式品牌动效。相比上一张更偏镭射质感的入场券，这次更像一张被光照亮的金色票券，通过碎片、光影、编号、条形码和暗色背景，营造出更强的仪式感和稀缺感。",
+      "longDescription": "这是 @world_is_web 为 iskra.graphics 做的另一段票券式品牌动效。相比上一张更偏镭射质感的入场券，这次更像一张被光照亮的金色票券，通过碎片、光影、编号、条形码和暗色背景，营造出更强的仪式感和稀缺感。\n同样是票券这个视觉隐喻，一个偏未来感和镭射材质，一个偏收藏感和金色奖励感。它们都没有用常规的官网首屏逻辑，而是把品牌信息包装成一个可以被观看、被期待、被收藏的对象。\n\n所以品牌动效不一定只围绕 Logo 展开，也可以围绕一种媒介展开。票券、会员卡、通行证、邀请函这些载体，本身就带有进入、资格、身份和仪式感，非常适合用来做数字品牌的视觉叙事。",
+      "author": "world_is_web",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "#品牌动效",
+        "#票券视觉",
+        "#金色质感",
+        "#视觉隐喻",
+        "#数字品牌",
+        "#WebExperience",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/15.png",
+      "video": "./assets/world-is-web-golden-ticket-motion.mp4",
+      "url": "https://x.com/world_is_web/status/2069388221075558537?s=20",
+      "dateAdded": "2026-07-07",
+      "createdAt": "2026-07-07T09:35:44.096Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417007845-afd21fb5-a2d7-4d9a-8cfd-866faaef8e9b.png",
+          "width": 1600,
+          "height": 1200
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.3333333333333333,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "adityasur11-figma-music-player",
+      "section": "inspiration",
+      "title": "16｜Figma 制作的拟物音乐播放器细节",
+      "description": "这是 @AdityaSur11 发布的音乐播放器界面细节，作者提到是用 Figma 制作。画面把播放器做成了偏硬件设备的视觉风格：大面积黑灰材质、实体按键、扬声器网孔、进度条和专辑封面共同营造出一种复古又克制的听觉氛围。 它不是那种重度复古的播放器皮肤，而是把硬件设备里的按钮、屏幕、网孔、材质和阴影转译成更现代的 UI 语言。",
+      "longDescription": "这是 @AdityaSur11 发布的音乐播放器界面细节，作者提到是用 Figma 制作。画面把播放器做成了偏硬件设备的视觉风格：大面积黑灰材质、实体按键、扬声器网孔、进度条和专辑封面共同营造出一种复古又克制的听觉氛围。 它不是那种重度复古的播放器皮肤，而是把硬件设备里的按钮、屏幕、网孔、材质和阴影转译成更现代的 UI 语言。\n其实音乐、播客、声音类产品，本身就很适合借用真实硬件的触感。适当的拟物细节能让界面更有情绪，也能强化正在播放、可以按下、有声音从这里出来的感知。",
+      "author": "AdityaSur11",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "#拟物设计",
+        "#音乐播放器",
+        "#Figma设计",
+        "#UI细节",
+        "#硬件质感",
+        "#声音产品",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/16.png",
+      "video": "",
+      "url": "https://x.com/AdityaSur11/status/2069624053636423690?s=20",
+      "dateAdded": "2026-07-07",
+      "createdAt": "2026-07-07T09:37:04.643Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417035460-29407c20-f257-49d0-8ee7-d5b8a94e4b67.png",
+          "width": 1200,
+          "height": 1135
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.0572687224669604,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-17-xr-展示型网站-用沉浸式视觉降低空间体验的理解门槛",
+      "section": "inspiration",
+      "title": "17｜XR 展示型网站：用沉浸式视觉降低空间体验的理解门槛",
+      "description": "它适合作为 XR/空间体验类网站的参考，重点观察如何用视觉实验、动效节奏和沉浸式页面结构降低 XR 概念的理解门槛。",
+      "longDescription": "它适合作为 XR/空间体验类网站的参考，重点观察如何用视觉实验、动效节奏和沉浸式页面结构降低 XR 概念的理解门槛。\n\n可借鉴点：\n1. XR 类产品官网不能只讲技术名词，需要用沉浸式视觉先建立感知。\n2. 展示型网站可通过动效节奏引导用户理解空间、设备、场景之间的关系。\n3. 首页首屏适合承担“世界观建立”功能，而不是直接堆功能介绍。\n4. 适合 XR、空间计算、沉浸展览、数字艺术、实验型品牌官网参考。",
+      "author": "Oobe-Xr",
+      "avatar": "",
+      "source": "Awwwards",
+      "type": "网站视觉",
+      "tags": [
+        "网站视觉",
+        "网页动效",
+        "交互模式",
+        "XR",
+        "官网",
+        "沉浸式展示",
+        "视觉实验",
+        "品牌体验页"
+      ],
+      "cover": "./assets/inspiration-cover-cache/17.png",
+      "video": "./assets/inspiration-video-cache/17-xr-showcase.mp4",
+      "url": "https://oobexr.zerotredici.app/",
+      "dateAdded": "2026-07-10",
+      "createdAt": "2026-07-10T07:39:33.709Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "Awwwards"
+        },
+        {
+          "label": "Category",
+          "value": "网站视觉"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669388920-b2d28310-acb4-48ef-be3c-2536be39d02e.png",
+          "width": 2986,
+          "height": 1794
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142084175-0698690f-a918-4aee-a719-1f6b82338e32.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.6644370122630991,
+      "size": "wide",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "3d",
+      "section": "inspiration",
+      "title": "11｜3D Interactive Folder Animation",
+      "description": "发布的一段 3D 文件夹交互动效演示。视频里用橙色、黑色、白色三种文件夹状态做展示，文件从文件夹中展开，整体有明显的空间层次和轻量拟物感。",
+      "longDescription": "发布的一段 3D 文件夹交互动效演示。视频里用橙色、黑色、白色三种文件夹状态做展示，文件从文件夹中展开，整体有明显的空间层次和轻量拟物感。",
+      "author": "AdityaSur11",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/11.png",
+      "video": "./assets/uploads/1783406370925-03-3d-interactive-folder-Animation.mp4",
+      "url": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#",
+      "dateAdded": "2026-07-10",
+      "createdAt": "2026-07-10T07:48:31.276Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669753472-ef301b90-9282-4219-a0bb-ae9e041484b2.png",
+          "width": 2244,
+          "height": 1286
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.744945567651633,
+      "size": "wide",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-18-触摸驱动的波浪卡片-从横向滑动变成有物理感的浏览体验",
+      "section": "inspiration",
+      "title": "18｜触摸驱动的波浪卡片：从横向滑动变成有物理感的浏览体验",
+      "description": "Wavy Carousel 是 Janum Trivedi 发布的 iPhone 界面动效案例 它用堆叠音乐卡片作为主体，卡片会跟随触摸拖拽产生流动、弯曲和层级变化，让传统 Carousel 从“横向滑动”变成更具物理感的手势反馈。",
+      "longDescription": "Wavy Carousel 是 Janum Trivedi 发布的 iPhone 界面动效案例 它用堆叠音乐卡片作为主体，卡片会跟随触摸拖拽产生流动、弯曲和层级变化，让传统 Carousel 从“横向滑动”变成更具物理感的手势反馈。\n可借鉴点：\n1. 卡片轮播不一定只能做平移，也可以加入弯曲、堆叠和弹性形变，增强触摸反馈。\n2. 音乐、播客、封面流、收藏夹这类视觉内容，适合用“物理感卡片”提升浏览愉悦度。\n3. Dark UI 下，卡片层级和运动节奏会比复杂装饰更重要。\n4. 适合音乐 App、内容收藏、作品集浏览、移动端推荐流、封面卡片组件参考。",
+      "author": "jmtrivedi",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "微交互",
+      "tags": [
+        "微交互",
+        "交互模式",
+        "产品细节",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/18.png",
+      "video": "./assets/inspiration-video-cache/18-wave-card.mp4",
+      "url": "https://x.com/jmtrivedi/status/2000678707137036637?s=20",
+      "dateAdded": "2026-07-10",
+      "createdAt": "2026-07-10T08:34:36.709Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "微交互"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783672553988-3daaef90-d997-4110-9106-c0e204f3a731.png",
+          "width": 894,
+          "height": 1494
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142092964-088c95a5-9592-47f5-8401-4a136175a06d.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 0.5983935742971888,
+      "size": "tall",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-19-可展开的-ai-thinking-panel",
+      "section": "inspiration",
+      "title": "19｜可展开的 AI Thinking Panel",
+      "description": "一个围绕 AI Thinking 状态设计的展开交互。默认状态只显示简洁的执行摘要，展开后可以查看模型对比、上下文、推理阶段以及任务完成时间。",
+      "longDescription": "一个围绕 AI Thinking 状态设计的展开交互。默认状态只显示简洁的执行摘要，展开后可以查看模型对比、上下文、推理阶段以及任务完成时间。\n它没有直接把大量过程信息全部铺在聊天界面中，而是通过渐进式展开控制信息密度。用户既能快速知道 AI 正在工作，也可以在需要时继续查看更完整的过程。",
+      "author": "Juliette",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "微交互",
+      "tags": [
+        "AI",
+        "Thinking",
+        "展开面板",
+        "状态反馈",
+        "微交互",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/19.png",
+      "video": "./assets/inspiration-video-cache/19-ai-thinking-panel.mp4",
+      "url": "https://x.com/shedsgns/status/2079162374712365254",
+      "dateAdded": "2026-07-27",
+      "createdAt": "2026-07-27T05:41:15.182Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "微交互"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144582604-7450f675-74ec-4ad8-b2e2-04e7dc976a34.png",
+          "width": 1736,
+          "height": 1238
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785131675981-50bed07a-f59a-4b8c-a647-83b627cc5e5d.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.4022617124394183,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-20-ai-task-app-输入状态切换",
+      "section": "inspiration",
+      "title": "20｜AI Task App 输入状态切换",
+      "description": "一个移动端 AI Task App 的输入区动效，从默认的命令输入状态，平滑切换到已经输入具体任务的编辑状态。",
+      "longDescription": "一个移动端 AI Task App 的输入区动效，从默认的命令输入状态，平滑切换到已经输入具体任务的编辑状态。\n案例最值得看的不是输入框造型，而是元素在状态变化中的连续性。图标、文字、按钮与容器都没有突然消失，而是通过位移和形态变化自然完成交接，让输入过程显得更轻。",
+      "author": "@ZaydenSaaSgtfs",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "AI",
+        "Chat",
+        "输入框",
+        "状态切换",
+        "移动端动效",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/20.png",
+      "video": "./assets/inspiration-video-cache/20-ai-task-input.mp4",
+      "url": "https://x.com/ZaydenSaaSgtfs/status/2079507994124108250",
+      "dateAdded": "2026-07-27",
+      "createdAt": "2026-07-27T09:27:58.885Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144604852-aac0c3a0-2677-4b7b-953a-afba9cc77f71.png",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144683570-e83591c1-d206-4fd1-bae0-6ef2bd0851a8.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.3333333333333333,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-21-codex-章节式代码审查界面",
+      "section": "inspiration",
+      "title": "21｜Codex 章节式代码审查界面",
+      "description": "Codex 的代码审查界面将开发者指令、AI 回复、文件引用与修改结果组织成连续的章节，而不是简单堆叠为一条很长的聊天记录。",
+      "longDescription": "Codex 的代码审查界面将开发者指令、AI 回复、文件引用与修改结果组织成连续的章节，而不是简单堆叠为一条很长的聊天记录。\n章节式结构非常适合处理长任务。它通过标题和内容分段建立阅读锚点，让用户可以快速回看某一步发生了什么，也让复杂任务的过程更接近一份可阅读的工作记录。",
+      "author": "@Neesh774",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "Codex",
+        "Code",
+        "Review",
+        "长任务",
+        "内容结构",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/21.png",
+      "video": "./assets/inspiration-video-cache/21-codex-review.mp4",
+      "url": "https://x.com/Neesh774/status/2070557463628149055",
+      "dateAdded": "2026-07-27",
+      "createdAt": "2026-07-27T09:32:15.238Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144772977-8ce6e369-237c-4394-a238-b9142a7774b6.png",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144808584-15658709-7062-423e-bb13-9f6085261b4c.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.3333333333333333,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-22-点击触发的全屏波纹反馈",
+      "section": "inspiration",
+      "title": "22｜点击触发的全屏波纹反馈",
+      "description": "点击界面右上角的 Publish 按钮后，一圈波浪形变从触点向外扩散。波纹经过的位置会产生短暂的弯曲和拉伸，最终随着波浪离开画面恢复原状。",
+      "longDescription": "点击界面右上角的 Publish 按钮后，一圈波浪形变从触点向外扩散。波纹经过的位置会产生短暂的弯曲和拉伸，最终随着波浪离开画面恢复原状。\n它没有把点击反馈限制在按钮内部，而是让一次局部操作影响整个界面空间。简单说让我联想到海浪🌊",
+      "author": "@benjaminnathan",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "微交互",
+      "tags": [
+        "点击反馈",
+        "波纹形变",
+        "页面动效",
+        "微交互",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/22.png",
+      "video": "./assets/inspiration-video-cache/22-fullscreen-ripple.mp4",
+      "url": "https://x.com/benjaminnathan/status/2069724377629765813?s=20",
+      "dateAdded": "2026-07-28",
+      "createdAt": "2026-07-28T01:37:42.243Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "微交互"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785202830097-6d22f09f-c974-452c-b346-2c2f0b379990.png",
+          "width": 886,
+          "height": 526
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785202873692-5fc78647-4f5d-4cdd-bdc9-3aacc4c15423.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.6844106463878328,
+      "size": "wide",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-23-ai-图片生成的像素揭示动效",
+      "section": "inspiration",
+      "title": "23｜AI 图片生成的像素揭示动效",
+      "description": "一个围绕 AI 图片生成设计的加载与揭示动效。生成过程中，灰度方块以不规则的节奏闪烁和移动，形成模糊的占位画面；图片完成后，相同的方块逐渐归位并显现最终图像。",
+      "longDescription": "一个围绕 AI 图片生成设计的加载与揭示动效。生成过程中，灰度方块以不规则的节奏闪烁和移动，形成模糊的占位画面；图片完成后，相同的方块逐渐归位并显现最终图像。\n这个案例把 AI 生成期间不可预测的等待过程，转化成了与最终结果有关的视觉反馈。\n\n灰度方块既承担 Loading 占位，也参与最后的图片揭示，因此生成前后不是两套割裂的状态。相比旋转图标或进度条，这种处理更贴合图像生成场景，也让结果出现的瞬间更有完成感。\n\n动效同时提供了浅色和深色两种界面版本，方便观察同一套反馈在不同主题下的对比度和层次处理。",
+      "author": "@dqnamo",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "AI",
+        "图片生成",
+        "Loading",
+        "图片揭示",
+        "状态过渡",
+        "生成反馈",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/23.png",
+      "video": "./assets/inspiration-video-cache/23-ai-pixel-reveal.mp4",
+      "url": "https://x.com/dqnamo/status/2082481271671078928",
+      "dateAdded": "2026-07-31",
+      "createdAt": "2026-07-31T06:50:27.983Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785480666235-6d0117ec-5514-409d-a6b8-798655fef0be.png",
+          "width": 1942,
+          "height": 1590
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785480823497-6cc4ceb5-d5b7-4ed2-b098-baa84d50e662.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.221383647798742,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-24-把文件丢进垃圾桶的删除交互",
+      "section": "inspiration",
+      "title": "24｜把文件丢进垃圾桶的删除交互",
+      "description": "一个把文件删除设计成“投垃圾”的趣味交互。用户拖动文件后，文件会被揉成纸团，再根据甩动方向和力度飞向垃圾桶；如果没有投中，界面还会记录失败次数，成功后则弹出删除确认提示。",
+      "longDescription": "一个把文件删除设计成“投垃圾”的趣味交互。用户拖动文件后，文件会被揉成纸团，再根据甩动方向和力度飞向垃圾桶；如果没有投中，界面还会记录失败次数，成功后则弹出删除确认提示。\n它没有使用常见的淡出、缩小或滑走，而是把“删除文件”对应到现实中的丢弃动作，让操作结果更加直观。\n\n纸团的形变、抛物线轨迹和垃圾桶反馈共同构成了一段完整的小动画。即使没有文字说明，用户也能理解当前发生了什么。\n\n这类趣味反馈更适合低频、非关键的删除场景。正式产品中仍需保留撤销入口，避免动画效果掩盖误操作风险。",
+      "author": "@nilseller",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "微交互",
+      "tags": [
+        "删除交互",
+        "拖拽手势",
+        "物理动效",
+        "趣味反馈",
+        "微交互",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/24.png",
+      "video": "./assets/inspiration-video-cache/24-trash-delete.mp4",
+      "url": "https://x.com/nilseller/status/2077423947004641474",
+      "dateAdded": "2026-07-31",
+      "createdAt": "2026-07-31T07:30:51.806Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "微交互"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785483159817-c1a45611-d275-4857-bb20-73d4eddfb24c.png",
+          "width": 2682,
+          "height": 1766
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785483094052-27c7dad0-b55a-4b0d-8bd9-996edf5664cc.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.5186862967157417,
+      "size": "wide",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-25-乐高积木式-dynamic-island",
+      "section": "inspiration",
+      "title": "25｜乐高积木式 Dynamic Island",
+      "description": "一个将 Dynamic Island 重新设计成乐高积木的趣味概念。Figma 评论、部署完成和 Spotify 播放状态会以不同颜色的积木胶囊出现，并通过拼接、展开和收起展示对应内容。",
+      "longDescription": "一个将 Dynamic Island 重新设计成乐高积木的趣味概念。Figma 评论、部署完成和 Spotify 播放状态会以不同颜色的积木胶囊出现，并通过拼接、展开和收起展示对应内容。\n这个案例没有只给 Dynamic Island 换一层乐高视觉，而是把积木的结构特点带进了交互。\n\n新通知出现时，不同模块会像积木一样拼接到主体上；展开后，胶囊继续保留清晰的分块关系。视觉造型、进入方式和内容结构使用了同一种设计语言，因此不会显得只是表面装饰。\n\n不同应用使用各自的代表色，也让用户可以在内容完全展开前，先通过颜色和形状判断通知来源。",
+      "author": "@ozzyxs1a",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "Dynamic",
+        "Island",
+        "乐高积木",
+        "通知动效",
+        "展开交互",
+        "趣味设计",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/25.png",
+      "video": "./assets/inspiration-video-cache/25-lego-dynamic-island.mp4",
+      "url": "https://x.com/ozzyxs1a/status/2073734969667493914",
+      "dateAdded": "2026-07-31",
+      "createdAt": "2026-07-31T07:42:43.979Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785483794748-ef076fb3-ecc7-4606-92ad-f056f6db53b0.png",
+          "width": 2902,
+          "height": 1436
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785483891062-631e2b4c-02cb-4400-9720-bccae23810b3.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 2.020891364902507,
+      "size": "wide",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-26-书签收藏的文件盒动效",
+      "section": "inspiration",
+      "title": "26｜书签收藏的文件盒动效",
+      "description": "一个围绕书签收藏设计的短动效。点击按钮后，书签图标会展开成一个立体文件盒，内容被收入盒中；动画结束后，组件恢复为蓝色选中状态，同时更新收藏数量。",
+      "longDescription": "一个围绕书签收藏设计的短动效。点击按钮后，书签图标会展开成一个立体文件盒，内容被收入盒中；动画结束后，组件恢复为蓝色选中状态，同时更新收藏数量。\n它把抽象的“收藏成功”，转译成了现实中将文件整理进收纳盒的动作。\n\n展开、收纳和关闭形成了一段完整的小叙事，用户不需要依赖额外提示，也能理解内容已经被保存。最终回到常规书签图标，则避免趣味动画长期占用界面空间。\n\n收藏数量在动画完成后更新，也让视觉反馈与数据变化保持了先后关系。相比简单填充图标，这种处理更有记忆点，但仍然保留了按钮原本的识别方式。",
+      "author": "@turaluix",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "3D",
+      "tags": [
+        "书签收藏",
+        "3D",
+        "动效",
+        "状态反馈",
+        "图标动画",
+        "微交互",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/26.png",
+      "video": "./assets/inspiration-video-cache/26-bookmark-file-box.mp4",
+      "url": "https://x.com/turaluix/status/2080720630534865182",
+      "dateAdded": "2026-07-31",
+      "createdAt": "2026-07-31T09:30:39.203Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "3D"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785490271318-92ecd789-b2e9-4b8e-9c22-bad60d3d7f13.png",
+          "width": 1348,
+          "height": 968
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785490339000-e7716f53-2d45-48ae-99fb-640b2a447077.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.3925619834710743,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-27-对着麦克风吹散种子的记录反馈",
+      "section": "inspiration",
+      "title": "27｜对着麦克风吹散种子的记录反馈",
+      "description": "一个为日记应用设计的成长反馈交互。用户完成记录后，可以对着手机麦克风吹气，将画面中的种子吹散；新的植物随后在个人花园中生长，逐渐形成一组可收藏的情绪与记录成果。",
+      "longDescription": "一个为日记应用设计的成长反馈交互。用户完成记录后，可以对着手机麦克风吹气，将画面中的种子吹散；新的植物随后在个人花园中生长，逐渐形成一组可收藏的情绪与记录成果。\n它没有使用常见的签到勾选、积分增加或庆祝烟花，而是把“完成一次记录”转译成播种和生长的过程。\n\n吹气既是一次真实的身体动作，也与画面中的种子运动形成自然对应。用户不需要学习新的手势，就能理解自己的动作正在影响界面。\n\n植物并不是一次性完成动画，而会继续留在花园中，成为记录积累的可视化结果。这样既强化了完成反馈，也让长期使用产生持续变化。",
+      "author": "@hours",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "3D",
+      "tags": [
+        "麦克风交互",
+        "成长反馈",
+        "3D",
+        "动效",
+        "情绪记录",
+        "游戏化设计",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/27.png",
+      "video": "./assets/inspiration-video-cache/27-microphone-seed-feedback.mp4",
+      "url": "https://x.com/hours/status/2082482503961686075",
+      "dateAdded": "2026-08-05",
+      "createdAt": "2026-08-05T08:26:03.465Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "3D"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785918564729-41acb00a-5894-42d1-8f99-91efe73a8881.png",
+          "width": 1274,
+          "height": 1522
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785918633972-afb6460f-cccf-4be2-b45c-6889fe1959ac.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 0.8370565045992115,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-28-让-ai-回答像人的边想边写",
+      "section": "inspiration",
+      "title": "28｜让 AI 回答像人的边想边写",
+      "description": "一个围绕 AI 回答过程设计的短动效。内容是在生成过程中加入手写式标记、数字圈选、删除线以及图表逐步出现等细节，让回答看起来更像一个人在边思考、边整理信息。",
+      "longDescription": "一个围绕 AI 回答过程设计的短动效。内容是在生成过程中加入手写式标记、数字圈选、删除线以及图表逐步出现等细节，让回答看起来更像一个人在边思考、边整理信息。\n最有意思的是，它没有继续优化传统的打字机效果，而是直接改变了 AI 内容出现的方式。\n重点数字被圈出来、部分文字被划掉、图表随着回答逐渐补全，这些动作把原本冰冷的流式输出变成了一段可观看的思考痕迹。\n尤其适合 AI 分析、数据解释或复杂回答场景：用户等待结果时，不只是看到文字越来越多，而是能够感受到信息正在被组织和修正。",
+      "author": "@nilseller",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "微交互",
+      "tags": [
+        "AI",
+        "Response",
+        "流式输出",
+        "手写动效",
+        "Generative",
+        "UI",
+        "微交互",
+        "𝕏"
+      ],
+      "cover": "./assets/inspiration-cover-cache/28.png",
+      "video": "./assets/inspiration-video-cache/28-ai-answer-thinking-writing.mp4",
+      "url": "https://x.com/nilseller/status/2084671704287310103",
+      "dateAdded": "2026-08-13",
+      "createdAt": "2026-08-13T09:27:18.215Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "微交互"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1786613466829-7ae03710-ef66-466b-8c61-ab8d821806ff.png",
+          "width": 2188,
+          "height": 1544
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786613413076-0d14f869-b530-4e95-969c-35dfdb093227.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.4170984455958548,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-29-flower-menu-放射式菜单交互",
+      "section": "inspiration",
+      "title": "29｜Flower Menu 放射式菜单交互",
+      "description": "一个将菜单选项围绕中心按钮展开的 Flower Menu 交互。触发菜单后，多个操作项从中心位置向四周放射展开，形成类似花瓣的结构；关闭时再沿原路径收回。",
+      "longDescription": "一个将菜单选项围绕中心按钮展开的 Flower Menu 交互。触发菜单后，多个操作项从中心位置向四周放射展开，形成类似花瓣的结构；关闭时再沿原路径收回。\n这个案例有意思的地方，是把普通的二级菜单从“列表展开”变成了一个具有空间关系的操作结构。\n中心按钮承担触发点，周围选项围绕它均匀分布，因此用户可以很快理解这些操作属于同一组。展开和收起过程中，所有元素都围绕中心保持一致的运动关系，也让整个交互显得非常完整。\n相比常见的下拉菜单或 Popover，这种形式更适合数量较少、频率相近的快捷操作。如果选项过多，放射结构反而会增加扫描和选择成本。",
+      "author": "@nitishkmrk",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "微交互",
+      "tags": [
+        "Radial",
+        "Menu",
+        "Flower",
+        "菜单动效",
+        "展开交互",
+        "微交互",
+        "𝕏"
+      ],
+      "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1786943315460-23bb83b8-3671-4b2c-ba05-84b615012d7d.png",
+      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786943248917-9318a525-887a-4a74-8ec9-5b4539cb9871.mp4",
+      "url": "https://x.com/nitishkmrk/status/2088947032274907602?s=20",
+      "dateAdded": "2026-08-17",
+      "createdAt": "2026-08-17T05:05:07.490Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "微交互"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1786943315460-23bb83b8-3671-4b2c-ba05-84b615012d7d.png",
+          "width": 1542,
+          "height": 1520
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786943248917-9318a525-887a-4a74-8ec9-5b4539cb9871.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.0144736842105264,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-30-带物理摆动感的作品集-carousel",
+      "section": "inspiration",
+      "title": "30｜带物理摆动感的作品集 Carousel",
+      "description": "一个用于作品集展示的 Carousel 组件。切换项目时，卡片不是沿着水平轨道简单滑入，而是带着明显的摆动和惯性从画面外进入，最终回到稳定位置。作者同时将这一组件开源，作为可复用的作品展示模块。",
+      "longDescription": "一个用于作品集展示的 Carousel 组件。切换项目时，卡片不是沿着水平轨道简单滑入，而是带着明显的摆动和惯性从画面外进入，最终回到稳定位置。作者同时将这一组件开源，作为可复用的作品展示模块。\n它有意思的地方，是给传统 Carousel 加入了一种接近真实物体的“重量感”。\n\n卡片进入时不是匀速移动，而是先快速进入，再因为惯性产生轻微摆动和回弹。用户能够感受到卡片像被悬挂或甩进画面，而不是单纯执行一次位移动画。\n\n这种运动方式尤其适合作品集、摄影、海报等视觉内容：卡片本身就是主角，稍微夸张的物理反馈反而能够强化浏览节奏。\n\n关键是控制回弹次数。如果摆动时间太长，会降低连续浏览效率；保持一到两次明显衰减，会更接近真实物理反馈。",
+      "author": "@YousufSoomroDev",
+      "avatar": "",
       "source": "𝕏",
       "type": "Motion",
       "tags": [
+        "Carousel",
+        "Physics",
         "Motion",
-        "Graphic",
-        "Culture",
-        "Experiment",
+        "Spring",
+        "作品集",
+        "卡片动效",
         "𝕏"
       ],
-      "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294704637-67d6bba0-b5dc-448c-bab1-f7ce3a56c78b.png",
-      "video": "./assets/pinckus-motion-graphics-hydrangea-x.mp4",
-      "url": "https://x.com/Pinckus102xz/status/2059978237921644784?s=20",
-      "dateAdded": "2026-06-24",
+      "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1786946234998-8216d018-10be-4f9f-8d48-1924a4274a60.png",
+      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786946224277-a30a5440-b7dc-40a8-93f2-bdb2ea795d7f.mp4",
+      "url": "https://x.com/YousufSoomroDev/status/2088657289410687111",
+      "dateAdded": "2026-08-17",
+      "createdAt": "2026-08-17T05:52:24.945Z",
       "details": [
         {
           "label": "Source",
@@ -29,357 +990,48 @@
         {
           "label": "Category",
           "value": "Motion"
-        },
-        {
-          "label": "Style",
-          "value": "Floral / Light 3D"
-        },
-        {
-          "label": "Color",
-          "value": "Bright / Soft gradient"
-        },
-        {
-          "label": "Interaction",
-          "value": "Looping motion"
         }
       ],
       "materials": [
         {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294704637-67d6bba0-b5dc-448c-bab1-f7ce3a56c78b.png"
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1786946234998-8216d018-10be-4f9f-8d48-1924a4274a60.png",
+          "width": 2430,
+          "height": 1524
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786946224277-a30a5440-b7dc-40a8-93f2-bdb2ea795d7f.mp4",
+          "width": "",
+          "height": ""
         }
       ],
-      "size": "tall",
-      "createdAt": "2026-06-24T05:32:06.897Z",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-    },
-    {
-      "id": "adityasur11-figma-music-player",
-      "section": "inspiration",
-      "title": "16｜Figma 制作的拟物音乐播放器细节",
-      "description": "用 Figma 做出的硬件感音乐播放器界面，关注按钮、网孔、材质和播放状态。",
-      "longDescription": "这是 @AdityaSur11 发布的音乐播放器界面细节，作者提到是用 Figma 制作。画面把播放器做成了偏硬件设备的视觉风格：大面积黑灰材质、实体按键、扬声器网孔、进度条和专辑封面共同营造出一种复古又克制的听觉氛围。\n\n它不是那种重度复古的播放器皮肤，而是把硬件设备里的按钮、屏幕、网孔、材质和阴影转译成更现代的 UI 语言。\n\n其实音乐、播客、声音类产品，本身就很适合借用真实硬件的触感。适当的拟物细节能让界面更有情绪，也能强化正在播放、可以按下、有声音从这里出来的感知。",
-      "author": "AdityaSur11",
-      "avatar": "https://pbs.twimg.com/profile_images/2008066661841248256/XJttc16H_200x200.jpg",
-      "source": "𝕏",
-      "type": "Interface",
-      "tags": [
-        "Interface",
-        "Skeuomorphic",
-        "Figma",
-        "Music",
-        "𝕏"
-      ],
-      "cover": "./assets/adityasur11-figma-music-player.jpg",
-      "video": "",
-      "url": "https://x.com/AdityaSur11/status/2069624053636423690?s=20",
-      "dateAdded": "2026-07-07",
-      "details": [
-        {
-          "label": "Source",
-          "value": "𝕏"
-        },
-        {
-          "label": "Category",
-          "value": "Interface"
-        },
-        {
-          "label": "Style",
-          "value": "Skeuomorphic / Hardware"
-        },
-        {
-          "label": "Tool",
-          "value": "Figma"
-        },
-        {
-          "label": "Medium",
-          "value": "Image"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417035460-29407c20-f257-49d0-8ee7-d5b8a94e4b67.png"
-        }
-      ],
-      "size": "standard",
-      "createdAt": "2026-07-07T09:37:04.643Z",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-    },
-    {
-      "id": "world-is-web-golden-ticket-motion",
-      "section": "inspiration",
-      "title": "15｜金色票券动效",
-      "description": "以金色票券、碎片、编号和暗色背景构成的品牌动效视觉隐喻。",
-      "longDescription": "这是 @world_is_web 为 iskra.graphics 做的另一段票券式品牌动效。相比上一张更偏镭射质感的入场券，这次更像一张被光照亮的金色票券，通过碎片、光影、编号、条形码和暗色背景，营造出更强的仪式感和稀缺感。\n\n同样是票券这个视觉隐喻，一个偏未来感和镭射材质，一个偏收藏感和金色奖励感。它们都没有用常规的官网首屏逻辑，而是把品牌信息包装成一个可以被观看、被期待、被收藏的对象。\n\n所以品牌动效不一定只围绕 Logo 展开，也可以围绕一种媒介展开。票券、会员卡、通行证、邀请函这些载体，本身就带有进入、资格、身份和仪式感，非常适合用来做数字品牌的视觉叙事。",
-      "author": "world_is_web",
-      "avatar": "https://pbs.twimg.com/profile_images/2033466992825696256/bjVQQY7b_200x200.jpg",
-      "source": "𝕏",
-      "type": "Brand",
-      "tags": [
-        "Brand",
-        "Motion",
-        "Ticket",
-        "Graphic",
-        "𝕏"
-      ],
-      "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417007845-afd21fb5-a2d7-4d9a-8cfd-866faaef8e9b.png",
-      "video": "./assets/world-is-web-golden-ticket-motion.mp4",
-      "url": "https://x.com/world_is_web/status/2069388221075558537?s=20",
-      "dateAdded": "2026-07-07",
-      "details": [
-        {
-          "label": "Source",
-          "value": "𝕏"
-        },
-        {
-          "label": "Category",
-          "value": "Brand motion"
-        },
-        {
-          "label": "Style",
-          "value": "Ticket / Gold"
-        },
-        {
-          "label": "Color",
-          "value": "Dark / Gold"
-        },
-        {
-          "label": "Interaction",
-          "value": "Collectible ticket motion"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783417007845-afd21fb5-a2d7-4d9a-8cfd-866faaef8e9b.png"
-        }
-      ],
-      "size": "portrait",
-      "createdAt": "2026-07-07T09:35:44.096Z",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-    },
-    {
-      "id": "kelindi-ebook-page-turn",
-      "section": "inspiration",
-      "title": "14｜把真实翻书质感带回数字阅读",
-      "description": "模拟纸张透光、翻页阴影和页面堆叠的电子书翻页交互探索。",
-      "longDescription": "这是 @_kelindi 做的一段电子书翻页交互探索。视频里不仅模拟了书页翻动的动作，还保留了纸张透光、背面内容隐约显现、翻页阴影和页面堆叠这些真实阅读里的细节。\n\n现在很多阅读产品追求极简和平面化，但真实纸书里的翻页、厚度、透光和阴影，其实能带来更强的沉浸感和阅读仪式感。\n\n拟物不等于复古，也不一定是过度装饰。好的拟物细节可以帮助用户理解状态、感知进度，也能让数字内容变得更有触感和情绪。",
-      "author": "_kelindi",
-      "avatar": "https://pbs.twimg.com/profile_images/2047731816207982592/1WDL2hib_200x200.jpg",
-      "source": "𝕏",
-      "type": "Interface",
-      "tags": [
-        "Interface",
-        "Reading",
-        "Skeuomorphic",
-        "Motion",
-        "𝕏"
-      ],
-      "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783416928473-f2dc337f-88ff-469e-ab28-f1aee63c7518.png",
-      "video": "./assets/kelindi-ebook-page-turn.mp4",
-      "url": "https://x.com/_kelindi/status/2067668302172721568?s=20",
-      "dateAdded": "2026-07-07",
-      "details": [
-        {
-          "label": "Source",
-          "value": "𝕏"
-        },
-        {
-          "label": "Category",
-          "value": "Reading interaction"
-        },
-        {
-          "label": "Style",
-          "value": "Physical / Skeuomorphic"
-        },
-        {
-          "label": "Material",
-          "value": "Paper / Light bleed"
-        },
-        {
-          "label": "Interaction",
-          "value": "Page turn"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783416928473-f2dc337f-88ff-469e-ab28-f1aee63c7518.png"
-        }
-      ],
-      "size": "standard",
-      "createdAt": "2026-07-07T09:30:26.897Z",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-    },
-    {
-      "id": "world-is-web-ticket-brand-motion",
-      "section": "inspiration",
-      "title": "13｜票券式品牌动效",
-      "description": "把网站设计工作室包装成一张可撕开的入场券，形成未来感和收藏感。",
-      "longDescription": "这是 @world_is_web 为 iskra.graphics 做的一段票券式品牌动效。画面把网站设计工作室包装成一张可撕开的入场券，通过镭射质感、暗色背景、条形码、编号和信息分区，营造出很强的未来感和收藏感。\n\n它没有直接用常规的标题、按钮和服务列表，而是把品牌信息压缩进一张票券里，让设计、开发、交互、发布这些服务内容变成更有视觉记忆点的图形信息。\n\n它的参考价值在于：品牌表达不一定只能依赖 Logo 和标语，也可以通过一种具体媒介来承载。票券、卡片、证件、说明书、包装盒这类现实物件，都可以转化成数字界面里的视觉隐喻，让品牌更有故事感。",
-      "author": "world_is_web",
-      "avatar": "https://pbs.twimg.com/profile_images/2033466992825696256/bjVQQY7b_200x200.jpg",
-      "source": "𝕏",
-      "type": "Brand",
-      "tags": [
-        "Brand",
-        "Motion",
-        "Ticket",
-        "Graphic",
-        "𝕏"
-      ],
-      "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415846872-6828d883-7dce-4e30-b950-da29bdb220d9.png",
-      "video": "./assets/world-is-web-ticket-brand-motion.mp4",
-      "url": "https://x.com/world_is_web/status/2068101965901390292?s=20",
-      "dateAdded": "2026-07-07",
-      "details": [
-        {
-          "label": "Source",
-          "value": "𝕏"
-        },
-        {
-          "label": "Category",
-          "value": "Brand motion"
-        },
-        {
-          "label": "Style",
-          "value": "Ticket / Holographic"
-        },
-        {
-          "label": "Color",
-          "value": "Dark / Iridescent"
-        },
-        {
-          "label": "Interaction",
-          "value": "Tear-away ticket motion"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415846872-6828d883-7dce-4e30-b950-da29bdb220d9.png"
-        }
-      ],
-      "size": "portrait",
-      "createdAt": "2026-07-07T09:16:39.903Z",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-    },
-    {
-      "id": "bamojk-webgl-wheel-browse",
-      "section": "inspiration",
-      "title": "12｜WebGL 轮盘式作品浏览动效",
-      "description": "Webflow、WebGL 和 Three.js 实现的空间轮盘式作品浏览动效。",
-      "longDescription": "这是 @bamojk 发布的一段 WIP 动效演示，使用 Webflow、WebGL 和 Three.js 做了一个轮盘式作品浏览效果。画面中图片卡片围绕空间路径旋转、翻动和切换，整体有很强的 3D 透视感和动态冲击力。\n\n传统作品集大多是卡片排列或瀑布流，而这个演示把内容做成了一个可滚动、可旋转、可进入的空间装置，让浏览本身变成了体验的一部分。\n\n它的参考价值在于：当内容本身偏视觉、艺术、摄影或创意项目时，列表不一定只是承载信息，也可以成为品牌气质的一部分。WebGL 和 Three.js 在这里不是单纯炫技，而是在强化“探索感”和“动态记忆点”。",
-      "author": "bamojk",
-      "avatar": "https://pbs.twimg.com/profile_images/1846125293276483587/g7FBWz5__200x200.jpg",
-      "source": "𝕏",
-      "type": "WebGL",
-      "tags": [
-        "WebGL",
-        "3D",
-        "Motion",
-        "Portfolio",
-        "𝕏"
-      ],
-      "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415676734-615921b9-b917-4ed1-bb64-bf7df6a3872e.png",
-      "video": "./assets/bamojk-webgl-wheel-browse.mp4",
-      "url": "https://x.com/bamojk/status/2067922309130977480?s=20",
-      "dateAdded": "2026-07-07",
-      "details": [
-        {
-          "label": "Source",
-          "value": "𝕏"
-        },
-        {
-          "label": "Category",
-          "value": "WebGL"
-        },
-        {
-          "label": "Style",
-          "value": "Spatial carousel"
-        },
-        {
-          "label": "Tools",
-          "value": "Webflow / WebGL / Three.js"
-        },
-        {
-          "label": "Interaction",
-          "value": "Rotating portfolio browse"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783415676734-615921b9-b917-4ed1-bb64-bf7df6a3872e.png"
-        }
-      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.594488188976378,
       "size": "wide",
-      "createdAt": "2026-07-07T09:13:58.332Z",
       "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
     },
     {
-      "id": "ampersand-no3-in-out",
+      "id": "inspiration-31-手绘圈选式导航反馈",
       "section": "inspiration",
-      "title": "01｜Ampersand No.3 - In & Out：字形动效实验",
-      "description": "用一个 & 符号承载进入、退出、遮罩和节奏的字体动效实验。",
-      "longDescription": "这是 Seb Cornelius 发布在 𝕏 上的一组字形动效实验，主题是 “Ampersand No.3 - In & Out”。画面围绕 & 符号做动态变化，通过形态进出、节奏变化和局部运动，让一个很简单的符号变成了有记忆点的视觉动效。\n\n这个案例适合一个小元素怎么做出高级感。它没有复杂场景，也不是大而全的品牌系统，但节奏、细节和形式感很强。\n\n很多时候我们做动效容易上来就想做大场景、大转场，但其实一个 Logo、一个符号、一个按钮状态，也可以通过节奏和形变做得很耐看。这个案例可以作为字体动效、品牌动态识别、加载动画的参考。",
-      "author": "Seb Cornelius",
-      "avatar": "https://pbs.twimg.com/profile_images/1910194496966680576/wwkh7f8r_200x200.jpg",
-      "source": "𝕏",
-      "type": "Typography",
-      "tags": [
-        "Typography",
-        "Motion",
-        "Experiment",
-        "Loader",
-        "𝕏"
-      ],
-      "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294914918-1a6e19fa-0ace-407c-9d3c-4908a9034359.png",
-      "video": "./assets/ampersand-no3-in-out-x.mp4",
-      "url": "https://x.com/SebCornelius/status/2059975757460586950",
-      "dateAdded": "2026-06-24",
-      "details": [
-        {
-          "label": "Source",
-          "value": "𝕏"
-        },
-        {
-          "label": "Category",
-          "value": "Typography"
-        },
-        {
-          "label": "Style",
-          "value": "Type motion"
-        },
-        {
-          "label": "Color",
-          "value": "Monochrome / Accent"
-        },
-        {
-          "label": "Interaction",
-          "value": "In / Out transition"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1782294914918-1a6e19fa-0ace-407c-9d3c-4908a9034359.png"
-        }
-      ],
-      "size": "wide",
-      "createdAt": "2026-06-24T05:32:06.903Z",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-    },
-    {
-      "id": "3d",
-      "section": "inspiration",
-      "title": "11｜3D Interactive Folder Animation",
-      "description": "发布的一段 3D 文件夹交互动效演示。视频里用橙色、黑色、白色三种文件夹状态做展示，文件从文件夹中展开，整体有明显的空间层次和轻量拟物感。",
-      "longDescription": "这是 @AdityaSur11 发布的一段 3D 文件夹交互动效演示。视频里用橙色、黑色、白色三种文件夹状态做展示，文件从文件夹中展开，整体有明显的空间层次和轻量拟物感。\n文件夹本身是很基础的界面隐喻，但通过 3D 透视、纸张展开、材质变化和鼠标悬停反馈，一个普通入口也能变得更有操作感和记忆点。\n它的参考价值在于：不一定只有复杂页面才需要动效。像文件夹、卡片、资料库、项目入口这类组件，也可以通过轻 3D 和状态变化，让用户更直观地感知里面有内容、可以打开、可以进入。",
-      "author": "AdityaSur11",
+      "title": "31｜手绘圈选式导航反馈",
+      "description": "一个围绕导航 Hover 状态设计的轻量微交互。 鼠标移动到不同菜单项时，一圈带有手绘质感的 SVG 椭圆会移动到当前项目周围，并通过绘制动画完成高亮。",
+      "longDescription": "一个围绕导航 Hover 状态设计的轻量微交互。 鼠标移动到不同菜单项时，一圈带有手绘质感的 SVG 椭圆会移动到当前项目周围，并通过绘制动画完成高亮。\n相比底线、背景色或文字变色，手绘 SVG 本身带有明显的不规则感，移动到不同菜单项时又保持同一套运动方式，因此既承担了状态提示，也成为界面中的视觉记忆点。  \n\n这种方式很适合作品集、个人网站、创意工作室等需要一点性格，但又不想加入复杂大动画的场景。",
+      "author": "@raul_dronca",
+      "avatar": "",
       "source": "𝕏",
       "type": "",
       "tags": [
-        "All"
+        "#Navigation",
+        "#SVG",
+        "#Hover",
+        "#Handdrawn",
+        "#微交互",
+        "𝕏"
       ],
-      "cover": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669753472-ef301b90-9282-4219-a0bb-ae9e041484b2.png",
-      "video": "./assets/uploads/1783406370925-03-3d-interactive-folder-Animation.mp4",
-      "url": "https://x.com/AdityaSur11/status/2070348830181376510?s=20",
-      "dateAdded": "2026-07-10",
+      "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787038993919-e00d7eb3-5f99-4247-a88c-0decf9fc544c.png",
+      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787039007057-4a916704-62b3-4823-99cd-3a6c31735c79.mp4",
+      "url": "https://x.com/raul_dronca/status/2089006726204789023",
+      "dateAdded": "2026-08-18",
+      "createdAt": "2026-08-18T07:42:47.183Z",
       "details": [
         {
           "label": "Source",
@@ -388,12 +1040,417 @@
       ],
       "materials": [
         {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669753472-ef301b90-9282-4219-a0bb-ae9e041484b2.png"
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787038993919-e00d7eb3-5f99-4247-a88c-0decf9fc544c.png",
+          "width": 2740,
+          "height": 1528
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787039007057-4a916704-62b3-4823-99cd-3a6c31735c79.mp4",
+          "width": "",
+          "height": ""
         }
       ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.793193717277487,
       "size": "wide",
-      "avatar": "./assets/uploads/1783406357762-XJttc16H_400x400.jpg",
-      "createdAt": "2026-07-10T07:48:31.276Z",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-32-会带动旁边的-tab-hover",
+      "section": "inspiration",
+      "title": "32｜会带动旁边的 Tab Hover",
+      "description": "一个围绕 Tab Hover 设计的轻量微交互。 鼠标移动到某个选项时，不只有当前 Tab 发生变化，左右相邻的选项也会同步产生轻微位移和倾斜，形成一种被当前元素挤开的空间反馈。",
+      "longDescription": "一个围绕 Tab Hover 设计的轻量微交互。 鼠标移动到某个选项时，不只有当前 Tab 发生变化，左右相邻的选项也会同步产生轻微位移和倾斜，形成一种被当前元素挤开的空间反馈。\n传统 Tab 通常只改变背景、颜色或透明度，而这里让相邻元素也参与反馈，因此用户的鼠标移动会影响整组组件。\n\n这种轻微的联动让菜单产生了更强的物理感，但幅度又没有大到破坏文字阅读。\n\n尤其适合导航、分类切换、作品筛选等横向排列组件：通过邻接元素的微小响应，让普通 Hover 多一点活性。",
+      "author": "@guerriero_se",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "微交互",
+      "tags": [
+        "Tab",
+        "Hover",
+        "邻接动效",
+        "Skew",
+        "微交互",
+        "𝕏"
+      ],
+      "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787217493451-d1d90c2e-cb3a-4ed4-86b9-2a2647236e72.png",
+      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787217563348-84bb0bc6-1aeb-4f71-91af-b093bbace0cd.mp4",
+      "url": "https://x.com/guerriero_se/status/2074141065104576781",
+      "dateAdded": "2026-08-20",
+      "createdAt": "2026-08-20T09:17:50.903Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "微交互"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787217493451-d1d90c2e-cb3a-4ed4-86b9-2a2647236e72.png",
+          "width": 1524,
+          "height": 1490
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787217563348-84bb0bc6-1aeb-4f71-91af-b093bbace0cd.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.0228187919463088,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-33-用动态眼睛来表达-ai-状态",
+      "section": "inspiration",
+      "title": "33｜用动态眼睛来表达 AI 状态",
+      "description": "一个为 Grok Bot 设计的动态状态图标。 极简的黑色圆形头像只保留一双白色眼睛，通过眨眼、移动、挤压和形态变化表现不同状态，让原本普通的 Bot Icon 产生类似角色表情的反馈。",
+      "longDescription": "一个为 Grok Bot 设计的动态状态图标。 极简的黑色圆形头像只保留一双白色眼睛，通过眨眼、移动、挤压和形态变化表现不同状态，让原本普通的 Bot Icon 产生类似角色表情的反馈。\n有意思的地方，是它没有额外增加 Loading、文字或状态标签，而是直接让图标本身承担反馈。\n眼睛的方向、大小和运动方式发生轻微变化，就能让一个非常抽象的 AI Agent 产生“正在观察、思考或回应”的感觉。\n相比复杂的角色动画，这种做法仍然保持了产品图标的简洁，同时又给 AI 增加了一点生命感。",
+      "author": "@benjitaylor",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "Motion",
+      "tags": [
+        "AI",
+        "Agent",
+        "Icon",
+        "Motion",
+        "状态反馈",
+        "Character",
+        "UI",
+        "微交互",
+        "𝕏"
+      ],
+      "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787297131668-90d91f0c-5f77-4ec9-965b-c63b7b943e00.png",
+      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787297088808-73dc193f-264e-4acd-94c3-942078f1c6f4.mp4",
+      "url": "https://x.com/benjitaylor/status/2087227155076046995",
+      "dateAdded": "2026-08-21",
+      "createdAt": "2026-08-21T07:24:10.578Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "Motion"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787297131668-90d91f0c-5f77-4ec9-965b-c63b7b943e00.png",
+          "width": 1532,
+          "height": 1508
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787297088808-73dc193f-264e-4acd-94c3-942078f1c6f4.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.0159151193633953,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-34-把电子签名变成-etch-a-sketch-小游戏",
+      "section": "inspiration",
+      "title": "34｜把电子签名变成 Etch A Sketch 小游戏",
+      "description": "一个把传统电子签名框重新设计成 Etch A Sketch 玩具（2003年被评为20世纪最令人难忘的100种玩具之一）的趣味交互。用户可以直接在玻璃屏上画出签名，如果对结果不满意，还可以通过摇晃设备把内容清空；完成签名后，再进入最终确认状态。",
+      "longDescription": "一个把传统电子签名框重新设计成 Etch A Sketch 玩具（2003年被评为20世纪最令人难忘的100种玩具之一）的趣味交互。用户可以直接在玻璃屏上画出签名，如果对结果不满意，还可以通过摇晃设备把内容清空；完成签名后，再进入最终确认状态。\n它有意思的地方，是没有把签名理解成一个纯功能性的输入框，而是借用了现实玩具里非常明确的操作规则。\n画出来和摇掉重来天然对应签名与清空两个动作，所以即使交互形式很特别，用户仍然能快速理解。\n尤其是 Shake to Erase，把原本普通的 Reset 按钮变成了一次真实的身体动作，让整个签名过程多了一点游戏感和记忆点。\n这种处理不一定适合正式合同或高频工具，但很适合作品集、Offer、活动确认、邀请函或品牌体验等更强调情绪和仪式感的场景。#电子签名",
+      "author": "@adrianabelarde_",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "#EtchASketch",
+        "#ShakeGesture",
+        "#趣味交互",
+        "#微交互",
+        "#PlayfulDesign",
+        "𝕏"
+      ],
+      "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787710727673-7f3ffe64-3089-4fcb-894b-34cd40f2a02d.png",
+      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787710825372-2e0a9a90-aef8-4271-b919-f8225fe0f990.mp4",
+      "url": "https://x.com/adrianabelarde_/status/2076290018193424792?s=20",
+      "dateAdded": "2026-08-26",
+      "createdAt": "2026-08-26T02:18:09.024Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787710727673-7f3ffe64-3089-4fcb-894b-34cd40f2a02d.png",
+          "width": 1546,
+          "height": 1506
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787710825372-2e0a9a90-aef8-4271-b919-f8225fe0f990.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.0265604249667994,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-35-让人忍不住想点的-hover-动效",
+      "section": "inspiration",
+      "title": "35｜让人忍不住想点的 Hover 动效",
+      "description": "一个专门围绕按钮 Hover 状态设计的短动效。 鼠标进入按钮后，原本稳定的视觉状态开始产生连续变化，让用户在真正点击之前，就能明显感知到按钮正在回应自己的操作。作者自己把它描述成：“A hover effect that makes you want to click it”。",
+      "longDescription": "一个专门围绕按钮 Hover 状态设计的短动效。 鼠标进入按钮后，原本稳定的视觉状态开始产生连续变化，让用户在真正点击之前，就能明显感知到按钮正在回应自己的操作。作者自己把它描述成：“A hover effect that makes you want to click it”。\n常见按钮通常只是变色、放大或者出现阴影，而这个案例更强调 Hover 之后持续发生的运动，让用户产生一种“接下来点一下会发生什么”的期待。\n\n这种思路特别适合 Hero CTA、作品集入口、购买按钮等需要吸引用户主动操作的位置。\n\nHover 不一定只是告诉用户“这里能点”，它也可以提前制造一点欲望。",
+      "author": "@tojawuzik",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "Motion",
+      "tags": [
+        "Hover",
+        "CTA",
+        "Button",
+        "Motion",
+        "点击反馈",
+        "微交互",
+        "𝕏"
+      ],
+      "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787802012100-abf6033d-70da-4fab-ad1b-a624e22b423e.png",
+      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787802075591-f954c7b2-c896-45c6-ae91-0fc1553ab0f1.mp4",
+      "url": "https://x.com/tojawuzik/status/2033987211691970785?utm_source=chatgpt.com",
+      "dateAdded": "2026-08-27",
+      "createdAt": "2026-08-27T03:38:21.412Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "Motion"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787802012100-abf6033d-70da-4fab-ad1b-a624e22b423e.png",
+          "width": 1542,
+          "height": 1412
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787802075591-f954c7b2-c896-45c6-ae91-0fc1553ab0f1.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.0920679886685551,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-36-会判断鼠标方向的-resize-handle",
+      "section": "inspiration",
+      "title": "36｜会判断鼠标方向的 Resize Handle",
+      "description": "当鼠标从不同方向进入或离开调整区域时，Handle 的过渡动画会根据鼠标运动方向发生变化，而不是始终播放同一套固定效果。",
+      "longDescription": "当鼠标从不同方向进入或离开调整区域时，Handle 的过渡动画会根据鼠标运动方向发生变化，而不是始终播放同一套固定效果。\n很多 Hover 动画只判断两种状态：进入或离开。但这个案例进一步加入了方向信息，让元素的运动方向和鼠标轨迹保持一致。\n\n这种细节很小，却会让界面产生更自然的空间感——鼠标从左侧进入，反馈就从左侧接住它；从另一侧离开，动画也顺着对应方向退出。\n\n对于 Resize Handle、分栏边界、拖拽控制点这类本身就带有方向语义的组件来说，这种处理尤其合理。",
+      "author": "@terkelg",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "微交互",
+      "tags": [
+        "Resize",
+        "Handle",
+        "Direction-aware",
+        "Hover",
+        "状态过渡",
+        "微交互",
+        "𝕏"
+      ],
+      "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787802540451-2c3b5997-d133-4ab7-93c9-af7550bf0b4e.png",
+      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787802584162-10e047c7-0e2a-45d8-a5fb-03b5e2c18aff.mp4",
+      "url": "https://x.com/terkelg/status/2048828974508171584?utm_source=chatgpt.com",
+      "dateAdded": "2026-08-27",
+      "createdAt": "2026-08-27T03:47:28.088Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "微交互"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787802540451-2c3b5997-d133-4ab7-93c9-af7550bf0b4e.png",
+          "width": 2384,
+          "height": 1272
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787802584162-10e047c7-0e2a-45d8-a5fb-03b5e2c18aff.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.8742138364779874,
+      "size": "wide",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-37-会根据按压位置变形的弹性按钮",
+      "section": "inspiration",
+      "title": "37｜会根据按压位置变形的弹性按钮",
+      "description": "用户按下按钮时，按钮不会整体统一缩小，而是会根据按压的位置和力度产生局部形变。手指落在哪一侧，对应区域就会向下凹陷，松开后再带着轻微弹性恢复原状。作者将它称为一种「plasticity-type button」的探索。",
+      "longDescription": "用户按下按钮时，按钮不会整体统一缩小，而是会根据按压的位置和力度产生局部形变。手指落在哪一侧，对应区域就会向下凹陷，松开后再带着轻微弹性恢复原状。作者将它称为一种「plasticity-type button」的探索。\n常见的 Pressed State 通常只有整体缩放、变色或阴影变化，不管用户点在按钮哪个位置，反馈都是同一套动画。\n\n这个案例把按压坐标也变成了动效参数：左侧被按下，形变就更多发生在左侧；点击中心，则会形成更均匀的凹陷。\n\n这种局部形变会让数字界面产生更接近真实材质的触感，也让一次非常普通的点击多了一层空间反馈。\n\n如果未来设备能够提供更丰富的压力或触控信息，这种“根据输入方式实时改变形态”的组件，会比固定播放的一段动画更自然。",
+      "author": "@michalmalewicz",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "微交互",
+      "tags": [
+        "Button",
+        "Press",
+        "Interaction",
+        "Plasticity",
+        "Reactive",
+        "UI",
+        "微交互",
+        "𝕏"
+      ],
+      "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787894627185-ceddb946-b8f2-4142-a055-acc4f30f67f7.png",
+      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787894684061-5748f080-de8b-42e8-a22b-5b8396969ef2.mp4",
+      "url": "https://x.com/michalmalewicz/status/2059298839215972592",
+      "dateAdded": "2026-08-28",
+      "createdAt": "2026-08-28T05:22:57.406Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        },
+        {
+          "label": "Category",
+          "value": "微交互"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1787894627185-ceddb946-b8f2-4142-a055-acc4f30f67f7.png",
+          "width": 2092,
+          "height": 1488
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787894684061-5748f080-de8b-42e8-a22b-5b8396969ef2.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.4059139784946237,
+      "size": "standard",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-38-用一把放大镜浏览数字邮票",
+      "section": "inspiration",
+      "title": "38｜用一把放大镜浏览数字邮票",
+      "description": "一个数字邮票收藏网站里的放大镜交互。 选中邮票后，可以拖动一把虚拟放大镜查看纸张纹理、字体和插画细节。镜片不只是简单把图片放大，还加入了边缘折射、轻微色散和缩放控制，让它更像一件真正放在邮票上的玻璃工具。",
+      "longDescription": "一个数字邮票收藏网站里的放大镜交互。 选中邮票后，可以拖动一把虚拟放大镜查看纸张纹理、字体和插画细节。镜片不只是简单把图片放大，还加入了边缘折射、轻微色散和缩放控制，让它更像一件真正放在邮票上的玻璃工具。\n拖动放大镜的过程，本身就是浏览内容的一部分。\n\n尤其是镜片边缘的形变和色散，让它不再像一个圆形 Mask，而是真的产生了“隔着玻璃观察”的感觉。\n\n这种设计很适合博物馆、档案、艺术品、材质、地图等需要用户主动观察细节的内容。",
+      "author": "@marijanapav",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "Magnifier",
+        "Drag",
+        "Interaction",
+        "Shader",
+        "Digital",
+        "Archive",
+        "网页交互",
+        "𝕏"
+      ],
+      "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1788155127483-b1435387-69ff-4e35-bf6b-0854c5a77389.png",
+      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788155412224-0fa743ff-14d0-443b-b580-2e0d4d27213e.mp4",
+      "url": "https://x.com/marijanapav/status/1984767288172597703?s=20",
+      "dateAdded": "2026-08-31",
+      "createdAt": "2026-08-31T05:44:22.101Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1788155127483-b1435387-69ff-4e35-bf6b-0854c5a77389.png",
+          "width": 2376,
+          "height": 1506
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788155412224-0fa743ff-14d0-443b-b580-2e0d4d27213e.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.5776892430278884,
+      "size": "wide",
+      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+    },
+    {
+      "id": "inspiration-39-把电子小票真的-打印-出来",
+      "section": "inspiration",
+      "title": "39｜把电子小票真的“打印”出来",
+      "description": "一个把结账小票设计成“打印过程”的界面组件。 触发后，小票会从卡片底部一点点伸出来，商品、金额和结算信息随着纸张展开逐步出现，让原本普通的订单结果多了一层类似真实收银机打印小票的反馈。",
+      "longDescription": "一个把结账小票设计成“打印过程”的界面组件。 触发后，小票会从卡片底部一点点伸出来，商品、金额和结算信息随着纸张展开逐步出现，让原本普通的订单结果多了一层类似真实收银机打印小票的反馈。\n它有意思的地方，是没有直接弹出一张完整的 Receipt Card，而是把现实中“打印小票”的过程也一起搬进了界面。\n\n纸张出现的方向、速度和内容揭示保持一致，因此动画不只是装饰，而是在解释：\n\n“这张小票刚刚生成。”\n\n这种现实动作的映射很适合支付成功、订单完成、发票生成等低频关键节点。\n\n它既能强化完成感，也能让一个原本非常普通的结果页面产生更明确的记忆点。\n\n作者使用 Paper 完成设计，并通过 Motion 制作动画。",
+      "author": "@jeetnirnejak",
+      "avatar": "",
+      "source": "𝕏",
+      "type": "",
+      "tags": [
+        "#Receipt",
+        "#PrintAnimation",
+        "#Checkout",
+        "#Motion",
+        "#微交互",
+        "#支付反馈",
+        "𝕏"
+      ],
+      "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1788241090120-7ede9a8e-bb20-4c88-a662-f26f5687fb55.png",
+      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788241116523-d1c3afdc-a685-40c1-a830-d5149372d68b.mp4",
+      "url": "https://x.com/jeetnirnejak/status/2056007595400527987",
+      "dateAdded": "2026-09-01",
+      "createdAt": "2026-09-01T05:37:32.580Z",
+      "details": [
+        {
+          "label": "Source",
+          "value": "𝕏"
+        }
+      ],
+      "materials": [
+        {
+          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1788241090120-7ede9a8e-bb20-4c88-a662-f26f5687fb55.png",
+          "width": 1956,
+          "height": 1454
+        },
+        {
+          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788241116523-d1c3afdc-a685-40c1-a830-d5149372d68b.mp4",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "mediaStatus": "",
+      "mediaAspectRatio": 1.34525447042641,
+      "size": "standard",
       "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
     },
     {
@@ -8253,261 +9310,6 @@
         }
       ],
       "size": "portrait"
-    },
-    {
-      "id": "inspiration-17-xr-展示型网站-用沉浸式视觉降低空间体验的理解门槛",
-      "section": "inspiration",
-      "title": "17｜XR 展示型网站：用沉浸式视觉降低空间体验的理解门槛",
-      "description": "它适合作为 XR/空间体验类网站的参考，重点观察如何用视觉实验、动效节奏和沉浸式页面结构降低 XR 概念的理解门槛。",
-      "longDescription": "它适合作为 XR/空间体验类网站的参考，重点观察如何用视觉实验、动效节奏和沉浸式页面结构降低 XR 概念的理解门槛。\n\n可借鉴点：\n1. XR 类产品官网不能只讲技术名词，需要用沉浸式视觉先建立感知。\n2. 展示型网站可通过动效节奏引导用户理解空间、设备、场景之间的关系。\n3. 首页首屏适合承担“世界观建立”功能，而不是直接堆功能介绍。\n4. 适合 XR、空间计算、沉浸展览、数字艺术、实验型品牌官网参考。",
-      "author": "Oobe-Xr",
-      "avatar": "",
-      "source": "Awwwards",
-      "type": "网站视觉",
-      "tags": [
-        "网站视觉",
-        "网页动效",
-        "交互模式",
-        "XR",
-        "官网",
-        "沉浸式展示",
-        "视觉实验",
-        "品牌体验页"
-      ],
-      "cover": "",
-      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142084175-0698690f-a918-4aee-a719-1f6b82338e32.mp4",
-      "url": "https://oobexr.zerotredici.app/",
-      "dateAdded": "2026-07-10",
-      "createdAt": "2026-07-10T07:39:33.709Z",
-      "details": [
-        {
-          "label": "Source",
-          "value": "Awwwards"
-        },
-        {
-          "label": "Category",
-          "value": "网站视觉"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783669388920-b2d28310-acb4-48ef-be3c-2536be39d02e.png"
-        },
-        {
-          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142084175-0698690f-a918-4aee-a719-1f6b82338e32.mp4"
-        }
-      ],
-      "size": "wide",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-    },
-    {
-      "id": "inspiration-18-触摸驱动的波浪卡片-从横向滑动变成有物理感的浏览体验",
-      "section": "inspiration",
-      "title": "18｜触摸驱动的波浪卡片：从横向滑动变成有物理感的浏览体验",
-      "description": "Wavy Carousel 是 Janum Trivedi 发布的 iPhone 界面动效案例 它用堆叠音乐卡片作为主体，卡片会跟随触摸拖拽产生流动、弯曲和层级变化，让传统 Carousel 从“横向滑动”变成更具物理感的手势反馈。",
-      "longDescription": "Wavy Carousel 是 Janum Trivedi 发布的 iPhone 界面动效案例 它用堆叠音乐卡片作为主体，卡片会跟随触摸拖拽产生流动、弯曲和层级变化，让传统 Carousel 从“横向滑动”变成更具物理感的手势反馈。\n可借鉴点：\n1. 卡片轮播不一定只能做平移，也可以加入弯曲、堆叠和弹性形变，增强触摸反馈。\n2. 音乐、播客、封面流、收藏夹这类视觉内容，适合用“物理感卡片”提升浏览愉悦度。\n3. Dark UI 下，卡片层级和运动节奏会比复杂装饰更重要。\n4. 适合音乐 App、内容收藏、作品集浏览、移动端推荐流、封面卡片组件参考。",
-      "author": "jmtrivedi",
-      "avatar": "",
-      "source": "𝕏",
-      "type": "微交互",
-      "tags": [
-        "微交互",
-        "交互模式",
-        "产品细节",
-        "𝕏"
-      ],
-      "cover": "",
-      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142092964-088c95a5-9592-47f5-8401-4a136175a06d.mp4",
-      "url": "https://x.com/jmtrivedi/status/2000678707137036637?s=20",
-      "dateAdded": "2026-07-10",
-      "createdAt": "2026-07-10T08:34:36.709Z",
-      "details": [
-        {
-          "label": "Source",
-          "value": "𝕏"
-        },
-        {
-          "label": "Category",
-          "value": "微交互"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1783672553988-3daaef90-d997-4110-9106-c0e204f3a731.png"
-        },
-        {
-          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785142092964-088c95a5-9592-47f5-8401-4a136175a06d.mp4"
-        }
-      ],
-      "size": "wide",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-    },
-    {
-      "id": "inspiration-19-可展开的-ai-thinking-panel",
-      "section": "inspiration",
-      "title": "19｜可展开的 AI Thinking Panel",
-      "description": "一个围绕 AI Thinking 状态设计的展开交互。默认状态只显示简洁的执行摘要，展开后可以查看模型对比、上下文、推理阶段以及任务完成时间。",
-      "longDescription": "一个围绕 AI Thinking 状态设计的展开交互。默认状态只显示简洁的执行摘要，展开后可以查看模型对比、上下文、推理阶段以及任务完成时间。\n它没有直接把大量过程信息全部铺在聊天界面中，而是通过渐进式展开控制信息密度。用户既能快速知道 AI 正在工作，也可以在需要时继续查看更完整的过程。",
-      "author": "Juliette",
-      "avatar": "",
-      "source": "𝕏",
-      "type": "微交互",
-      "tags": [
-        "AI",
-        "Thinking",
-        "展开面板",
-        "状态反馈",
-        "微交互",
-        "𝕏"
-      ],
-      "cover": "",
-      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785131675981-50bed07a-f59a-4b8c-a647-83b627cc5e5d.mp4",
-      "url": "https://x.com/shedsgns/status/2079162374712365254",
-      "dateAdded": "2026-07-27",
-      "createdAt": "2026-07-27T05:41:15.182Z",
-      "details": [
-        {
-          "label": "Source",
-          "value": "𝕏"
-        },
-        {
-          "label": "Category",
-          "value": "微交互"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144582604-7450f675-74ec-4ad8-b2e2-04e7dc976a34.png"
-        },
-        {
-          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785131675981-50bed07a-f59a-4b8c-a647-83b627cc5e5d.mp4"
-        }
-      ],
-      "size": "wide",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-    },
-    {
-      "id": "inspiration-20-ai-task-app-输入状态切换",
-      "section": "inspiration",
-      "title": "20｜AI Task App 输入状态切换",
-      "description": "一个移动端 AI Task App 的输入区动效，从默认的命令输入状态，平滑切换到已经输入具体任务的编辑状态。",
-      "longDescription": "一个移动端 AI Task App 的输入区动效，从默认的命令输入状态，平滑切换到已经输入具体任务的编辑状态。\n案例最值得看的不是输入框造型，而是元素在状态变化中的连续性。图标、文字、按钮与容器都没有突然消失，而是通过位移和形态变化自然完成交接，让输入过程显得更轻。",
-      "author": "@ZaydenSaaSgtfs",
-      "avatar": "",
-      "source": "𝕏",
-      "type": "",
-      "tags": [
-        "AI",
-        "Chat",
-        "输入框",
-        "状态切换",
-        "移动端动效",
-        "𝕏"
-      ],
-      "cover": "",
-      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144683570-e83591c1-d206-4fd1-bae0-6ef2bd0851a8.mp4",
-      "url": "https://x.com/ZaydenSaaSgtfs/status/2079507994124108250",
-      "dateAdded": "2026-07-27",
-      "createdAt": "2026-07-27T09:27:58.885Z",
-      "details": [
-        {
-          "label": "Source",
-          "value": "𝕏"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144604852-aac0c3a0-2677-4b7b-953a-afba9cc77f71.png"
-        },
-        {
-          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144683570-e83591c1-d206-4fd1-bae0-6ef2bd0851a8.mp4"
-        }
-      ],
-      "size": "wide",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-    },
-    {
-      "id": "inspiration-21-codex-章节式代码审查界面",
-      "section": "inspiration",
-      "title": "21｜Codex 章节式代码审查界面",
-      "description": "Codex 的代码审查界面将开发者指令、AI 回复、文件引用与修改结果组织成连续的章节，而不是简单堆叠为一条很长的聊天记录。",
-      "longDescription": "Codex 的代码审查界面将开发者指令、AI 回复、文件引用与修改结果组织成连续的章节，而不是简单堆叠为一条很长的聊天记录。\n章节式结构非常适合处理长任务。它通过标题和内容分段建立阅读锚点，让用户可以快速回看某一步发生了什么，也让复杂任务的过程更接近一份可阅读的工作记录。",
-      "author": "@Neesh774",
-      "avatar": "",
-      "source": "𝕏",
-      "type": "",
-      "tags": [
-        "Codex",
-        "Code",
-        "Review",
-        "长任务",
-        "内容结构",
-        "𝕏"
-      ],
-      "cover": "",
-      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144808584-15658709-7062-423e-bb13-9f6085261b4c.mp4",
-      "url": "https://x.com/Neesh774/status/2070557463628149055",
-      "dateAdded": "2026-07-27",
-      "createdAt": "2026-07-27T09:32:15.238Z",
-      "details": [
-        {
-          "label": "Source",
-          "value": "𝕏"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785144772977-8ce6e369-237c-4394-a238-b9142a7774b6.png"
-        },
-        {
-          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785144808584-15658709-7062-423e-bb13-9f6085261b4c.mp4"
-        }
-      ],
-      "size": "wide",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
-    },
-    {
-      "id": "inspiration-22-点击触发的全屏波纹反馈",
-      "section": "inspiration",
-      "title": "22｜点击触发的全屏波纹反馈",
-      "description": "点击界面右上角的 Publish 按钮后，一圈波浪形变从触点向外扩散。波纹经过的位置会产生短暂的弯曲和拉伸，最终随着波浪离开画面恢复原状。",
-      "longDescription": "点击界面右上角的 Publish 按钮后，一圈波浪形变从触点向外扩散。波纹经过的位置会产生短暂的弯曲和拉伸，最终随着波浪离开画面恢复原状。\n它没有把点击反馈限制在按钮内部，而是让一次局部操作影响整个界面空间。简单说让我联想到海浪🌊",
-      "author": "@benjaminnathan",
-      "avatar": "",
-      "source": "𝕏",
-      "type": "微交互",
-      "tags": [
-        "点击反馈",
-        "波纹形变",
-        "页面动效",
-        "微交互",
-        "𝕏"
-      ],
-      "cover": "",
-      "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785202873692-5fc78647-4f5d-4cdd-bdc9-3aacc4c15423.mp4",
-      "url": "https://x.com/benjaminnathan/status/2069724377629765813?s=20",
-      "dateAdded": "2026-07-28",
-      "createdAt": "2026-07-28T01:37:42.243Z",
-      "details": [
-        {
-          "label": "Source",
-          "value": "𝕏"
-        },
-        {
-          "label": "Category",
-          "value": "微交互"
-        }
-      ],
-      "materials": [
-        {
-          "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1785202830097-6d22f09f-c974-452c-b346-2c2f0b379990.png"
-        },
-        {
-          "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1785202873692-5fc78647-4f5d-4cdd-bdc9-3aacc4c15423.mp4"
-        }
-      ],
-      "size": "wide",
-      "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
     }
   ]
 }
