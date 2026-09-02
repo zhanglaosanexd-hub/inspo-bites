@@ -148,9 +148,16 @@ const LOCAL_INSPIRATION_MEDIA = [
   },
 ];
 
-export async function onRequest({ request, env }) {
+export async function onRequest({ request, env, waitUntil }) {
   if (request.method === "OPTIONS") return optionsResponse();
   if (request.method !== "GET") return json({ error: "Method not allowed" }, 405, "no-store");
+
+  const edgeCache = globalThis.caches?.default;
+  const cacheKey = new Request(new URL("/api/content", request.url).toString());
+  if (edgeCache) {
+    const cachedResponse = await edgeCache.match(cacheKey);
+    if (cachedResponse) return cachedResponse;
+  }
 
   const token = env.YUQUE_TOKEN || env.YUQUE_AUTH_TOKEN || "";
   const sources = readSources(env);
@@ -203,7 +210,7 @@ export async function onRequest({ request, env }) {
     if (result.value.warning) warnings.push(result.value.warning);
   });
 
-  return json(
+  const response = json(
     {
       source: "yuque",
       items: items.map((item) => rewriteItemMedia(item, mediaConfig)),
@@ -215,6 +222,14 @@ export async function onRequest({ request, env }) {
     200,
     `public, max-age=0, s-maxage=${CACHE_SECONDS}, stale-while-revalidate=${STALE_SECONDS}`,
   );
+
+  if (edgeCache) {
+    const cacheWrite = edgeCache.put(cacheKey, response.clone());
+    if (typeof waitUntil === "function") waitUntil(cacheWrite);
+    else await cacheWrite;
+  }
+
+  return response;
 }
 
 function readSources(env) {
