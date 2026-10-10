@@ -6,6 +6,12 @@ const state = {
   viewMode: "masonry",
 };
 
+const SECTION_URL_TABS = {
+  inspiration: "inspo",
+  "ux-bites": "ux-bites",
+  "app-recap": "app-recap",
+};
+
 let items = [];
 let sections = {};
 let sectionList = [];
@@ -133,6 +139,7 @@ let onlineCountTimer = 0;
 async function init() {
   const collectionData = await loadCollectionData();
 
+  state.section = getSectionFromUrl();
   applyCollectionData(collectionData);
 
   startOnlineCountMonitoring();
@@ -519,18 +526,39 @@ function normalizeLocalAssetPath(value) {
   return "";
 }
 
+function getSectionFromUrl() {
+  const tab = new URL(window.location.href).searchParams.get("tab");
+  return Object.keys(SECTION_URL_TABS).find((sectionId) => SECTION_URL_TABS[sectionId] === tab)
+    || "inspiration";
+}
+
+function switchSection(sectionId, { updateUrl = true } = {}) {
+  if (!sections[sectionId] || sectionId === state.section) return;
+
+  closeDetail({ immediate: true });
+  state.section = sectionId;
+  state.filter = "All";
+  state.query = "";
+  searchInput.value = "";
+
+  if (updateUrl) {
+    const url = new URL(window.location.href);
+    url.searchParams.set("tab", SECTION_URL_TABS[sectionId] || sectionId);
+    window.history.pushState(null, "", url);
+  }
+
+  render();
+}
+
 function bindEvents() {
   sectionNav.addEventListener("click", (event) => {
     const button = event.target.closest(".section-link");
     if (!button) return;
-    if (button.dataset.section === state.section) return;
+    switchSection(button.dataset.section);
+  });
 
-    closeDetail({ immediate: true });
-    state.section = button.dataset.section;
-    state.filter = "All";
-    state.query = "";
-    searchInput.value = "";
-    render();
+  window.addEventListener("popstate", () => {
+    switchSection(getSectionFromUrl(), { updateUrl: false });
   });
 
   searchInput.addEventListener("input", (event) => {
