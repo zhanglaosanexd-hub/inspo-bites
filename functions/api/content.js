@@ -35,6 +35,10 @@ const STALE_SECONDS = 60 * 60;
 const YUQUE_API_BASE = "https://www.yuque.com/api/v2/repos";
 const YUQUE_TABLE_API_BASE = "https://www.yuque.com/api/modules/table/doc";
 const TABLE_RECORD_LIMIT = 5000;
+const CACHED_INSPIRATION_VIDEO_IDS = new Set([
+  "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39",
+  "40", "41", "42", "43", "44", "45", "46", "47", "48", "49",
+]);
 const LOCAL_INSPIRATION_COVER_IDS = new Set([
   "01",
   "09",
@@ -56,6 +60,7 @@ const LOCAL_INSPIRATION_COVER_IDS = new Set([
   "26",
   "27",
   "28",
+  ...CACHED_INSPIRATION_VIDEO_IDS,
 ]);
 const LOCAL_INSPIRATION_MEDIA = [
   {
@@ -965,8 +970,10 @@ function tableAttachments(value) {
 
 function findLocalMediaOverride(title, section) {
   if (section !== "inspiration") return {};
-  const media = LOCAL_INSPIRATION_MEDIA.find((item) => title.includes(item.titleIncludes)) || {};
   const coverId = title.match(/^(\d{2})[｜|]/)?.[1] || "";
+  const media = CACHED_INSPIRATION_VIDEO_IDS.has(coverId)
+    ? { video: `./assets/inspiration-video-cache/${coverId}-x-preview.mp4` }
+    : LOCAL_INSPIRATION_MEDIA.find((item) => title.includes(item.titleIncludes)) || {};
   if (!LOCAL_INSPIRATION_COVER_IDS.has(coverId)) return media;
   return { ...media, cover: `./assets/inspiration-cover-cache/${coverId}.png` };
 }

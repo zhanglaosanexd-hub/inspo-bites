@@ -8840,8 +8840,8 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1786943315460-23bb83b8-3671-4b2c-ba05-84b615012d7d.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786943248917-9318a525-887a-4a74-8ec9-5b4539cb9871.mp4",
+        "cover": "./assets/inspiration-cover-cache/29.png",
+        "video": "./assets/inspiration-video-cache/29-x-preview.mp4",
         "url": "https://x.com/nitishkmrk/status/2088947032274907602?s=20",
         "dateAdded": "2026-08-17",
         "createdAt": "2026-08-17T05:05:07.490Z",
@@ -8891,8 +8891,8 @@ window.INSPO_STATIC_DATA = {
           "卡片动效",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1786946234998-8216d018-10be-4f9f-8d48-1924a4274a60.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1786946224277-a30a5440-b7dc-40a8-93f2-bdb2ea795d7f.mp4",
+        "cover": "./assets/inspiration-cover-cache/30.png",
+        "video": "./assets/inspiration-video-cache/30-x-preview.mp4",
         "url": "https://x.com/YousufSoomroDev/status/2088657289410687111",
         "dateAdded": "2026-08-17",
         "createdAt": "2026-08-17T05:52:24.945Z",
@@ -8941,8 +8941,8 @@ window.INSPO_STATIC_DATA = {
           "#微交互",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787038993919-e00d7eb3-5f99-4247-a88c-0decf9fc544c.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787039007057-4a916704-62b3-4823-99cd-3a6c31735c79.mp4",
+        "cover": "./assets/inspiration-cover-cache/31.png",
+        "video": "./assets/inspiration-video-cache/31-x-preview.mp4",
         "url": "https://x.com/raul_dronca/status/2089006726204789023",
         "dateAdded": "2026-08-18",
         "createdAt": "2026-08-18T07:42:47.183Z",
@@ -8987,8 +8987,8 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787217493451-d1d90c2e-cb3a-4ed4-86b9-2a2647236e72.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787217563348-84bb0bc6-1aeb-4f71-91af-b093bbace0cd.mp4",
+        "cover": "./assets/inspiration-cover-cache/32.png",
+        "video": "./assets/inspiration-video-cache/32-x-preview.mp4",
         "url": "https://x.com/guerriero_se/status/2074141065104576781",
         "dateAdded": "2026-08-20",
         "createdAt": "2026-08-20T09:17:50.903Z",
@@ -9040,8 +9040,8 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787297131668-90d91f0c-5f77-4ec9-965b-c63b7b943e00.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787297088808-73dc193f-264e-4acd-94c3-942078f1c6f4.mp4",
+        "cover": "./assets/inspiration-cover-cache/33.png",
+        "video": "./assets/inspiration-video-cache/33-x-preview.mp4",
         "url": "https://x.com/benjitaylor/status/2087227155076046995",
         "dateAdded": "2026-08-21",
         "createdAt": "2026-08-21T07:24:10.578Z",
@@ -9090,8 +9090,8 @@ window.INSPO_STATIC_DATA = {
           "#PlayfulDesign",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787710727673-7f3ffe64-3089-4fcb-894b-34cd40f2a02d.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787710825372-2e0a9a90-aef8-4271-b919-f8225fe0f990.mp4",
+        "cover": "./assets/inspiration-cover-cache/34.png",
+        "video": "./assets/inspiration-video-cache/34-x-preview.mp4",
         "url": "https://x.com/adrianabelarde_/status/2076290018193424792?s=20",
         "dateAdded": "2026-08-26",
         "createdAt": "2026-08-26T02:18:09.024Z",
@@ -9137,8 +9137,8 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787802012100-abf6033d-70da-4fab-ad1b-a624e22b423e.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787802075591-f954c7b2-c896-45c6-ae91-0fc1553ab0f1.mp4",
+        "cover": "./assets/inspiration-cover-cache/35.png",
+        "video": "./assets/inspiration-video-cache/35-x-preview.mp4",
         "url": "https://x.com/tojawuzik/status/2033987211691970785?utm_source=chatgpt.com",
         "dateAdded": "2026-08-27",
         "createdAt": "2026-08-27T03:38:21.412Z",
@@ -9188,8 +9188,8 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787802540451-2c3b5997-d133-4ab7-93c9-af7550bf0b4e.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787802584162-10e047c7-0e2a-45d8-a5fb-03b5e2c18aff.mp4",
+        "cover": "./assets/inspiration-cover-cache/36.png",
+        "video": "./assets/inspiration-video-cache/36-x-preview.mp4",
         "url": "https://x.com/terkelg/status/2048828974508171584?utm_source=chatgpt.com",
         "dateAdded": "2026-08-27",
         "createdAt": "2026-08-27T03:47:28.088Z",
@@ -9240,8 +9240,8 @@ window.INSPO_STATIC_DATA = {
           "微交互",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1787894627185-ceddb946-b8f2-4142-a055-acc4f30f67f7.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1787894684061-5748f080-de8b-42e8-a22b-5b8396969ef2.mp4",
+        "cover": "./assets/inspiration-cover-cache/37.png",
+        "video": "./assets/inspiration-video-cache/37-x-preview.mp4",
         "url": "https://x.com/michalmalewicz/status/2059298839215972592",
         "dateAdded": "2026-08-28",
         "createdAt": "2026-08-28T05:22:57.406Z",
@@ -9292,8 +9292,8 @@ window.INSPO_STATIC_DATA = {
           "网页交互",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1788155127483-b1435387-69ff-4e35-bf6b-0854c5a77389.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788155412224-0fa743ff-14d0-443b-b580-2e0d4d27213e.mp4",
+        "cover": "./assets/inspiration-cover-cache/38.png",
+        "video": "./assets/inspiration-video-cache/38-x-preview.mp4",
         "url": "https://x.com/marijanapav/status/1984767288172597703?s=20",
         "dateAdded": "2026-08-31",
         "createdAt": "2026-08-31T05:44:22.101Z",
@@ -9339,8 +9339,8 @@ window.INSPO_STATIC_DATA = {
           "#支付反馈",
           "𝕏"
         ],
-        "cover": "/api/media?url=https%3A%2F%2Fcdn.nlark.com%2Fyuque%2F0%2F2026%2Fpng%2F23205200%2F1788241090120-7ede9a8e-bb20-4c88-a662-f26f5687fb55.png",
-        "video": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788241116523-d1c3afdc-a685-40c1-a830-d5149372d68b.mp4",
+        "cover": "./assets/inspiration-cover-cache/39.png",
+        "video": "./assets/inspiration-video-cache/39-x-preview.mp4",
         "url": "https://x.com/jeetnirnejak/status/2056007595400527987",
         "dateAdded": "2026-09-01",
         "createdAt": "2026-09-01T05:37:32.580Z",
@@ -9365,6 +9365,496 @@ window.INSPO_STATIC_DATA = {
         "mediaStatus": "",
         "mediaAspectRatio": 1.34525447042641,
         "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-40-拖动边框-把字母揉成流体",
+        "section": "inspiration",
+        "title": "40｜拖动边框，把字母揉成流体",
+        "description": "用户拖动文字外侧的边框时，里面原本规整的字母会跟着空间变化不断挤压、拉伸和变形，逐渐从字体变成类似软胶、细胞一样的有机形态。",
+        "longDescription": "用户拖动文字外侧的边框时，里面原本规整的字母会跟着空间变化不断挤压、拉伸和变形，逐渐从字体变成类似软胶、细胞一样的有机形态。\n边框被压窄，字母也跟着被挤压；空间被拉开，字形又重新舒展开来。用户很容易产生一种“这几个字真的很软”的感觉。\n\n相比常见的 Responsive Type，这个案例进一步把布局变化做成了可以亲手操作的材质反馈。\n\n这种思路很适合实验字体、品牌视觉、作品集标题或网页互动：不要只让内容适应容器，也可以让容器本身成为操纵内容形态的工具。",
+        "author": "@naso",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "Typography",
+        "tags": [
+          "Typography",
+          "Drag",
+          "Interaction",
+          "Morphing",
+          "Experimental",
+          "UI",
+          "网页交互",
+          "𝕏"
+        ],
+        "cover": "./assets/inspiration-cover-cache/40.png",
+        "video": "./assets/inspiration-video-cache/40-x-preview.mp4",
+        "url": "https://x.com/naso/status/2086995635526345076",
+        "dateAdded": "2026-09-03",
+        "createdAt": "2026-09-03T07:01:25.290Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "Typography"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1788418921602-eff134d2-3bba-4e1b-98f1-8a812c1a07e9.png",
+            "width": 2386,
+            "height": 1490
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788418993617-6a00ef9c-4a01-455f-b0af-9ccc7c6a2264.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.6013422818791947,
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-41-会在标签处分裂的拖拽控件",
+        "section": "inspiration",
+        "title": "41｜会在标签处分裂的拖拽控件",
+        "description": "拖动拉环经过不同标签时，原本完整的控件会在标签所在位置自然分裂，让文字从中间显露出来；继续拖动后，两侧结构再重新合拢，同时配合一段轻量的声音反馈。",
+        "longDescription": "拖动拉环经过不同标签时，原本完整的控件会在标签所在位置自然分裂，让文字从中间显露出来；继续拖动后，两侧结构再重新合拢，同时配合一段轻量的声音反馈。\n拉环、标签和内容处在同一套空间关系里：拖到哪里，控件就主动为当前位置的文字让出空间，因此标签不是简单覆盖在轨道上，而像是真正嵌进了拖动路径里。\n\n这种分裂与重新合拢的变化，也让不同节点之间的切换变得更有反馈感。用户不只是在“移动一个控件”，而是在经过一个个明确的位置。\n\n再加上轻量的声音反馈，整个操作会产生一点类似机械卡扣和实体拉环的感觉。\n\n很适合时间轴、前后对比、媒体浏览、模式选择等既需要连续拖动，又存在明确节点的场景。",
+        "author": "@AdamWhitcroft",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "微交互",
+        "tags": [
+          "拖拽控件",
+          "滑动选择",
+          "声音反馈",
+          "形态变化",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "./assets/inspiration-cover-cache/41.png",
+        "video": "./assets/inspiration-video-cache/41-x-preview.mp4",
+        "url": "https://x.com/AdamWhitcroft/status/2093755003248984352?s=20",
+        "dateAdded": "2026-09-07",
+        "createdAt": "2026-09-07T07:03:58.589Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "微交互"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1788765018800-715d62d8-efd9-4d3f-ad61-d42f71895a91.png",
+            "width": 960,
+            "height": 1548
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788764698325-11817615-7184-447b-8fd3-9bb05316b507.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 0.6201550387596899,
+        "size": "tall",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-42-会跟着旋转开合的相机光圈",
+        "section": "inspiration",
+        "title": "42｜会跟着旋转开合的相机光圈",
+        "description": "拖动外侧圆环时，中间的光圈叶片会跟着旋转、收紧或展开；同时可以调节快门和感光度，点击自动模式后，界面还会自行寻找合适的曝光状态。",
+        "longDescription": "拖动外侧圆环时，中间的光圈叶片会跟着旋转、收紧或展开；同时可以调节快门和感光度，点击自动模式后，界面还会自行寻找合适的曝光状态。\n用户转动圆环，里面的叶片就同步开合，操作动作和结果之间几乎不需要解释。\n尤其是从小光圈逐渐“绽放”到大光圈的过程，让原本抽象的参数变化变成了一段非常直观的视觉反馈。\n这种设计很适合摄影、音频、调色或其他专业工具：当参数本身对应现实中的机械结构时，控件也可以直接从那个真实动作中寻找交互方式。",
+        "author": "@jeetnirnejak",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "微交互",
+        "tags": [
+          "相机光圈",
+          "旋转交互",
+          "参数控制",
+          "拟物反馈",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "./assets/inspiration-cover-cache/42.png",
+        "video": "./assets/inspiration-video-cache/42-x-preview.mp4",
+        "url": "https://x.com/jeetnirnejak/status/2089706882688753782",
+        "dateAdded": "2026-09-07",
+        "createdAt": "2026-09-07T07:05:01.602Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "微交互"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1788764729461-4b47f042-539e-4ee7-bd6d-ec21fac3e988.png",
+            "width": 1476,
+            "height": 1350
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788764761967-e2ea1b52-0031-4226-b68a-122ae638bcdc.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.0933333333333333,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-43-会融在一起的筛选标签",
+        "section": "inspiration",
+        "title": "43｜会融在一起的筛选标签",
+        "description": "点击不同标签时，选中背景不会简单地消失再出现，而是像一团柔软的液体一样，在不同选项之间拉伸、融合和重新成形，让连续切换看起来像是同一个对象在移动。",
+        "longDescription": "点击不同标签时，选中背景不会简单地消失再出现，而是像一团柔软的液体一样，在不同选项之间拉伸、融合和重新成形，让连续切换看起来像是同一个对象在移动。\n普通筛选标签通常是“这个取消选中、那个变成选中”，用户实际上会看到两个状态同时切换。\n\n这个案例则通过流体形变，把两次变化合并成一次运动：选中背景从当前位置被拉向下一个标签，再重新形成完整形状。\n\n因此用户看到的不是几个组件分别发生变化，而是：\n\n同一个选中状态，在不同位置之间转移。\n\n这种方式很适合筛选、分类、多选标签等高频组件，在不改变原有操作逻辑的情况下，让状态切换更连续，也更有触感。",
+        "author": "@juli_fella",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "#筛选标签",
+          "#流体动效",
+          "#状态切换",
+          "#形态变化",
+          "#微交互",
+          "𝕏"
+        ],
+        "cover": "./assets/inspiration-cover-cache/43.png",
+        "video": "./assets/inspiration-video-cache/43-x-preview.mp4",
+        "url": "https://x.com/juli_fella/status/2095491684138180809",
+        "dateAdded": "2026-09-09",
+        "createdAt": "2026-09-09T03:15:52.520Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1788923796565-e64f2751-1ebb-4855-9ab2-f07132116451.png",
+            "width": 2450,
+            "height": 1532
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1788923835236-d49cc5d9-be4e-42fd-ba63-311b116d29f0.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.5992167101827677,
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-44-选中文字时-会有花从里面长出来",
+        "section": "inspiration",
+        "title": "44｜选中文字时，会有花从里面长出来",
+        "description": "拖动鼠标选中文字时，花朵和植物会沿着选中的区域逐渐生长出来；松开选择后，这些植物再慢慢收回，让原本非常普通的“文字高亮”变成了一段带有生命感的反馈。",
+        "longDescription": "拖动鼠标选中文字时，花朵和植物会沿着选中的区域逐渐生长出来；松开选择后，这些植物再慢慢收回，让原本非常普通的“文字高亮”变成了一段带有生命感的反馈。\n常见选区通常只是改变背景颜色，而这里直接把“选中了这一段内容”转译成植物生长：选区越长，出现的视觉内容也越多。\n\n花朵并不是单纯盖在文字上，而是沿着用户拖动形成的范围生长，因此整个效果和手势之间有非常直接的对应关系。\n\n这种处理很适合作品集、品牌网站、编辑器彩蛋或阅读类产品：不需要改变原本的操作方式，只是在用户已经熟悉的动作上，再增加一层有记忆点的反馈。",
+        "author": "@omer_assa",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "微交互",
+        "tags": [
+          "文字选择",
+          "生长动效",
+          "拖拽反馈",
+          "趣味交互",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "./assets/inspiration-cover-cache/44.png",
+        "video": "./assets/inspiration-video-cache/44-x-preview.mp4",
+        "url": "https://x.com/omer_assa/status/2083862523640496179?s=20",
+        "dateAdded": "2026-09-16",
+        "createdAt": "2026-09-16T07:10:15.625Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "微交互"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1789542661144-c21019de-ff7c-490d-82c6-c1c77a2f3dd1.png",
+            "width": 1590,
+            "height": 1396
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1789628825642-0662acb0-58e8-4d83-a5bc-4407b75287a7.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.1389684813753582,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-45-会堆叠-悬停后自动展开的通知",
+        "section": "inspiration",
+        "title": "45｜会堆叠、悬停后自动展开的通知",
+        "description": "连续出现多条通知时，它们不会全部平铺在页面上，而是自动叠在一起，只保留最前面一条完整显示；鼠标移动到通知区域后，后面的消息再依次展开，离开后重新收拢。",
+        "longDescription": "连续出现多条通知时，它们不会全部平铺在页面上，而是自动叠在一起，只保留最前面一条完整显示；鼠标移动到通知区域后，后面的消息再依次展开，离开后重新收拢。\n默认状态下，多条通知通过缩小和错位形成一叠，只占一块区域；当用户真正表现出查看意图——把鼠标移过去——组件才把完整内容展开。\n因此界面不会为了可能发生的阅读需求，一开始就把所有消息全部铺开。\n展开和收拢过程中，每条通知的位置、大小和层级连续变化，看起来更像一叠真实卡片被摊开，而不是几个独立浮层突然出现。\n这种处理很适合后台工具、协作产品、上传任务、批量操作等容易连续产生反馈的场景。",
+        "author": "@jrgarciadev",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "微交互",
+        "tags": [
+          "通知组件",
+          "堆叠交互",
+          "悬停展开",
+          "状态切换",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "./assets/inspiration-cover-cache/45.png",
+        "video": "./assets/inspiration-video-cache/45-x-preview.mp4",
+        "url": "https://x.com/jrgarciadev/status/2098098246660899091",
+        "dateAdded": "2026-09-16",
+        "createdAt": "2026-09-16T08:22:26.596Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "微交互"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1789546985261-3a3deeb1-be6d-49ad-b6bf-56b3c7161eae.png",
+            "width": 2476,
+            "height": 1518
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1789628841821-37aaf620-a521-42ec-8b5c-a5cc8442078f.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.6310935441370225,
+        "size": "wide",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-46-会根据上下文自动分裂的操作按钮",
+        "section": "inspiration",
+        "title": "46｜会根据上下文自动分裂的操作按钮",
+        "description": "默认状态下，相关操作被收在一个紧凑的控件里；当界面进入需要更多选择的情境时，原本聚合在一起的操作区域会自然分开，露出对应的动作入口，结束后再重新合回原来的形态。",
+        "longDescription": "默认状态下，相关操作被收在一个紧凑的控件里；当界面进入需要更多选择的情境时，原本聚合在一起的操作区域会自然分开，露出对应的动作入口，结束后再重新合回原来的形态。\n普通做法通常是点击按钮后再弹出菜单，或者长期并排放置多个操作。\n这个案例则直接让组件本身发生形态变化：需要时分开，不需要时重新合并。\n因此新增操作没有带来一个新的浮层，用户的注意力也始终停留在同一个位置。\n这种方式很适合只有少量次级动作的场景，例如确认与更多选项、编辑与删除、播放与队列等。上下文变化时，不一定要再打开一个界面，也可以让原来的控件自己长出新的操作。",
+        "author": "@withAnimationUI",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "微交互",
+        "tags": [
+          "上下文操作",
+          "分裂动效",
+          "状态切换",
+          "操作按钮",
+          "微交互",
+          "𝕏"
+        ],
+        "cover": "./assets/inspiration-cover-cache/46.png",
+        "video": "./assets/inspiration-video-cache/46-x-preview.mp4",
+        "url": "https://x.com/withAnimationUI/status/2099386664506581042",
+        "dateAdded": "2026-09-18",
+        "createdAt": "2026-09-18T01:30:51.857Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "微交互"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1789695069844-92dbd9eb-2089-4e0e-8e3d-e843f8c80051.png",
+            "width": 1420,
+            "height": 1406
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1789695126111-e2c2ceec-fb2f-4bcb-8566-77d97e854ef8.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.0099573257467995,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-47-把作品集页脚做成一个打孔器",
+        "section": "inspiration",
+        "title": "47｜把作品集页脚做成一个打孔器",
+        "description": "作者把小时候常玩的手工打孔器带进网页，在页面最底部加入一段带有明显“按压、打孔”感的互动，让原本通常只放版权、邮箱和社交链接的 Footer，变成了一个可以停下来玩一下的小彩蛋。",
+        "longDescription": "作者把小时候常玩的手工打孔器带进网页，在页面最底部加入一段带有明显“按压、打孔”感的互动，让原本通常只放版权、邮箱和社交链接的 Footer，变成了一个可以停下来玩一下的小彩蛋。\n大多数作品集到了 Footer 就意味着浏览结束，界面也会突然变得非常功能化。\n这个案例反过来，把 Footer 当成了最后一个可以留下记忆点的位置。\n更值得借鉴的是，它的灵感不是来自另一个网页组件，而是来自现实里的手工工具。\n打孔器本身就有明确的按压、切割和留下形状的动作，所以搬进网页以后，用户几乎不需要额外学习，就能理解这种互动的趣味。\n对于作品集、个人网站或创意工作室官网来说，页脚不一定只是“结束”，也可以成为整段浏览体验最后一个小惊喜。",
+        "author": "@csidearchives",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "网页动效",
+        "tags": [
+          "作品集",
+          "页脚设计",
+          "拟物交互",
+          "趣味反馈",
+          "网页动效",
+          "𝕏"
+        ],
+        "cover": "./assets/inspiration-cover-cache/47.png",
+        "video": "./assets/inspiration-video-cache/47-x-preview.mp4",
+        "url": "https://x.com/csidearchives/status/2095908112075206818",
+        "dateAdded": "2026-09-20",
+        "createdAt": "2026-09-20T07:50:01.023Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          },
+          {
+            "label": "Category",
+            "value": "网页动效"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1789890650042-40488e90-6f8e-4509-8b18-87069c030090.png",
+            "width": 1880,
+            "height": 1406
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1789890702059-62d7f28f-2646-4489-851a-0b364b4909e7.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.337126600284495,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-48-把电脑的音频和-ui-做成一条时间轴",
+        "section": "inspiration",
+        "title": "48｜把电脑的音频和 UI 做成一条时间轴",
+        "description": "作者把不同年代的电脑 UI、视觉风格和声音放在一起呈现，随着年份变化，屏幕里的界面语言也在不断改变。 从早期像素感、厚重窗口，到后来越来越扁平和现代的系统界面，不只是“看起来像那个年代”，连声音也一起参与了氛围塑造。",
+        "longDescription": "作者把不同年代的电脑 UI、视觉风格和声音放在一起呈现，随着年份变化，屏幕里的界面语言也在不断改变。 从早期像素感、厚重窗口，到后来越来越扁平和现代的系统界面，不只是“看起来像那个年代”，连声音也一起参与了氛围塑造。\n很多复古设计会把注意力放在窗口样式、字体、图标和像素质感上，但这里加入了声音之后，记忆一下变得更完整了。\n开机声、提示音、操作反馈，本身也是一代电脑体验的重要组成部分。\n当 UI 和声音同时变化时，我们感知到的不只是设计风格的演进，更像是在快速翻阅一段个人电脑的体验史。",
+        "author": "@colderoshay",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "#UI设计",
+          "#声音设计",
+          "#复古设计",
+          "#交互设计",
+          "#动效设计",
+          "𝕏"
+        ],
+        "cover": "./assets/inspiration-cover-cache/48.png",
+        "video": "./assets/inspiration-video-cache/48-x-preview.mp4",
+        "url": "https://x.com/colderoshay/status/2101679582734872751?s=20",
+        "dateAdded": "2026-09-24",
+        "createdAt": "2026-09-24T09:14:06.781Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1790241385373-4c1d1f64-7505-4aed-8262-d8c60974a302.png",
+            "width": 1942,
+            "height": 1510
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1790241464068-52dad689-e1f3-4e2a-ad7a-00ceee6cf20e.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 1.286092715231788,
+        "size": "standard",
+        "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
+      },
+      {
+        "id": "inspiration-49-在输入光标上加了一盏会移动的灯",
+        "section": "inspiration",
+        "title": "49｜在输入光标上加了一盏会移动的灯",
+        "description": "作者把传统的输入光标设计成了带一盏沿轨道移动的小灯的打字机。随着文字不断输入，装置会跟随光标移动，灯光始终照亮正在书写的位置。 这次还加入了万圣节主题的外观：暗色背景、缠绕的蛛网、微弱的电光与带有颗粒质感的纸张，让原本简单的打字过程多了一层神秘氛围。",
+        "longDescription": "作者把传统的输入光标设计成了带一盏沿轨道移动的小灯的打字机。随着文字不断输入，装置会跟随光标移动，灯光始终照亮正在书写的位置。 这次还加入了万圣节主题的外观：暗色背景、缠绕的蛛网、微弱的电光与带有颗粒质感的纸张，让原本简单的打字过程多了一层神秘氛围。\n普通输入框里的光标只负责提示位置，而这里的光标不仅会移动，还会带动灯光和阴影变化，让每次输入都像在操控一台真实的机械设备。\n\n更巧妙的是，灯光既承担了视觉反馈，也自然地把用户注意力引向当前输入位置。",
+        "author": "@raffiki_art",
+        "avatar": "",
+        "source": "𝕏",
+        "type": "",
+        "tags": [
+          "#交互设计",
+          "#动效设计",
+          "#拟物设计",
+          "#UI设计",
+          "#创意交互",
+          "𝕏"
+        ],
+        "cover": "./assets/inspiration-cover-cache/49.png",
+        "video": "./assets/inspiration-video-cache/49-x-preview.mp4",
+        "url": "https://x.com/raffiki_art/status/2108072499267461149?s=20",
+        "dateAdded": "2026-10-09",
+        "createdAt": "2026-10-09T06:29:02.453Z",
+        "details": [
+          {
+            "label": "Source",
+            "value": "𝕏"
+          }
+        ],
+        "materials": [
+          {
+            "file": "https://cdn.nlark.com/yuque/0/2026/png/23205200/1791527405967-1963bf88-7d7a-4156-b91d-1d359acf4652.png",
+            "width": 702,
+            "height": 1510
+          },
+          {
+            "file": "https://www.yuque.com/attachments/yuque/0/2026/mp4/23205200/1791527465735-9594c7b3-44cf-425d-a683-b6b5a227abb1.mp4",
+            "width": "",
+            "height": ""
+          }
+        ],
+        "mediaStatus": "",
+        "mediaAspectRatio": 0.4649006622516556,
+        "size": "tall",
         "reference": "https://www.yuque.com/zhanglaosan-bz7nq/gmzg15/wv0ye00q7degi1zp?singleDoc#"
       }
     ]

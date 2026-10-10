@@ -124,7 +124,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20260902-latest-on-entry";
+const DATA_VERSION = "20261010-safari-previews";
 const REMOTE_CONTENT_TIMEOUT_MS = 15 * 1000;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 60 * 1000;
@@ -1376,7 +1376,8 @@ function bindVideoFallbacks(root) {
       wantsPlayback = true;
       if (poster && !poster.complete) return;
       loadLazyVideo(video);
-      if (video.readyState >= 2) revealVideo();
+      // Safari may stop at metadata until play() requests the video frames.
+      revealVideo();
     };
     const stopPlayback = () => {
       wantsPlayback = false;
@@ -1425,6 +1426,9 @@ function loadLazyVideo(video) {
   if (!source) return;
 
   video.dataset.videoLoaded = "true";
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
   if (!video.getAttribute("src")) video.src = source;
   video.preload = "metadata";
   video.load();
