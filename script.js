@@ -16,6 +16,7 @@ let detailTransitionFrame = 0;
 let detailCloseTimer = 0;
 let changelogTransitionFrame = 0;
 let activeChangelog = null;
+let galleryVideoObserver = null;
 
 const gallery = document.querySelector("#gallery");
 const sectionNav = document.querySelector(".section-nav");
@@ -848,6 +849,10 @@ function renderFilters(filters) {
 }
 
 function renderGallery() {
+  galleryVideoObserver?.disconnect();
+  galleryVideoObserver = null;
+  gallery.querySelectorAll("video").forEach((video) => video.pause());
+
   const filtered = getVisibleItems();
   visibleItems = filtered;
   itemCount.textContent = `${filtered.length} 条内容`;
@@ -989,7 +994,7 @@ function createMediaMarkup(item, options = {}) {
       : createMediaMissingMarkup(item, "视频加载中", "正在加载动态预览。");
     return `
       ${poster}
-      <video muted loop playsinline autoplay preload="auto" src="${videoPath}" data-video-path="${videoPath}" aria-hidden="true"></video>
+      <video muted loop playsinline preload="none" data-video-path="${videoPath}" aria-hidden="true"></video>
     `;
   }
 
@@ -1301,11 +1306,24 @@ function renderSingleColumn(filtered) {
 }
 
 function bindVideoFallbacks(root) {
+  const playbackHandlers = new Map();
+  // Keep automatic previews, but let covers load before visible videos use bandwidth.
+  const observer = root === gallery && "IntersectionObserver" in window
+    ? new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const playback = playbackHandlers.get(entry.target);
+          if (entry.isIntersecting) playback?.start();
+          else playback?.stop();
+        });
+      })
+    : null;
+  if (root === gallery) galleryVideoObserver = observer;
+
   root.querySelectorAll("video[data-video-path]").forEach((video) => {
     const container = video.parentElement;
     const poster = container?.querySelector("img[data-media-image]");
     const fallback = container?.querySelector(".media-missing");
-    let wantsPlayback = true;
+    let wantsPlayback = false;
 
     const showFallback = () => {
       video.hidden = true;
@@ -1319,15 +1337,29 @@ function bindVideoFallbacks(root) {
       const playRequest = video.play();
       if (playRequest && typeof playRequest.then === "function") {
         playRequest
-          .then(() => container?.classList.add("is-video-playing"))
+          .then(() => {
+            if (wantsPlayback) container?.classList.add("is-video-playing");
+            else video.pause();
+          })
           .catch(() => container?.classList.remove("is-video-playing"));
       }
     };
     const startPlayback = () => {
       wantsPlayback = true;
+      if (poster && !poster.complete) return;
       loadLazyVideo(video);
       if (video.readyState >= 2) revealVideo();
     };
+    const stopPlayback = () => {
+      wantsPlayback = false;
+      video.pause();
+    };
+    const onPosterReady = () => {
+      if (wantsPlayback) startPlayback();
+    };
+
+    poster?.addEventListener("load", onPosterReady, { once: true });
+    poster?.addEventListener("error", onPosterReady, { once: true });
 
     video.addEventListener("error", showFallback, { once: true });
     video.addEventListener("canplay", revealVideo);
@@ -1336,7 +1368,12 @@ function bindVideoFallbacks(root) {
       if (wantsPlayback) container?.classList.add("is-video-playing");
     });
 
-    startPlayback();
+    if (observer) {
+      playbackHandlers.set(video, { start: startPlayback, stop: stopPlayback });
+      observer.observe(video);
+    } else {
+      startPlayback();
+    }
   });
 }
 
@@ -1361,7 +1398,7 @@ function loadLazyVideo(video) {
 
   video.dataset.videoLoaded = "true";
   if (!video.getAttribute("src")) video.src = source;
-  video.preload = "auto";
+  video.preload = "metadata";
   video.load();
 }
 
