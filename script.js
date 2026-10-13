@@ -48,7 +48,6 @@ const detailMeta = document.querySelector("#detail-meta");
 const detailTags = document.querySelector("#detail-tags");
 const detailSourceLink = document.querySelector("#detail-source-link");
 const clickSparkCanvas = document.querySelector("#click-spark-canvas");
-const onlineCount = document.querySelector("#online-count");
 const changelogTrigger = document.querySelector("#whats-new-trigger");
 const changelogMeta = document.querySelector("#whats-new-meta");
 const changelogModal = document.querySelector("#changelog-modal");
@@ -102,10 +101,6 @@ const DETAIL_VALUE_LABELS = {
 const FILTER_LABELS = {
   All: "全部",
 };
-const ONLINE_BASE_COUNT = 13;
-const ONLINE_COUNT_ENDPOINT = "/api/presence";
-const ONLINE_COUNT_REFRESH_MS = 15 * 1000;
-const ONLINE_SESSION_KEY = "inspo-presence-session";
 const HOUR_MS = 60 * 60 * 1000;
 const DAY_MS = 24 * HOUR_MS;
 const NEW_WINDOW_MS = 36 * 60 * 60 * 1000;
@@ -134,15 +129,12 @@ const CHANGELOG_REFRESH_MS = 60 * 1000;
 const MEDIA_BASE_URL = normalizeMediaBaseUrl(window.INSPO_MEDIA_BASE_URL || "");
 const MEDIA_URL_MAP = normalizeMediaUrlMap(window.INSPO_MEDIA_URL_MAP || window.INSPO_MEDIA_MAP);
 
-let onlineCountTimer = 0;
-
 async function init() {
   const collectionData = await loadCollectionData();
 
   state.section = getSectionFromUrl();
   applyCollectionData(collectionData);
 
-  startOnlineCountMonitoring();
   renderSidebar();
   bindEvents();
   initWhatsNew();
@@ -1700,80 +1692,6 @@ function dateToCreatedAt(value) {
   if (!value) return "";
   if (String(value).includes("T")) return value;
   return `${value}T00:00:00.000Z`;
-}
-
-function startOnlineCountMonitoring() {
-  renderOnlineCount(0);
-  refreshOnlineCount();
-  window.addEventListener("pagehide", sendPresenceLeave);
-}
-
-async function refreshOnlineCount() {
-  let shouldContinue = true;
-
-  try {
-    const response = await fetch(ONLINE_COUNT_ENDPOINT, {
-      method: "POST",
-      cache: "no-store",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id: getPresenceSessionId() }),
-    });
-
-    if (response.status === 404) {
-      shouldContinue = false;
-      return;
-    }
-
-    if (!response.ok) return;
-
-    const payload = await response.json();
-    renderOnlineCount(getRealtimeVisitorCount(payload));
-  } catch {
-    renderOnlineCount(0);
-  } finally {
-    window.clearTimeout(onlineCountTimer);
-    if (shouldContinue) {
-      onlineCountTimer = window.setTimeout(refreshOnlineCount, ONLINE_COUNT_REFRESH_MS);
-    }
-  }
-}
-
-function getRealtimeVisitorCount(payload) {
-  const value = payload?.online ?? payload?.activeVisitors ?? payload?.count ?? 0;
-  const count = Number(value);
-  if (!Number.isFinite(count)) return 0;
-  return Math.max(0, Math.floor(count));
-}
-
-function getPresenceSessionId() {
-  const existing = window.sessionStorage.getItem(ONLINE_SESSION_KEY);
-  if (existing) return existing;
-
-  const nextId =
-    typeof globalThis.crypto?.randomUUID === "function"
-      ? globalThis.crypto.randomUUID()
-      : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-  window.sessionStorage.setItem(ONLINE_SESSION_KEY, nextId);
-  return nextId;
-}
-
-function sendPresenceLeave() {
-  const id = window.sessionStorage.getItem(ONLINE_SESSION_KEY);
-  if (!id || typeof navigator.sendBeacon !== "function") return;
-
-  const payload = JSON.stringify({ id, status: "leave" });
-  navigator.sendBeacon(
-    ONLINE_COUNT_ENDPOINT,
-    new Blob([payload], { type: "application/json" }),
-  );
-}
-
-function renderOnlineCount(realtimeVisitors) {
-  if (!onlineCount) return;
-  onlineCount.textContent = String(ONLINE_BASE_COUNT + realtimeVisitors);
 }
 
 init().catch((error) => {

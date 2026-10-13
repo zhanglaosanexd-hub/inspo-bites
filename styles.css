@@ -120,48 +120,6 @@ body.detail-open .content {
   object-fit: contain;
 }
 
-.presence {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  width: fit-content;
-  margin-left: auto;
-  color: var(--muted);
-  font-size: 13px;
-  white-space: nowrap;
-}
-
-.presence-dot {
-  position: relative;
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: #7ed321;
-  box-shadow: 0 0 0 1px rgba(42, 94, 11, 0.16);
-}
-
-.presence-dot::after {
-  content: "";
-  position: absolute;
-  inset: -7px;
-  border: 1.5px solid rgba(126, 211, 33, 0.5);
-  border-radius: inherit;
-  animation: presence-pulse 1.8s ease-out infinite;
-}
-
-@keyframes presence-pulse {
-  0% {
-    opacity: 0.56;
-    transform: scale(0.42);
-  }
-
-  72%,
-  100% {
-    opacity: 0;
-    transform: scale(1.35);
-  }
-}
-
 .section-nav {
   display: grid;
   gap: 3px;
@@ -1913,7 +1871,6 @@ h1 {
   }
 
   .brand-name,
-  .presence,
   .weekly-link,
   .sidebar-rule,
   .sidebar-copyright {
