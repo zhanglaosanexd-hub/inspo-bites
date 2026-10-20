@@ -115,6 +115,7 @@ const APP_RECAP_MIN_CARD_WIDTH = 150;
 const APP_RECAP_MAX_CARD_WIDTH = 300;
 const APP_RECAP_TARGET_CARD_WIDTH = 300;
 const INITIAL_EAGER_MEDIA_COUNT = 4;
+const INSPIRATION_ARCHIVE_BASE_COUNT = 8;
 const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
@@ -875,7 +876,7 @@ function renderGallery() {
 
   const filtered = getVisibleItems();
   visibleItems = filtered;
-  itemCount.textContent = `${filtered.length} 条内容`;
+  itemCount.textContent = `${getDisplayItemCount(filtered)} 条内容`;
 
   const recentDate = getRecentDate(items.filter((item) => item.section === state.section));
   if (lastUpdated && recentDate) {
@@ -887,6 +888,12 @@ function renderGallery() {
   else if (state.viewMode === "grid") renderUniformGrid(filtered);
   else renderMasonry(filtered);
   emptyState.hidden = filtered.length > 0;
+}
+
+function getDisplayItemCount(filtered) {
+  const isInspirationTotal =
+    state.section === "inspiration" && state.filter === "All" && !state.query;
+  return filtered.length + (isInspirationTotal ? INSPIRATION_ARCHIVE_BASE_COUNT : 0);
 }
 
 function renderViewModeControls() {
