@@ -644,6 +644,7 @@ function normalizeJsonItem(item, source, doc, reference, index = 0) {
     layout: pick(item, ["layout", "布局"]) || "",
     appIcon: pick(item, ["appIcon", "icon", "App图标", "App 图标", "图标"]) || "",
     imageCount: numberOrEmpty(pick(item, ["imageCount", "count", "张数", "图片数"])),
+    appYear: numberOrEmpty(pick(item, ["appYear", "year", "年份", "年度"])),
     reference,
   });
 }

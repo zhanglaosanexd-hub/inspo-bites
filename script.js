@@ -26,6 +26,10 @@ let galleryVideoObserver = null;
 let recapGalleryObserver = null;
 let recapDetailObserver = null;
 let recapPrefetchTimer = 0;
+let recapDetailRequest = 0;
+let recapDetailController = null;
+let recapDetailCleanup = null;
+const recapDetailCache = new Map();
 const prefetchedRecapItems = new Set();
 
 const gallery = document.querySelector("#gallery");
@@ -124,7 +128,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20261010-safari-previews";
+const DATA_VERSION = "20261023-recap-archive";
 const REMOTE_CONTENT_TIMEOUT_MS = 15 * 1000;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 60 * 1000;
@@ -134,6 +138,9 @@ const CHANGELOG_REFRESH_MS = 60 * 1000;
 const MEDIA_BASE_URL = normalizeMediaBaseUrl(window.INSPO_MEDIA_BASE_URL || "");
 const MEDIA_URL_MAP = normalizeMediaUrlMap(window.INSPO_MEDIA_URL_MAP || window.INSPO_MEDIA_MAP);
 const APP_RECAP_MEDIA = window.INSPO_APP_RECAP_MEDIA || {};
+const APP_RECAP_INDEX = Array.isArray(window.INSPO_APP_RECAP_INDEX?.items)
+  ? window.INSPO_APP_RECAP_INDEX.items
+  : [];
 const APP_RECAP_LOCAL_MEDIA = new Map(
   Object.values(APP_RECAP_MEDIA).map((asset) => [asset.file, asset]),
 );
@@ -321,7 +328,7 @@ function getCollectionFingerprint() {
   const sectionFingerprint = sectionList
     .map((section) => `${section.id}:${section.title}:${section.filters.join("|")}:${section.showFilters}`)
     .join(";");
-  const itemFingerprint = items
+  const itemFingerprint = items.filter((item) => item.section === state.section)
     .map((item) =>
       [
         item.id,
@@ -455,7 +462,13 @@ function normalizeSections(data) {
 
 function normalizeItems(data) {
   const source = Array.isArray(data) ? data : data.items || [];
-  return source.map((item) =>
+  // The published archive owns its records, including when an older CMS/browser
+  // cache still contains the previous, much larger inline screenshot lists.
+  const archiveIds = new Set(APP_RECAP_INDEX.map((item) => item.id));
+  const collection = APP_RECAP_INDEX.length
+    ? [...source.filter((item) => !isAppRecapItem(item) || !archiveIds.has(item.id)), ...APP_RECAP_INDEX]
+    : source;
+  return collection.map((item) =>
     normalizeItemMedia({
       ...item,
       createdAt: item.createdAt || dateToCreatedAt(item.dateAdded),
@@ -628,6 +641,11 @@ function bindEvents() {
   detailViewer.addEventListener("click", (event) => {
     const clickedContent = event.target.closest(".detail-panel, .detail-preview");
     if (!clickedContent) closeDetail();
+  });
+  detailPreview.addEventListener("click", (event) => {
+    if (!event.target.closest("[data-recap-detail-retry]")) return;
+    event.stopPropagation();
+    renderDetail();
   });
 }
 
@@ -944,12 +962,16 @@ function getVisibleItems() {
     const inSection = item.section === state.section;
     const inFilter = matchesActiveFilter(item, activeFilter);
     const haystack =
-      `${item.title || ""} ${item.description || ""} ${item.source || ""} ${tags.join(" ")}`.toLowerCase();
+      `${item.title || ""} ${item.productName || ""} ${item.appYear || ""} ${item.description || ""} ${item.source || ""} ${tags.join(" ")}`.toLowerCase();
     const inQuery = !query || haystack.includes(query);
     return inSection && inFilter && inQuery;
   });
 
   return visible.sort((a, b) => {
+    if (state.section === "app-recap") {
+      const yearDifference = getAppRecapYear(b) - getAppRecapYear(a);
+      if (yearDifference) return yearDifference;
+    }
     if (state.sort === "title") return a.title.localeCompare(b.title);
     if (state.sort === "source") return a.source.localeCompare(b.source);
     return new Date(b.dateAdded) - new Date(a.dateAdded);
@@ -958,6 +980,9 @@ function getVisibleItems() {
 
 function matchesActiveFilter(item, activeFilter) {
   if (activeFilter === "All") return true;
+  if (isAppRecapItem(item) && /^20\d{2}$/.test(activeFilter)) {
+    return String(getAppRecapYear(item)) === activeFilter;
+  }
   if (item.section === "inspiration") {
     const source = normalizeSourceFilterValue(item.source);
     return source === activeFilter;
@@ -1011,17 +1036,20 @@ function createAppRecapCard(item, priorityIndex = 0) {
   const icon = escapeHtml(item.appIcon || item.avatar || "");
   const count = Number(item.imageCount || item.materials?.length || 0);
   const asset = getAppRecapAsset(item.cover);
-  const cover = escapeHtml(asset?.preview || item.cover || "");
-  const aspectStyle = asset ? ` style="--card-aspect: ${asset.width} / ${asset.height}"` : "";
+  const cover = escapeHtml(item.preview || asset?.preview || item.cover || "");
+  const width = Number(item.coverWidth || asset?.width);
+  const height = Number(item.coverHeight || asset?.height);
+  const dimensions = width > 0 && height > 0 ? ` width="${width}" height="${height}"` : "";
+  const aspectStyle = dimensions ? ` style="--card-aspect: ${width} / ${height}"` : "";
   const isEager = shouldEagerLoadCard(priorityIndex);
 
   return `
     <article class="work-card app-recap-card is-portrait">
       <div class="media-frame"${aspectStyle}>
-        <button class="media-link" type="button" data-detail-id="${escapeHtml(item.id)}" aria-label="查看 ${itemTitle} 详情">
+        <button class="media-link" type="button" data-detail-id="${escapeHtml(item.id)}" aria-label="查看 ${itemTitle} ${getAppRecapYear(item) || ""} 年度回顾详情">
           ${
             cover
-              ? `<img class="app-recap-cover" ${isEager ? "src" : "data-recap-gallery-src"}="${cover}" alt="${itemTitle}" loading="eager" fetchpriority="${isEager ? "high" : "auto"}" decoding="async" referrerpolicy="no-referrer" />`
+              ? `<img class="app-recap-cover" ${isEager ? "src" : "data-recap-gallery-src"}="${cover}"${dimensions} alt="${itemTitle}" loading="eager" fetchpriority="${isEager ? "high" : "auto"}" decoding="async" referrerpolicy="no-referrer" />`
               : createMediaMarkup(item, { eager: isEager })
           }
         </button>
@@ -1033,6 +1061,7 @@ function createAppRecapCard(item, priorityIndex = 0) {
             : ""
         }
       </div>
+      <div class="app-recap-card-caption"><strong>${escapeHtml(item.productName || item.title)}</strong><span>${getAppRecapYear(item) || ""}</span></div>
     </article>
   `;
 }
@@ -1111,6 +1140,7 @@ function openDetail(itemId) {
 function closeDetail(options = {}) {
   if (detailViewer.hidden || detailViewer.classList.contains("is-closing")) return;
 
+  cancelAppRecapDetailRequest();
   recapDetailObserver?.disconnect();
   recapDetailObserver = null;
   cancelAnimationFrame(detailTransitionFrame);
@@ -1150,6 +1180,7 @@ function moveDetail(direction) {
 function renderDetail() {
   const item = visibleItems[activeDetailIndex];
   if (!item) return;
+  cancelAppRecapDetailRequest();
   const isAppRecap = isAppRecapItem(item);
   recapDetailObserver?.disconnect();
   recapDetailObserver = null;
@@ -1188,39 +1219,98 @@ function renderDetail() {
     )
     .join("");
   updateDetailNav();
+  if (isAppRecap && item.materialsUrl && !recapDetailCache.has(item.id)) {
+    loadAppRecapDetail(item, recapDetailRequest);
+  }
 }
 
 function createAppRecapDetailMarkup(item) {
-  const materials = normalizeMaterials(item);
+  const materials = recapDetailCache.get(item.id) || normalizeMaterials(item);
+  if (item.materialsUrl && !recapDetailCache.has(item.id)) {
+    const cover = item.cover ? [{ file: item.cover, width: item.coverWidth, height: item.coverHeight }] : [];
+    return createAppRecapStrip(item, cover) + `<div class="app-recap-load-status" role="status">正在加载页面…</div>`;
+  }
   if (!materials.length) return createMediaMarkup(item);
+  return createAppRecapStrip(item, materials);
+}
 
+function createAppRecapStrip(item, materials) {
   return `
     <div class="app-recap-strip" tabindex="0" aria-label="${escapeHtml(item.title)} 年度回顾截图">
       ${materials
         .map((material, index) => {
           const asset = getAppRecapAsset(material.file);
-          const dimensions = asset ? ` width="${asset.width}" height="${asset.height}"` : "";
-          const previewStyle = asset?.preview
-            ? `; background-image: url(${escapeHtml(JSON.stringify(asset.preview))}); background-size: 100% 100%`
+          const width = Number(material.width || asset?.width);
+          const height = Number(material.height || asset?.height);
+          const dimensions = width > 0 && height > 0 ? ` width="${width}" height="${height}"` : "";
+          const preview = index === 0 ? item.preview || asset?.preview : "";
+          const previewStyle = preview
+            ? `; background-image: url(${escapeHtml(JSON.stringify(preview))}); background-size: 100% 100%`
             : "";
-          const aspectStyle = asset ? ` style="--shot-aspect: ${asset.width} / ${asset.height}${previewStyle}"` : "";
+          const aspectStyle = dimensions ? ` style="--shot-aspect: ${width} / ${height}${previewStyle}"` : "";
           return `
             <figure class="app-recap-shot"${aspectStyle}>
               <img
                 class="app-recap-shot-image"
                 ${index === 0 ? "src" : "data-recap-src"}="${escapeHtml(material.file)}"${dimensions}
-                alt="${escapeHtml(`${item.title} 截图 ${index + 1}`)}"
+                alt="${escapeHtml(material.caption || `${item.title} ${getAppRecapYear(item)} 截图 ${index + 1}`)}"
                 loading="eager"
                 fetchpriority="${index === 0 ? "high" : "auto"}"
                 decoding="async"
                 referrerpolicy="no-referrer"
               />
+              <button class="app-recap-image-retry" type="button" hidden>图片加载失败，点击重试</button>
             </figure>
           `;
         })
         .join("")}
     </div>
   `;
+}
+
+function cancelAppRecapDetailRequest() {
+  recapDetailRequest += 1;
+  recapDetailController?.abort();
+  recapDetailController = null;
+  recapDetailCleanup?.();
+  recapDetailCleanup = null;
+}
+
+async function loadAppRecapDetail(item, requestId) {
+  const controller = new AbortController();
+  recapDetailController = controller;
+  const timeoutId = window.setTimeout(() => controller.abort(), 15000);
+  const isCurrent = () => recapDetailRequest === requestId && visibleItems[activeDetailIndex]?.id === item.id;
+  try {
+    const response = await fetch(item.materialsUrl, { signal: controller.signal, cache: "force-cache" });
+    if (!response.ok) throw new Error("页面清单加载失败");
+    const data = await response.json();
+    const materials = normalizeMaterials(data).filter((material) => !material.kind || material.kind === "image")
+      .map((material) => ({ ...material, file: resolveMediaUrl(material.file) }));
+    if (!materials.length) throw new Error("页面清单为空");
+    recapDetailCache.set(item.id, materials);
+    if (!isCurrent()) return;
+    recapDetailCleanup?.();
+    recapDetailCleanup = null;
+    recapDetailObserver?.disconnect();
+    recapDetailObserver = null;
+    detailPreview.innerHTML = createAppRecapStrip(item, materials);
+    bindAppRecapDetailImages(detailPreview);
+    bindAppRecapImageRatios(detailPreview);
+  } catch {
+    if (!isCurrent()) return;
+    const status = detailPreview.querySelector(".app-recap-load-status");
+    if (status) {
+      status.innerHTML = `页面暂未加载成功 <button type="button" data-recap-detail-retry>重试</button>`;
+    }
+  } finally {
+    window.clearTimeout(timeoutId);
+    if (recapDetailController === controller) recapDetailController = null;
+  }
+}
+
+function getAppRecapYear(item) {
+  return Number(item.appYear) || Number(String(item.source || item.description || "").match(/20\d{2}/)?.[0]) || 0;
 }
 
 function getAppRecapAsset(file) {
@@ -1233,6 +1323,17 @@ function bindAppRecapGalleryImages() {
     delete image.dataset.recapGallerySrc;
   };
   const pending = gallery.querySelectorAll("img[data-recap-gallery-src]");
+  gallery.querySelectorAll(".app-recap-cover").forEach((image) => {
+    const failed = () => {
+      if (!image.hasAttribute("src")) return;
+      const frame = image.closest(".media-frame");
+      frame?.classList.add("has-recap-cover-error");
+      image.hidden = true;
+    };
+    image.addEventListener("error", failed, { once: true });
+    image.addEventListener("load", () => image.closest(".media-frame")?.classList.remove("has-recap-cover-error"), { once: true });
+    if (image.hasAttribute("src") && image.complete && !image.naturalWidth) failed();
+  });
   if (typeof IntersectionObserver !== "function") {
     pending.forEach((image) => { image.loading = "lazy"; load(image); });
     return;
@@ -1253,6 +1354,14 @@ function prefetchAppRecapDetail(itemId) {
   const item = items.find((candidate) => candidate.id === itemId);
   if (!item || !isAppRecapItem(item)) return;
   prefetchedRecapItems.add(itemId);
+  if (item.materialsUrl) {
+    if (item.cover) {
+      const image = new Image();
+      image.fetchPriority = "low";
+      image.src = item.cover;
+    }
+    return;
+  }
   normalizeMaterials(item).slice(0, 1).forEach((material) => {
     if (!getAppRecapAsset(material.file)) return;
     const image = new Image();
@@ -1264,48 +1373,136 @@ function prefetchAppRecapDetail(itemId) {
 function bindAppRecapDetailImages(root) {
   const strip = root.querySelector(".app-recap-strip");
   if (!strip) return;
+  const requestId = recapDetailRequest;
+  const queue = [];
+  const queued = new Set();
+  let activeLoads = 0;
+  let stopped = false;
+  let scrollFrame = 0;
+  let observer = null;
+  const isCurrent = () => !stopped && requestId === recapDetailRequest && strip.isConnected;
+  const images = Array.from(strip.querySelectorAll("img"));
+  const resetError = (image) => {
+    image.closest(".app-recap-shot").classList.remove("has-image-error");
+    image.closest(".app-recap-shot").querySelector(".app-recap-image-retry").hidden = true;
+  };
+  const releaseDistantImage = (image) => {
+    if (image.dataset.recapInRange !== "false" || image.dataset.recapLoading === "true") return;
+    if (image.hasAttribute("src")) {
+      image.dataset.recapSrc = image.dataset.recapSource;
+      image.removeAttribute("src");
+    }
+    resetError(image);
+  };
+  const pump = () => {
+    if (!isCurrent()) return;
+    while (activeLoads < 3 && queue.length) {
+      const image = queue.shift();
+      queued.delete(image);
+      if (!image.dataset.recapSrc || image.dataset.recapInRange === "false" || !image.isConnected) continue;
+      activeLoads += 1;
+      image.dataset.recapLoading = "true";
+      resetError(image);
+      let settled = false;
+      const release = () => {
+        if (settled) return;
+        settled = true;
+        activeLoads -= 1;
+        delete image.dataset.recapLoading;
+        releaseDistantImage(image);
+        pump();
+      };
+      image.addEventListener("load", release, { once: true });
+      image.addEventListener("error", release, { once: true });
+      image.src = image.dataset.recapSrc;
+      delete image.dataset.recapSrc;
+    }
+  };
   const loadImage = (image) => {
     const source = image.dataset.recapSrc;
-    if (!source) return;
-    image.src = source;
-    delete image.dataset.recapSrc;
+    if (!source || queued.has(image)) return;
+    queued.add(image);
+    queue.push(image);
+    pump();
+  };
+  const setInRange = (image, inRange) => {
+    image.dataset.recapInRange = String(inRange);
+    if (inRange) {
+      loadImage(image);
+      return;
+    }
+    const queueIndex = queue.indexOf(image);
+    if (queueIndex >= 0) queue.splice(queueIndex, 1);
+    queued.delete(image);
+    // Let ongoing downloads finish. Their completion handler releases the
+    // decoded image when it is still outside the small viewport buffer.
+    releaseDistantImage(image);
   };
   if (typeof IntersectionObserver === "function") {
-    const observer = new IntersectionObserver((entries) => {
+    observer = new IntersectionObserver((entries) => {
+      if (!isCurrent()) return;
       entries.forEach((entry) => {
-        if (!entry.isIntersecting || !entry.target.isConnected) return;
-        loadImage(entry.target);
-        observer.unobserve(entry.target);
+        if (!entry.target.isConnected) return;
+        setInRange(entry.target, entry.isIntersecting);
       });
     }, { root: strip, rootMargin: "0px 240px", threshold: 0 });
     recapDetailObserver = observer;
   }
-  const images = Array.from(strip.querySelectorAll("img"));
   images.forEach((image) => {
-    image.addEventListener("error", () => {
-      // Retry a transient CDN/network failure once; retain the original screenshot.
-      const source = image.getAttribute("src");
-      if (!source || image.dataset.recapRetried) return;
-      image.dataset.recapRetried = "true";
-      image.src = `${source}${source.includes("?") ? "&" : "?"}retry=1`;
+    image.dataset.recapSource = image.getAttribute("src") || image.dataset.recapSrc;
+    const figure = image.closest(".app-recap-shot");
+    const retry = figure.querySelector(".app-recap-image-retry");
+    const failed = () => {
+      // Removing src intentionally releases distant decoded screenshots.
+      if (!image.hasAttribute("src")) return;
+      figure.classList.add("has-image-error");
+      retry.hidden = false;
+    };
+    image.addEventListener("error", failed);
+    image.addEventListener("load", () => {
+      figure.classList.remove("has-image-error");
+      retry.hidden = true;
     });
+    retry.addEventListener("click", () => {
+      const source = image.getAttribute("src");
+      if (!source || !isCurrent()) return;
+      image.dataset.recapSource = `${source.split("?")[0]}?retry=${Date.now()}`;
+      image.dataset.recapSrc = image.dataset.recapSource;
+      loadImage(image);
+    });
+    if (image.hasAttribute("src") && image.complete && !image.naturalWidth) failed();
   });
   const first = images[0];
-  const activeObserver = recapDetailObserver;
-  const loadAdjacent = () => {
-    if (!first?.isConnected) return;
-    if (activeObserver && recapDetailObserver !== activeObserver) return;
+  const syncVisibleImages = () => {
+    scrollFrame = 0;
+    if (!isCurrent()) return;
+    const bounds = strip.getBoundingClientRect();
     images.forEach((image) => {
-      if (!image.dataset.recapSrc) return;
-      if (activeObserver) activeObserver.observe(image);
-      else {
-        image.loading = "lazy";
-        loadImage(image);
-      }
+      const rectangle = image.closest(".app-recap-shot").getBoundingClientRect();
+      setInRange(image, rectangle.right >= bounds.left - 240 && rectangle.left <= bounds.right + 240);
     });
   };
+  const onScroll = () => {
+    if (!scrollFrame) scrollFrame = requestAnimationFrame(syncVisibleImages);
+  };
+  const loadAdjacent = () => {
+    if (!isCurrent()) return;
+    if (observer) images.forEach((image) => observer.observe(image));
+    else {
+      syncVisibleImages();
+      strip.addEventListener("scroll", onScroll, { passive: true });
+    }
+  };
+  recapDetailCleanup = () => {
+    stopped = true;
+    queue.length = 0;
+    queued.clear();
+    observer?.disconnect();
+    cancelAnimationFrame(scrollFrame);
+    strip.removeEventListener("scroll", onScroll);
+  };
   // Finish the first screenshot before adjacent images compete for bandwidth.
-  if (first?.complete && first.naturalWidth) loadAdjacent();
+  if (!first || first.complete) loadAdjacent();
   else {
     first?.addEventListener("load", loadAdjacent, { once: true });
     first?.addEventListener("error", loadAdjacent, { once: true });
@@ -1395,6 +1592,14 @@ function escapeHtml(value) {
 }
 
 function getDetailRows(item) {
+  if (isAppRecapItem(item)) {
+    return [
+      ["产品", item.productName || item.title],
+      ["年份", String(getAppRecapYear(item) || "")],
+      ["类别", item.type || "其他"],
+      ["页面", `${Number(item.imageCount || normalizeMaterials(item).length)} 张`],
+    ];
+  }
   if (item.details?.length) return item.details.map((row) => [row.label, row.value]);
 
   return [
@@ -1418,6 +1623,10 @@ function getFilterLabel(filter) {
 }
 
 function renderMasonry(filtered) {
+  if (state.section === "app-recap") {
+    renderAppRecapYearGroups(filtered);
+    return;
+  }
   gallery.className = "gallery is-masonry";
   const galleryMetrics = getGalleryMetrics();
   const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
@@ -1436,6 +1645,40 @@ function renderMasonry(filtered) {
   gallery.innerHTML = columns
     .map((column) => `<div class="gallery-column">${column.cards.join("")}</div>`)
     .join("");
+  bindVideoFallbacks(gallery);
+  bindImageFallbacks(gallery);
+  bindGalleryMediaRatios(gallery);
+  bindAppRecapImageRatios(gallery);
+}
+
+function renderAppRecapYearGroups(filtered) {
+  const galleryMetrics = getGalleryMetrics();
+  const yearGroups = new Map();
+  filtered.forEach((item) => {
+    const year = getAppRecapYear(item);
+    if (!yearGroups.has(year)) yearGroups.set(year, []);
+    yearGroups.get(year).push(item);
+  });
+  let priorityIndex = 0;
+  gallery.className = "gallery is-masonry is-app-recap-years";
+  gallery.style.maxWidth = "";
+  gallery.innerHTML = Array.from(yearGroups, ([year, yearItems]) => {
+    const columnCount = Math.min(galleryMetrics.columnCount, yearItems.length);
+    const columns = Array.from({ length: columnCount }, () => ({ height: 0, cards: [] }));
+    yearItems.forEach((item) => {
+      const target = columns.reduce((shortest, column) => column.height < shortest.height ? column : shortest);
+      target.cards.push(createCard(item, priorityIndex++));
+      target.height += getCardEstimate(item);
+    });
+    return `
+      <section class="app-recap-year-group" data-app-year="${year}" aria-label="${year} 年度回顾">
+        <div class="app-recap-year-heading"><h2>${year}</h2><span>${yearItems.length} 个产品</span></div>
+        <div class="app-recap-year-columns" style="--gallery-columns: ${columnCount}">
+          ${columns.map((column) => `<div class="gallery-column">${column.cards.join("")}</div>`).join("")}
+        </div>
+      </section>
+    `;
+  }).join("");
   bindVideoFallbacks(gallery);
   bindImageFallbacks(gallery);
   bindGalleryMediaRatios(gallery);

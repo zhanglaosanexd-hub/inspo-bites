@@ -29,14 +29,33 @@ In production, `/admin/` falls back to Decap CMS and writes changes back to the 
 
 ## App Recap media
 
-App Recap screenshots are mirrored as WebP in `assets/app-recap-cache/` so readers
-do not depend on the original image host. `data/app-recap-media.js` maps the
-original URLs (including previously cached content) to local screenshots,
-smaller gallery covers, and image dimensions. To mirror newly added App Recap
-records, run `python3 scripts/cache-app-recap-media.py` with Pillow installed,
-then commit the generated assets and manifest. Bump the manifest query string in
-`index.html` when publishing a changed manifest. Screenshot order and captions
-remain in the content data; the media manifest only changes file delivery.
+The 2022–2025 archive uses a lightweight `data/app-recap-index.js` catalog.
+Each card identifies its product and report year; year groups are displayed
+newest first. Screenshot metadata lives in `data/app-recap-details/<id>.json`
+and is fetched only when that product is opened. The gallery loads small WebP
+covers; the detail strip keeps only nearby screenshots loaded, with a maximum
+of three simultaneous image downloads and explicit retry controls.
+
+To rebuild the local 2022–2024 source archive after adding or changing material:
+
+```bash
+python3 scripts/import-app-recap-archive.py --source-root ../年度报告素材
+node scripts/validate-app-recap-archive.mjs
+```
+
+The importer preserves the existing 2025 images and IDs, creates year-specific
+WebP assets in `assets/app-recap-archive/`, and records all source mappings in
+`data/app-recap-details/import-report.json`. Keep the PNG/video originals in
+the local source archive. Publish the generated image assets, catalog and
+per-product JSON together, then bump their page cache version when changing
+the archive. Product variants are combined within each year; separate years
+remain separate collections. Original videos are not uploaded.
+
+The preserved 2025 WebP screenshots remain in `assets/app-recap-cache/` so
+readers do not depend on the original image host. `data/app-recap-media.js`
+retains the original cover/icon aliases for compatibility with cached pages.
+Current archive imports use the importer above; screenshot order, captions and
+dimensions are saved in each product's detail JSON.
 
 ## Yuque CMS
 

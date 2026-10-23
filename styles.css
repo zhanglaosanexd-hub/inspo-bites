@@ -624,6 +624,40 @@ h1 {
   gap: 14px;
 }
 
+.gallery.is-app-recap-years {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 30px;
+}
+
+.app-recap-year-group {
+  min-width: 0;
+}
+
+.app-recap-year-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.app-recap-year-heading h2 {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.app-recap-year-heading span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.app-recap-year-columns {
+  display: grid;
+  grid-template-columns: repeat(var(--gallery-columns), minmax(0, 1fr));
+  align-items: start;
+  gap: 14px;
+}
+
 .gallery.is-uniform,
 .gallery.is-single {
   grid-template-columns: repeat(var(--gallery-columns, 3), minmax(0, 1fr));
@@ -690,6 +724,42 @@ h1 {
 
 .app-recap-card .media-frame {
   background: transparent;
+}
+
+.app-recap-card-caption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 40px;
+  padding: 10px 12px;
+  background: var(--surface);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.app-recap-card-caption strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.app-recap-card-caption span {
+  flex-shrink: 0;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.has-recap-cover-error .media-link::after {
+  content: "封面暂未加载，点击查看页面";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  padding: 20px;
+  color: var(--muted);
+  background: #efefeb;
+  font-size: 13px;
+  text-align: center;
 }
 
 .gallery.is-uniform .work-card.app-recap-card .media-frame::before,
@@ -1790,6 +1860,7 @@ h1 {
 }
 
 .app-recap-shot {
+  position: relative;
   flex: 0 0 auto;
   aspect-ratio: var(--shot-aspect, 9 / 16);
   height: min(72vh, 760px);
@@ -1807,6 +1878,45 @@ h1 {
   height: 100%;
   object-fit: contain;
   object-position: top center;
+}
+
+.app-recap-load-status {
+  margin: -14px 24px 12px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.app-recap-load-status button,
+.app-recap-image-retry {
+  border: 1px solid rgba(23, 23, 23, 0.2);
+  border-radius: 6px;
+  padding: 8px 12px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.96);
+  font: inherit;
+  cursor: pointer;
+}
+
+.app-recap-load-status button {
+  margin-left: 8px;
+}
+
+.app-recap-image-retry {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: max-content;
+  max-width: calc(100% - 24px);
+  transform: translate(-50%, -50%);
+  font-size: 13px;
+}
+
+.app-recap-image-retry[hidden] {
+  display: none;
+}
+
+.app-recap-shot.has-image-error img {
+  visibility: hidden;
 }
 
 .visually-hidden {
