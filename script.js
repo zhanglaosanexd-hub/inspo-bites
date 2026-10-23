@@ -1282,7 +1282,9 @@ async function loadAppRecapDetail(item, requestId) {
   const timeoutId = window.setTimeout(() => controller.abort(), 15000);
   const isCurrent = () => recapDetailRequest === requestId && visibleItems[activeDetailIndex]?.id === item.id;
   try {
-    const response = await fetch(item.materialsUrl, { signal: controller.signal, cache: "force-cache" });
+    const detailUrl = new URL(item.materialsUrl, document.baseURI);
+    detailUrl.searchParams.set("v", DATA_VERSION);
+    const response = await fetch(detailUrl.href, { signal: controller.signal, cache: "force-cache" });
     if (!response.ok) throw new Error("页面清单加载失败");
     const data = await response.json();
     const materials = normalizeMaterials(data).filter((material) => !material.kind || material.kind === "image")
