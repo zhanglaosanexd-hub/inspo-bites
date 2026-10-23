@@ -1,6 +1,7 @@
 const state = {
   section: "inspiration",
   filter: "All",
+  appRecapYear: "All",
   query: "",
   sort: "recent",
   viewMode: "masonry",
@@ -36,6 +37,8 @@ const gallery = document.querySelector("#gallery");
 const sectionNav = document.querySelector(".section-nav");
 const emptyState = document.querySelector("#empty-state");
 const filterStrip = document.querySelector("#filter-strip");
+const yearFilterRow = document.querySelector("#year-filter-row");
+const yearFilterStrip = document.querySelector("#year-filter-strip");
 const pageTitle = document.querySelector("#page-title");
 const pageEyebrow = document.querySelector("#page-eyebrow");
 const pageDescription = document.querySelector("#page-description");
@@ -128,7 +131,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20261023-recap-archive";
+const DATA_VERSION = "20261023-recap-year-tabs";
 const REMOTE_CONTENT_TIMEOUT_MS = 15 * 1000;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 60 * 1000;
@@ -554,6 +557,7 @@ function switchSection(sectionId, { updateUrl = true } = {}) {
   closeDetail({ immediate: true });
   state.section = sectionId;
   state.filter = "All";
+  state.appRecapYear = "All";
   state.query = "";
   searchInput.value = "";
 
@@ -567,6 +571,16 @@ function switchSection(sectionId, { updateUrl = true } = {}) {
 }
 
 function bindEvents() {
+  yearFilterStrip.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-year]");
+    if (!button || state.section !== "app-recap" || button.dataset.year === state.appRecapYear) return;
+    closeDetail({ immediate: true });
+    state.appRecapYear = button.dataset.year;
+    renderYearFilters();
+    yearFilterStrip.querySelector(`[data-year="${state.appRecapYear}"]`)?.focus({ preventScroll: true });
+    renderGallery();
+  });
+
   sectionNav.addEventListener("click", (event) => {
     const button = event.target.closest(".section-link");
     if (!button) return;
@@ -887,14 +901,18 @@ function render() {
     filterStrip.innerHTML = "";
   }
 
+  renderYearFilters();
   renderGallery();
 }
 
 function renderFilters(filters) {
-  filterStrip.innerHTML = filters
+  const categoryFilters = state.section === "app-recap"
+    ? filters.filter((filter) => !/^20\d{2}$/.test(filter))
+    : filters;
+  filterStrip.innerHTML = categoryFilters
     .map(
       (filter) => `
-        <button class="filter-chip ${filter === state.filter ? "is-active" : ""}" type="button" data-filter="${filter}">
+        <button class="filter-chip ${filter === state.filter ? "is-active" : ""}" type="button" data-filter="${filter}" aria-pressed="${filter === state.filter}">
           ${escapeHtml(getFilterLabel(filter))}
         </button>
       `,
@@ -910,6 +928,24 @@ function renderFilters(filters) {
       renderGallery();
     });
   });
+}
+
+function renderYearFilters() {
+  const showYears = state.section === "app-recap";
+  yearFilterRow.hidden = !showYears;
+  if (!showYears) {
+    yearFilterStrip.innerHTML = "";
+    return;
+  }
+  const years = [...new Set(items.filter(isAppRecapItem).map(getAppRecapYear).filter(Boolean))]
+    .sort((a, b) => b - a).map(String);
+  if (state.appRecapYear !== "All" && !years.includes(state.appRecapYear)) state.appRecapYear = "All";
+  yearFilterStrip.innerHTML = ["All", ...years].map((year) => `
+    <button class="filter-chip year-filter-chip ${year === state.appRecapYear ? "is-active" : ""}"
+      type="button" data-year="${year}" aria-pressed="${year === state.appRecapYear}">
+      ${year === "All" ? "全部年份" : year}
+    </button>
+  `).join("");
 }
 
 function renderGallery() {
@@ -961,10 +997,12 @@ function getVisibleItems() {
     const tags = normalizeList(item.tags);
     const inSection = item.section === state.section;
     const inFilter = matchesActiveFilter(item, activeFilter);
+    const inYear = state.section !== "app-recap" || state.appRecapYear === "All"
+      || String(getAppRecapYear(item)) === state.appRecapYear;
     const haystack =
       `${item.title || ""} ${item.productName || ""} ${item.appYear || ""} ${item.description || ""} ${item.source || ""} ${tags.join(" ")}`.toLowerCase();
     const inQuery = !query || haystack.includes(query);
-    return inSection && inFilter && inQuery;
+    return inSection && inFilter && inYear && inQuery;
   });
 
   return visible.sort((a, b) => {
@@ -980,9 +1018,6 @@ function getVisibleItems() {
 
 function matchesActiveFilter(item, activeFilter) {
   if (activeFilter === "All") return true;
-  if (isAppRecapItem(item) && /^20\d{2}$/.test(activeFilter)) {
-    return String(getAppRecapYear(item)) === activeFilter;
-  }
   if (item.section === "inspiration") {
     const source = normalizeSourceFilterValue(item.source);
     return source === activeFilter;

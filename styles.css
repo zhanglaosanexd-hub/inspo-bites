@@ -536,6 +536,38 @@ h1 {
   pointer-events: none;
 }
 
+.year-filter-row {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.year-filter-row[hidden] {
+  display: none;
+}
+
+.year-filter-label {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.year-filter-strip {
+  display: flex;
+  gap: 7px;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 2px;
+  scrollbar-width: none;
+}
+
+.year-filter-strip::-webkit-scrollbar {
+  display: none;
+}
+
 .filter-chip {
   flex: 0 0 auto;
   min-height: 32px;

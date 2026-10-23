@@ -9,7 +9,7 @@
     />
     <title>Inspo.design - 设计与 UX 收藏</title>
     <link rel="icon" type="image/png" href="./assets/inspo-bites-logo.png?v=20260710-presence-heartbeat" />
-    <link rel="stylesheet" href="./styles.css?v=20261023-recap-archive" />
+    <link rel="stylesheet" href="./styles.css?v=20261023-recap-year-tabs" />
   </head>
   <body>
     <canvas class="click-spark-canvas" id="click-spark-canvas" aria-hidden="true"></canvas>
@@ -169,6 +169,10 @@
               </svg>
             </button>
           </div>
+          <div class="year-filter-row" id="year-filter-row" hidden>
+            <span class="year-filter-label">年份</span>
+            <div class="year-filter-strip" id="year-filter-strip" role="group" aria-label="年份筛选"></div>
+          </div>
         </div>
 
         <label class="sort-box visually-hidden">
@@ -265,8 +269,8 @@
     <script defer src="./data/app-recap-media.js?v=20261023-recap-archive"></script>
     <script defer src="./data/app-recap-index.js?v=20261023-recap-archive"></script>
     <script defer src="./data/media-config.js?v=20261010-safari-previews"></script>
-    <script defer src="./data/content.js?v=20261023-recap-archive"></script>
+    <script defer src="./data/content.js?v=20261023-recap-year-tabs"></script>
     <script defer src="./data/changelog.js?v=20260902-latest-on-entry"></script>
-    <script type="module" src="./script.js?v=20261023-recap-archive"></script>
+    <script type="module" src="./script.js?v=20261023-recap-year-tabs"></script>
   </body>
 </html>
