@@ -27,6 +27,17 @@ The local admin can edit JSON content and upload media into `assets/uploads`.
 
 In production, `/admin/` falls back to Decap CMS and writes changes back to the Git repository after GitHub authentication is configured.
 
+## App Recap media
+
+App Recap screenshots are mirrored as WebP in `assets/app-recap-cache/` so readers
+do not depend on the original image host. `data/app-recap-media.js` maps the
+original URLs (including previously cached content) to local screenshots,
+smaller gallery covers, and image dimensions. To mirror newly added App Recap
+records, run `python3 scripts/cache-app-recap-media.py` with Pillow installed,
+then commit the generated assets and manifest. Bump the manifest query string in
+`index.html` when publishing a changed manifest. Screenshot order and captions
+remain in the content data; the media manifest only changes file delivery.
+
 ## Yuque CMS
 
 The production site can read content from Yuque through the Cloudflare Pages Function at `/api/content`.

@@ -23,6 +23,10 @@ let detailCloseTimer = 0;
 let changelogTransitionFrame = 0;
 let activeChangelog = null;
 let galleryVideoObserver = null;
+let recapGalleryObserver = null;
+let recapDetailObserver = null;
+let recapPrefetchTimer = 0;
+const prefetchedRecapItems = new Set();
 
 const gallery = document.querySelector("#gallery");
 const sectionNav = document.querySelector(".section-nav");
@@ -129,6 +133,10 @@ const CHANGELOG_READ_KEY = "inspo-changelog-read-version";
 const CHANGELOG_REFRESH_MS = 60 * 1000;
 const MEDIA_BASE_URL = normalizeMediaBaseUrl(window.INSPO_MEDIA_BASE_URL || "");
 const MEDIA_URL_MAP = normalizeMediaUrlMap(window.INSPO_MEDIA_URL_MAP || window.INSPO_MEDIA_MAP);
+const APP_RECAP_MEDIA = window.INSPO_APP_RECAP_MEDIA || {};
+const APP_RECAP_LOCAL_MEDIA = new Map(
+  Object.values(APP_RECAP_MEDIA).map((asset) => [asset.file, asset]),
+);
 
 async function init() {
   const collectionData = await loadCollectionData();
@@ -506,6 +514,8 @@ function resolveMediaUrl(value) {
   const assetPath = normalizeLocalAssetPath(raw);
   const mapped = MEDIA_URL_MAP.get(raw) || (assetPath ? MEDIA_URL_MAP.get(assetPath) : "");
   if (mapped) return mapped;
+  const recapAsset = APP_RECAP_MEDIA[raw];
+  if (recapAsset) return resolveMediaUrl(recapAsset.file);
   if (MEDIA_BASE_URL && assetPath) return `${MEDIA_BASE_URL}/${assetPath}`;
 
   return raw;
@@ -585,6 +595,21 @@ function bindEvents() {
     if (!trigger) return;
 
     openDetail(trigger.dataset.detailId);
+  });
+
+  const warmRecap = (event) => {
+    const trigger = event.target.closest("[data-detail-id]");
+    if (!trigger || state.section !== "app-recap") return;
+    clearTimeout(recapPrefetchTimer);
+    const delay = event.type === "pointerover" ? 120 : 0;
+    recapPrefetchTimer = window.setTimeout(() => prefetchAppRecapDetail(trigger.dataset.detailId), delay);
+  };
+  gallery.addEventListener("pointerover", warmRecap);
+  gallery.addEventListener("focusin", warmRecap);
+  gallery.addEventListener("pointerdown", warmRecap);
+  gallery.addEventListener("pointerout", (event) => {
+    const trigger = event.target.closest("[data-detail-id]");
+    if (trigger && !trigger.contains(event.relatedTarget)) clearTimeout(recapPrefetchTimer);
   });
 
   document.addEventListener("keydown", (event) => {
@@ -872,6 +897,11 @@ function renderFilters(filters) {
 function renderGallery() {
   galleryVideoObserver?.disconnect();
   galleryVideoObserver = null;
+  recapGalleryObserver?.disconnect();
+  recapGalleryObserver = null;
+  gallery.querySelectorAll(".app-recap-card img[src]").forEach((image) => {
+    if (!image.complete) image.removeAttribute("src");
+  });
   gallery.querySelectorAll("video").forEach((video) => video.pause());
 
   const filtered = getVisibleItems();
@@ -887,6 +917,7 @@ function renderGallery() {
   if (state.viewMode === "single") renderSingleColumn(filtered);
   else if (state.viewMode === "grid") renderUniformGrid(filtered);
   else renderMasonry(filtered);
+  if (state.section === "app-recap") bindAppRecapGalleryImages();
   emptyState.hidden = filtered.length > 0;
 }
 
@@ -979,16 +1010,18 @@ function createAppRecapCard(item, priorityIndex = 0) {
   const category = escapeHtml(item.type || item.tags?.[0] || "其他");
   const icon = escapeHtml(item.appIcon || item.avatar || "");
   const count = Number(item.imageCount || item.materials?.length || 0);
-  const cover = escapeHtml(item.cover || "");
+  const asset = getAppRecapAsset(item.cover);
+  const cover = escapeHtml(asset?.preview || item.cover || "");
+  const aspectStyle = asset ? ` style="--card-aspect: ${asset.width} / ${asset.height}"` : "";
   const isEager = shouldEagerLoadCard(priorityIndex);
 
   return `
     <article class="work-card app-recap-card is-portrait">
-      <div class="media-frame">
+      <div class="media-frame"${aspectStyle}>
         <button class="media-link" type="button" data-detail-id="${escapeHtml(item.id)}" aria-label="查看 ${itemTitle} 详情">
           ${
             cover
-              ? `<img class="app-recap-cover" src="${cover}" alt="${itemTitle}" loading="${isEager ? "eager" : "lazy"}" fetchpriority="${isEager ? "high" : "auto"}" referrerpolicy="no-referrer" />`
+              ? `<img class="app-recap-cover" ${isEager ? "src" : "data-recap-gallery-src"}="${cover}" alt="${itemTitle}" loading="eager" fetchpriority="${isEager ? "high" : "auto"}" decoding="async" referrerpolicy="no-referrer" />`
               : createMediaMarkup(item, { eager: isEager })
           }
         </button>
@@ -996,7 +1029,7 @@ function createAppRecapCard(item, priorityIndex = 0) {
         <span class="app-recap-count">${count}张</span>
         ${
           icon
-            ? `<span class="app-recap-icon"><img src="${icon}" alt="" loading="lazy" referrerpolicy="no-referrer" /></span>`
+            ? `<span class="app-recap-icon"><img ${isEager ? "src" : "data-recap-gallery-src"}="${icon}" alt="" loading="eager" referrerpolicy="no-referrer" /></span>`
             : ""
         }
       </div>
@@ -1078,6 +1111,8 @@ function openDetail(itemId) {
 function closeDetail(options = {}) {
   if (detailViewer.hidden || detailViewer.classList.contains("is-closing")) return;
 
+  recapDetailObserver?.disconnect();
+  recapDetailObserver = null;
   cancelAnimationFrame(detailTransitionFrame);
   clearTimeout(detailCloseTimer);
 
@@ -1116,6 +1151,8 @@ function renderDetail() {
   const item = visibleItems[activeDetailIndex];
   if (!item) return;
   const isAppRecap = isAppRecapItem(item);
+  recapDetailObserver?.disconnect();
+  recapDetailObserver = null;
 
   detailViewer.classList.toggle("is-app-recap-detail", isAppRecap);
   detailPreview.classList.toggle("is-app-recap-preview", isAppRecap);
@@ -1127,6 +1164,7 @@ function renderDetail() {
   detailDescription.hidden = isAppRecap || !(item.longDescription || item.description);
   detailDescription.textContent = isAppRecap ? "" : item.longDescription || item.description;
   detailPreview.innerHTML = isAppRecap ? createAppRecapDetailMarkup(item) : createMediaMarkup(item, { eager: true });
+  if (isAppRecap) bindAppRecapDetailImages(detailPreview);
   bindVideoFallbacks(detailPreview);
   bindImageFallbacks(detailPreview);
   bindAppRecapImageRatios(detailPreview);
@@ -1157,25 +1195,121 @@ function createAppRecapDetailMarkup(item) {
   if (!materials.length) return createMediaMarkup(item);
 
   return `
-    <div class="app-recap-strip" aria-label="${escapeHtml(item.title)} 年度回顾截图">
+    <div class="app-recap-strip" tabindex="0" aria-label="${escapeHtml(item.title)} 年度回顾截图">
       ${materials
-        .map(
-          (material, index) => `
-            <figure class="app-recap-shot">
+        .map((material, index) => {
+          const asset = getAppRecapAsset(material.file);
+          const dimensions = asset ? ` width="${asset.width}" height="${asset.height}"` : "";
+          const previewStyle = asset?.preview
+            ? `; background-image: url(${escapeHtml(JSON.stringify(asset.preview))}); background-size: 100% 100%`
+            : "";
+          const aspectStyle = asset ? ` style="--shot-aspect: ${asset.width} / ${asset.height}${previewStyle}"` : "";
+          return `
+            <figure class="app-recap-shot"${aspectStyle}>
               <img
                 class="app-recap-shot-image"
-                src="${escapeHtml(material.file)}"
+                ${index === 0 ? "src" : "data-recap-src"}="${escapeHtml(material.file)}"${dimensions}
                 alt="${escapeHtml(`${item.title} 截图 ${index + 1}`)}"
-                loading="${index < 3 ? "eager" : "lazy"}"
-                fetchpriority="${index < 3 ? "high" : "auto"}"
+                loading="eager"
+                fetchpriority="${index === 0 ? "high" : "auto"}"
+                decoding="async"
                 referrerpolicy="no-referrer"
               />
             </figure>
-          `,
-        )
+          `;
+        })
         .join("")}
     </div>
   `;
+}
+
+function getAppRecapAsset(file) {
+  return APP_RECAP_MEDIA[file] || APP_RECAP_LOCAL_MEDIA.get(file);
+}
+
+function bindAppRecapGalleryImages() {
+  const load = (image) => {
+    image.src = image.dataset.recapGallerySrc;
+    delete image.dataset.recapGallerySrc;
+  };
+  const pending = gallery.querySelectorAll("img[data-recap-gallery-src]");
+  if (typeof IntersectionObserver !== "function") {
+    pending.forEach((image) => { image.loading = "lazy"; load(image); });
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting || !entry.target.isConnected) return;
+      load(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: "120px 0px", threshold: 0 });
+  pending.forEach((image) => observer.observe(image));
+  recapGalleryObserver = observer;
+}
+
+function prefetchAppRecapDetail(itemId) {
+  if (navigator.connection?.saveData || prefetchedRecapItems.has(itemId)) return;
+  const item = items.find((candidate) => candidate.id === itemId);
+  if (!item || !isAppRecapItem(item)) return;
+  prefetchedRecapItems.add(itemId);
+  normalizeMaterials(item).slice(0, 1).forEach((material) => {
+    if (!getAppRecapAsset(material.file)) return;
+    const image = new Image();
+    image.fetchPriority = "low";
+    image.src = material.file;
+  });
+}
+
+function bindAppRecapDetailImages(root) {
+  const strip = root.querySelector(".app-recap-strip");
+  if (!strip) return;
+  const loadImage = (image) => {
+    const source = image.dataset.recapSrc;
+    if (!source) return;
+    image.src = source;
+    delete image.dataset.recapSrc;
+  };
+  if (typeof IntersectionObserver === "function") {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting || !entry.target.isConnected) return;
+        loadImage(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { root: strip, rootMargin: "0px 240px", threshold: 0 });
+    recapDetailObserver = observer;
+  }
+  const images = Array.from(strip.querySelectorAll("img"));
+  images.forEach((image) => {
+    image.addEventListener("error", () => {
+      // Retry a transient CDN/network failure once; retain the original screenshot.
+      const source = image.getAttribute("src");
+      if (!source || image.dataset.recapRetried) return;
+      image.dataset.recapRetried = "true";
+      image.src = `${source}${source.includes("?") ? "&" : "?"}retry=1`;
+    });
+  });
+  const first = images[0];
+  const activeObserver = recapDetailObserver;
+  const loadAdjacent = () => {
+    if (!first?.isConnected) return;
+    if (activeObserver && recapDetailObserver !== activeObserver) return;
+    images.forEach((image) => {
+      if (!image.dataset.recapSrc) return;
+      if (activeObserver) activeObserver.observe(image);
+      else {
+        image.loading = "lazy";
+        loadImage(image);
+      }
+    });
+  };
+  // Finish the first screenshot before adjacent images compete for bandwidth.
+  if (first?.complete && first.naturalWidth) loadAdjacent();
+  else {
+    first?.addEventListener("load", loadAdjacent, { once: true });
+    first?.addEventListener("error", loadAdjacent, { once: true });
+  }
 }
 
 function updateDetailNav() {
