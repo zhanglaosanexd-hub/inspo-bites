@@ -20,10 +20,9 @@ export async function onRequest({ request, waitUntil }) {
     if (!metadata) {
       let pending = metadataRequests.get(post);
       if (!pending) {
-        pending = fetch(`https://api.fxtwitter.com/status/${post}`, {
+        pending = fetchWithTimeout(`https://api.fxtwitter.com/status/${post}`, {
           headers: { Accept: "application/json", "User-Agent": "Inspo.design Media" },
-          signal: AbortSignal.timeout(10000),
-        }).then(async (response) => {
+        }, 10000).then(async (response) => {
           if (!response.ok) throw new Error("Video metadata unavailable");
           return response.json();
         }).finally(() => metadataRequests.delete(post));
@@ -50,13 +49,12 @@ export async function onRequest({ request, waitUntil }) {
     if (!source) return failure("Public video unavailable", 404);
     const headers = new Headers({ "User-Agent": "Inspo.design Media" });
     if (request.headers.has("Range")) headers.set("Range", request.headers.get("Range"));
-    const upstream = await fetch(source.url, {
+    const upstream = await fetchWithTimeout(source.url, {
       method: request.method,
       headers,
       redirect: "error",
-      signal: AbortSignal.timeout(15000),
       cf: { cacheEverything: true, cacheTtl: 30 * 24 * 60 * 60 },
-    });
+    }, 15000);
     if (!upstream.ok) return failure("Video unavailable", upstream.status);
     const output = new Headers({
       "Content-Type": "video/mp4",
@@ -71,6 +69,16 @@ export async function onRequest({ request, waitUntil }) {
     return new Response(request.method === "HEAD" ? null : upstream.body, { status: upstream.status, headers: output });
   } catch {
     return failure("Video temporarily unavailable", 502);
+  }
+}
+
+async function fetchWithTimeout(url, options, timeoutMs) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await fetch(url, { ...options, signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
   }
 }
 

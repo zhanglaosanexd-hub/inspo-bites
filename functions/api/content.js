@@ -161,7 +161,7 @@ export async function onRequest({ request, env, waitUntil }) {
   if (request.method !== "GET") return json({ error: "Method not allowed" }, 405, "no-store");
 
   const edgeCache = globalThis.caches?.default;
-  const cacheKey = new Request(new URL("/api/content", request.url).toString());
+  const cacheKey = new Request(new URL("/api/content?schema=20261102-media-cache", request.url).toString());
   if (edgeCache) {
     const cachedResponse = await edgeCache.match(cacheKey);
     if (cachedResponse) return cachedResponse;
