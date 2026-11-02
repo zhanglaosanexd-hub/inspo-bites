@@ -133,6 +133,7 @@ globalThis.fetch = async (url, options) => {
       { container: "mp4", bitrate: 9999999, url: "https://evil.test/private.mp4" },
     ] }] } } });
   }
+  assert.equal(options.redirect, "manual", "Cloudflare supports manual/follow redirect modes; redirects must not bypass the host check");
   mediaUrls.push(String(url));
   return new Response(options.method === "HEAD" ? null : "0123456789abcdef", { status: options.headers.has("Range") ? 206 : 200, headers: { "Content-Length": "16", "Content-Range": "bytes 0-15/1000" } });
 };

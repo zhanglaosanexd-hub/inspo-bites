@@ -61,9 +61,10 @@ export async function onRequest({ request, waitUntil }) {
     const upstream = await fetchWithTimeout(source.url, {
       method: request.method,
       headers,
-      redirect: "error",
+      redirect: "manual",
       cf: { cacheEverything: true, cacheTtl: 30 * 24 * 60 * 60 },
     }, 15000);
+    if (upstream.status >= 300 && upstream.status < 400) return failure("Video redirect unavailable", 502, "video-redirect");
     if (!upstream.ok) return failure("Video unavailable", upstream.status);
     const output = new Headers({
       "Content-Type": "video/mp4",
