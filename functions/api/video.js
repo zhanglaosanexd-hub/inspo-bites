@@ -6,6 +6,7 @@ export async function onRequest({ request, waitUntil }) {
   const post = url.searchParams.get("post") || "";
   const clip = Number(url.searchParams.get("clip") || 0);
   if (!/^\d{15,22}$/.test(post) || !Number.isInteger(clip) || clip < 0 || clip > 3) return failure("Invalid video", 400);
+  let stage = "metadata-cache";
   try {
     const cache = globalThis.caches?.default;
     const key = new Request(new URL(`/__video_metadata/${post}`, request.url));
@@ -18,23 +19,30 @@ export async function onRequest({ request, waitUntil }) {
       cached = null;
     }
     if (!metadata) {
+      stage = "metadata-fetch";
       let pending = metadataRequests.get(post);
       if (!pending) {
         pending = fetchWithTimeout(`https://api.fxtwitter.com/status/${post}`, {
           headers: { Accept: "application/json", "User-Agent": "Inspo.design Media" },
         }, 10000).then(async (response) => {
-          if (!response.ok) throw new Error("Video metadata unavailable");
+          if (!response.ok) {
+            const error = new Error("Video metadata unavailable");
+            error.stage = `metadata-http-${response.status}`;
+            throw error;
+          }
           return response.json();
         }).finally(() => metadataRequests.delete(post));
         metadataRequests.set(post, pending);
       }
       metadata = await pending;
+      stage = "metadata-save";
       if (cache) {
         const save = cache.put(key, new Response(JSON.stringify(metadata), { headers: { "Content-Type": "application/json", "Cache-Control": "public, max-age=3600" } })).catch(() => {});
         if (typeof waitUntil === "function") waitUntil(save);
         else await save;
       }
     }
+    stage = "video-formats";
     const formats = (metadata.tweet?.media?.videos?.[clip]?.formats || [])
       .filter((format) => {
         try {
@@ -49,6 +57,7 @@ export async function onRequest({ request, waitUntil }) {
     if (!source) return failure("Public video unavailable", 404);
     const headers = new Headers({ "User-Agent": "Inspo.design Media" });
     if (request.headers.has("Range")) headers.set("Range", request.headers.get("Range"));
+    stage = "video-fetch";
     const upstream = await fetchWithTimeout(source.url, {
       method: request.method,
       headers,
@@ -67,8 +76,8 @@ export async function onRequest({ request, waitUntil }) {
       if (upstream.headers.has(name)) output.set(name, upstream.headers.get(name));
     }
     return new Response(request.method === "HEAD" ? null : upstream.body, { status: upstream.status, headers: output });
-  } catch {
-    return failure("Video temporarily unavailable", 502);
+  } catch (error) {
+    return failure("Video temporarily unavailable", 502, error.stage || `${stage}-${error.name || "Error"}`);
   }
 }
 
@@ -82,6 +91,8 @@ async function fetchWithTimeout(url, options, timeoutMs) {
   }
 }
 
-function failure(message, status) {
-  return new Response(message, { status, headers: { "Cache-Control": "no-store", "Content-Type": "text/plain; charset=utf-8" } });
+function failure(message, status, stage = "") {
+  const headers = { "Cache-Control": "no-store", "Content-Type": "text/plain; charset=utf-8" };
+  if (stage) headers["X-Inspo-Video-Failure"] = stage;
+  return new Response(message, { status, headers });
 }
