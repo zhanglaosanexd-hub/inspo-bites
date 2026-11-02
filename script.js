@@ -24,13 +24,17 @@ let detailCloseTimer = 0;
 let changelogTransitionFrame = 0;
 let activeChangelog = null;
 let galleryVideoObserver = null;
+let galleryImageObserver = null;
+let galleryPlaybackSuspended = false;
+const mediaPlaybackHandlers = new Map();
+const mediaCleanups = new WeakMap();
 let recapGalleryObserver = null;
 let recapDetailObserver = null;
 let recapPrefetchTimer = 0;
 let recapDetailRequest = 0;
-let recapDetailController = null;
 let recapDetailCleanup = null;
 const recapDetailCache = new Map();
+const recapDetailPending = new Map();
 const prefetchedRecapItems = new Set();
 
 const gallery = document.querySelector("#gallery");
@@ -131,7 +135,7 @@ const SINGLE_CARD_MAX_WIDTH = 430;
 const DETAIL_PREVIEW_MAX_WIDTH = 1060;
 const DETAIL_PREVIEW_VERTICAL_GUTTER = 112;
 const DETAIL_EXIT_MS = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 360;
-const DATA_VERSION = "20261023-recap-year-tabs";
+const DATA_VERSION = "20261102-media-cache";
 const REMOTE_CONTENT_TIMEOUT_MS = 15 * 1000;
 const REMOTE_CONTENT_CACHE_KEY = `inspo-remote-content:${DATA_VERSION}`;
 const REMOTE_CONTENT_CACHE_MAX_AGE_MS = 60 * 1000;
@@ -141,6 +145,8 @@ const CHANGELOG_REFRESH_MS = 60 * 1000;
 const MEDIA_BASE_URL = normalizeMediaBaseUrl(window.INSPO_MEDIA_BASE_URL || "");
 const MEDIA_URL_MAP = normalizeMediaUrlMap(window.INSPO_MEDIA_URL_MAP || window.INSPO_MEDIA_MAP);
 const APP_RECAP_MEDIA = window.INSPO_APP_RECAP_MEDIA || {};
+const INSPIRATION_MEDIA = window.INSPO_INSPIRATION_MEDIA || {};
+const RECAP_ARCHIVE_VERSION = window.INSPO_APP_RECAP_INDEX?.version || DATA_VERSION;
 const APP_RECAP_INDEX = Array.isArray(window.INSPO_APP_RECAP_INDEX?.items)
   ? window.INSPO_APP_RECAP_INDEX.items
   : [];
@@ -216,6 +222,8 @@ async function hydrateRemoteCollectionData(localData) {
 }
 
 async function loadRemoteCollectionData(localData) {
+  const fresh = readCachedRemoteCollectionData();
+  if (fresh) return mergeCollectionData(localData, fresh);
   const controller = new AbortController();
   const timeoutId = window.setTimeout(() => controller.abort(), REMOTE_CONTENT_TIMEOUT_MS);
 
@@ -511,6 +519,9 @@ function normalizeItemMedia(item) {
   ["cover", "video", "avatar", "appIcon"].forEach((key) => {
     if (next[key]) next[key] = resolveMediaUrl(next[key]);
   });
+  if (/^https:\/\/(?:www\.)?yuque\.com\/attachments\/yuque\//i.test(next.video || "")) {
+    next.video = getXVideoPath(next.url) || next.video;
+  }
 
   if (Array.isArray(next.materials)) {
     next.materials = next.materials.map((material) => {
@@ -529,12 +540,32 @@ function resolveMediaUrl(value) {
 
   const assetPath = normalizeLocalAssetPath(raw);
   const mapped = MEDIA_URL_MAP.get(raw) || (assetPath ? MEDIA_URL_MAP.get(assetPath) : "");
+  const inspirationAsset = INSPIRATION_MEDIA.urls?.[mapped || raw];
+  if (inspirationAsset) return resolveMediaUrl(inspirationAsset);
   if (mapped) return mapped;
   const recapAsset = APP_RECAP_MEDIA[raw];
   if (recapAsset) return resolveMediaUrl(recapAsset.file);
   if (MEDIA_BASE_URL && assetPath) return `${MEDIA_BASE_URL}/${assetPath}`;
 
   return raw;
+}
+
+function getXVideoPath(value) {
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "https:" || !["x.com", "www.x.com", "twitter.com", "www.twitter.com"].includes(url.hostname)) return "";
+    const post = url.pathname.match(/\/status\/(\d{15,22})(?:\/|$)/)?.[1];
+    if (!post) return "";
+    const clip = Math.max(0, Number(url.pathname.match(/\/video\/(\d+)/)?.[1] || 1) - 1);
+    return `/api/video?post=${post}&clip=${Math.min(clip, 3)}&quality=original`;
+  } catch { return ""; }
+}
+
+function getPreviewVideoUrl(item) {
+  const local = INSPIRATION_MEDIA.previews?.[item.video];
+  if (local) return local.file;
+  if (item.video?.startsWith("/api/video?")) return item.video.replace("quality=original", "quality=preview");
+  return item.video;
 }
 
 function normalizeLocalAssetPath(value) {
@@ -571,6 +602,8 @@ function switchSection(sectionId, { updateUrl = true } = {}) {
 }
 
 function bindEvents() {
+  document.addEventListener("visibilitychange", refreshMediaPlayback);
+  document.addEventListener("pointerdown", refreshMediaPlayback, { passive: true });
   yearFilterStrip.addEventListener("click", (event) => {
     const button = event.target.closest("[data-year]");
     if (!button || state.section !== "app-recap" || button.dataset.year === state.appRecapYear) return;
@@ -951,12 +984,14 @@ function renderYearFilters() {
 function renderGallery() {
   galleryVideoObserver?.disconnect();
   galleryVideoObserver = null;
+  galleryImageObserver?.disconnect();
+  galleryImageObserver = null;
+  releaseVideoMedia(gallery);
   recapGalleryObserver?.disconnect();
   recapGalleryObserver = null;
   gallery.querySelectorAll(".app-recap-card img[src]").forEach((image) => {
     if (!image.complete) image.removeAttribute("src");
   });
-  gallery.querySelectorAll("video").forEach((video) => video.pause());
 
   const filtered = getVisibleItems();
   visibleItems = filtered;
@@ -972,6 +1007,7 @@ function renderGallery() {
   else if (state.viewMode === "grid") renderUniformGrid(filtered);
   else renderMasonry(filtered);
   if (state.section === "app-recap") bindAppRecapGalleryImages();
+  else bindGalleryImageLoading();
   emptyState.hidden = filtered.length > 0;
 }
 
@@ -1035,7 +1071,7 @@ function normalizeSourceFilterValue(value) {
 function createCard(item, priorityIndex = 0) {
   if (isAppRecapItem(item)) return createAppRecapCard(item, priorityIndex);
 
-  const media = createMediaMarkup(item, { eager: shouldEagerLoadCard(priorityIndex) });
+  const media = createMediaMarkup(item, { eager: shouldEagerLoadCard(priorityIndex), preview: true });
   const itemUrl = escapeHtml(item.url || "");
   const itemTitle = escapeHtml(item.title || "未命名内容");
   const newBadge = isNewItem(item) ? `<span class="new-badge" aria-label="新内容">新</span>` : "";
@@ -1104,15 +1140,15 @@ function createAppRecapCard(item, priorityIndex = 0) {
 function createMediaMarkup(item, options = {}) {
   const itemTitle = escapeHtml(item.title || "未命名内容");
   const isEager = Boolean(options.eager);
-  const loading = isEager ? "eager" : "lazy";
+  const imageSourceAttribute = options.preview && !isEager ? "data-media-path" : "src";
   const fetchPriority = isEager ? "high" : "auto";
 
   if (item.motionCover) return createMotionCover(item);
   if (item.video) {
-    const videoPath = escapeHtml(item.video);
+    const videoPath = escapeHtml(options.preview ? getPreviewVideoUrl(item) : item.video);
     const poster = item.cover
       ? `
-        <img class="media-fallback-image" data-media-image="true" src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" />
+        <img class="media-fallback-image" data-media-image="true" ${imageSourceAttribute}="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="eager" fetchpriority="${fetchPriority}" decoding="async" />
         ${createMediaMissingMarkup(item, "视频加载中", "正在加载动态预览。", true)}
       `
       : createMediaMissingMarkup(item, "视频加载中", "正在加载动态预览。");
@@ -1124,7 +1160,7 @@ function createMediaMarkup(item, options = {}) {
 
   if (item.cover) {
     return `
-      <img data-media-image="true" src="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="${loading}" fetchpriority="${fetchPriority}" />
+      <img data-media-image="true" ${imageSourceAttribute}="${escapeHtml(item.cover)}" alt="${itemTitle}" loading="eager" fetchpriority="${fetchPriority}" decoding="async" />
       ${createMediaMissingMarkup(item, "视频同步中", "视频源正在整理，稍后恢复动态预览。", true)}
     `;
   }
@@ -1156,6 +1192,8 @@ function shouldEagerLoadCard(priorityIndex) {
 function openDetail(itemId) {
   const nextIndex = visibleItems.findIndex((item) => item.id === itemId);
   if (nextIndex < 0) return;
+  galleryPlaybackSuspended = true;
+  refreshMediaPlayback();
 
   clearTimeout(detailCloseTimer);
   cancelAnimationFrame(detailTransitionFrame);
@@ -1174,6 +1212,7 @@ function openDetail(itemId) {
 
 function closeDetail(options = {}) {
   if (detailViewer.hidden || detailViewer.classList.contains("is-closing")) return;
+  releaseVideoMedia(detailPreview);
 
   cancelAppRecapDetailRequest();
   recapDetailObserver?.disconnect();
@@ -1188,6 +1227,8 @@ function closeDetail(options = {}) {
     detailPreview.innerHTML = "";
     document.body.classList.remove("detail-open");
     activeDetailIndex = 0;
+    galleryPlaybackSuspended = false;
+    refreshMediaPlayback();
     return;
   }
 
@@ -1200,6 +1241,8 @@ function closeDetail(options = {}) {
     document.body.classList.remove("detail-open");
     detailPreview.innerHTML = "";
     activeDetailIndex = 0;
+    galleryPlaybackSuspended = false;
+    refreshMediaPlayback();
   }, DETAIL_EXIT_MS);
 }
 
@@ -1215,6 +1258,7 @@ function moveDetail(direction) {
 function renderDetail() {
   const item = visibleItems[activeDetailIndex];
   if (!item) return;
+  releaseVideoMedia(detailPreview);
   cancelAppRecapDetailRequest();
   const isAppRecap = isAppRecapItem(item);
   recapDetailObserver?.disconnect();
@@ -1305,27 +1349,14 @@ function createAppRecapStrip(item, materials) {
 
 function cancelAppRecapDetailRequest() {
   recapDetailRequest += 1;
-  recapDetailController?.abort();
-  recapDetailController = null;
   recapDetailCleanup?.();
   recapDetailCleanup = null;
 }
 
 async function loadAppRecapDetail(item, requestId) {
-  const controller = new AbortController();
-  recapDetailController = controller;
-  const timeoutId = window.setTimeout(() => controller.abort(), 15000);
   const isCurrent = () => recapDetailRequest === requestId && visibleItems[activeDetailIndex]?.id === item.id;
   try {
-    const detailUrl = new URL(item.materialsUrl, document.baseURI);
-    detailUrl.searchParams.set("v", DATA_VERSION);
-    const response = await fetch(detailUrl.href, { signal: controller.signal, cache: "force-cache" });
-    if (!response.ok) throw new Error("页面清单加载失败");
-    const data = await response.json();
-    const materials = normalizeMaterials(data).filter((material) => !material.kind || material.kind === "image")
-      .map((material) => ({ ...material, file: resolveMediaUrl(material.file) }));
-    if (!materials.length) throw new Error("页面清单为空");
-    recapDetailCache.set(item.id, materials);
+    const materials = await fetchAppRecapMaterials(item);
     if (!isCurrent()) return;
     recapDetailCleanup?.();
     recapDetailCleanup = null;
@@ -1340,10 +1371,32 @@ async function loadAppRecapDetail(item, requestId) {
     if (status) {
       status.innerHTML = `页面暂未加载成功 <button type="button" data-recap-detail-retry>重试</button>`;
     }
-  } finally {
-    window.clearTimeout(timeoutId);
-    if (recapDetailController === controller) recapDetailController = null;
   }
+}
+
+function fetchAppRecapMaterials(item) {
+  if (recapDetailCache.has(item.id)) return Promise.resolve(recapDetailCache.get(item.id));
+  if (recapDetailPending.has(item.id)) return recapDetailPending.get(item.id);
+  const controller = new AbortController();
+  const timeoutId = window.setTimeout(() => controller.abort(), 8000);
+  const detailUrl = new URL(item.materialsUrl, document.baseURI);
+  detailUrl.searchParams.set("v", RECAP_ARCHIVE_VERSION);
+  const pending = fetch(detailUrl.href, { signal: controller.signal, cache: "force-cache" })
+    .then(async (response) => {
+      if (!response.ok) throw new Error("页面清单加载失败");
+      const data = await response.json();
+      const materials = normalizeMaterials(data).filter((material) => !material.kind || material.kind === "image")
+        .map((material) => ({ ...material, file: resolveMediaUrl(material.file) }));
+      if (!materials.length) throw new Error("页面清单为空");
+      recapDetailCache.set(item.id, materials);
+      return materials;
+    })
+    .finally(() => {
+      window.clearTimeout(timeoutId);
+      recapDetailPending.delete(item.id);
+    });
+  recapDetailPending.set(item.id, pending);
+  return pending;
 }
 
 function getAppRecapYear(item) {
@@ -1392,6 +1445,7 @@ function prefetchAppRecapDetail(itemId) {
   if (!item || !isAppRecapItem(item)) return;
   prefetchedRecapItems.add(itemId);
   if (item.materialsUrl) {
+    fetchAppRecapMaterials(item).catch(() => prefetchedRecapItems.delete(itemId));
     if (item.cover) {
       const image = new Image();
       image.fetchPriority = "low";
@@ -1748,7 +1802,6 @@ function renderSingleColumn(filtered) {
 
 function bindVideoFallbacks(root) {
   const playbackHandlers = new Map();
-  // Keep automatic previews, but let covers load before visible videos use bandwidth.
   const observer = root === gallery && "IntersectionObserver" in window
     ? new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -1765,49 +1818,114 @@ function bindVideoFallbacks(root) {
     const poster = container?.querySelector("img[data-media-image]");
     const fallback = container?.querySelector(".media-missing");
     let wantsPlayback = false;
-
-    const showFallback = () => {
-      video.hidden = true;
-      container?.classList.remove("is-video-playing");
-      if (!poster || poster.hidden) {
-        if (fallback) fallback.hidden = false;
-      }
-    };
+    let disposed = false;
+    let playPending = false;
+    let posterWaited = false;
+    let posterTimer = 0;
+    let retryTimer = 0;
+    let retryCount = 0;
+    let needsReload = false;
+    let failed = false;
+    const allowed = () => !disposed && wantsPlayback && !document.hidden && (root !== gallery || !galleryPlaybackSuspended);
     const revealVideo = () => {
-      if (!wantsPlayback || video.hidden) return;
-      const playRequest = video.play();
+      if (!allowed() || failed || playPending) return;
+      let playRequest;
+      try {
+        playRequest = video.play();
+      } catch {
+        video.dataset.playbackState = "blocked";
+        return;
+      }
       if (playRequest && typeof playRequest.then === "function") {
+        playPending = true;
         playRequest
           .then(() => {
-            if (wantsPlayback) container?.classList.add("is-video-playing");
+            if (allowed()) {
+              container?.classList.add("is-video-playing");
+              video.dataset.playbackState = "playing";
+            }
             else video.pause();
           })
-          .catch(() => container?.classList.remove("is-video-playing"));
+          .catch(() => {
+            if (!disposed && allowed()) video.dataset.playbackState = "blocked";
+          })
+          .finally(() => { playPending = false; });
       }
+    };
+    const syncPlayback = () => {
+      if (!allowed()) {
+        video.pause();
+        window.clearTimeout(posterTimer);
+        posterTimer = 0;
+        return;
+      }
+      if (failed) return;
+      if (poster && (!poster.complete || !poster.getAttribute("src")) && !posterWaited) {
+        if (!posterTimer) posterTimer = window.setTimeout(() => {
+          posterTimer = 0;
+          posterWaited = true;
+          syncPlayback();
+        }, 400);
+        return;
+      }
+      if (needsReload) {
+        needsReload = false;
+        delete video.dataset.videoLoaded;
+        video.hidden = false;
+      }
+      loadLazyVideo(video);
+      revealVideo();
     };
     const startPlayback = () => {
       wantsPlayback = true;
-      if (poster && !poster.complete) return;
-      loadLazyVideo(video);
-      // Safari may stop at metadata until play() requests the video frames.
-      revealVideo();
+      syncPlayback();
     };
     const stopPlayback = () => {
       wantsPlayback = false;
-      video.pause();
+      syncPlayback();
     };
     const onPosterReady = () => {
-      if (wantsPlayback) startPlayback();
+      posterWaited = true;
+      syncPlayback();
     };
-
-    poster?.addEventListener("load", onPosterReady, { once: true });
-    poster?.addEventListener("error", onPosterReady, { once: true });
-
-    video.addEventListener("error", showFallback, { once: true });
+    const onVideoError = () => {
+      if (disposed) return;
+      container?.classList.remove("is-video-playing");
+      if (retryCount++ === 0) {
+        needsReload = true;
+        video.dataset.playbackState = "retrying";
+        retryTimer = window.setTimeout(syncPlayback, 750);
+      } else {
+        failed = true;
+        video.hidden = true;
+        video.dataset.playbackState = "error";
+        if ((!poster || poster.hidden) && fallback) fallback.hidden = false;
+      }
+    };
+    const onPlaying = () => {
+      if (allowed()) {
+        container?.classList.add("is-video-playing");
+        video.dataset.playbackState = "playing";
+      } else video.pause();
+    };
+    poster?.addEventListener("load", onPosterReady);
+    poster?.addEventListener("error", onPosterReady);
+    video.addEventListener("error", onVideoError);
     video.addEventListener("canplay", revealVideo);
     video.addEventListener("loadeddata", revealVideo);
-    video.addEventListener("playing", () => {
-      if (wantsPlayback) container?.classList.add("is-video-playing");
+    video.addEventListener("playing", onPlaying);
+    mediaPlaybackHandlers.set(video, { sync: syncPlayback });
+    mediaCleanups.set(video, () => {
+      disposed = true;
+      window.clearTimeout(posterTimer);
+      window.clearTimeout(retryTimer);
+      poster?.removeEventListener("load", onPosterReady);
+      poster?.removeEventListener("error", onPosterReady);
+      video.removeEventListener("error", onVideoError);
+      video.removeEventListener("canplay", revealVideo);
+      video.removeEventListener("loadeddata", revealVideo);
+      video.removeEventListener("playing", onPlaying);
+      mediaPlaybackHandlers.delete(video);
     });
 
     if (observer) {
@@ -1819,16 +1937,54 @@ function bindVideoFallbacks(root) {
   });
 }
 
+function refreshMediaPlayback() {
+  mediaPlaybackHandlers.forEach((handler) => handler.sync());
+}
+
+function releaseVideoMedia(root) {
+  root.querySelectorAll("video").forEach((video) => {
+    mediaCleanups.get(video)?.();
+    mediaCleanups.delete(video);
+    video.pause();
+    if (video.getAttribute("src")) {
+      video.removeAttribute("src");
+      video.load();
+    }
+  });
+}
+
+function bindGalleryImageLoading() {
+  const load = (image) => {
+    image.src = image.dataset.mediaPath;
+    delete image.dataset.mediaPath;
+  };
+  const images = gallery.querySelectorAll("img[data-media-path]");
+  if (typeof IntersectionObserver !== "function") {
+    images.forEach((image) => { image.loading = "lazy"; load(image); });
+    return;
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting || !entry.target.isConnected) return;
+      load(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: "120px 0px" });
+  images.forEach((image) => observer.observe(image));
+  galleryImageObserver = observer;
+}
+
 function bindImageFallbacks(root) {
   root.querySelectorAll("img[data-media-image]").forEach((image) => {
     const fallback = image.parentElement?.querySelector(".media-missing") || null;
     const showFallback = () => {
+      if (!image.getAttribute("src")) return;
       image.hidden = true;
       if (fallback) fallback.hidden = false;
     };
 
     image.addEventListener("error", showFallback, { once: true });
-    if (image.complete && image.naturalWidth === 0) showFallback();
+    if (image.getAttribute("src") && image.complete && image.naturalWidth === 0) showFallback();
   });
 }
 

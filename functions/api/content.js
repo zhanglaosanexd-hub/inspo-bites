@@ -1,3 +1,6 @@
+import { CACHED_INSPIRATION_MEDIA } from "../_shared/inspiration-media.js";
+import { getXVideoPath } from "../_shared/x-video.js";
+
 const DEFAULT_SOURCES = [
   {
     section: "inspiration",
@@ -514,7 +517,7 @@ function normalizeYuqueTableRecord(record, context) {
   const analysis = compactParagraphs([field("analysis")].filter(Boolean));
   const type = inferTypeFromTableTags(tags, sourceText);
   const cover = mediaOverride.cover || proxiedYuqueImageUrl(coverAsset?.file || "");
-  const video = mediaOverride.video || playableVideoAsset?.file || "";
+  const video = mediaOverride.video || (blockedVideoAsset ? getXVideoPath(link) : "") || playableVideoAsset?.file || "";
   const mediaAspectRatio =
     getAttachmentAspectRatio(playableVideoAsset) ||
     getAttachmentAspectRatio(videoAsset) ||
@@ -971,7 +974,11 @@ function tableAttachments(value) {
 
 function findLocalMediaOverride(title, section) {
   if (section !== "inspiration") return {};
-  const coverId = title.match(/^(\d{2})[｜|]/)?.[1] || "";
+  const coverId = title.match(/^(\d+)[｜|]/)?.[1]?.padStart(2, "0") || "";
+  if (CACHED_INSPIRATION_MEDIA[coverId]) {
+    const legacy = LOCAL_INSPIRATION_MEDIA.find((item) => title.includes(item.titleIncludes)) || {};
+    return { ...legacy, ...CACHED_INSPIRATION_MEDIA[coverId] };
+  }
   const media = CACHED_INSPIRATION_VIDEO_IDS.has(coverId)
     ? { video: `./assets/inspiration-video-cache/${coverId}-x-preview.mp4` }
     : LOCAL_INSPIRATION_MEDIA.find((item) => title.includes(item.titleIncludes)) || {};
@@ -1167,7 +1174,7 @@ function isVideoUrl(value) {
 }
 
 function isPrivateYuqueAttachmentUrl(value) {
-  return false;
+  return /^https:\/\/(?:www\.)?yuque\.com\/attachments\/yuque\//i.test(String(value || ""));
 }
 
 function proxiedYuqueImageUrl(value) {

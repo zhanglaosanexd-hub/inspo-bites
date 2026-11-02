@@ -36,6 +36,12 @@ const VIDEO_SOURCES = [
   ["47-x-preview.mp4", "2095908112075206818"],
   ["48-x-preview.mp4", "2101679582734872751"],
   ["49-x-preview.mp4", "2108072499267461149", 1],
+  ["50-x-preview.mp4", "2098332398760976777"],
+  ["51-x-preview.mp4", "2105703705471566024"],
+  ["52-x-preview.mp4", "2105719967328919792"],
+  ["53-x-preview.mp4", "2111194691303596460"],
+  ["54-x-preview.mp4", "2087790252891181568"],
+  ["55-x-preview.mp4", "2104157692747206787"],
 ];
 
 await mkdir(OUTPUT_DIR, { recursive: true });
@@ -46,7 +52,7 @@ for (const [filename, tweetId, videoIndex = 0] of VIDEO_SOURCES) {
     console.log(`${filename}: already cached`);
     continue;
   }
-  const metadataResponse = await fetch(`https://api.fxtwitter.com/status/${tweetId}`);
+  const metadataResponse = await fetch(`https://api.fxtwitter.com/status/${tweetId}`, { signal: AbortSignal.timeout(30000) });
   if (!metadataResponse.ok) throw new Error(`${tweetId}: metadata ${metadataResponse.status}`);
 
   const metadata = await metadataResponse.json();
@@ -59,8 +65,12 @@ for (const [filename, tweetId, videoIndex = 0] of VIDEO_SOURCES) {
 
   let saved = false;
   for (const variant of variants) {
-    const videoResponse = await fetch(variant.url);
+    const videoResponse = await fetch(variant.url, { signal: AbortSignal.timeout(45000) });
     if (!videoResponse.ok) continue;
+    if (Number(videoResponse.headers.get("Content-Length")) > MAX_FILE_BYTES) {
+      await videoResponse.body?.cancel();
+      continue;
+    }
 
     const bytes = new Uint8Array(await videoResponse.arrayBuffer());
     if (bytes.byteLength > MAX_FILE_BYTES && variants.length > 1) continue;

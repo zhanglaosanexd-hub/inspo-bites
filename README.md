@@ -2,6 +2,39 @@
 
 A lightweight static collection site for design inspiration and UX notes.
 
+## Preview delivery and cache checks
+
+Inspo gallery videos use hashed, silent H.264 previews from
+`assets/inspiration-previews/`; the detail viewer keeps the original videos.
+The preview builder preserves the full presentation duration, moves MP4
+metadata ahead of the video payload, optimizes covers, and emits matching
+browser/server manifests. Existing content cached in a browser is remapped to
+the same assets. Visible videos play automatically, pause outside the viewport
+or behind a detail dialog, and resume without seeking back to zero.
+
+New public X sources without a local mirror use `/api/video` as a same-origin
+fallback instead of a private Yuque attachment. The endpoint only accepts X
+post IDs, validates the upstream video host, caches metadata for an hour and
+preserves byte-range responses. Images and versioned App Recap detail lists use
+long browser caching; fresh Yuque metadata is reused for one minute.
+
+To refresh the local inspiration media, save a current `/api/content` response,
+mirror its source videos, then run:
+
+```bash
+python3 scripts/build-inspiration-previews.py --source-json content.json --ffmpeg /path/to/ffmpeg
+node scripts/validate-media-cache.mjs
+node scripts/test-media-loading.mjs
+node scripts/validate-app-recap-archive.mjs
+```
+
+Publish the generated assets and both manifests together, and bump the
+`inspiration-media.js`, `content.js` and `script.js` query strings in
+`index.html`. The validator checks missing files, H.264/fast-start packaging,
+unchanged duration and preservation of the other tabs' content. Do not preload
+the entire archive: gallery images are viewport-limited, and App Recap shares
+one in-flight detail request between intent prefetch and opening the dialog.
+
 ## Edit Content
 
 You can manage content in two ways:
