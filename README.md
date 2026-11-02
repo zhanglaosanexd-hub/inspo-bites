@@ -123,7 +123,9 @@ v 1.01
 - 更新内容二
 ```
 
-After the Yuque document is published, the edge endpoint refreshes within about one minute. An open page checks once per minute, so changelog-only updates do not require a Git commit or Cloudflare deployment. Each browser stores its last-read version locally and only shows What's new when the published version number increases.
+After the Yuque document is published, the edge endpoint checks for updates about once per minute when Yuque is available. An open page also checks once per minute, so changelog-only updates normally do not require a Git commit or Cloudflare deployment. Requests share a cache key even when their query strings differ. During a timeout or rate limit, the endpoint keeps the latest cached release and retries after a short delay; a cold cache uses the bundled published snapshot instead of returning an empty log.
+
+The browser snapshot is `data/changelog.js`; the API snapshot is `functions/_shared/changelog-snapshot.js`. Keep them consistent when updating the bundled fallback. Run `node scripts/test-changelog-cache.mjs` to check caching, version protection and outage recovery. Each browser stores its last-read version locally and only shows What's new when the version number increases.
 
 ### Yuque Content Format
 

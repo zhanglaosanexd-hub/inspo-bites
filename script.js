@@ -1666,7 +1666,7 @@ function renderMasonry(filtered) {
   }
   gallery.className = "gallery is-masonry";
   const galleryMetrics = getGalleryMetrics();
-  const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
+  const columnCount = galleryMetrics.columnCount;
   const columns = Array.from({ length: columnCount }, () => ({ height: 0, cards: [] }));
 
   filtered.forEach((item, index) => {
@@ -1700,7 +1700,7 @@ function renderAppRecapYearGroups(filtered) {
   gallery.className = "gallery is-masonry is-app-recap-years";
   gallery.style.maxWidth = "";
   gallery.innerHTML = Array.from(yearGroups, ([year, yearItems]) => {
-    const columnCount = Math.min(galleryMetrics.columnCount, yearItems.length);
+    const columnCount = galleryMetrics.columnCount;
     const columns = Array.from({ length: columnCount }, () => ({ height: 0, cards: [] }));
     yearItems.forEach((item) => {
       const target = columns.reduce((shortest, column) => column.height < shortest.height ? column : shortest);
@@ -1725,7 +1725,7 @@ function renderAppRecapYearGroups(filtered) {
 function renderUniformGrid(filtered) {
   gallery.className = "gallery is-uniform";
   const galleryMetrics = getGalleryMetrics();
-  const columnCount = Math.min(galleryMetrics.columnCount, Math.max(filtered.length, 1));
+  const columnCount = galleryMetrics.columnCount;
   gallery.style.setProperty("--gallery-columns", columnCount);
   gallery.style.maxWidth = "";
   gallery.innerHTML = filtered.map((item, index) => createCard(item, index)).join("");
