@@ -37,7 +37,7 @@ vm.createContext(context);
 for (const file of ["data/inspiration-media.js", "data/media-config.js", "data/app-recap-index.js"]) {
   vm.runInContext(await readFile(new URL(`../${file}`, import.meta.url), "utf8"), context);
 }
-const script = (await readFile(new URL("../script.js", import.meta.url), "utf8")).replace(/init\(\)\.catch\(\(error\) => \{[\s\S]*$/, "");
+const script = (await readFile(new URL("../script.js", import.meta.url), "utf8")).replace(/^import .*;\n/gm, "").replace(/init\(\)\.catch\(\(error\) => \{[\s\S]*$/, "");
 vm.runInContext(script, context);
 const run = (code) => vm.runInContext(code, context);
 const tick = async () => { for (let i = 0; i < 5; i++) await Promise.resolve(); };
@@ -97,6 +97,15 @@ const p1 = run("fetchAppRecapMaterials(item)"); const p2 = run("fetchAppRecapMat
 assert.equal(p1, p2); assert.equal(metadataCalls, 1);
 finish({ ok: true, json: async () => ({ materials: [{ file: "./assets/page.webp", kind: "image" }] }) });
 await p1; await run("fetchAppRecapMaterials(item)"); assert.equal(metadataCalls, 1);
+context.product = { id: "test-product", title: "Test App", appRecapReports: [
+  { ...context.item, appYear: 2025 },
+  { id: "test-recap-2024", appYear: 2024, materials: [{ file: "./assets/older.webp", kind: "image" }] },
+] };
+const productPromise = run("fetchAppRecapMaterials(product)");
+assert.equal(productPromise, run("fetchAppRecapMaterials(product)"));
+const productMaterials = await productPromise;
+assert.equal(productMaterials.length, 2); assert.equal(productMaterials[1].reportYear, "2024");
+assert.equal(metadataCalls, 1, "Product modal must reuse per-report data without duplicate requests");
 
 const localCache = new Map();
 context.window.localStorage = { getItem: (key) => localCache.get(key), setItem: (key, value) => localCache.set(key, value) };

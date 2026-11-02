@@ -1,3 +1,5 @@
+import { renderAppIconWall } from "./app-recap-products.js?v=20261102-app-icons";
+
 const state = {
   section: "inspiration",
   filter: "All",
@@ -18,6 +20,8 @@ let sections = {};
 let sectionList = [];
 let resizeFrame = 0;
 let visibleItems = [];
+let detailItems = [];
+let detailReturnFocus = null;
 let activeDetailIndex = 0;
 let detailTransitionFrame = 0;
 let detailCloseTimer = 0;
@@ -38,6 +42,7 @@ const recapDetailPending = new Map();
 const prefetchedRecapItems = new Set();
 
 const gallery = document.querySelector("#gallery");
+const appIconWall = document.querySelector("#app-icon-wall");
 const sectionNav = document.querySelector(".section-nav");
 const emptyState = document.querySelector("#empty-state");
 const filterStrip = document.querySelector("#filter-strip");
@@ -610,6 +615,7 @@ function bindEvents() {
     closeDetail({ immediate: true });
     state.appRecapYear = button.dataset.year;
     renderYearFilters();
+    renderAppRecapIcons();
     yearFilterStrip.querySelector(`[data-year="${state.appRecapYear}"]`)?.focus({ preventScroll: true });
     renderGallery();
   });
@@ -693,6 +699,13 @@ function bindEvents() {
     if (!event.target.closest("[data-recap-detail-retry]")) return;
     event.stopPropagation();
     renderDetail();
+  });
+  detailTags.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-recap-jump-year]");
+    if (!button) return;
+    const target = detailPreview.querySelector(`[data-report-year="${button.dataset.recapJumpYear}"]`);
+    // Jump directly so intermediate years do not start image downloads.
+    target?.scrollIntoView({ block: "nearest", inline: "start", behavior: "auto" });
   });
 }
 
@@ -935,7 +948,20 @@ function render() {
   }
 
   renderYearFilters();
+  renderAppRecapIcons();
   renderGallery();
+}
+
+function renderAppRecapIcons() {
+  const recapItems = items.filter(isAppRecapItem);
+  renderAppIconWall(appIconWall, {
+    records: recapItems.filter((item) => state.appRecapYear === "All"
+      || String(getAppRecapYear(item)) === state.appRecapYear),
+    iconItems: recapItems,
+    icons: window.INSPO_APP_RECAP_ICONS || {},
+    hidden: state.section !== "app-recap",
+    onOpen: openAppRecapProduct,
+  });
 }
 
 function renderFilters(filters) {
@@ -1189,20 +1215,43 @@ function shouldEagerLoadCard(priorityIndex) {
   return priorityIndex < eagerCount;
 }
 
-function openDetail(itemId) {
-  const nextIndex = visibleItems.findIndex((item) => item.id === itemId);
+function createAppRecapProductItem(product) {
+  const latest = product.reports[0];
+  return {
+    ...latest,
+    id: `app-product:${product.key}:${product.reports.map((report) => report.id).join(",")}`,
+    title: product.name,
+    productName: product.name,
+    author: product.name,
+    appIcon: product.icon || latest.appIcon,
+    imageCount: product.imageCount,
+    appRecapReports: product.reports,
+  };
+}
+
+function openAppRecapProduct(product, products) {
+  const collection = products.map(createAppRecapProductItem);
+  const index = products.findIndex((candidate) => candidate.key === product.key);
+  if (index < 0) return;
+  openDetail(collection[index].id, { collection });
+}
+
+function openDetail(itemId, { collection = visibleItems } = {}) {
+  const nextIndex = collection.findIndex((item) => item.id === itemId);
   if (nextIndex < 0) return;
   galleryPlaybackSuspended = true;
   refreshMediaPlayback();
 
   clearTimeout(detailCloseTimer);
   cancelAnimationFrame(detailTransitionFrame);
+  detailItems = collection;
+  detailReturnFocus = document.activeElement;
   activeDetailIndex = nextIndex;
-  renderDetail();
   detailViewer.hidden = false;
-  updateDetailPreviewSize();
   detailViewer.classList.remove("is-open", "is-closing");
   document.body.classList.add("detail-open");
+  renderDetail();
+  updateDetailPreviewSize();
   detailTransitionFrame = requestAnimationFrame(() => {
     detailViewer.classList.add("is-open");
     updateDetailPreviewSize();
@@ -1227,6 +1276,7 @@ function closeDetail(options = {}) {
     detailPreview.innerHTML = "";
     document.body.classList.remove("detail-open");
     activeDetailIndex = 0;
+    detailItems = [];
     galleryPlaybackSuspended = false;
     refreshMediaPlayback();
     return;
@@ -1241,22 +1291,24 @@ function closeDetail(options = {}) {
     document.body.classList.remove("detail-open");
     detailPreview.innerHTML = "";
     activeDetailIndex = 0;
+    detailItems = [];
+    if (detailReturnFocus?.isConnected) detailReturnFocus.focus({ preventScroll: true });
     galleryPlaybackSuspended = false;
     refreshMediaPlayback();
   }, DETAIL_EXIT_MS);
 }
 
 function moveDetail(direction) {
-  if (!visibleItems.length) return;
+  if (!detailItems.length) return;
   const nextIndex = activeDetailIndex + direction;
-  if (nextIndex < 0 || nextIndex >= visibleItems.length) return;
+  if (nextIndex < 0 || nextIndex >= detailItems.length) return;
 
   activeDetailIndex = nextIndex;
   renderDetail();
 }
 
 function renderDetail() {
-  const item = visibleItems[activeDetailIndex];
+  const item = detailItems[activeDetailIndex];
   if (!item) return;
   releaseVideoMedia(detailPreview);
   cancelAppRecapDetailRequest();
@@ -1281,9 +1333,9 @@ function renderDetail() {
   bindDetailPreviewRatio();
   detailSourceLink.hidden = isAppRecap || !item.url;
   detailSourceLink.href = item.url || "#";
-  detailTags.hidden = isAppRecap;
+  detailTags.hidden = isAppRecap && (item.appRecapReports?.length || 0) < 2;
   detailTags.innerHTML = isAppRecap
-    ? ""
+    ? (item.appRecapReports || []).map((report) => `<button class="app-recap-year-jump" type="button" data-recap-jump-year="${getAppRecapYear(report)}"${recapDetailCache.has(item.id) ? "" : " disabled"}>${getAppRecapYear(report)} · ${Number(report.imageCount)} 张</button>`).join("")
     : normalizeList(item.tags)
         .map((tag) => `<span class="tag">${escapeHtml(tag)}</span>`)
         .join("");
@@ -1298,14 +1350,14 @@ function renderDetail() {
     )
     .join("");
   updateDetailNav();
-  if (isAppRecap && item.materialsUrl && !recapDetailCache.has(item.id)) {
+  if (isAppRecap && (item.materialsUrl || item.appRecapReports) && !recapDetailCache.has(item.id)) {
     loadAppRecapDetail(item, recapDetailRequest);
   }
 }
 
 function createAppRecapDetailMarkup(item) {
   const materials = recapDetailCache.get(item.id) || normalizeMaterials(item);
-  if (item.materialsUrl && !recapDetailCache.has(item.id)) {
+  if ((item.materialsUrl || item.appRecapReports) && !recapDetailCache.has(item.id)) {
     const cover = item.cover ? [{ file: item.cover, width: item.coverWidth, height: item.coverHeight }] : [];
     return createAppRecapStrip(item, cover) + `<div class="app-recap-load-status" role="status">正在加载页面…</div>`;
   }
@@ -1328,7 +1380,8 @@ function createAppRecapStrip(item, materials) {
             : "";
           const aspectStyle = dimensions ? ` style="--shot-aspect: ${width} / ${height}${previewStyle}"` : "";
           return `
-            <figure class="app-recap-shot"${aspectStyle}>
+            <figure class="app-recap-shot"${material.reportYear ? ` data-report-year="${escapeHtml(material.reportYear)}"` : ""}${aspectStyle}>
+              ${material.reportYear ? `<figcaption class="app-recap-shot-label">${escapeHtml(material.reportYear)} · ${material.reportPage} / ${material.reportCount}</figcaption>` : ""}
               <img
                 class="app-recap-shot-image"
                 ${index === 0 ? "src" : "data-recap-src"}="${escapeHtml(material.file)}"${dimensions}
@@ -1354,7 +1407,7 @@ function cancelAppRecapDetailRequest() {
 }
 
 async function loadAppRecapDetail(item, requestId) {
-  const isCurrent = () => recapDetailRequest === requestId && visibleItems[activeDetailIndex]?.id === item.id;
+  const isCurrent = () => recapDetailRequest === requestId && detailItems[activeDetailIndex]?.id === item.id;
   try {
     const materials = await fetchAppRecapMaterials(item);
     if (!isCurrent()) return;
@@ -1365,6 +1418,7 @@ async function loadAppRecapDetail(item, requestId) {
     detailPreview.innerHTML = createAppRecapStrip(item, materials);
     bindAppRecapDetailImages(detailPreview);
     bindAppRecapImageRatios(detailPreview);
+    detailTags.querySelectorAll("[data-recap-jump-year]").forEach((button) => { button.disabled = false; });
   } catch {
     if (!isCurrent()) return;
     const status = detailPreview.querySelector(".app-recap-load-status");
@@ -1377,6 +1431,32 @@ async function loadAppRecapDetail(item, requestId) {
 function fetchAppRecapMaterials(item) {
   if (recapDetailCache.has(item.id)) return Promise.resolve(recapDetailCache.get(item.id));
   if (recapDetailPending.has(item.id)) return recapDetailPending.get(item.id);
+  if (item.appRecapReports) {
+    const pending = Promise.all(item.appRecapReports.map(async (report) => {
+      const materials = await fetchAppRecapMaterials(report);
+      return materials.map((material, index) => ({
+        ...material,
+        reportYear: String(getAppRecapYear(report)),
+        reportPage: index + 1,
+        reportCount: materials.length,
+        caption: `${item.title} ${getAppRecapYear(report)} 截图 ${index + 1}`,
+      }));
+    })).then((reports) => {
+      const materials = reports.flat();
+      if (!materials.length) throw new Error("页面清单为空");
+      recapDetailCache.set(item.id, materials);
+      return materials;
+    }).finally(() => recapDetailPending.delete(item.id));
+    recapDetailPending.set(item.id, pending);
+    return pending;
+  }
+  if (!item.materialsUrl) {
+    const materials = normalizeMaterials(item).filter((material) => !material.kind || material.kind === "image")
+      .map((material) => ({ ...material, file: resolveMediaUrl(material.file) }));
+    if (!materials.length) return Promise.reject(new Error("页面清单为空"));
+    recapDetailCache.set(item.id, materials);
+    return Promise.resolve(materials);
+  }
   const controller = new AbortController();
   const timeoutId = window.setTimeout(() => controller.abort(), 8000);
   const detailUrl = new URL(item.materialsUrl, document.baseURI);
@@ -1602,7 +1682,7 @@ function bindAppRecapDetailImages(root) {
 
 function updateDetailNav() {
   const hasPrevious = activeDetailIndex > 0;
-  const hasNext = activeDetailIndex < visibleItems.length - 1;
+  const hasNext = activeDetailIndex < detailItems.length - 1;
   detailPrevButton.disabled = !hasPrevious;
   detailNextButton.disabled = !hasNext;
   detailPrevButton.setAttribute("aria-disabled", String(!hasPrevious));
@@ -1686,7 +1766,9 @@ function getDetailRows(item) {
   if (isAppRecapItem(item)) {
     return [
       ["产品", item.productName || item.title],
-      ["年份", String(getAppRecapYear(item) || "")],
+      ["年份", item.appRecapReports
+        ? [...new Set(item.appRecapReports.map(getAppRecapYear))].join(" / ")
+        : String(getAppRecapYear(item) || "")],
       ["类别", item.type || "其他"],
       ["页面", `${Number(item.imageCount || normalizeMaterials(item).length)} 张`],
     ];

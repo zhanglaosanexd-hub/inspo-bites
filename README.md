@@ -69,6 +69,14 @@ and is fetched only when that product is opened. The gallery loads small WebP
 covers; the detail strip keeps only nearby screenshots loaded, with a maximum
 of three simultaneous image downloads and explicit retry controls.
 
+The two-row App icon wall opens a product modal directly. A selected year
+includes that year's report; All Years combines that product's reports newest
+first, with screenshot year labels and direct year jumps. This does not change
+the search/category filters or gallery card sizes. Icons use the newest catalog
+icon or the local overrides in `data/app-recap-icons.js`; verified source URLs
+are recorded in `assets/app-recap-icons/sources.json`. Rebuild those small WebP
+icons with `python3 scripts/cache-app-recap-icons.py --selection assets/app-recap-icons/sources.json`.
+
 To rebuild the local 2022–2024 source archive after adding or changing material:
 
 ```bash
