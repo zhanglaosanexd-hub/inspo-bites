@@ -1,20 +1,19 @@
 .app-icon-wall {
   --app-icon-size: 56px;
   --app-icon-cell: 80px;
-  margin: 0 0 26px;
+  --app-icon-gap: 12px;
+  margin: 0 0 20px;
   min-width: 0;
-  padding: 20px 0 16px;
+  padding: 4px 0 14px;
   border-bottom: 1px solid var(--line, #deded8);
 }
 
-.app-icon-wall[hidden],
-.app-icon-pages[hidden] {
+.app-icon-wall[hidden] {
   display: none !important;
 }
 
 .app-icon-header,
-.app-icon-heading,
-.app-icon-pages {
+.app-icon-heading {
   display: flex;
   align-items: center;
 }
@@ -22,7 +21,7 @@
 .app-icon-header {
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 .app-icon-heading {
@@ -45,66 +44,88 @@
   white-space: nowrap;
 }
 
-.app-icon-pages {
-  gap: 6px;
-}
-
-.app-icon-page {
+.app-icon-lanes {
   display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  border: 1px solid var(--line, #deded8);
-  border-radius: 50%;
-  background: var(--surface, #fff);
-  color: var(--ink, #171717);
-  font: inherit;
-  font-size: 17px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.app-icon-page:disabled {
-  opacity: 0.35;
-  cursor: default;
-}
-
-.app-icon-viewport {
+  gap: 14px;
   min-width: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
+}
+
+.app-icon-row {
+  min-width: 0;
+  min-height: var(--app-icon-size);
+  overflow: hidden;
   overscroll-behavior-x: contain;
   scrollbar-color: var(--line, #deded8) transparent;
   scrollbar-width: thin;
   -webkit-overflow-scrolling: touch;
 }
 
-.app-icon-viewport::-webkit-scrollbar {
+.app-icon-row::-webkit-scrollbar {
   height: 4px;
 }
 
-.app-icon-viewport::-webkit-scrollbar-thumb {
+.app-icon-row::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background: var(--line, #deded8);
 }
 
-.app-icon-grid {
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(2, auto);
-  grid-auto-columns: var(--app-icon-cell);
-  gap: 14px 12px;
+.app-icon-track,
+.app-icon-segment,
+.app-icon-set {
+  display: flex;
+  flex: 0 0 auto;
   width: max-content;
-  padding: 3px 3px 10px;
+}
+
+.app-icon-track {
+  padding: 4px 0;
+  will-change: transform;
+}
+
+.app-icon-set {
+  gap: var(--app-icon-gap);
+  padding-right: var(--app-icon-gap);
+}
+
+.is-looping .app-icon-track {
+  animation: app-icon-flow var(--app-icon-cycle-duration, 120s) linear infinite;
+}
+
+.is-looping .is-reversed .app-icon-track {
+  animation-direction: reverse;
+}
+
+.app-icon-wall:hover .app-icon-track,
+.app-icon-wall:focus-within .app-icon-track,
+.app-icon-wall.is-icon-page-hidden .app-icon-track {
+  animation-play-state: paused;
+}
+
+.app-icon-wall.is-keyboard-browsing .app-icon-row {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.app-icon-wall.is-keyboard-browsing .app-icon-track {
+  animation: none;
+  transform: none;
+  will-change: auto;
+}
+
+.app-icon-wall.is-keyboard-browsing .app-icon-repeat {
+  display: none;
+}
+
+@keyframes app-icon-flow {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .app-icon-button {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  gap: 7px;
+  justify-content: center;
+  flex: 0 0 var(--app-icon-cell);
   min-width: 0;
   width: var(--app-icon-cell);
   margin: 0;
@@ -157,29 +178,11 @@
   -webkit-line-clamp: 2;
 }
 
-.app-icon-name {
-  display: block;
-  width: 100%;
-  overflow: hidden;
-  color: var(--muted, #72726d);
-  font-size: 11px;
-  font-weight: 500;
-  line-height: 16px;
-  text-align: center;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.app-icon-button:hover .app-icon-name {
-  color: var(--ink, #171717);
-}
-
 .app-icon-button:hover .app-icon-picture {
   box-shadow: 0 3px 12px rgba(23, 23, 23, 0.1);
 }
 
-.app-icon-button:focus-visible,
-.app-icon-page:focus-visible {
+.app-icon-button:focus-visible {
   outline: 2px solid var(--ink, #171717);
   outline-offset: 3px;
 }
@@ -218,29 +221,38 @@
   .app-icon-wall {
     --app-icon-size: 44px;
     --app-icon-cell: 64px;
+    --app-icon-gap: 8px;
     margin-bottom: 18px;
-    padding: 16px 0 12px;
+    padding: 2px 0 12px;
   }
 
   .app-icon-header {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
   }
 
-  .app-icon-grid {
-    gap: 12px 8px;
-  }
-
-  .app-icon-button {
-    gap: 5px;
-  }
-
-  .app-icon-name {
-    font-size: 10px;
-    line-height: 15px;
+  .app-icon-lanes {
+    gap: 10px;
   }
 
   .app-icon-fallback {
     max-height: 30px;
     font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-icon-row {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .app-icon-wall .app-icon-track {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+
+  .app-icon-repeat {
+    display: none;
   }
 }

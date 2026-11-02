@@ -444,7 +444,7 @@ h1 {
   font-size: 12px;
 }
 
-.head-meta span {
+.head-meta > span {
   display: inline-flex;
   align-items: center;
   min-height: 30px;
@@ -452,6 +452,34 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.72);
+}
+
+.page-head.has-recap-years {
+  margin-bottom: 8px;
+}
+
+.has-recap-years .head-meta {
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.head-meta .year-filter-row {
+  gap: 8px;
+}
+
+.head-meta .year-filter-strip {
+  gap: 5px;
+}
+
+.head-meta .year-filter-chip {
+  min-height: 30px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+#item-count {
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .toolbar {
@@ -1974,6 +2002,16 @@ h1 {
     --sidebar: 196px;
   }
 
+  .page-head.has-recap-years {
+    grid-template-columns: max-content minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+
+  .has-recap-years .head-meta {
+    grid-column: 1 / -1;
+    grid-row: 3;
+  }
+
   .detail-viewer {
     grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
   }
@@ -2092,6 +2130,20 @@ h1 {
     grid-row: 3;
     justify-content: flex-start;
     min-width: 0;
+  }
+
+  .has-recap-years .head-meta {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .head-meta .year-filter-row {
+    flex: 1 1 280px;
+  }
+
+  .head-meta .year-filter-chip {
+    padding: 0 8px;
+    font-size: 11px;
   }
 
   .toolbar {

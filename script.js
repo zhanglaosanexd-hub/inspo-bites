@@ -1,4 +1,4 @@
-import { renderAppIconWall } from "./app-recap-products.js?v=20261102-app-icons";
+import { renderAppIconWall } from "./app-recap-products.js?v=20261102-recap-marquee-v2";
 
 const state = {
   section: "inspiration",
@@ -991,6 +991,7 @@ function renderFilters(filters) {
 
 function renderYearFilters() {
   const showYears = state.section === "app-recap";
+  document.querySelector(".page-head").classList.toggle("has-recap-years", showYears);
   yearFilterRow.hidden = !showYears;
   if (!showYears) {
     yearFilterStrip.innerHTML = "";
@@ -1021,7 +1022,7 @@ function renderGallery() {
 
   const filtered = getVisibleItems();
   visibleItems = filtered;
-  itemCount.textContent = `${getDisplayItemCount(filtered)} 条内容`;
+  itemCount.textContent = `${getDisplayItemCount(filtered)} ${state.section === "app-recap" ? "张截图" : "条内容"}`;
 
   const recentDate = getRecentDate(items.filter((item) => item.section === state.section));
   if (lastUpdated && recentDate) {
@@ -1038,6 +1039,9 @@ function renderGallery() {
 }
 
 function getDisplayItemCount(filtered) {
+  if (state.section === "app-recap") {
+    return filtered.reduce((count, item) => count + Number(item.imageCount || normalizeMaterials(item).length), 0);
+  }
   const isInspirationTotal =
     state.section === "inspiration" && state.filter === "All" && !state.query;
   return filtered.length + (isInspirationTotal ? INSPIRATION_ARCHIVE_BASE_COUNT : 0);

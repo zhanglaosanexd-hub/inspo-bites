@@ -97,16 +97,17 @@ function element(doc, tag, className, text) {
   return node;
 }
 
-function createPager(doc, direction) {
-  const button = element(doc, "button", "app-icon-page", direction < 0 ? "←" : "→");
-  button.type = "button";
-  button.setAttribute("aria-label", direction < 0 ? "查看上一页 App" : "查看下一页 App");
-  return button;
-}
-
-function createProductButton(doc, product, products, onOpen, index) {
-  const button = element(doc, "button", "app-icon-button");
-  button.type = "button";
+function createProductButton(doc, product, products, onOpen, index, duplicate = false) {
+  // Visual copies are pointer targets; only the original buttons enter the
+  // accessibility tree and keyboard order.
+  const button = element(doc, duplicate ? "span" : "button", "app-icon-button");
+  if (duplicate) {
+    button.classList.add("app-icon-copy");
+    button.setAttribute("aria-hidden", "true");
+  } else {
+    button.type = "button";
+    button.dataset.appIconOriginal = "true";
+  }
   button.dataset.appIconIndex = String(index);
   button.setAttribute("aria-haspopup", "dialog");
   button.setAttribute("aria-label", `查看${product.name}的全部年度回顾截图，共 ${product.imageCount} 张`);
@@ -131,8 +132,7 @@ function createProductButton(doc, product, products, onOpen, index) {
     icon.append(image);
   }
 
-  const name = element(doc, "span", "app-icon-name", product.name);
-  button.append(icon, name);
+  button.append(icon);
   button.addEventListener("click", () => {
     if (typeof onOpen === "function") onOpen(product, products);
   });
@@ -140,26 +140,26 @@ function createProductButton(doc, product, products, onOpen, index) {
 }
 
 /**
- * Render a two-row, manually scrollable App shortcut wall. The owner provides
- * the modal callback; no report manifest or screenshot is loaded by this module.
+ * Render two continuous, opposite-moving icon rows. Reduced-motion and keyboard
+ * browsing expose the original icons as ordinary horizontally scrollable rows.
+ * The owner provides the modal; no screenshot details are loaded here.
  */
 export function renderAppIconWall(container, {
   records = [], iconItems = records, icons = {}, onOpen, hidden = false,
 } = {}) {
   if (!container) return [];
   const previous = wallStates.get(container);
-  const previousScroll = previous?.viewport?.scrollLeft || previous?.scrollLeft || 0;
   previous?.cleanup?.();
   container.classList.add("app-icon-wall");
+  container.classList.remove("is-keyboard-browsing", "is-looping", "is-icon-page-hidden");
   container.hidden = Boolean(hidden);
 
   if (hidden) {
-    wallStates.set(container, { keys: previous?.keys || "", scrollLeft: previousScroll });
+    wallStates.delete(container);
     return [];
   }
 
   const products = groupAppRecapProducts(records, { icons, iconItems });
-  const keys = JSON.stringify(products.map((product) => product.key));
   const doc = container.ownerDocument;
   const win = doc.defaultView;
   container.replaceChildren();
@@ -167,7 +167,7 @@ export function renderAppIconWall(container, {
 
   if (!products.length) {
     container.hidden = true;
-    wallStates.set(container, { keys, scrollLeft: 0 });
+    wallStates.delete(container);
     return products;
   }
 
@@ -177,39 +177,66 @@ export function renderAppIconWall(container, {
     element(doc, "h2", "app-icon-title", "按 App 浏览"),
     element(doc, "span", "app-icon-total", `${products.length} 个 App`),
   );
-  const controls = element(doc, "div", "app-icon-pages");
-  const previousPage = createPager(doc, -1);
-  const nextPage = createPager(doc, 1);
-  controls.append(previousPage, nextPage);
-  header.append(heading, controls);
+  header.append(heading);
+  const lanes = element(doc, "div", "app-icon-lanes");
+  container.append(header, lanes);
+  const originals = new Map();
+  const rows = [];
 
-  const viewport = element(doc, "div", "app-icon-viewport");
-  const grid = element(doc, "div", "app-icon-grid");
-  products.forEach((product, index) => {
-    grid.append(createProductButton(doc, product, products, onOpen, index));
+  const revealButton = (button) => {
+    if (!button) return;
+    container.classList.add("is-keyboard-browsing");
+    const row = button.closest(".app-icon-row");
+    const bounds = row.getBoundingClientRect();
+    const target = button.getBoundingClientRect();
+    if (target.left < bounds.left + 4) row.scrollLeft += target.left - bounds.left - 4;
+    else if (target.right > bounds.right - 4) row.scrollLeft += target.right - bounds.right + 4;
+  };
+  const openProduct = (product, collection, duplicate) => {
+    if (duplicate) {
+      const original = originals.get(product.key);
+      revealButton(original);
+      original?.focus({ preventScroll: true });
+    }
+    if (typeof onOpen === "function") onOpen(product, collection);
+  };
+
+  for (let rowIndex = 0; rowIndex < 2; rowIndex += 1) {
+    const row = element(doc, "div", `app-icon-row${rowIndex ? " is-reversed" : ""}`);
+    const track = element(doc, "div", "app-icon-track");
+    const segment = element(doc, "div", "app-icon-segment");
+    const copySegment = element(doc, "div", "app-icon-segment app-icon-repeat");
+    copySegment.setAttribute("aria-hidden", "true");
+    let entries = products.map((product, index) => ({ product, index }))
+      .filter(({ index }) => index % 2 === rowIndex);
+    const onlyCopies = !entries.length;
+    if (onlyCopies) entries = [{ product: products[0], index: 0 }];
+    const makeSet = (duplicate) => {
+      const set = element(doc, "div", `app-icon-set${duplicate ? " app-icon-repeat" : ""}`);
+      if (duplicate) set.setAttribute("aria-hidden", "true");
+      entries.forEach(({ product, index }) => {
+        const button = createProductButton(doc, product, products,
+          (selected, collection) => openProduct(selected, collection, duplicate), index, duplicate);
+        if (!duplicate) originals.set(product.key, button);
+        set.append(button);
+      });
+      return set;
+    };
+    const originalSet = makeSet(onlyCopies);
+    segment.append(originalSet);
+    track.append(segment, copySegment);
+    row.append(track);
+    lanes.append(row);
+    rows.push({ row, track, segment, copySegment, originalSet, makeSet, repeats: 0 });
+  }
+
+  lanes.addEventListener("focusin", (event) => {
+    const button = event.target.closest?.("[data-app-icon-original]");
+    if (button?.matches(":focus-visible")) revealButton(button);
   });
-  viewport.append(grid);
-  container.append(header, viewport);
-
-  const updateControls = () => {
-    const maximum = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
-    previousPage.disabled = viewport.scrollLeft <= 1;
-    nextPage.disabled = viewport.scrollLeft >= maximum - 1;
-    controls.hidden = maximum <= 1;
-  };
-  const page = (direction) => {
-    const reducedMotion = win?.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-    viewport.scrollBy({
-      left: direction * Math.max(80, viewport.clientWidth * 0.85),
-      behavior: reducedMotion ? "auto" : "smooth",
-    });
-  };
-  previousPage.addEventListener("click", () => page(-1));
-  nextPage.addEventListener("click", () => page(1));
-  viewport.addEventListener("scroll", updateControls, { passive: true });
-  viewport.addEventListener("keydown", (event) => {
+  lanes.addEventListener("keydown", (event) => {
     const button = event.target.closest?.(".app-icon-button");
-    if (!button || !viewport.contains(button)) return;
+    if (!button || !lanes.contains(button)) return;
     const index = Number(button.dataset.appIconIndex);
     let target = index;
     if (event.key === "ArrowLeft") target = Math.max(0, index - 2);
@@ -220,26 +247,58 @@ export function renderAppIconWall(container, {
     else if (event.key === "End") target = products.length - 1;
     else if (event.key !== "ArrowUp" && event.key !== "ArrowDown") return;
     event.preventDefault();
-    const targetButton = grid.children[target];
+    const targetButton = originals.get(products[target].key);
+    revealButton(targetButton);
     targetButton.focus({ preventScroll: true });
-    targetButton.scrollIntoView({ block: "nearest", inline: "nearest" });
   });
 
+  let frame = 0;
+  const updateRepeats = () => {
+    frame = 0;
+    if (container.hidden || !container.isConnected) return;
+    rows.forEach((model) => {
+      const setWidth = model.originalSet.getBoundingClientRect().width;
+      if (!setWidth) return;
+      const repeats = Math.max(1, Math.ceil(model.row.clientWidth / setWidth));
+      if (repeats !== model.repeats) {
+        while (model.segment.children.length > 1) model.segment.lastElementChild.remove();
+        model.copySegment.replaceChildren();
+        for (let index = 1; index < repeats; index += 1) model.segment.append(model.makeSet(true));
+        for (let index = 0; index < repeats; index += 1) model.copySegment.append(model.makeSet(true));
+        model.repeats = repeats;
+      }
+      model.track.style.setProperty("--app-icon-cycle-duration", `${Math.max(20, setWidth * repeats / 24)}s`);
+    });
+    container.classList.add("is-looping");
+  };
+  const scheduleResize = () => {
+    if (!frame) frame = win.requestAnimationFrame(updateRepeats);
+  };
+  const resumeAfterFocus = () => {
+    if (container.contains(doc.activeElement)) return;
+    container.classList.remove("is-keyboard-browsing");
+    rows.forEach(({ row }) => { row.scrollLeft = 0; });
+  };
+  container.addEventListener("focusout", resumeAfterFocus);
+  const onVisibility = () => container.classList.toggle("is-icon-page-hidden", doc.hidden);
+  doc.addEventListener("visibilitychange", onVisibility);
+  onVisibility();
   let observer;
   if (win?.ResizeObserver) {
-    observer = new win.ResizeObserver(updateControls);
-    observer.observe(viewport);
+    observer = new win.ResizeObserver(scheduleResize);
+    observer.observe(container);
   } else {
-    win?.addEventListener("resize", updateControls);
+    win?.addEventListener("resize", scheduleResize);
   }
-  viewport.scrollLeft = previous?.keys === keys ? previousScroll : 0;
-  updateControls();
+  updateRepeats();
   wallStates.set(container, {
-    keys,
-    viewport,
     cleanup() {
       observer?.disconnect();
-      win?.removeEventListener("resize", updateControls);
+      win?.cancelAnimationFrame(frame);
+      win?.removeEventListener("resize", scheduleResize);
+      container.removeEventListener("focusout", resumeAfterFocus);
+      doc.removeEventListener("visibilitychange", onVisibility);
+      container.classList.remove("is-looping");
     },
   });
   return products;
